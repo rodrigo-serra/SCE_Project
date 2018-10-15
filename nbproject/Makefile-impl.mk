@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=parte1.X
+PROJECTNAME=SCE_Project
 
 # Active Configuration
 DEFAULTCONF=default

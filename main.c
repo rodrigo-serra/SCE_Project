@@ -51,11 +51,10 @@ volatile int hrs = 0;
 volatile int mins = 0;
 volatile int secs = 0;
 const int PMON = 3;
+volatile int ALAF = 0;
+const int TALA = 2;
 
 void changeleds(void){
-    
-    //Change LED
-  
     
     secs +=1;
     if(secs == 60)
@@ -69,11 +68,11 @@ void changeleds(void){
         mins = 0;
     }
     
-    if(LED_D2_GetValue() == LOW)
+    if(LED_D5_GetValue() == LOW)
     {
-        LED_D2_SetHigh();
+        LED_D5_SetHigh();
     }else{
-        LED_D2_SetLow();
+        LED_D5_SetLow();
     }
 }
 
@@ -81,16 +80,18 @@ void s1Pressed(){
     if(LED_D4_GetValue() == LOW)
     {
         LED_D4_SetHigh();
-        TMR1_StartTimer();
+        
     }else{
         LED_D4_SetLow();
-        TMR1_StopTimer();
+        
     }
     
     __delay_ms(5);
 }
 
 void sensor_timer();
+int get_luminosity (void);
+void setLedLuminosity(int);
 
 void main(void)
 {
@@ -115,17 +116,17 @@ void main(void)
     TMR1_SetInterruptHandler(&changeleds);
     
     INT_SetInterruptHandler(&s1Pressed);
-
+    
+    int luminosity = 0;
+    
     while (1)
     {
-        
-        LED_D3_SetHigh();
-        
         
         
         if(secs%PMON == 0){
             //get luminosity lvl
-            
+            luminosity = get_luminosity();
+            setLedLuminosity(luminosity);
         }
         
         if(secs%PMON == 1){
@@ -137,6 +138,11 @@ void main(void)
             //                       or max or min -- checks thresholds)
         
             //if alarm is on call function to change brightness
+            if(ALAF == 1){
+                //change brightness with pwm for TALA duration
+                
+                LED_D4_SetHigh();
+            }
         }
         
         
@@ -145,6 +151,31 @@ void main(void)
     }
 }
 
+int get_luminosity (void){
+    
+    //READ FOR POTENCIOMETER
+    int lum = 2;
+    
+    //Ler do potenciometro
+    
+    return lum;
+    
+}
+
+void setLedLuminosity(int lum){
+    if(lum > 1){
+        LED_D3_SetHigh();
+    }else{
+        LED_D3_SetLow();
+    }
+    
+    if(lum%2 == 1)
+    {
+        LED_D2_SetHigh();
+    }else{
+        LED_D2_SetLow();
+    }
+}
 
 //sensor timer interrupt
 // time info, max temp, min temp, data vector and max/min registers

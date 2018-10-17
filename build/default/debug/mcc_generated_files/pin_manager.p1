@@ -89,6 +89,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36234
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 36234: extern volatile unsigned char SLRCONE __attribute__((address(0xF67)));
 [v _SLRCONE `Vuc ~T0 @X0 0 e@3943 ]
+"30066
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 30066: extern volatile unsigned char INTPPS __attribute__((address(0xE90)));
+[v _INTPPS `Vuc ~T0 @X0 0 e@3728 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1778,8 +1781,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 83:     ANSELE = 0x07;
 [e = _ANSELE -> -> 7 `i `uc ]
 "84
-[; ;mcc_generated_files/pin_manager.c: 84:     ANSELA = 0x0F;
-[e = _ANSELA -> -> 15 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 84:     ANSELA = 0x0E;
+[e = _ANSELA -> -> 14 `i `uc ]
 "89
 [; ;mcc_generated_files/pin_manager.c: 89:     WPUD = 0x00;
 [e = _WPUD -> -> 0 `i `uc ]
@@ -1825,19 +1828,22 @@ Version 4.0 HI-TECH Software Intermediate Code
 "111
 [; ;mcc_generated_files/pin_manager.c: 111:     SLRCONE = 0x07;
 [e = _SLRCONE -> -> 7 `i `uc ]
-"119
-[; ;mcc_generated_files/pin_manager.c: 119: }
+"120
+[; ;mcc_generated_files/pin_manager.c: 120:     INTPPS = 0x0C;
+[e = _INTPPS -> -> 12 `i `uc ]
+"121
+[; ;mcc_generated_files/pin_manager.c: 121: }
 [e :UE 1625 ]
 }
-"121
-[; ;mcc_generated_files/pin_manager.c: 121: void PIN_MANAGER_IOC(void)
+"123
+[; ;mcc_generated_files/pin_manager.c: 123: void PIN_MANAGER_IOC(void)
 [v _PIN_MANAGER_IOC `(v ~T0 @X0 1 ef ]
-"122
-[; ;mcc_generated_files/pin_manager.c: 122: {
+"124
+[; ;mcc_generated_files/pin_manager.c: 124: {
 {
 [e :U _PIN_MANAGER_IOC ]
 [f ]
-"123
-[; ;mcc_generated_files/pin_manager.c: 123: }
+"125
+[; ;mcc_generated_files/pin_manager.c: 125: }
 [e :UE 1626 ]
 }

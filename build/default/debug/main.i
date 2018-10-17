@@ -20883,6 +20883,21 @@ typedef uint32_t uint_fast32_t;
 # 1 "./mcc_generated_files/interrupt_manager.h" 1
 # 54 "./mcc_generated_files/mcc.h" 2
 
+# 1 "./mcc_generated_files/ext_int.h" 1
+# 250 "./mcc_generated_files/ext_int.h"
+void EXT_INT_Initialize(void);
+# 272 "./mcc_generated_files/ext_int.h"
+void INT_ISR(void);
+# 296 "./mcc_generated_files/ext_int.h"
+void INT_CallBack(void);
+# 319 "./mcc_generated_files/ext_int.h"
+void INT_SetInterruptHandler(void (* InterruptHandler)(void));
+# 343 "./mcc_generated_files/ext_int.h"
+extern void (*INT_InterruptHandler)(void);
+# 367 "./mcc_generated_files/ext_int.h"
+void INT_DefaultInterruptHandler(void);
+# 55 "./mcc_generated_files/mcc.h" 2
+
 # 1 "./mcc_generated_files/tmr1.h" 1
 # 100 "./mcc_generated_files/tmr1.h"
 void TMR1_Initialize(void);
@@ -20908,49 +20923,38 @@ void TMR1_ISR(void);
 extern void (*TMR1_InterruptHandler)(void);
 # 421 "./mcc_generated_files/tmr1.h"
 void TMR1_DefaultInterruptHandler(void);
-# 55 "./mcc_generated_files/mcc.h" 2
-# 70 "./mcc_generated_files/mcc.h"
+# 56 "./mcc_generated_files/mcc.h" 2
+# 71 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 83 "./mcc_generated_files/mcc.h"
+# 84 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 96 "./mcc_generated_files/mcc.h"
+# 97 "./mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 44 "main.c" 2
 
+# 1 "./interruptions.h" 1
+# 23 "./interruptions.h"
+void changeleds(void);
+void s1Pressed(void);
+# 45 "main.c" 2
 
+# 1 "./globalvariables.h" 1
+# 22 "./globalvariables.h"
+volatile int hrs = 0;
+volatile int mins = 0;
+volatile int secs = 0;
+const int PMON = 3;
+volatile int ALAF = 0;
+const int TALA = 2;
+# 46 "main.c" 2
 
-
-
-
-int hrs = 0;
-int mins = 0;
-int secs = 0;
-
-void changeleds(void){
-
-
-
-
-    secs +=1;
-    if(secs == 60)
-    {
-        mins += 1;
-        secs = 0;
-    }
-    if(mins == 60)
-    {
-        hrs += 1;
-        mins = 0;
-    }
-
-    if(PORTAbits.RA4 == 0)
-    {
-        do { LATAbits.LATA4 = 1; } while(0);
-    }else{
-        do { LATAbits.LATA4 = 0; } while(0);
-    }
-}
-
+# 1 "./measureAndSaveFunctions.h" 1
+# 22 "./measureAndSaveFunctions.h"
+void sensor_timer();
+int get_luminosity (void);
+void setLedLuminosity(int);
+# 47 "main.c" 2
+# 56 "main.c"
 void main(void)
 {
 
@@ -20971,12 +20975,39 @@ void main(void)
 
 
 
-     TMR1_SetInterruptHandler(&changeleds);
+    TMR1_SetInterruptHandler(&changeleds);
+
+    INT_SetInterruptHandler(&s1Pressed);
+
+    int luminosity = 0;
 
     while (1)
     {
 
-        do { LATAbits.LATA5 = 1; } while(0);
+
+        if(secs%PMON == 0){
+
+            luminosity = get_luminosity();
+            setLedLuminosity(luminosity);
+        }
+
+        if(secs%PMON == 1){
+
+        }
+
+        if(secs%PMON == 2){
+
+
+
+
+            if(ALAF == 1){
+
+
+                do { LATAbits.LATA6 = 1; } while(0);
+            }
+        }
+
+
 
 
     }

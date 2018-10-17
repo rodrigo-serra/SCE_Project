@@ -1,67 +1,51 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[t ~ __interrupt . k ]
-[t T1 __interrupt ]
-"21840 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 21840:     struct {
-[s S990 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S990 . INTE . IOCIE TMR0IE ]
-"21839
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 21839: typedef union {
-[u S989 `S990 1 ]
-[n S989 . . ]
-"21847
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 21847: extern volatile PIE0bits_t PIE0bits __attribute__((address(0x716)));
-[v _PIE0bits `VS989 ~T0 @X0 0 e@1814 ]
-"21418
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 21418:     struct {
-[s S971 :1 `uc 1 :3 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S971 . INTF . IOCIF TMR0IF ]
-"21417
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 21417: typedef union {
-[u S970 `S971 1 ]
-[n S970 . . ]
-"21425
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 21425: extern volatile PIR0bits_t PIR0bits __attribute__((address(0x70C)));
-[v _PIR0bits `VS970 ~T0 @X0 0 e@1804 ]
-"272 mcc_generated_files/ext_int.h
-[; ;mcc_generated_files/ext_int.h: 272: void INT_ISR(void);
-[v _INT_ISR `(v ~T0 @X0 0 ef ]
-"357 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 357:     struct {
-[s S31 :1 `uc 1 :5 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S31 . INTEDG . PEIE GIE ]
-"356
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 356: typedef union {
-[u S30 `S31 1 ]
-[n S30 . . ]
-"364
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 364: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
-[v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-"21995
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 21995:     struct {
-[s S998 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S998 . TMR1IE TMR2IE TMR3IE TMR4IE TMR5IE TMR6IE ]
-"21994
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 21994: typedef union {
-[u S997 `S998 1 ]
-[n S997 . . ]
-"22004
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 22004: extern volatile PIE4bits_t PIE4bits __attribute__((address(0x71A)));
-[v _PIE4bits `VS997 ~T0 @X0 0 e@1818 ]
-"21573
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 21573:     struct {
-[s S979 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S979 . TMR1IF TMR2IF TMR3IF TMR4IF TMR5IF TMR6IF ]
-"21572
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 21572: typedef union {
-[u S978 `S979 1 ]
-[n S978 . . ]
-"21582
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 21582: extern volatile PIR4bits_t PIR4bits __attribute__((address(0x710)));
-[v _PIR4bits `VS978 ~T0 @X0 0 e@1808 ]
-"367 mcc_generated_files/tmr1.h
-[; ;mcc_generated_files/tmr1.h: 367: void TMR1_ISR(void);
-[v _TMR1_ISR `(v ~T0 @X0 0 ef ]
+"956 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 956:     struct {
+[s S53 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S53 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
+"955
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 955: typedef union {
+[u S52 `S53 1 ]
+[n S52 . . ]
+"967
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 967: extern volatile LATAbits_t LATAbits __attribute__((address(0x016)));
+[v _LATAbits `VS52 ~T0 @X0 0 e@22 ]
+"22 ./globalvariables.h
+[; ;./globalvariables.h: 22: volatile int hrs = 0;
+[v _hrs `Vi ~T0 @X0 1 e ]
+[i _hrs
+-> 0 `i
+]
+"23
+[; ;./globalvariables.h: 23: volatile int mins = 0;
+[v _mins `Vi ~T0 @X0 1 e ]
+[i _mins
+-> 0 `i
+]
+"24
+[; ;./globalvariables.h: 24: volatile int secs = 0;
+[v _secs `Vi ~T0 @X0 1 e ]
+[i _secs
+-> 0 `i
+]
+"25
+[; ;./globalvariables.h: 25: const int PMON = 3;
+[v _PMON `Ci ~T0 @X0 1 e ]
+[i _PMON
+-> 3 `i
+]
+"26
+[; ;./globalvariables.h: 26: volatile int ALAF = 0;
+[v _ALAF `Vi ~T0 @X0 1 e ]
+[i _ALAF
+-> 0 `i
+]
+"27
+[; ;./globalvariables.h: 27: const int TALA = 2;
+[v _TALA `Ci ~T0 @X0 1 e ]
+[i _TALA
+-> 2 `i
+]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1700,74 +1684,90 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36645
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 36645: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-[v $root$_INTERRUPT_InterruptManager `(v ~T0 @X0 0 e ]
-"52 mcc_generated_files/interrupt_manager.c
-[; ;mcc_generated_files/interrupt_manager.c: 52: void __attribute__((picinterrupt(""))) INTERRUPT_InterruptManager (void)
-[v _INTERRUPT_InterruptManager `(v ~T1 @X0 1 ef ]
-"53
-[; ;mcc_generated_files/interrupt_manager.c: 53: {
+"5 measureAndSaveFunctions.c
+[; ;measureAndSaveFunctions.c: 5: int get_luminosity (void){
+[v _get_luminosity `(i ~T0 @X0 1 ef ]
 {
-[e :U _INTERRUPT_InterruptManager ]
+[e :U _get_luminosity ]
 [f ]
-"55
-[; ;mcc_generated_files/interrupt_manager.c: 55:     if(PIE0bits.INTE == 1 && PIR0bits.INTF == 1)
-[e $ ! && == -> . . _PIE0bits 0 0 `i -> 1 `i == -> . . _PIR0bits 0 0 `i -> 1 `i 1626  ]
-"56
-[; ;mcc_generated_files/interrupt_manager.c: 56:     {
-{
-"57
-[; ;mcc_generated_files/interrupt_manager.c: 57:         INT_ISR();
-[e ( _INT_ISR ..  ]
-"58
-[; ;mcc_generated_files/interrupt_manager.c: 58:     }
+"8
+[; ;measureAndSaveFunctions.c: 8:     int lum = 2;
+[v _lum `i ~T0 @X0 1 a ]
+[e = _lum -> 2 `i ]
+"12
+[; ;measureAndSaveFunctions.c: 12:     return lum;
+[e ) _lum ]
+[e $UE 1625  ]
+"14
+[; ;measureAndSaveFunctions.c: 14: }
+[e :UE 1625 ]
 }
-[e $U 1627  ]
-"59
-[; ;mcc_generated_files/interrupt_manager.c: 59:     else if(INTCONbits.PEIE == 1)
-[e :U 1626 ]
-[e $ ! == -> . . _INTCONbits 0 2 `i -> 1 `i 1628  ]
-"60
-[; ;mcc_generated_files/interrupt_manager.c: 60:     {
+"16
+[; ;measureAndSaveFunctions.c: 16: void setLedLuminosity(int lum){
+[v _setLedLuminosity `(v ~T0 @X0 1 ef1`i ]
 {
-"61
-[; ;mcc_generated_files/interrupt_manager.c: 61:         if(PIE4bits.TMR1IE == 1 && PIR4bits.TMR1IF == 1)
-[e $ ! && == -> . . _PIE4bits 0 0 `i -> 1 `i == -> . . _PIR4bits 0 0 `i -> 1 `i 1629  ]
-"62
-[; ;mcc_generated_files/interrupt_manager.c: 62:         {
+[e :U _setLedLuminosity ]
+[v _lum `i ~T0 @X0 1 r1 ]
+[f ]
+"17
+[; ;measureAndSaveFunctions.c: 17:     if(lum > 1){
+[e $ ! > _lum -> 1 `i 1627  ]
 {
-"63
-[; ;mcc_generated_files/interrupt_manager.c: 63:             TMR1_ISR();
-[e ( _TMR1_ISR ..  ]
-"64
-[; ;mcc_generated_files/interrupt_manager.c: 64:         }
-}
-[e $U 1630  ]
-"65
-[; ;mcc_generated_files/interrupt_manager.c: 65:         else
-[e :U 1629 ]
-"66
-[; ;mcc_generated_files/interrupt_manager.c: 66:         {
-{
-"68
-[; ;mcc_generated_files/interrupt_manager.c: 68:         }
-}
+"18
+[; ;measureAndSaveFunctions.c: 18:         do { LATAbits.LATA5 = 1; } while(0);
 [e :U 1630 ]
-"69
-[; ;mcc_generated_files/interrupt_manager.c: 69:     }
+{
+[e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
+}
+[e :U 1629 ]
+"19
+[; ;measureAndSaveFunctions.c: 19:     }else{
 }
 [e $U 1631  ]
-"70
-[; ;mcc_generated_files/interrupt_manager.c: 70:     else
-[e :U 1628 ]
-"71
-[; ;mcc_generated_files/interrupt_manager.c: 71:     {
+[e :U 1627 ]
 {
-"73
-[; ;mcc_generated_files/interrupt_manager.c: 73:     }
+"20
+[; ;measureAndSaveFunctions.c: 20:         do { LATAbits.LATA5 = 0; } while(0);
+[e :U 1634 ]
+{
+[e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
+}
+[e :U 1633 ]
+"21
+[; ;measureAndSaveFunctions.c: 21:     }
 }
 [e :U 1631 ]
-[e :U 1627 ]
-"74
-[; ;mcc_generated_files/interrupt_manager.c: 74: }
-[e :UE 1625 ]
+"23
+[; ;measureAndSaveFunctions.c: 23:     if(lum%2 == 1)
+[e $ ! == % _lum -> 2 `i -> 1 `i 1635  ]
+"24
+[; ;measureAndSaveFunctions.c: 24:     {
+{
+"25
+[; ;measureAndSaveFunctions.c: 25:         do { LATAbits.LATA4 = 1; } while(0);
+[e :U 1638 ]
+{
+[e = . . _LATAbits 0 4 -> -> 1 `i `uc ]
+}
+[e :U 1637 ]
+"26
+[; ;measureAndSaveFunctions.c: 26:     }else{
+}
+[e $U 1639  ]
+[e :U 1635 ]
+{
+"27
+[; ;measureAndSaveFunctions.c: 27:         do { LATAbits.LATA4 = 0; } while(0);
+[e :U 1642 ]
+{
+[e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
+}
+[e :U 1641 ]
+"28
+[; ;measureAndSaveFunctions.c: 28:     }
+}
+[e :U 1639 ]
+"29
+[; ;measureAndSaveFunctions.c: 29: }
+[e :UE 1626 ]
 }

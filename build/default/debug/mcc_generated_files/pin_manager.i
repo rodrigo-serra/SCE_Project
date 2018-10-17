@@ -20834,7 +20834,7 @@ void PIN_MANAGER_Initialize(void)
     ANSELC = 0xDF;
     ANSELB = 0xEF;
     ANSELE = 0x07;
-    ANSELA = 0x0F;
+    ANSELA = 0x0E;
 
 
 
@@ -20862,13 +20862,8 @@ void PIN_MANAGER_Initialize(void)
     SLRCONC = 0xFF;
     SLRCOND = 0xFF;
     SLRCONE = 0x07;
-
-
-
-
-
-
-
+# 120 "mcc_generated_files/pin_manager.c"
+    INTPPS = 0x0C;
 }
 
 void PIN_MANAGER_IOC(void)

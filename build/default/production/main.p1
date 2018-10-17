@@ -1,39 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"390 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 390:     struct {
-[s S33 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S33 . RA0 RA1 RA2 RA3 RA4 RA5 RA6 RA7 ]
-"389
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 389: typedef union {
-[u S32 `S33 1 ]
-[n S32 . . ]
-"401
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 401: extern volatile PORTAbits_t PORTAbits __attribute__((address(0x00C)));
-[v _PORTAbits `VS32 ~T0 @X0 0 e@12 ]
-"956
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 956:     struct {
-[s S53 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S53 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
-"955
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 955: typedef union {
-[u S52 `S53 1 ]
-[n S52 . . ]
-"967
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 967: extern volatile LATAbits_t LATAbits __attribute__((address(0x016)));
-[v _LATAbits `VS52 ~T0 @X0 0 e@22 ]
-"129 ./mcc_generated_files/tmr1.h
-[; ;./mcc_generated_files/tmr1.h: 129: void TMR1_StartTimer(void);
-[v _TMR1_StartTimer `(v ~T0 @X0 0 ef ]
-"161
-[; ;./mcc_generated_files/tmr1.h: 161: void TMR1_StopTimer(void);
-[v _TMR1_StopTimer `(v ~T0 @X0 0 ef ]
-[v F12202 `(v ~T0 @X0 1 tf1`ul ]
-"92 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic.h
-[v __delay `JF12202 ~T0 @X0 0 e ]
-[p i __delay ]
 [p mainexit ]
-"71 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 71: void SYSTEM_Initialize(void);
+"72 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 72: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "357 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 357:     struct {
@@ -46,15 +14,37 @@ Version 4.0 HI-TECH Software Intermediate Code
 "364
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 364: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-[v F12258 `(v ~T0 @X0 0 tf ]
+[v F12291 `(v ~T0 @X0 0 tf ]
 "385 ./mcc_generated_files/tmr1.h
 [; ;./mcc_generated_files/tmr1.h: 385:  void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _TMR1_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F12258 ]
-[v F12241 `(v ~T0 @X0 0 tf ]
+[v _TMR1_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F12291 ]
+"23 ./interruptions.h
+[; ;./interruptions.h: 23: void changeleds(void);
+[v _changeleds `(v ~T0 @X0 0 ef ]
+[v F12301 `(v ~T0 @X0 0 tf ]
 "319 ./mcc_generated_files/ext_int.h
 [; ;./mcc_generated_files/ext_int.h: 319: void INT_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _INT_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F12241 ]
-[v F12276 `(v ~T0 @X0 0 tf ]
+[v _INT_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F12301 ]
+"24 ./interruptions.h
+[; ;./interruptions.h: 24: void s1Pressed(void);
+[v _s1Pressed `(v ~T0 @X0 0 ef ]
+"23 ./measureAndSaveFunctions.h
+[; ;./measureAndSaveFunctions.h: 23: int get_luminosity (void);
+[v _get_luminosity `(i ~T0 @X0 0 ef ]
+"24
+[; ;./measureAndSaveFunctions.h: 24: void setLedLuminosity(int);
+[v _setLedLuminosity `(v ~T0 @X0 0 ef1`i ]
+"956 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 956:     struct {
+[s S53 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S53 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
+"955
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 955: typedef union {
+[u S52 `S53 1 ]
+[n S52 . . ]
+"967
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 967: extern volatile LATAbits_t LATAbits __attribute__((address(0x016)));
+[v _LATAbits `VS52 ~T0 @X0 0 e@22 ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1693,222 +1683,134 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36645
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 36645: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"50 main.c
-[; ;main.c: 50: volatile int hrs = 0;
+"24 ./globalvariables.h
+[; ;./globalvariables.h: 24: volatile int hrs = 0;
 [v _hrs `Vi ~T0 @X0 1 e ]
 [i _hrs
 -> 0 `i
 ]
-"51
-[; ;main.c: 51: volatile int mins = 0;
+"25
+[; ;./globalvariables.h: 25: volatile int mins = 0;
 [v _mins `Vi ~T0 @X0 1 e ]
 [i _mins
 -> 0 `i
 ]
-"52
-[; ;main.c: 52: volatile int secs = 0;
+"26
+[; ;./globalvariables.h: 26: volatile int secs = 0;
 [v _secs `Vi ~T0 @X0 1 e ]
 [i _secs
 -> 0 `i
 ]
-"53
-[; ;main.c: 53: const int PMON = 3;
+"27
+[; ;./globalvariables.h: 27: const int PMON = 3;
 [v _PMON `Ci ~T0 @X0 1 e ]
 [i _PMON
 -> 3 `i
 ]
-"55
-[; ;main.c: 55: void changeleds(void){
-[v _changeleds `(v ~T0 @X0 1 ef ]
-{
-[e :U _changeleds ]
-[f ]
-"60
-[; ;main.c: 60:     secs +=1;
-[e =+ _secs -> -> 1 `i `Vi ]
-"61
-[; ;main.c: 61:     if(secs == 60)
-[e $ ! == _secs -> 60 `i 1626  ]
-"62
-[; ;main.c: 62:     {
-{
-"63
-[; ;main.c: 63:         mins += 1;
-[e =+ _mins -> -> 1 `i `Vi ]
-"64
-[; ;main.c: 64:         secs = 0;
-[e = _secs -> 0 `i ]
-"65
-[; ;main.c: 65:     }
-}
-[e :U 1626 ]
-"66
-[; ;main.c: 66:     if(mins == 60)
-[e $ ! == _mins -> 60 `i 1627  ]
-"67
-[; ;main.c: 67:     {
-{
-"68
-[; ;main.c: 68:         hrs += 1;
-[e =+ _hrs -> -> 1 `i `Vi ]
-"69
-[; ;main.c: 69:         mins = 0;
-[e = _mins -> 0 `i ]
-"70
-[; ;main.c: 70:     }
-}
-[e :U 1627 ]
-"72
-[; ;main.c: 72:     if(PORTAbits.RA4 == 0)
-[e $ ! == -> . . _PORTAbits 0 4 `i -> 0 `i 1628  ]
-"73
-[; ;main.c: 73:     {
-{
-"74
-[; ;main.c: 74:         do { LATAbits.LATA4 = 1; } while(0);
-[e :U 1631 ]
-{
-[e = . . _LATAbits 0 4 -> -> 1 `i `uc ]
-}
-[e :U 1630 ]
-"75
-[; ;main.c: 75:     }else{
-}
-[e $U 1632  ]
-[e :U 1628 ]
-{
-"76
-[; ;main.c: 76:         do { LATAbits.LATA4 = 0; } while(0);
-[e :U 1635 ]
-{
-[e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
-}
-[e :U 1634 ]
-"77
-[; ;main.c: 77:     }
-}
-[e :U 1632 ]
-"78
-[; ;main.c: 78: }
-[e :UE 1625 ]
-}
-"80
-[; ;main.c: 80: void s1Pressed(){
-[v _s1Pressed `(v ~T0 @X0 1 ef ]
-{
-[e :U _s1Pressed ]
-[f ]
-"81
-[; ;main.c: 81:     if(PORTAbits.RA6 == 0)
-[e $ ! == -> . . _PORTAbits 0 6 `i -> 0 `i 1637  ]
-"82
-[; ;main.c: 82:     {
-{
-"83
-[; ;main.c: 83:         do { LATAbits.LATA6 = 1; } while(0);
-[e :U 1640 ]
-{
-[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
-}
-[e :U 1639 ]
-"84
-[; ;main.c: 84:         TMR1_StartTimer();
-[e ( _TMR1_StartTimer ..  ]
-"85
-[; ;main.c: 85:     }else{
-}
-[e $U 1641  ]
-[e :U 1637 ]
-{
-"86
-[; ;main.c: 86:         do { LATAbits.LATA6 = 0; } while(0);
-[e :U 1644 ]
-{
-[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
-}
-[e :U 1643 ]
-"87
-[; ;main.c: 87:         TMR1_StopTimer();
-[e ( _TMR1_StopTimer ..  ]
-"88
-[; ;main.c: 88:     }
-}
-[e :U 1641 ]
-"90
-[; ;main.c: 90:     _delay((unsigned long)((5)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"91
-[; ;main.c: 91: }
-[e :UE 1636 ]
-}
+"28
+[; ;./globalvariables.h: 28: volatile int ALAF = 0;
+[v _ALAF `Vi ~T0 @X0 1 e ]
+[i _ALAF
+-> 0 `i
+]
+"29
+[; ;./globalvariables.h: 29: const int TALA = 2;
+[v _TALA `Ci ~T0 @X0 1 e ]
+[i _TALA
+-> 2 `i
+]
+"30
+[; ;./globalvariables.h: 30: adc_result_t adcResult = 0;
+[v _adcResult `us ~T0 @X0 1 e ]
+[i _adcResult
+-> -> 0 `i `us
+]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"95
-[; ;main.c: 95: void main(void)
+"56 main.c
+[; ;main.c: 56: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"96
-[; ;main.c: 96: {
+"57
+[; ;main.c: 57: {
 {
 [e :U _main ]
 [f ]
-"98
-[; ;main.c: 98:     SYSTEM_Initialize();
+"59
+[; ;main.c: 59:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"104
-[; ;main.c: 104:     (INTCONbits.GIE = 1);
+"65
+[; ;main.c: 65:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"107
-[; ;main.c: 107:     (INTCONbits.PEIE = 1);
+"68
+[; ;main.c: 68:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
-"115
-[; ;main.c: 115:     TMR1_SetInterruptHandler(&changeleds);
+"76
+[; ;main.c: 76:     TMR1_SetInterruptHandler(&changeleds);
 [e ( _TMR1_SetInterruptHandler (1 &U _changeleds ]
-"117
-[; ;main.c: 117:     INT_SetInterruptHandler(&s1Pressed);
-[e ( _INT_SetInterruptHandler (1 -> &U _s1Pressed `*F12276 ]
-"119
-[; ;main.c: 119:     while (1)
-[e :U 1647 ]
-"120
-[; ;main.c: 120:     {
+"78
+[; ;main.c: 78:     INT_SetInterruptHandler(&s1Pressed);
+[e ( _INT_SetInterruptHandler (1 &U _s1Pressed ]
+"80
+[; ;main.c: 80:     int luminosity = 0;
+[v _luminosity `i ~T0 @X0 1 a ]
+[e = _luminosity -> 0 `i ]
+"82
+[; ;main.c: 82:     while (1)
+[e :U 1627 ]
+"83
+[; ;main.c: 83:     {
 {
-"122
-[; ;main.c: 122:         do { LATAbits.LATA5 = 1; } while(0);
-[e :U 1651 ]
+"85
+[; ;main.c: 85:         if(secs%PMON == 0){
+[e $ ! == % _secs _PMON -> 0 `i 1629  ]
 {
-[e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
+"87
+[; ;main.c: 87:             luminosity = get_luminosity();
+[e = _luminosity ( _get_luminosity ..  ]
+"88
+[; ;main.c: 88:             setLedLuminosity(luminosity);
+[e ( _setLedLuminosity (1 _luminosity ]
+"89
+[; ;main.c: 89:         }
 }
-[e :U 1650 ]
-"126
-[; ;main.c: 126:         if(secs%PMON == 0){
-[e $ ! == % _secs _PMON -> 0 `i 1652  ]
+[e :U 1629 ]
+"91
+[; ;main.c: 91:         if(secs%PMON == 1){
+[e $ ! == % _secs _PMON -> 1 `i 1630  ]
 {
-"129
-[; ;main.c: 129:         }
+"93
+[; ;main.c: 93:         }
 }
-[e :U 1652 ]
-"131
-[; ;main.c: 131:         if(secs%PMON == 1){
-[e $ ! == % _secs _PMON -> 1 `i 1653  ]
+[e :U 1630 ]
+"95
+[; ;main.c: 95:         if(secs%PMON == 2){
+[e $ ! == % _secs _PMON -> 2 `i 1631  ]
 {
-"133
-[; ;main.c: 133:         }
-}
-[e :U 1653 ]
-"135
-[; ;main.c: 135:         if(secs%PMON == 2){
-[e $ ! == % _secs _PMON -> 2 `i 1654  ]
+"100
+[; ;main.c: 100:             if(ALAF == 1){
+[e $ ! == _ALAF -> 1 `i 1632  ]
 {
-"140
-[; ;main.c: 140:         }
+"103
+[; ;main.c: 103:                 do { LATAbits.LATA6 = 1; } while(0);
+[e :U 1635 ]
+{
+[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
 }
-[e :U 1654 ]
-"145
-[; ;main.c: 145:     }
+[e :U 1634 ]
+"104
+[; ;main.c: 104:             }
 }
-[e :U 1646 ]
-[e $U 1647  ]
-[e :U 1648 ]
-"146
-[; ;main.c: 146: }
-[e :UE 1645 ]
+[e :U 1632 ]
+"105
+[; ;main.c: 105:         }
+}
+[e :U 1631 ]
+"110
+[; ;main.c: 110:     }
+}
+[e :U 1626 ]
+[e $U 1627  ]
+[e :U 1628 ]
+"111
+[; ;main.c: 111: }
+[e :UE 1625 ]
 }

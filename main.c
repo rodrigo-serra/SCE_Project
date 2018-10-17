@@ -45,7 +45,7 @@
 #include "interruptions.h"
 #include "globalvariables.h"
 #include "measureAndSaveFunctions.h"
-
+#include "mcc_generated_files/adcc.h"
 
 
 
@@ -81,8 +81,7 @@ void main(void)
     
     while (1)
     {
-        
-        
+               
         if(secs%PMON == 0){
             //get luminosity lvl
             luminosity = get_luminosity();

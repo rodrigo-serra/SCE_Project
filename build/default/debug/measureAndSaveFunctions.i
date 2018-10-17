@@ -8,24 +8,16 @@
 # 2 "<built-in>" 2
 # 1 "measureAndSaveFunctions.c" 2
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 192 "./mcc_generated_files/pin_manager.h"
-void PIN_MANAGER_Initialize (void);
 # 204 "./mcc_generated_files/pin_manager.h"
+void PIN_MANAGER_Initialize (void);
+# 216 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 1 "measureAndSaveFunctions.c" 2
 
 # 1 "./globalvariables.h" 1
 # 22 "./globalvariables.h"
-volatile int hrs = 0;
-volatile int mins = 0;
-volatile int secs = 0;
-const int PMON = 3;
-volatile int ALAF = 0;
-const int TALA = 2;
-# 2 "measureAndSaveFunctions.c" 2
-
-# 1 "./mcc_generated_files/mcc.h" 1
-# 49 "./mcc_generated_files/mcc.h"
+# 1 "./mcc_generated_files/adcc.h" 1
+# 54 "./mcc_generated_files/adcc.h"
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 1 3
 # 18 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -20808,11 +20800,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 27 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\xc.h" 2 3
-# 49 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/device_config.h" 1
-# 50 "./mcc_generated_files/mcc.h" 2
-
+# 54 "./mcc_generated_files/adcc.h" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 1 3
 # 22 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 3
@@ -20885,28 +20873,98 @@ typedef int32_t int_fast32_t;
 typedef uint32_t uint_fast16_t;
 typedef uint32_t uint_fast32_t;
 # 131 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\stdint.h" 2 3
-# 52 "./mcc_generated_files/mcc.h" 2
+# 55 "./mcc_generated_files/adcc.h" 2
 
 # 1 "C:\\Program Files (x86)\\Microchip\\xc8\\v2.00\\pic\\include\\c99\\stdbool.h" 1 3
-# 53 "./mcc_generated_files/mcc.h" 2
+# 56 "./mcc_generated_files/adcc.h" 2
+# 72 "./mcc_generated_files/adcc.h"
+typedef uint16_t adc_result_t;
+# 89 "./mcc_generated_files/adcc.h"
+typedef enum
+{
+    POT = 0x0,
+    channel_VSS = 0x3C,
+    channel_Temp = 0x3D,
+    channel_DAC1 = 0x3E,
+    channel_FVR_buf1 = 0x3F
+} adcc_channel_t;
+# 130 "./mcc_generated_files/adcc.h"
+void ADCC_Initialize(void);
+# 159 "./mcc_generated_files/adcc.h"
+void ADCC_StartConversion(adcc_channel_t channel);
+# 189 "./mcc_generated_files/adcc.h"
+_Bool ADCC_IsConversionDone();
+# 221 "./mcc_generated_files/adcc.h"
+adc_result_t ADCC_GetConversionResult(void);
+# 252 "./mcc_generated_files/adcc.h"
+adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel);
+# 277 "./mcc_generated_files/adcc.h"
+void ADCC_StopConversion(void);
+# 304 "./mcc_generated_files/adcc.h"
+void ADCC_SetStopOnInterrupt(void);
+# 329 "./mcc_generated_files/adcc.h"
+void ADCC_DischargeSampleCapacitor(void);
+# 355 "./mcc_generated_files/adcc.h"
+void ADCC_LoadAcquisitionRegister(uint8_t);
+# 381 "./mcc_generated_files/adcc.h"
+void ADCC_SetPrechargeTime(uint8_t);
+# 406 "./mcc_generated_files/adcc.h"
+void ADCC_SetRepeatCount(uint8_t);
+# 434 "./mcc_generated_files/adcc.h"
+uint8_t ADCC_GetCurrentCountofConversions(void);
+# 458 "./mcc_generated_files/adcc.h"
+void ADCC_ClearAccumulator(void);
+# 483 "./mcc_generated_files/adcc.h"
+uint16_t ADCC_GetAccumulatorValue(void);
+# 511 "./mcc_generated_files/adcc.h"
+_Bool ADCC_HasAccumulatorOverflowed(void);
+# 536 "./mcc_generated_files/adcc.h"
+uint16_t ADCC_GetFilterValue(void);
+# 564 "./mcc_generated_files/adcc.h"
+uint16_t ADCC_GetPreviousResult(void);
+# 590 "./mcc_generated_files/adcc.h"
+void ADCC_DefineSetPoint(uint16_t);
+# 616 "./mcc_generated_files/adcc.h"
+void ADCC_SetUpperThreshold(uint16_t);
+# 642 "./mcc_generated_files/adcc.h"
+void ADCC_SetLowerThreshold(uint16_t);
+# 669 "./mcc_generated_files/adcc.h"
+uint16_t ADCC_GetErrorCalculation(void);
+# 696 "./mcc_generated_files/adcc.h"
+void ADCC_EnableDoubleSampling(void);
+# 720 "./mcc_generated_files/adcc.h"
+void ADCC_EnableContinuousConversion(void);
+# 744 "./mcc_generated_files/adcc.h"
+void ADCC_DisableContinuousConversion(void);
+# 772 "./mcc_generated_files/adcc.h"
+_Bool ADCC_HasErrorCrossedUpperThreshold(void);
+# 800 "./mcc_generated_files/adcc.h"
+_Bool ADCC_HasErrorCrossedLowerThreshold(void);
+# 827 "./mcc_generated_files/adcc.h"
+uint8_t ADCC_GetConversionStageStatus(void);
+# 22 "./globalvariables.h" 2
+
+
+volatile int hrs = 0;
+volatile int mins = 0;
+volatile int secs = 0;
+const int PMON = 3;
+volatile int ALAF = 0;
+const int TALA = 2;
+adc_result_t adcResult = 0;
+# 2 "measureAndSaveFunctions.c" 2
+
+# 1 "./mcc_generated_files/mcc.h" 1
+# 50 "./mcc_generated_files/mcc.h"
+# 1 "./mcc_generated_files/device_config.h" 1
+# 50 "./mcc_generated_files/mcc.h" 2
+
+
+
 
 # 1 "./mcc_generated_files/interrupt_manager.h" 1
 # 54 "./mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/ext_int.h" 1
-# 250 "./mcc_generated_files/ext_int.h"
-void EXT_INT_Initialize(void);
-# 272 "./mcc_generated_files/ext_int.h"
-void INT_ISR(void);
-# 296 "./mcc_generated_files/ext_int.h"
-void INT_CallBack(void);
-# 319 "./mcc_generated_files/ext_int.h"
-void INT_SetInterruptHandler(void (* InterruptHandler)(void));
-# 343 "./mcc_generated_files/ext_int.h"
-extern void (*INT_InterruptHandler)(void);
-# 367 "./mcc_generated_files/ext_int.h"
-void INT_DefaultInterruptHandler(void);
-# 55 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/tmr1.h" 1
 # 100 "./mcc_generated_files/tmr1.h"
@@ -20934,11 +20992,26 @@ extern void (*TMR1_InterruptHandler)(void);
 # 421 "./mcc_generated_files/tmr1.h"
 void TMR1_DefaultInterruptHandler(void);
 # 56 "./mcc_generated_files/mcc.h" 2
-# 71 "./mcc_generated_files/mcc.h"
+
+# 1 "./mcc_generated_files/ext_int.h" 1
+# 250 "./mcc_generated_files/ext_int.h"
+void EXT_INT_Initialize(void);
+# 272 "./mcc_generated_files/ext_int.h"
+void INT_ISR(void);
+# 296 "./mcc_generated_files/ext_int.h"
+void INT_CallBack(void);
+# 319 "./mcc_generated_files/ext_int.h"
+void INT_SetInterruptHandler(void (* InterruptHandler)(void));
+# 343 "./mcc_generated_files/ext_int.h"
+extern void (*INT_InterruptHandler)(void);
+# 367 "./mcc_generated_files/ext_int.h"
+void INT_DefaultInterruptHandler(void);
+# 57 "./mcc_generated_files/mcc.h" 2
+# 72 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 84 "./mcc_generated_files/mcc.h"
+# 85 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 97 "./mcc_generated_files/mcc.h"
+# 98 "./mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 3 "measureAndSaveFunctions.c" 2
 

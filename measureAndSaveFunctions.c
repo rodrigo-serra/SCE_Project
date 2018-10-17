@@ -1,6 +1,7 @@
 #include "mcc_generated_files/pin_manager.h"
 #include "globalvariables.h"
 #include "mcc_generated_files/mcc.h"
+#include "mcc_generated_files/adcc.h"
 
 int get_luminosity (void){
     
@@ -8,6 +9,16 @@ int get_luminosity (void){
     int lum = 2;
     
     //Ler do potenciometro
+    adcResult = ADCC_GetSingleConversion(POT);
+    if(adcResult < 256){
+        lum = 0;
+    }else if(adcResult < 512){
+        lum = 1;
+    } else if(adcResult < 768){
+        lum = 2;
+    }else{
+        lum = 3;
+    }
     
     return lum;
     

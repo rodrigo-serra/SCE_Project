@@ -10,42 +10,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "967
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 967: extern volatile LATAbits_t LATAbits __attribute__((address(0x016)));
 [v _LATAbits `VS52 ~T0 @X0 0 e@22 ]
-"22 ./globalvariables.h
-[; ;./globalvariables.h: 22: volatile int hrs = 0;
-[v _hrs `Vi ~T0 @X0 1 e ]
-[i _hrs
--> 0 `i
-]
-"23
-[; ;./globalvariables.h: 23: volatile int mins = 0;
-[v _mins `Vi ~T0 @X0 1 e ]
-[i _mins
--> 0 `i
-]
-"24
-[; ;./globalvariables.h: 24: volatile int secs = 0;
-[v _secs `Vi ~T0 @X0 1 e ]
-[i _secs
--> 0 `i
-]
-"25
-[; ;./globalvariables.h: 25: const int PMON = 3;
-[v _PMON `Ci ~T0 @X0 1 e ]
-[i _PMON
--> 3 `i
-]
-"26
-[; ;./globalvariables.h: 26: volatile int ALAF = 0;
-[v _ALAF `Vi ~T0 @X0 1 e ]
-[i _ALAF
--> 0 `i
-]
-"27
-[; ;./globalvariables.h: 27: const int TALA = 2;
-[v _TALA `Ci ~T0 @X0 1 e ]
-[i _TALA
--> 2 `i
-]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1684,6 +1648,48 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36645
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 36645: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
+"24 ./globalvariables.h
+[; ;./globalvariables.h: 24: volatile int hrs = 0;
+[v _hrs `Vi ~T0 @X0 1 e ]
+[i _hrs
+-> 0 `i
+]
+"25
+[; ;./globalvariables.h: 25: volatile int mins = 0;
+[v _mins `Vi ~T0 @X0 1 e ]
+[i _mins
+-> 0 `i
+]
+"26
+[; ;./globalvariables.h: 26: volatile int secs = 0;
+[v _secs `Vi ~T0 @X0 1 e ]
+[i _secs
+-> 0 `i
+]
+"27
+[; ;./globalvariables.h: 27: const int PMON = 3;
+[v _PMON `Ci ~T0 @X0 1 e ]
+[i _PMON
+-> 3 `i
+]
+"28
+[; ;./globalvariables.h: 28: volatile int ALAF = 0;
+[v _ALAF `Vi ~T0 @X0 1 e ]
+[i _ALAF
+-> 0 `i
+]
+"29
+[; ;./globalvariables.h: 29: const int TALA = 2;
+[v _TALA `Ci ~T0 @X0 1 e ]
+[i _TALA
+-> 2 `i
+]
+"30
+[; ;./globalvariables.h: 30: adc_result_t adcResult = 0;
+[v _adcResult `us ~T0 @X0 1 e ]
+[i _adcResult
+-> -> 0 `i `us
+]
 "5 measureAndSaveFunctions.c
 [; ;measureAndSaveFunctions.c: 5: int get_luminosity (void){
 [v _get_luminosity `(i ~T0 @X0 1 ef ]

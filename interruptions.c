@@ -32,7 +32,6 @@ void s1Pressed(){
         
     }else{
         LED_D4_SetLow();
-        
     }
     
     __delay_ms(5);

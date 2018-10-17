@@ -1781,8 +1781,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;mcc_generated_files/pin_manager.c: 83:     ANSELE = 0x07;
 [e = _ANSELE -> -> 7 `i `uc ]
 "84
-[; ;mcc_generated_files/pin_manager.c: 84:     ANSELA = 0x0E;
-[e = _ANSELA -> -> 14 `i `uc ]
+[; ;mcc_generated_files/pin_manager.c: 84:     ANSELA = 0x0F;
+[e = _ANSELA -> -> 15 `i `uc ]
 "89
 [; ;mcc_generated_files/pin_manager.c: 89:     WPUD = 0x00;
 [e = _WPUD -> -> 0 `i `uc ]

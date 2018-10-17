@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"71 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 71: void SYSTEM_Initialize(void);
+"72 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 72: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "357 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 357:     struct {
@@ -14,20 +14,27 @@ Version 4.0 HI-TECH Software Intermediate Code
 "364
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 364: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-[v F12258 `(v ~T0 @X0 0 tf ]
+[v F12291 `(v ~T0 @X0 0 tf ]
 "385 ./mcc_generated_files/tmr1.h
 [; ;./mcc_generated_files/tmr1.h: 385:  void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _TMR1_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F12258 ]
+[v _TMR1_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F12291 ]
 "23 ./interruptions.h
 [; ;./interruptions.h: 23: void changeleds(void);
 [v _changeleds `(v ~T0 @X0 0 ef ]
-[v F12241 `(v ~T0 @X0 0 tf ]
+[v F12301 `(v ~T0 @X0 0 tf ]
 "319 ./mcc_generated_files/ext_int.h
 [; ;./mcc_generated_files/ext_int.h: 319: void INT_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _INT_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F12241 ]
+[v _INT_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F12301 ]
 "24 ./interruptions.h
 [; ;./interruptions.h: 24: void s1Pressed(void);
 [v _s1Pressed `(v ~T0 @X0 0 ef ]
+"84 main.c
+[; ;main.c: 84:         adcResult = ADCC_GetSingleConversion(POT);
+[c E12238 0 60 61 62 63 .. ]
+[n E12238 . POT channel_VSS channel_Temp channel_DAC1 channel_FVR_buf1  ]
+"252 ./mcc_generated_files/adcc.h
+[; ;./mcc_generated_files/adcc.h: 252: adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel);
+[v _ADCC_GetSingleConversion `(us ~T0 @X0 0 ef1`E12238 ]
 "23 ./measureAndSaveFunctions.h
 [; ;./measureAndSaveFunctions.h: 23: int get_luminosity (void);
 [v _get_luminosity `(i ~T0 @X0 0 ef ]
@@ -1683,41 +1690,47 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36645
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 36645: __asm("TOSH equ 0FEFh");
 [; <" TOSH equ 0FEFh ;# ">
-"22 ./globalvariables.h
-[; ;./globalvariables.h: 22: volatile int hrs = 0;
+"24 ./globalvariables.h
+[; ;./globalvariables.h: 24: volatile int hrs = 0;
 [v _hrs `Vi ~T0 @X0 1 e ]
 [i _hrs
 -> 0 `i
 ]
-"23
-[; ;./globalvariables.h: 23: volatile int mins = 0;
+"25
+[; ;./globalvariables.h: 25: volatile int mins = 0;
 [v _mins `Vi ~T0 @X0 1 e ]
 [i _mins
 -> 0 `i
 ]
-"24
-[; ;./globalvariables.h: 24: volatile int secs = 0;
+"26
+[; ;./globalvariables.h: 26: volatile int secs = 0;
 [v _secs `Vi ~T0 @X0 1 e ]
 [i _secs
 -> 0 `i
 ]
-"25
-[; ;./globalvariables.h: 25: const int PMON = 3;
+"27
+[; ;./globalvariables.h: 27: const int PMON = 3;
 [v _PMON `Ci ~T0 @X0 1 e ]
 [i _PMON
 -> 3 `i
 ]
-"26
-[; ;./globalvariables.h: 26: volatile int ALAF = 0;
+"28
+[; ;./globalvariables.h: 28: volatile int ALAF = 0;
 [v _ALAF `Vi ~T0 @X0 1 e ]
 [i _ALAF
 -> 0 `i
 ]
-"27
-[; ;./globalvariables.h: 27: const int TALA = 2;
+"29
+[; ;./globalvariables.h: 29: const int TALA = 2;
 [v _TALA `Ci ~T0 @X0 1 e ]
 [i _TALA
 -> 2 `i
+]
+"30
+[; ;./globalvariables.h: 30: adc_result_t adcResult = 0;
+[v _adcResult `us ~T0 @X0 1 e ]
+[i _adcResult
+-> -> 0 `i `us
 ]
 [v $root$_main `(v ~T0 @X0 0 e ]
 "56 main.c
@@ -1753,6 +1766,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "83
 [; ;main.c: 83:     {
 {
+"84
+[; ;main.c: 84:         adcResult = ADCC_GetSingleConversion(POT);
+[e = _adcResult ( _ADCC_GetSingleConversion (1 . `E12238 0 ]
 "86
 [; ;main.c: 86:         if(secs%PMON == 0){
 [e $ ! == % _secs _PMON -> 0 `i 1629  ]

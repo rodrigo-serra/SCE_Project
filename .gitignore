@@ -12,3 +12,12 @@
 *.o
 *.sym
 *.rlf
+*.i
+*.p1
+*.cmf
+*.elf
+*.lst
+*.map
+*.rlf
+*.sdb
+*.sym

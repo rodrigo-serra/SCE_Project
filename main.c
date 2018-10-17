@@ -85,7 +85,8 @@ void main(void)
         if(secs%PMON == 0){
             //get luminosity lvl
             luminosity = get_luminosity();
-            setLedLuminosity(luminosity);
+            setLedLuminosity(luminosity); 
+            
         }
         
         if(secs%PMON == 1){

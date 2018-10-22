@@ -21,9 +21,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "967
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 967: extern volatile LATAbits_t LATAbits __attribute__((address(0x016)));
 [v _LATAbits `VS52 ~T0 @X0 0 e@22 ]
-[v F12208 `(v ~T0 @X0 1 tf1`ul ]
+[v F12210 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic.h
-[v __delay `JF12208 ~T0 @X0 0 e ]
+[v __delay `JF12210 ~T0 @X0 0 e ]
 [p i __delay ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 54: __asm("INDF0 equ 00h");
@@ -1704,6 +1704,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _adcResult `us ~T0 @X0 1 e ]
 [i _adcResult
 -> -> 0 `i `us
+]
+"31
+[; ;./globalvariables.h: 31: volatile int LumThreshold = 2;
+[v _LumThreshold `Vi ~T0 @X0 1 e ]
+[i _LumThreshold
+-> 2 `i
+]
+"32
+[; ;./globalvariables.h: 32: volatile int TempThreshold = 30;
+[v _TempThreshold `Vi ~T0 @X0 1 e ]
+[i _TempThreshold
+-> 30 `i
 ]
 "6 interruptions.c
 [; ;interruptions.c: 6: void changeleds(void){

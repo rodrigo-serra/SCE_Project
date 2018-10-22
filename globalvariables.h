@@ -28,6 +28,8 @@ const int PMON = 3;
 volatile int ALAF = 0;
 const int TALA = 2;
 adc_result_t adcResult = 0;
+volatile int LumThreshold = 2;
+volatile int TempThreshold = 30;
 
 #endif	/* GLOBALVARIABLES_H */
 

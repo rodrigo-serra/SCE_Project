@@ -19,7 +19,7 @@ extern "C" {
 }
 #endif
 
-void sensor_timer(int lum);
+void sensor_timer(int lum, int temp);
 int get_luminosity (void);
 void setLedLuminosity(int);
 

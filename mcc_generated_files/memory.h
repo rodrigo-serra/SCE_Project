@@ -73,8 +73,16 @@
 #define NUM_REGS_SAVED           0x7065
 #define HOUR                     0x7066
 #define MINUTE                   0x7067
-#define MAX                      0x7068
-#define MIN                      0x7069        
+#define MAXLUM                   0x7068
+#define MAXTEMP                  0x706D
+#define MINLUM                   0x7072
+#define MINTEMP                  0x7077
+        
+#define HOURS                   0
+#define MINUTES                 1        
+#define SECONDS                 2
+#define TEMP                    3
+#define LUM                     4
         
 /**
   Section: Flash Module APIs

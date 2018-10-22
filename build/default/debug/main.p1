@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"72 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 72: void SYSTEM_Initialize(void);
+"73 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 73: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "357 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 357:     struct {
@@ -14,33 +14,29 @@ Version 4.0 HI-TECH Software Intermediate Code
 "364
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 364: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-[v F12291 `(v ~T0 @X0 0 tf ]
+[v F12317 `(v ~T0 @X0 0 tf ]
 "385 ./mcc_generated_files/tmr1.h
 [; ;./mcc_generated_files/tmr1.h: 385:  void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _TMR1_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F12291 ]
+[v _TMR1_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F12317 ]
 "23 ./interruptions.h
 [; ;./interruptions.h: 23: void changeleds(void);
 [v _changeleds `(v ~T0 @X0 0 ef ]
-[v F12301 `(v ~T0 @X0 0 tf ]
+[v F12300 `(v ~T0 @X0 0 tf ]
 "319 ./mcc_generated_files/ext_int.h
 [; ;./mcc_generated_files/ext_int.h: 319: void INT_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _INT_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F12301 ]
+[v _INT_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F12300 ]
 "24 ./interruptions.h
 [; ;./interruptions.h: 24: void s1Pressed(void);
 [v _s1Pressed `(v ~T0 @X0 0 ef ]
-"84 main.c
-[; ;main.c: 84:         adcResult = ADCC_GetSingleConversion(POT);
-[c E12238 0 60 61 62 63 .. ]
-[n E12238 . POT channel_VSS channel_Temp channel_DAC1 channel_FVR_buf1  ]
-"252 ./mcc_generated_files/adcc.h
-[; ;./mcc_generated_files/adcc.h: 252: adc_result_t ADCC_GetSingleConversion(adcc_channel_t channel);
-[v _ADCC_GetSingleConversion `(us ~T0 @X0 0 ef1`E12238 ]
 "23 ./measureAndSaveFunctions.h
 [; ;./measureAndSaveFunctions.h: 23: int get_luminosity (void);
 [v _get_luminosity `(i ~T0 @X0 0 ef ]
 "24
 [; ;./measureAndSaveFunctions.h: 24: void setLedLuminosity(int);
 [v _setLedLuminosity `(v ~T0 @X0 0 ef1`i ]
+"22
+[; ;./measureAndSaveFunctions.h: 22: void sensor_timer(int lum, int temp);
+[v _sensor_timer `(v ~T0 @X0 0 ef2`i`i ]
 "956 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 956:     struct {
 [s S53 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -1732,6 +1728,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _adcResult
 -> -> 0 `i `us
 ]
+"31
+[; ;./globalvariables.h: 31: volatile int LumThreshold = 2;
+[v _LumThreshold `Vi ~T0 @X0 1 e ]
+[i _LumThreshold
+-> 2 `i
+]
+"32
+[; ;./globalvariables.h: 32: volatile int TempThreshold = 30;
+[v _TempThreshold `Vi ~T0 @X0 1 e ]
+[i _TempThreshold
+-> 30 `i
+]
 [v $root$_main `(v ~T0 @X0 0 e ]
 "56 main.c
 [; ;main.c: 56: void main(void)
@@ -1766,18 +1774,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "83
 [; ;main.c: 83:     {
 {
-"84
-[; ;main.c: 84:         adcResult = ADCC_GetSingleConversion(POT);
-[e = _adcResult ( _ADCC_GetSingleConversion (1 . `E12238 0 ]
-"86
-[; ;main.c: 86:         if(secs%PMON == 0){
+"85
+[; ;main.c: 85:         if(secs%PMON == 0){
 [e $ ! == % _secs _PMON -> 0 `i 1629  ]
 {
-"88
-[; ;main.c: 88:             luminosity = get_luminosity();
+"87
+[; ;main.c: 87:             luminosity = get_luminosity();
 [e = _luminosity ( _get_luminosity ..  ]
-"89
-[; ;main.c: 89:             setLedLuminosity(luminosity);
+"88
+[; ;main.c: 88:             setLedLuminosity(luminosity);
 [e ( _setLedLuminosity (1 _luminosity ]
 "90
 [; ;main.c: 90:         }
@@ -1795,6 +1800,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 96:         if(secs%PMON == 2){
 [e $ ! == % _secs _PMON -> 2 `i 1631  ]
 {
+"99
+[; ;main.c: 99:             sensor_timer(luminosity, 20);
+[e ( _sensor_timer (2 , _luminosity -> 20 `i ]
 "101
 [; ;main.c: 101:             if(ALAF == 1){
 [e $ ! == _ALAF -> 1 `i 1632  ]

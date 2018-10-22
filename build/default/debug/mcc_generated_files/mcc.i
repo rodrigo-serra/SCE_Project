@@ -20951,6 +20951,36 @@ _Bool ADCC_HasErrorCrossedLowerThreshold(void);
 uint8_t ADCC_GetConversionStageStatus(void);
 # 55 "mcc_generated_files/mcc.h" 2
 
+# 1 "mcc_generated_files/memory.h" 1
+# 115 "mcc_generated_files/memory.h"
+uint16_t FLASH_ReadWord(uint16_t flashAddr);
+# 144 "mcc_generated_files/memory.h"
+void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word);
+# 180 "mcc_generated_files/memory.h"
+int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray);
+# 205 "mcc_generated_files/memory.h"
+void FLASH_EraseBlock(uint16_t startAddr);
+# 238 "mcc_generated_files/memory.h"
+void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData);
+# 264 "mcc_generated_files/memory.h"
+uint8_t DATAEE_ReadByte(uint16_t bAdd);
+# 56 "mcc_generated_files/mcc.h" 2
+
+# 1 "mcc_generated_files/ext_int.h" 1
+# 250 "mcc_generated_files/ext_int.h"
+void EXT_INT_Initialize(void);
+# 272 "mcc_generated_files/ext_int.h"
+void INT_ISR(void);
+# 296 "mcc_generated_files/ext_int.h"
+void INT_CallBack(void);
+# 319 "mcc_generated_files/ext_int.h"
+void INT_SetInterruptHandler(void (* InterruptHandler)(void));
+# 343 "mcc_generated_files/ext_int.h"
+extern void (*INT_InterruptHandler)(void);
+# 367 "mcc_generated_files/ext_int.h"
+void INT_DefaultInterruptHandler(void);
+# 57 "mcc_generated_files/mcc.h" 2
+
 # 1 "mcc_generated_files/tmr1.h" 1
 # 100 "mcc_generated_files/tmr1.h"
 void TMR1_Initialize(void);
@@ -20976,27 +21006,12 @@ void TMR1_ISR(void);
 extern void (*TMR1_InterruptHandler)(void);
 # 421 "mcc_generated_files/tmr1.h"
 void TMR1_DefaultInterruptHandler(void);
-# 56 "mcc_generated_files/mcc.h" 2
-
-# 1 "mcc_generated_files/ext_int.h" 1
-# 250 "mcc_generated_files/ext_int.h"
-void EXT_INT_Initialize(void);
-# 272 "mcc_generated_files/ext_int.h"
-void INT_ISR(void);
-# 296 "mcc_generated_files/ext_int.h"
-void INT_CallBack(void);
-# 319 "mcc_generated_files/ext_int.h"
-void INT_SetInterruptHandler(void (* InterruptHandler)(void));
-# 343 "mcc_generated_files/ext_int.h"
-extern void (*INT_InterruptHandler)(void);
-# 367 "mcc_generated_files/ext_int.h"
-void INT_DefaultInterruptHandler(void);
-# 57 "mcc_generated_files/mcc.h" 2
-# 72 "mcc_generated_files/mcc.h"
+# 58 "mcc_generated_files/mcc.h" 2
+# 73 "mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 85 "mcc_generated_files/mcc.h"
+# 86 "mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 98 "mcc_generated_files/mcc.h"
+# 99 "mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 47 "mcc_generated_files/mcc.c" 2
 
@@ -21008,8 +21023,8 @@ void SYSTEM_Initialize(void)
     PIN_MANAGER_Initialize();
     OSCILLATOR_Initialize();
     ADCC_Initialize();
-    TMR1_Initialize();
     EXT_INT_Initialize();
+    TMR1_Initialize();
 }
 
 void OSCILLATOR_Initialize(void)

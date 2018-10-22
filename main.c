@@ -96,7 +96,7 @@ void main(void)
         if(secs%PMON == 2){
             //call function to save (it checks if its a new value or not --
             //                       or max or min -- checks thresholds)
-        
+            sensor_timer(luminosity, 20);
             //if alarm is on call function to change brightness
             if(ALAF == 1){
                 //change brightness with pwm for TALA duration

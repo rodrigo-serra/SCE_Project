@@ -81,7 +81,7 @@ void main(void)
     
     while (1)
     {
-               
+        secs +=1;       
         if(secs%PMON == 0){
             //get luminosity lvl
             luminosity = get_luminosity();

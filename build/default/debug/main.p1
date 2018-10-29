@@ -1774,6 +1774,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "83
 [; ;main.c: 83:     {
 {
+"84
+[; ;main.c: 84:         secs +=1;
+[e =+ _secs -> -> 1 `i `Vi ]
 "85
 [; ;main.c: 85:         if(secs%PMON == 0){
 [e $ ! == % _secs _PMON -> 0 `i 1629  ]

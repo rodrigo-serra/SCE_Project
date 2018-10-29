@@ -498,36 +498,36 @@ channel_FVR_buf1 63
 "45
 [v _sensor_timer sensor_timer `(v  1 e 1 0 ]
 {
-"75
-[v sensor_timer@newRegIndex newRegIndex `i  1 a 2 16 ]
-"83
-[v sensor_timer@updateNumRegsSaved updateNumRegsSaved `i  1 a 2 2 ]
+"87
+[v sensor_timer@updateNumRegsSaved updateNumRegsSaved `i  1 a 2 16 ]
+"79
+[v sensor_timer@newRegIndex newRegIndex `i  1 a 2 14 ]
 "47
 [v sensor_timer@numRegsSaved numRegsSaved `i  1 a 2 26 ]
 "48
 [v sensor_timer@lastRegSaved lastRegSaved `i  1 a 2 24 ]
-"62
-[v sensor_timer@localSec localSec `i  1 a 2 22 ]
-"61
-[v sensor_timer@localMin localMin `i  1 a 2 20 ]
-"60
-[v sensor_timer@localHour localHour `i  1 a 2 18 ]
 "66
-[v sensor_timer@lastTempEntry lastTempEntry `i  1 a 2 14 ]
+[v sensor_timer@localSec localSec `i  1 a 2 22 ]
 "65
-[v sensor_timer@lastLumEntry lastLumEntry `i  1 a 2 12 ]
-"105
-[v sensor_timer@minLum minLum `i  1 a 2 10 ]
-"104
-[v sensor_timer@minTemp minTemp `i  1 a 2 8 ]
-"103
-[v sensor_timer@maxLum maxLum `i  1 a 2 6 ]
-"102
-[v sensor_timer@maxTemp maxTemp `i  1 a 2 4 ]
+[v sensor_timer@localMin localMin `i  1 a 2 20 ]
+"64
+[v sensor_timer@localHour localHour `i  1 a 2 18 ]
+"70
+[v sensor_timer@lastTempEntry lastTempEntry `i  1 a 2 12 ]
+"69
+[v sensor_timer@lastLumEntry lastLumEntry `i  1 a 2 10 ]
+"110
+[v sensor_timer@minLum minLum `i  1 a 2 8 ]
+"109
+[v sensor_timer@minTemp minTemp `i  1 a 2 6 ]
+"108
+[v sensor_timer@maxLum maxLum `i  1 a 2 4 ]
+"107
+[v sensor_timer@maxTemp maxTemp `i  1 a 2 2 ]
 "45
 [v sensor_timer@lum lum `i  1 p 2 6 ]
 [v sensor_timer@temp temp `i  1 p 2 8 ]
-"145
+"150
 } 0
 "105 D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
 [v _TMR1_StopTimer TMR1_StopTimer `(v  1 e 1 0 ]

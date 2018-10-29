@@ -21069,7 +21069,7 @@ void main(void)
 
     while (1)
     {
-
+        secs +=1;
         if(secs%PMON == 0){
 
             luminosity = get_luminosity();

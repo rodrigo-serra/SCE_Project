@@ -21079,11 +21079,15 @@ void sensor_timer(int lum, int temp){
     int lastRegSaved = DATAEE_ReadByte(0x7064);
 
 
-    if( numRegsSaved == 0 || ((numRegsSaved != lastRegSaved) && numRegsSaved != 20)){
-        numRegsSaved = 0;
+    if( numRegsSaved == 0 || ((numRegsSaved != lastRegSaved) && numRegsSaved != 20) || numRegsSaved > 20 || lastRegSaved > 20){
+        numRegsSaved = 1;
         lastRegSaved = 0;
         DATAEE_WriteByte(0x7065, numRegsSaved);
         DATAEE_WriteByte(0x7064, lastRegSaved);
+        DATAEE_WriteByte(0x706D + 3, 0);
+        DATAEE_WriteByte(0x7068 + 4, 0);
+        DATAEE_WriteByte(0x7077 + 3, 200);
+        DATAEE_WriteByte(0x7072 + 4, 5);
     }
 
 
@@ -21104,8 +21108,8 @@ void sensor_timer(int lum, int temp){
     if(((lum != lastLumEntry || temp != lastTempEntry) && numRegsSaved != 0) || numRegsSaved == 0){
 
         int newRegIndex = 0;
-        if(lastRegSaved == 19){
-            newRegIndex == 0;
+        if(lastRegSaved >= 19){
+            newRegIndex = 0;
         }else{
             newRegIndex = lastRegSaved + 1;
         }
@@ -21114,13 +21118,14 @@ void sensor_timer(int lum, int temp){
         int updateNumRegsSaved = 0;
         if(numRegsSaved < 20)
         {
-            numRegsSaved += 1;
-            updateNumRegsSaved = 1;
+            updateNumRegsSaved = numRegsSaved + 1;
+        }else{
+            updateNumRegsSaved = numRegsSaved;
         }
 
 
         DATAEE_WriteByte(0x7064, newRegIndex);
-        DATAEE_WriteByte(0x7065, numRegsSaved);
+        DATAEE_WriteByte(0x7065, updateNumRegsSaved);
 
         DATAEE_WriteByte(0x7000 + lastRegSaved + 0x7066, localHour);
         DATAEE_WriteByte(0x7000 + lastRegSaved + 1, localMin);

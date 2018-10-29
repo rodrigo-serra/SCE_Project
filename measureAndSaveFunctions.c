@@ -48,8 +48,8 @@ void sensor_timer(int lum, int temp){
     int lastRegSaved = DATAEE_ReadByte(LAST_WRITTEN);
     
     //check if it connected for the first time
-    if( numRegsSaved == 0 || ((numRegsSaved != lastRegSaved) && numRegsSaved != 20)){
-        numRegsSaved = 0;
+    if( numRegsSaved == 0 || ((numRegsSaved != lastRegSaved) && numRegsSaved != 20) || numRegsSaved > 20 || lastRegSaved > 20){
+        numRegsSaved = 1;
         lastRegSaved = 0;
         DATAEE_WriteByte(NUM_REGS_SAVED, numRegsSaved);
         DATAEE_WriteByte(LAST_WRITTEN, lastRegSaved);
@@ -77,8 +77,8 @@ void sensor_timer(int lum, int temp){
     if(((lum != lastLumEntry || temp != lastTempEntry) && numRegsSaved != 0) || numRegsSaved == 0){
         //change the register
         int newRegIndex = 0;
-        if(lastRegSaved == 19){
-            newRegIndex == 0;
+        if(lastRegSaved >= 19){
+            newRegIndex = 0;
         }else{
             newRegIndex = lastRegSaved + 1;
         }
@@ -87,13 +87,14 @@ void sensor_timer(int lum, int temp){
         int updateNumRegsSaved = 0;
         if(numRegsSaved < 20)
         {
-            numRegsSaved += 1;
-            updateNumRegsSaved = 1;
+            updateNumRegsSaved = numRegsSaved + 1;
+        }else{
+            updateNumRegsSaved = numRegsSaved;
         }
         
         //Now the values are saved in the registers
         DATAEE_WriteByte(LAST_WRITTEN, newRegIndex);
-        DATAEE_WriteByte(NUM_REGS_SAVED, numRegsSaved);
+        DATAEE_WriteByte(NUM_REGS_SAVED, updateNumRegsSaved);
         
         DATAEE_WriteByte(START_INDEX + lastRegSaved + HOUR, localHour);
         DATAEE_WriteByte(START_INDEX + lastRegSaved + MINUTES, localMin);

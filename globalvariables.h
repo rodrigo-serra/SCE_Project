@@ -26,6 +26,7 @@ volatile int mins = 0;
 volatile int secs = 0;
 const int PMON = 3;
 volatile int ALAF = 0;
+volatile int control_ALAF = 0;
 const int TALA = 2;
 adc_result_t adcResult = 0;
 volatile int LumThreshold = 2;

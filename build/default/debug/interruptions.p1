@@ -1694,25 +1694,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 "29
-[; ;./globalvariables.h: 29: const int TALA = 2;
+[; ;./globalvariables.h: 29: volatile int control_ALAF = 0;
+[v _control_ALAF `Vi ~T0 @X0 1 e ]
+[i _control_ALAF
+-> 0 `i
+]
+"30
+[; ;./globalvariables.h: 30: const int TALA = 2;
 [v _TALA `Ci ~T0 @X0 1 e ]
 [i _TALA
 -> 2 `i
 ]
-"30
-[; ;./globalvariables.h: 30: adc_result_t adcResult = 0;
+"31
+[; ;./globalvariables.h: 31: adc_result_t adcResult = 0;
 [v _adcResult `us ~T0 @X0 1 e ]
 [i _adcResult
 -> -> 0 `i `us
 ]
-"31
-[; ;./globalvariables.h: 31: volatile int LumThreshold = 2;
+"32
+[; ;./globalvariables.h: 32: volatile int LumThreshold = 2;
 [v _LumThreshold `Vi ~T0 @X0 1 e ]
 [i _LumThreshold
 -> 2 `i
 ]
-"32
-[; ;./globalvariables.h: 32: volatile int TempThreshold = 30;
+"33
+[; ;./globalvariables.h: 33: volatile int TempThreshold = 30;
 [v _TempThreshold `Vi ~T0 @X0 1 e ]
 [i _TempThreshold
 -> 30 `i
@@ -1793,45 +1799,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 1625 ]
 }
 "28
-[; ;interruptions.c: 28: void s1Pressed(){
+[; ;interruptions.c: 28: void s1Pressed(void){
 [v _s1Pressed `(v ~T0 @X0 1 ef ]
 {
 [e :U _s1Pressed ]
 [f ]
 "29
-[; ;interruptions.c: 29:     if(PORTAbits.RA6 == 0)
-[e $ ! == -> . . _PORTAbits 0 6 `i -> 0 `i 1637  ]
-"30
-[; ;interruptions.c: 30:     {
-{
+[; ;interruptions.c: 29:     ALAF = 0;
+[e = _ALAF -> 0 `i ]
 "31
-[; ;interruptions.c: 31:         do { LATAbits.LATA6 = 1; } while(0);
-[e :U 1640 ]
-{
-[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
-}
-[e :U 1639 ]
-"33
-[; ;interruptions.c: 33:     }else{
-}
-[e $U 1641  ]
-[e :U 1637 ]
-{
-"34
-[; ;interruptions.c: 34:         do { LATAbits.LATA6 = 0; } while(0);
-[e :U 1644 ]
-{
-[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
-}
-[e :U 1643 ]
-"35
-[; ;interruptions.c: 35:     }
-}
-[e :U 1641 ]
-"37
-[; ;interruptions.c: 37:     _delay((unsigned long)((5)*(1000000/4000.0)));
+[; ;interruptions.c: 31:     _delay((unsigned long)((5)*(1000000/4000.0)));
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"38
-[; ;interruptions.c: 38: }
+"32
+[; ;interruptions.c: 32: }
 [e :UE 1636 ]
 }

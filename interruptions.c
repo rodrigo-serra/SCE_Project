@@ -25,14 +25,8 @@ void changeleds(void){
     }
 }
 
-void s1Pressed(){
-    if(LED_D4_GetValue() == LOW)
-    {
-        LED_D4_SetHigh();
-        
-    }else{
-        LED_D4_SetLow();
-    }
+void s1Pressed(void){
+    ALAF = 0;
     
     __delay_ms(5);
 }

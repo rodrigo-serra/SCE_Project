@@ -1,7 +1,7 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [p mainexit ]
-"72 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 72: void SYSTEM_Initialize(void);
+"76 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 76: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "357 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 357:     struct {
@@ -14,37 +14,48 @@ Version 4.0 HI-TECH Software Intermediate Code
 "364
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 364: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-[v F12291 `(v ~T0 @X0 0 tf ]
+[v F12265 `(v ~T0 @X0 0 tf ]
 "385 ./mcc_generated_files/tmr1.h
 [; ;./mcc_generated_files/tmr1.h: 385:  void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _TMR1_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F12291 ]
+[v _TMR1_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F12265 ]
 "23 ./interruptions.h
 [; ;./interruptions.h: 23: void changeleds(void);
 [v _changeleds `(v ~T0 @X0 0 ef ]
-[v F12301 `(v ~T0 @X0 0 tf ]
+[v F12400 `(v ~T0 @X0 0 tf ]
 "319 ./mcc_generated_files/ext_int.h
 [; ;./mcc_generated_files/ext_int.h: 319: void INT_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _INT_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F12301 ]
+[v _INT_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F12400 ]
 "24 ./interruptions.h
 [; ;./interruptions.h: 24: void s1Pressed(void);
 [v _s1Pressed `(v ~T0 @X0 0 ef ]
+[v F12248 `(v ~T0 @X0 0 tf ]
+"385 ./mcc_generated_files/tmr3.h
+[; ;./mcc_generated_files/tmr3.h: 385:  void TMR3_SetInterruptHandler(void (* InterruptHandler)(void));
+[v _TMR3_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F12248 ]
+"28 ./pwmAlarm.h
+[; ;./pwmAlarm.h: 28: void change_PWM(void);
+[v _change_PWM `(v ~T0 @X0 0 ef ]
+"161 ./mcc_generated_files/tmr3.h
+[; ;./mcc_generated_files/tmr3.h: 161: void TMR3_StopTimer(void);
+[v _TMR3_StopTimer `(v ~T0 @X0 0 ef ]
 "23 ./measureAndSaveFunctions.h
 [; ;./measureAndSaveFunctions.h: 23: int get_luminosity (void);
 [v _get_luminosity `(i ~T0 @X0 0 ef ]
 "24
 [; ;./measureAndSaveFunctions.h: 24: void setLedLuminosity(int);
 [v _setLedLuminosity `(v ~T0 @X0 0 ef1`i ]
-"956 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 956:     struct {
-[s S53 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
-[n S53 . LATA0 LATA1 LATA2 LATA3 LATA4 LATA5 LATA6 LATA7 ]
-"955
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 955: typedef union {
-[u S52 `S53 1 ]
-[n S52 . . ]
-"967
-[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 967: extern volatile LATAbits_t LATAbits __attribute__((address(0x016)));
-[v _LATAbits `VS52 ~T0 @X0 0 e@22 ]
+"22
+[; ;./measureAndSaveFunctions.h: 22: void sensor_timer(int lum, int temp);
+[v _sensor_timer `(v ~T0 @X0 0 ef2`i`i ]
+"464 ./mcc_generated_files/tmr2.h
+[; ;./mcc_generated_files/tmr2.h: 464: void TMR2_StartTimer(void);
+[v _TMR2_StartTimer `(v ~T0 @X0 0 ef ]
+"129 ./mcc_generated_files/tmr3.h
+[; ;./mcc_generated_files/tmr3.h: 129: void TMR3_StartTimer(void);
+[v _TMR3_StartTimer `(v ~T0 @X0 0 ef ]
+"129 ./mcc_generated_files/pwm6.h
+[; ;./mcc_generated_files/pwm6.h: 129:  void PWM6_LoadDutyValue(uint16_t dutyValue);
+[v _PWM6_LoadDutyValue `(v ~T0 @X0 0 ef1`us ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1714,103 +1725,155 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 "29
-[; ;./globalvariables.h: 29: const int TALA = 2;
+[; ;./globalvariables.h: 29: volatile int control_ALAF = 0;
+[v _control_ALAF `Vi ~T0 @X0 1 e ]
+[i _control_ALAF
+-> 0 `i
+]
+"30
+[; ;./globalvariables.h: 30: const int TALA = 2;
 [v _TALA `Ci ~T0 @X0 1 e ]
 [i _TALA
 -> 2 `i
 ]
-"30
-[; ;./globalvariables.h: 30: adc_result_t adcResult = 0;
+"31
+[; ;./globalvariables.h: 31: adc_result_t adcResult = 0;
 [v _adcResult `us ~T0 @X0 1 e ]
 [i _adcResult
 -> -> 0 `i `us
 ]
+"32
+[; ;./globalvariables.h: 32: volatile int LumThreshold = 2;
+[v _LumThreshold `Vi ~T0 @X0 1 e ]
+[i _LumThreshold
+-> 2 `i
+]
+"33
+[; ;./globalvariables.h: 33: volatile int TempThreshold = 30;
+[v _TempThreshold `Vi ~T0 @X0 1 e ]
+[i _TempThreshold
+-> 30 `i
+]
+"15 ./pwmAlarm.h
+[; ;./pwmAlarm.h: 15: volatile int pwm_value = 0;
+[v _pwm_value `Vi ~T0 @X0 1 e ]
+[i _pwm_value
+-> 0 `i
+]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"56 main.c
-[; ;main.c: 56: void main(void)
+"57 main.c
+[; ;main.c: 57: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"57
-[; ;main.c: 57: {
+"58
+[; ;main.c: 58: {
 {
 [e :U _main ]
 [f ]
-"59
-[; ;main.c: 59:     SYSTEM_Initialize();
+"60
+[; ;main.c: 60:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"65
-[; ;main.c: 65:     (INTCONbits.GIE = 1);
+"66
+[; ;main.c: 66:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"68
-[; ;main.c: 68:     (INTCONbits.PEIE = 1);
+"69
+[; ;main.c: 69:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
-"76
-[; ;main.c: 76:     TMR1_SetInterruptHandler(&changeleds);
+"77
+[; ;main.c: 77:     TMR1_SetInterruptHandler(&changeleds);
 [e ( _TMR1_SetInterruptHandler (1 &U _changeleds ]
-"78
-[; ;main.c: 78:     INT_SetInterruptHandler(&s1Pressed);
+"79
+[; ;main.c: 79:     INT_SetInterruptHandler(&s1Pressed);
 [e ( _INT_SetInterruptHandler (1 &U _s1Pressed ]
-"80
-[; ;main.c: 80:     int luminosity = 0;
+"81
+[; ;main.c: 81:     TMR3_SetInterruptHandler(&change_PWM);
+[e ( _TMR3_SetInterruptHandler (1 &U _change_PWM ]
+"82
+[; ;main.c: 82:     TMR3_StopTimer();
+[e ( _TMR3_StopTimer ..  ]
+"84
+[; ;main.c: 84:     int luminosity = 0;
 [v _luminosity `i ~T0 @X0 1 a ]
 [e = _luminosity -> 0 `i ]
-"82
-[; ;main.c: 82:     while (1)
+"86
+[; ;main.c: 86:     while (1)
 [e :U 1627 ]
-"83
-[; ;main.c: 83:     {
+"87
+[; ;main.c: 87:     {
 {
-"85
-[; ;main.c: 85:         if(secs%PMON == 0){
+"88
+[; ;main.c: 88:         secs +=1;
+[e =+ _secs -> -> 1 `i `Vi ]
+"89
+[; ;main.c: 89:         if(secs%PMON == 0){
 [e $ ! == % _secs _PMON -> 0 `i 1629  ]
 {
-"87
-[; ;main.c: 87:             luminosity = get_luminosity();
+"91
+[; ;main.c: 91:             luminosity = get_luminosity();
 [e = _luminosity ( _get_luminosity ..  ]
-"88
-[; ;main.c: 88:             setLedLuminosity(luminosity);
+"92
+[; ;main.c: 92:             setLedLuminosity(luminosity);
 [e ( _setLedLuminosity (1 _luminosity ]
-"89
-[; ;main.c: 89:         }
+"94
+[; ;main.c: 94:         }
 }
 [e :U 1629 ]
-"91
-[; ;main.c: 91:         if(secs%PMON == 1){
+"96
+[; ;main.c: 96:         if(secs%PMON == 1){
 [e $ ! == % _secs _PMON -> 1 `i 1630  ]
 {
-"93
-[; ;main.c: 93:         }
+"98
+[; ;main.c: 98:         }
 }
 [e :U 1630 ]
-"95
-[; ;main.c: 95:         if(secs%PMON == 2){
+"100
+[; ;main.c: 100:         if(secs%PMON == 2){
 [e $ ! == % _secs _PMON -> 2 `i 1631  ]
 {
-"100
-[; ;main.c: 100:             if(ALAF == 1){
-[e $ ! == _ALAF -> 1 `i 1632  ]
-{
 "103
-[; ;main.c: 103:                 do { LATAbits.LATA6 = 1; } while(0);
-[e :U 1635 ]
+[; ;main.c: 103:             sensor_timer(luminosity, 20);
+[e ( _sensor_timer (2 , _luminosity -> 20 `i ]
+"105
+[; ;main.c: 105:             if(ALAF == 1 && control_ALAF == 0){
+[e $ ! && == _ALAF -> 1 `i == _control_ALAF -> 0 `i 1632  ]
 {
-[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
+"108
+[; ;main.c: 108:                 TMR2_StartTimer();
+[e ( _TMR2_StartTimer ..  ]
+"109
+[; ;main.c: 109:                 TMR3_StartTimer();
+[e ( _TMR3_StartTimer ..  ]
+"110
+[; ;main.c: 110:                 control_ALAF = 1;
+[e = _control_ALAF -> 1 `i ]
+"111
+[; ;main.c: 111:             }else if(ALAF == 0 && control_ALAF == 1){
+}
+[e $U 1633  ]
+[e :U 1632 ]
+[e $ ! && == _ALAF -> 0 `i == _control_ALAF -> 1 `i 1634  ]
+{
+"112
+[; ;main.c: 112:                 PWM6_LoadDutyValue(0);
+[e ( _PWM6_LoadDutyValue (1 -> -> 0 `i `us ]
+"113
+[; ;main.c: 113:                 control_ALAF = 0;
+[e = _control_ALAF -> 0 `i ]
+"114
+[; ;main.c: 114:             }
 }
 [e :U 1634 ]
-"104
-[; ;main.c: 104:             }
-}
-[e :U 1632 ]
-"105
-[; ;main.c: 105:         }
+[e :U 1633 ]
+"117
+[; ;main.c: 117:         }
 }
 [e :U 1631 ]
-"110
-[; ;main.c: 110:     }
+"122
+[; ;main.c: 122:     }
 }
 [e :U 1626 ]
 [e $U 1627  ]
 [e :U 1628 ]
-"111
-[; ;main.c: 111: }
+"123
+[; ;main.c: 123: }
 [e :UE 1625 ]
 }

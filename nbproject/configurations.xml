@@ -23,6 +23,7 @@
       <itemPath>interruptions.h</itemPath>
       <itemPath>registers.h</itemPath>
       <itemPath>measureAndSaveFunctions.h</itemPath>
+      <itemPath>pwmAlarm.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -50,6 +51,7 @@
       <itemPath>interruptions.c</itemPath>
       <itemPath>registers.c</itemPath>
       <itemPath>measureAndSaveFunctions.c</itemPath>
+      <itemPath>pwmAlarm.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -58,6 +60,9 @@
       <itemPath>MyConfig.mc3</itemPath>
     </logicalFolder>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="default" type="2">

@@ -1698,25 +1698,31 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 "29
-[; ;./globalvariables.h: 29: const int TALA = 2;
+[; ;./globalvariables.h: 29: volatile int control_ALAF = 0;
+[v _control_ALAF `Vi ~T0 @X0 1 e ]
+[i _control_ALAF
+-> 0 `i
+]
+"30
+[; ;./globalvariables.h: 30: const int TALA = 2;
 [v _TALA `Ci ~T0 @X0 1 e ]
 [i _TALA
 -> 2 `i
 ]
-"30
-[; ;./globalvariables.h: 30: adc_result_t adcResult = 0;
+"31
+[; ;./globalvariables.h: 31: adc_result_t adcResult = 0;
 [v _adcResult `us ~T0 @X0 1 e ]
 [i _adcResult
 -> -> 0 `i `us
 ]
-"31
-[; ;./globalvariables.h: 31: volatile int LumThreshold = 2;
+"32
+[; ;./globalvariables.h: 32: volatile int LumThreshold = 2;
 [v _LumThreshold `Vi ~T0 @X0 1 e ]
 [i _LumThreshold
 -> 2 `i
 ]
-"32
-[; ;./globalvariables.h: 32: volatile int TempThreshold = 30;
+"33
+[; ;./globalvariables.h: 33: volatile int TempThreshold = 30;
 [v _TempThreshold `Vi ~T0 @X0 1 e ]
 [i _TempThreshold
 -> 30 `i

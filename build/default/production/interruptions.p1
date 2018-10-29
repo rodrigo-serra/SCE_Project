@@ -21,9 +21,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "967
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 967: extern volatile LATAbits_t LATAbits __attribute__((address(0x016)));
 [v _LATAbits `VS52 ~T0 @X0 0 e@22 ]
-[v F12208 `(v ~T0 @X0 1 tf1`ul ]
+[v F12210 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic.h
-[v __delay `JF12208 ~T0 @X0 0 e ]
+[v __delay `JF12210 ~T0 @X0 0 e ]
 [p i __delay ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 54: __asm("INDF0 equ 00h");
@@ -1694,16 +1694,34 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 "29
-[; ;./globalvariables.h: 29: const int TALA = 2;
+[; ;./globalvariables.h: 29: volatile int control_ALAF = 0;
+[v _control_ALAF `Vi ~T0 @X0 1 e ]
+[i _control_ALAF
+-> 0 `i
+]
+"30
+[; ;./globalvariables.h: 30: const int TALA = 2;
 [v _TALA `Ci ~T0 @X0 1 e ]
 [i _TALA
 -> 2 `i
 ]
-"30
-[; ;./globalvariables.h: 30: adc_result_t adcResult = 0;
+"31
+[; ;./globalvariables.h: 31: adc_result_t adcResult = 0;
 [v _adcResult `us ~T0 @X0 1 e ]
 [i _adcResult
 -> -> 0 `i `us
+]
+"32
+[; ;./globalvariables.h: 32: volatile int LumThreshold = 2;
+[v _LumThreshold `Vi ~T0 @X0 1 e ]
+[i _LumThreshold
+-> 2 `i
+]
+"33
+[; ;./globalvariables.h: 33: volatile int TempThreshold = 30;
+[v _TempThreshold `Vi ~T0 @X0 1 e ]
+[i _TempThreshold
+-> 30 `i
 ]
 "6 interruptions.c
 [; ;interruptions.c: 6: void changeleds(void){
@@ -1787,39 +1805,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _s1Pressed ]
 [f ]
 "29
-[; ;interruptions.c: 29:     if(PORTAbits.RA6 == 0)
-[e $ ! == -> . . _PORTAbits 0 6 `i -> 0 `i 1637  ]
-"30
-[; ;interruptions.c: 30:     {
-{
+[; ;interruptions.c: 29:     ALAF = 0;
+[e = _ALAF -> 0 `i ]
 "31
-[; ;interruptions.c: 31:         do { LATAbits.LATA6 = 1; } while(0);
-[e :U 1640 ]
-{
-[e = . . _LATAbits 0 6 -> -> 1 `i `uc ]
-}
-[e :U 1639 ]
-"33
-[; ;interruptions.c: 33:     }else{
-}
-[e $U 1641  ]
-[e :U 1637 ]
-{
-"34
-[; ;interruptions.c: 34:         do { LATAbits.LATA6 = 0; } while(0);
-[e :U 1644 ]
-{
-[e = . . _LATAbits 0 6 -> -> 0 `i `uc ]
-}
-[e :U 1643 ]
-"35
-[; ;interruptions.c: 35:     }
-}
-[e :U 1641 ]
-"37
-[; ;interruptions.c: 37:     _delay((unsigned long)((5)*(1000000/4000.0)));
+[; ;interruptions.c: 31:     _delay((unsigned long)((5)*(1000000/4000.0)));
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"38
-[; ;interruptions.c: 38: }
+"32
+[; ;interruptions.c: 32: }
 [e :UE 1636 ]
 }

@@ -46,6 +46,7 @@
 #include "globalvariables.h"
 #include "measureAndSaveFunctions.h"
 #include "mcc_generated_files/adcc.h"
+#include "pwmAlarm.h"
 
 
 
@@ -77,6 +78,9 @@ void main(void)
     
     INT_SetInterruptHandler(&s1Pressed);
     
+    TMR3_SetInterruptHandler(&change_PWM);
+    TMR3_StopTimer();
+    
     int luminosity = 0;
     
     while (1)
@@ -98,11 +102,18 @@ void main(void)
             //                       or max or min -- checks thresholds)
             sensor_timer(luminosity, 20);
             //if alarm is on call function to change brightness
-            if(ALAF == 1){
+            if(ALAF == 1 && control_ALAF == 0){
                 //change brightness with pwm for TALA duration
                 
-                LED_D4_SetHigh();
+                TMR2_StartTimer();
+                TMR3_StartTimer();
+                control_ALAF = 1;
+            }else if(ALAF == 0 && control_ALAF == 1){
+                PWM6_LoadDutyValue(0);
+                control_ALAF = 0;
             }
+            
+           
         }
         
         

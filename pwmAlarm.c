@@ -29,18 +29,15 @@ void PWM_Disable(void){
 }
 
 void change_PWM(void){
-    
-    //TMR2_StartTimer();
+
     if(pwm_value == 0)
         PWM_Enable();
     
     pwm_value += 100;
     PWM6_LoadDutyValue(pwm_value);
     if(pwm_value == 1000){
-        TMR2_StopTimer();
         TMR3_StopTimer();
-        PWM_Disable();
         pwm_value = 0;
-        IO_RA6_SetHigh();
+        PWM6_LoadDutyValue(1020);
     }
 }

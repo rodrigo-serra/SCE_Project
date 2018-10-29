@@ -49,7 +49,7 @@ void sensor_timer(int lum, int temp){
     
     //check if it connected for the first time
     if( numRegsSaved == 0 || ((numRegsSaved != lastRegSaved) && numRegsSaved != 20) || numRegsSaved > 20 || lastRegSaved > 20){
-        numRegsSaved = 1;
+        numRegsSaved = 0;
         lastRegSaved = 0;
         DATAEE_WriteByte(NUM_REGS_SAVED, numRegsSaved);
         DATAEE_WriteByte(LAST_WRITTEN, lastRegSaved);
@@ -66,12 +66,16 @@ void sensor_timer(int lum, int temp){
     int localSec = secs;
     TMR1_StartTimer();
     
+    //Save time
+    DATAEE_WriteByte(HOUR, localHour);
+    DATAEE_WriteByte(MINUTE, localMin);
+    
     int lastLumEntry = 0;
     int lastTempEntry = 0;
     
     if(numRegsSaved != 0){
-        lastLumEntry = DATAEE_ReadByte(START_INDEX + LAST_WRITTEN + LUM);
-        lastTempEntry = DATAEE_ReadByte(START_INDEX + LAST_WRITTEN + TEMP);
+        lastLumEntry = DATAEE_ReadByte(START_INDEX + lastRegSaved-1 + LUM);
+        lastTempEntry = DATAEE_ReadByte(START_INDEX + lastRegSaved-1 + TEMP);
     }
     
     if(((lum != lastLumEntry || temp != lastTempEntry) && numRegsSaved != 0) || numRegsSaved == 0){
@@ -96,7 +100,7 @@ void sensor_timer(int lum, int temp){
         DATAEE_WriteByte(LAST_WRITTEN, newRegIndex);
         DATAEE_WriteByte(NUM_REGS_SAVED, updateNumRegsSaved);
         
-        DATAEE_WriteByte(START_INDEX + lastRegSaved + HOUR, localHour);
+        DATAEE_WriteByte(START_INDEX + lastRegSaved + HOURS, localHour);
         DATAEE_WriteByte(START_INDEX + lastRegSaved + MINUTES, localMin);
         DATAEE_WriteByte(START_INDEX + lastRegSaved + SECONDS, localSec);
         DATAEE_WriteByte(START_INDEX + lastRegSaved + TEMP, temp);

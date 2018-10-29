@@ -21080,7 +21080,7 @@ void sensor_timer(int lum, int temp){
 
 
     if( numRegsSaved == 0 || ((numRegsSaved != lastRegSaved) && numRegsSaved != 20) || numRegsSaved > 20 || lastRegSaved > 20){
-        numRegsSaved = 1;
+        numRegsSaved = 0;
         lastRegSaved = 0;
         DATAEE_WriteByte(0x7065, numRegsSaved);
         DATAEE_WriteByte(0x7064, lastRegSaved);
@@ -21097,12 +21097,16 @@ void sensor_timer(int lum, int temp){
     int localSec = secs;
     TMR1_StartTimer();
 
+
+    DATAEE_WriteByte(0x7066, localHour);
+    DATAEE_WriteByte(0x7067, localMin);
+
     int lastLumEntry = 0;
     int lastTempEntry = 0;
 
     if(numRegsSaved != 0){
-        lastLumEntry = DATAEE_ReadByte(0x7000 + 0x7064 + 4);
-        lastTempEntry = DATAEE_ReadByte(0x7000 + 0x7064 + 3);
+        lastLumEntry = DATAEE_ReadByte(0x7000 + lastRegSaved-1 + 4);
+        lastTempEntry = DATAEE_ReadByte(0x7000 + lastRegSaved-1 + 3);
     }
 
     if(((lum != lastLumEntry || temp != lastTempEntry) && numRegsSaved != 0) || numRegsSaved == 0){
@@ -21127,7 +21131,7 @@ void sensor_timer(int lum, int temp){
         DATAEE_WriteByte(0x7064, newRegIndex);
         DATAEE_WriteByte(0x7065, updateNumRegsSaved);
 
-        DATAEE_WriteByte(0x7000 + lastRegSaved + 0x7066, localHour);
+        DATAEE_WriteByte(0x7000 + lastRegSaved + 0, localHour);
         DATAEE_WriteByte(0x7000 + lastRegSaved + 1, localMin);
         DATAEE_WriteByte(0x7000 + lastRegSaved + 2, localSec);
         DATAEE_WriteByte(0x7000 + lastRegSaved + 3, temp);

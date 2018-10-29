@@ -11,47 +11,47 @@
 # All addresses and the length are given in unqualified hexadecimal
 # in delta units.  Any other numeric values are decimal.
 %PSECTS
-$C:\Users\Rui\AppData\Local\Temp\s4p0.o
+$C:\Users\Rui\AppData\Local\Temp\s9bk.o
 reset_vec CODE 0 0 0 2 2
 end_init CODE 0 29 29 2 2
 config CONFIG 0 8007 8007 5 2
 $dist/default/debug\SCE_Project.debug.o
 cinit CODE 0 2B 2B 1E 2
-text1 CODE 0 4E2 4E2 1F 2
-text2 CODE 0 49 49 318 2
-text3 CODE 0 605 605 3 2
-text4 CODE 0 608 608 3 2
-text5 CODE 0 501 501 1F 2
-text6 CODE 0 5C4 5C4 D 2
-text7 CODE 0 442 442 41 2
-text8 CODE 0 56C 56C 15 2
-text9 CODE 0 3E5 3E5 5D 2
-text10 CODE 0 581 581 13 2
-text11 CODE 0 520 520 1E 2
-text12 CODE 0 5EF 5EF 6 2
-text13 CODE 0 5E7 5E7 8 2
-text14 CODE 0 483 483 33 2
-text15 CODE 0 5DE 5DE 9 2
-text16 CODE 0 5D1 5D1 D 2
-text17 CODE 0 5F5 5F5 6 2
-text18 CODE 0 556 556 16 2
-text20 CODE 0 53E 53E 18 2
-text21 CODE 0 60F 60F 1 2
-text22 CODE 0 4B6 4B6 2C 2
-text23 CODE 0 594 594 12 2
-text24 CODE 0 5FB 5FB 6 2
-text25 CODE 0 5B6 5B6 E 2
-text26 CODE 0 610 610 1 2
-text27 CODE 0 5A6 5A6 10 2
+text1 CODE 0 4FC 4FC 1F 2
+text2 CODE 0 49 49 332 2
+text3 CODE 0 61F 61F 3 2
+text4 CODE 0 622 622 3 2
+text5 CODE 0 51B 51B 1F 2
+text6 CODE 0 5DE 5DE D 2
+text7 CODE 0 45C 45C 41 2
+text8 CODE 0 586 586 15 2
+text9 CODE 0 3FF 3FF 5D 2
+text10 CODE 0 59B 59B 13 2
+text11 CODE 0 53A 53A 1E 2
+text12 CODE 0 609 609 6 2
+text13 CODE 0 601 601 8 2
+text14 CODE 0 49D 49D 33 2
+text15 CODE 0 5F8 5F8 9 2
+text16 CODE 0 5EB 5EB D 2
+text17 CODE 0 60F 60F 6 2
+text18 CODE 0 570 570 16 2
+text20 CODE 0 558 558 18 2
+text21 CODE 0 629 629 1 2
+text22 CODE 0 4D0 4D0 2C 2
+text23 CODE 0 5AE 5AE 12 2
+text24 CODE 0 615 615 6 2
+text25 CODE 0 5D0 5D0 E 2
+text26 CODE 0 62A 62A 1 2
+text27 CODE 0 5C0 5C0 10 2
 nvBANK0 BANK0 1 46 46 6 1
-maintext CODE 0 361 361 84 2
+maintext CODE 0 37B 37B 84 2
 cstackCOMMON COMMON 1 70 70 A 1
 cstackBANK0 BANK0 1 20 20 1E 1
-stringtext1 STRCODE 0 60B 60B 2 2
-stringtext2 STRCODE 0 60D 60D 2 2
+stringtext1 STRCODE 0 625 625 2 2
+stringtext2 STRCODE 0 627 627 2 2
 intentry CODE 0 4 4 25 2
 bssBANK0 BANK0 1 3E 3E 8 1
-idataBANK0 CODE 0 601 601 4 2
+idataBANK0 CODE 0 61B 61B 4 2
 dataBANK0 BANK0 1 4C 4C 4 1
 bssCOMMON COMMON 1 7A 7A 2 1
 # %UNUSED Section
@@ -84,9 +84,9 @@ BANK7 3A0-3EF 1
 BANK8 420-46F 1
 BANK9 4A0-4EF 1
 CONST 2-3 2
-CONST 611-1FFF 2
+CONST 62B-1FFF 2
 ENTRY 2-3 2
-ENTRY 611-1FFF 2
+ENTRY 62B-1FFF 2
 IDLOC 8000-8003 2
 SFR10 500-51F 1
 SFR11 580-59F 1
@@ -112,7 +112,7 @@ SFR30 F00-F6F 1
 SFR31 F80-FEF 1
 STACK 2030-23EF 1
 CODE 2-3 2
-CODE 611-1FFF 2
+CODE 62B-1FFF 2
 SFR0 0-1F 1
 SFR1 80-9F 1
 SFR2 100-11F 1
@@ -130,9 +130,9 @@ BIGRAM 2000-23EF 1
 COMMON 7C-7D 1
 EEDATA F000-F0FF 2
 STRCODE 2-3 2
-STRCODE 611-1FFF 2
+STRCODE 62B-1FFF 2
 STRING 2-3 2
-STRING 611-1FFF 2
+STRING 62B-1FFF 2
 # %LINETAB Section
 # This section enumerates the file/line to address mappings.
 # The beginning of the section is indicated by %LINETAB.
@@ -147,30 +147,30 @@ STRING 611-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/debug\SCE_Project.debug.o
-2B cinit CODE >12447:C:\Users\Rui\AppData\Local\Temp\s4p0.
-2B cinit CODE >12450:C:\Users\Rui\AppData\Local\Temp\s4p0.
-2B cinit CODE >12491:C:\Users\Rui\AppData\Local\Temp\s4p0.
-2E cinit CODE >12492:C:\Users\Rui\AppData\Local\Temp\s4p0.
-2F cinit CODE >12493:C:\Users\Rui\AppData\Local\Temp\s4p0.
-32 cinit CODE >12494:C:\Users\Rui\AppData\Local\Temp\s4p0.
-33 cinit CODE >12495:C:\Users\Rui\AppData\Local\Temp\s4p0.
-36 cinit CODE >12496:C:\Users\Rui\AppData\Local\Temp\s4p0.
-37 cinit CODE >12497:C:\Users\Rui\AppData\Local\Temp\s4p0.
-3A cinit CODE >12498:C:\Users\Rui\AppData\Local\Temp\s4p0.
-3B cinit CODE >12503:C:\Users\Rui\AppData\Local\Temp\s4p0.
-3C cinit CODE >12504:C:\Users\Rui\AppData\Local\Temp\s4p0.
-3D cinit CODE >12508:C:\Users\Rui\AppData\Local\Temp\s4p0.
-3E cinit CODE >12509:C:\Users\Rui\AppData\Local\Temp\s4p0.
-3F cinit CODE >12510:C:\Users\Rui\AppData\Local\Temp\s4p0.
-40 cinit CODE >12511:C:\Users\Rui\AppData\Local\Temp\s4p0.
-41 cinit CODE >12512:C:\Users\Rui\AppData\Local\Temp\s4p0.
-42 cinit CODE >12513:C:\Users\Rui\AppData\Local\Temp\s4p0.
-43 cinit CODE >12514:C:\Users\Rui\AppData\Local\Temp\s4p0.
-44 cinit CODE >12515:C:\Users\Rui\AppData\Local\Temp\s4p0.
-45 cinit CODE >12521:C:\Users\Rui\AppData\Local\Temp\s4p0.
-45 cinit CODE >12523:C:\Users\Rui\AppData\Local\Temp\s4p0.
-46 cinit CODE >12524:C:\Users\Rui\AppData\Local\Temp\s4p0.
-47 cinit CODE >12525:C:\Users\Rui\AppData\Local\Temp\s4p0.
+2B cinit CODE >12447:C:\Users\Rui\AppData\Local\Temp\s9bk.
+2B cinit CODE >12450:C:\Users\Rui\AppData\Local\Temp\s9bk.
+2B cinit CODE >12491:C:\Users\Rui\AppData\Local\Temp\s9bk.
+2E cinit CODE >12492:C:\Users\Rui\AppData\Local\Temp\s9bk.
+2F cinit CODE >12493:C:\Users\Rui\AppData\Local\Temp\s9bk.
+32 cinit CODE >12494:C:\Users\Rui\AppData\Local\Temp\s9bk.
+33 cinit CODE >12495:C:\Users\Rui\AppData\Local\Temp\s9bk.
+36 cinit CODE >12496:C:\Users\Rui\AppData\Local\Temp\s9bk.
+37 cinit CODE >12497:C:\Users\Rui\AppData\Local\Temp\s9bk.
+3A cinit CODE >12498:C:\Users\Rui\AppData\Local\Temp\s9bk.
+3B cinit CODE >12503:C:\Users\Rui\AppData\Local\Temp\s9bk.
+3C cinit CODE >12504:C:\Users\Rui\AppData\Local\Temp\s9bk.
+3D cinit CODE >12508:C:\Users\Rui\AppData\Local\Temp\s9bk.
+3E cinit CODE >12509:C:\Users\Rui\AppData\Local\Temp\s9bk.
+3F cinit CODE >12510:C:\Users\Rui\AppData\Local\Temp\s9bk.
+40 cinit CODE >12511:C:\Users\Rui\AppData\Local\Temp\s9bk.
+41 cinit CODE >12512:C:\Users\Rui\AppData\Local\Temp\s9bk.
+42 cinit CODE >12513:C:\Users\Rui\AppData\Local\Temp\s9bk.
+43 cinit CODE >12514:C:\Users\Rui\AppData\Local\Temp\s9bk.
+44 cinit CODE >12515:C:\Users\Rui\AppData\Local\Temp\s9bk.
+45 cinit CODE >12521:C:\Users\Rui\AppData\Local\Temp\s9bk.
+45 cinit CODE >12523:C:\Users\Rui\AppData\Local\Temp\s9bk.
+46 cinit CODE >12524:C:\Users\Rui\AppData\Local\Temp\s9bk.
+47 cinit CODE >12525:C:\Users\Rui\AppData\Local\Temp\s9bk.
 4 intentry CODE >52:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/interrupt_manager.c
 6 intentry CODE >55:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/interrupt_manager.c
 F intentry CODE >57:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/interrupt_manager.c
@@ -185,360 +185,362 @@ F intentry CODE >57:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/int
 25 intentry CODE >70:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/interrupt_manager.c
 26 intentry CODE >73:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/interrupt_manager.c
 27 intentry CODE >74:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/interrupt_manager.c
-5A6 text27 CODE >28:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
-5A6 text27 CODE >29:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
-5AB text27 CODE >31:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
-5AD text27 CODE >33:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
-5AE text27 CODE >34:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
-5B1 text27 CODE >35:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
-5B1 text27 CODE >37:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
-5B5 text27 CODE >38:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
-610 text26 CODE >54:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
-610 text26 CODE >57:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
-5B6 text25 CODE >41:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
-5B6 text25 CODE >44:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
-5BD text25 CODE >46:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
-5C3 text25 CODE >47:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
-5C3 text25 CODE >48:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
-5FB text24 CODE >32:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
-5FB text24 CODE >34:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
-5FD text24 CODE >37:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
-600 text24 CODE >38:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
-594 text23 CODE >127:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-594 text23 CODE >129:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-599 text23 CODE >132:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-59A text23 CODE >135:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-59C text23 CODE >136:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-59E text23 CODE >139:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-59F text23 CODE >140:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-5A0 text23 CODE >141:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-5A0 text23 CODE >144:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-5A2 text23 CODE >145:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-5A5 text23 CODE >146:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-5A5 text23 CODE >147:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-4B6 text22 CODE >6:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
-4B6 text22 CODE >8:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
-4BB text22 CODE >9:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
-4C2 text22 CODE >11:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
-4C6 text22 CODE >12:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
-4C9 text22 CODE >13:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
-4C9 text22 CODE >14:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
-4D0 text22 CODE >16:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
-4D4 text22 CODE >17:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
-4D7 text22 CODE >18:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
-4D7 text22 CODE >20:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
-4DB text22 CODE >22:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
-4DD text22 CODE >23:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
-4DE text22 CODE >24:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
-4E1 text22 CODE >25:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
-4E1 text22 CODE >26:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
-60F text21 CODE >182:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-60F text21 CODE >185:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-53E text20 CODE >164:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-53E text20 CODE >168:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-540 text20 CODE >169:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-548 text20 CODE >171:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-54F text20 CODE >173:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-555 text20 CODE >174:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-555 text20 CODE >175:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-556 text18 CODE >63:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-556 text18 CODE >67:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-558 text18 CODE >69:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-559 text18 CODE >71:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-55A text18 CODE >73:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-55B text18 CODE >75:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-55C text18 CODE >77:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-55D text18 CODE >79:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-55E text18 CODE >81:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-560 text18 CODE >83:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-561 text18 CODE >85:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-562 text18 CODE >87:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-563 text18 CODE >89:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-564 text18 CODE >91:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-565 text18 CODE >93:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-566 text18 CODE >95:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-567 text18 CODE >97:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-568 text18 CODE >99:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-56A text18 CODE >101:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-56B text18 CODE >104:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-5F5 text17 CODE >50:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
-5F5 text17 CODE >51:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
-5FA text17 CODE >52:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
-5D1 text16 CODE >59:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
-5D1 text16 CODE >64:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
-5D3 text16 CODE >65:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
-5D4 text16 CODE >67:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
-5DB text16 CODE >68:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
-5DD text16 CODE >70:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
-5DE text15 CODE >60:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
-5DE text15 CODE >63:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
-5E1 text15 CODE >65:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
-5E2 text15 CODE >67:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
-5E3 text15 CODE >69:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
-5E5 text15 CODE >71:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
-5E6 text15 CODE >72:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
-483 text14 CODE >57:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-483 text14 CODE >62:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-485 text14 CODE >63:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-486 text14 CODE >64:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-487 text14 CODE >65:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-488 text14 CODE >66:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-489 text14 CODE >71:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-48B text14 CODE >72:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-48D text14 CODE >73:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-48F text14 CODE >74:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-491 text14 CODE >75:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-493 text14 CODE >80:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-496 text14 CODE >81:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-498 text14 CODE >82:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-49A text14 CODE >83:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-49C text14 CODE >84:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-49E text14 CODE >89:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-49F text14 CODE >90:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-4A0 text14 CODE >91:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-4A1 text14 CODE >92:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-4A2 text14 CODE >93:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-4A3 text14 CODE >98:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-4A4 text14 CODE >99:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-4A5 text14 CODE >100:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-4A6 text14 CODE >101:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-4A7 text14 CODE >102:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-4A8 text14 CODE >107:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-4AA text14 CODE >108:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-4AC text14 CODE >109:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-4AE text14 CODE >110:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-4B0 text14 CODE >111:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-4B2 text14 CODE >120:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-4B5 text14 CODE >121:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
-5E7 text13 CODE >74:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
-5E7 text13 CODE >77:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
-5E9 text13 CODE >79:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
-5EA text13 CODE >81:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
-5EB text13 CODE >83:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
-5EC text13 CODE >85:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
-5ED text13 CODE >87:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
-5EE text13 CODE >88:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
-5EF text12 CODE >178:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-5EF text12 CODE >179:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-5F4 text12 CODE >180:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-520 text11 CODE >64:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-520 text11 CODE >69:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-522 text11 CODE >72:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-523 text11 CODE >75:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-525 text11 CODE >78:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-527 text11 CODE >81:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-529 text11 CODE >84:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-530 text11 CODE >87:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-532 text11 CODE >90:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-533 text11 CODE >93:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-53A text11 CODE >96:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-53D text11 CODE >97:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-581 text10 CODE >50:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
-581 text10 CODE >52:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
-584 text10 CODE >53:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
-587 text10 CODE >54:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
-58A text10 CODE >55:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
-58D text10 CODE >56:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
-590 text10 CODE >57:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
-593 text10 CODE >58:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
-3E5 text9 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
-3E5 text9 CODE >12:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
-3E6 text9 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
-3EA text9 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
-3EF text9 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
-3F2 text9 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
-3F2 text9 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
-3F6 text9 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
-3FC text9 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
-402 text9 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
-404 text9 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
-405 text9 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
-40A text9 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
-40F text9 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
-40F text9 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
-415 text9 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
-415 text9 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
-41F text9 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
-424 text9 CODE >28:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
-429 text9 CODE >29:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
-431 text9 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
-431 text9 CODE >31:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
-436 text9 CODE >32:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
-43C text9 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
-441 text9 CODE >34:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
-56C text8 CODE >130:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-56D text8 CODE >133:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-570 text8 CODE >136:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-571 text8 CODE >139:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-572 text8 CODE >142:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-573 text8 CODE >145:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-574 text8 CODE >148:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-575 text8 CODE >148:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-575 text8 CODE >150:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-57B text8 CODE >154:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-580 text8 CODE >155:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
-442 text7 CODE >7:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-442 text7 CODE >10:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-446 text7 CODE >13:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-44F text7 CODE >14:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-458 text7 CODE >15:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-45A text7 CODE >16:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-464 text7 CODE >17:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-468 text7 CODE >18:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-472 text7 CODE >19:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-476 text7 CODE >20:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-477 text7 CODE >21:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-47C text7 CODE >22:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-47D text7 CODE >24:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-482 text7 CODE >26:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-5C4 text6 CODE >202:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
-5C4 text6 CODE >204:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
-5C7 text6 CODE >205:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
-5C9 text6 CODE >206:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
-5CA text6 CODE >207:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
-5CB text6 CODE >208:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
-5CC text6 CODE >209:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
-5CD text6 CODE >211:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
-5D0 text6 CODE >212:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
-501 text5 CODE >180:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
-501 text5 CODE >182:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
-505 text5 CODE >184:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
-508 text5 CODE >185:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
-50A text5 CODE >186:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
-50C text5 CODE >187:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
-50D text5 CODE >188:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
-50E text5 CODE >189:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
-50F text5 CODE >190:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
-511 text5 CODE >191:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
-513 text5 CODE >192:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
-514 text5 CODE >194:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
-515 text5 CODE >194:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
-515 text5 CODE >196:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
-519 text5 CODE >198:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
-51A text5 CODE >199:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
-51F text5 CODE >200:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
-608 text4 CODE >99:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-608 text4 CODE >102:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-60A text4 CODE >103:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-605 text3 CODE >105:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-605 text3 CODE >108:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
-607 text3 CODE >109:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+5C0 text27 CODE >28:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
+5C0 text27 CODE >29:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
+5C5 text27 CODE >31:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
+5C7 text27 CODE >33:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
+5C8 text27 CODE >34:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
+5CB text27 CODE >35:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
+5CB text27 CODE >37:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
+5CF text27 CODE >38:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
+62A text26 CODE >54:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
+62A text26 CODE >57:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
+5D0 text25 CODE >41:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
+5D0 text25 CODE >44:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
+5D7 text25 CODE >46:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
+5DD text25 CODE >47:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
+5DD text25 CODE >48:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
+615 text24 CODE >32:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
+615 text24 CODE >34:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
+617 text24 CODE >37:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
+61A text24 CODE >38:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
+5AE text23 CODE >127:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+5AE text23 CODE >129:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+5B3 text23 CODE >132:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+5B4 text23 CODE >135:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+5B6 text23 CODE >136:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+5B8 text23 CODE >139:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+5B9 text23 CODE >140:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+5BA text23 CODE >141:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+5BA text23 CODE >144:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+5BC text23 CODE >145:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+5BF text23 CODE >146:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+5BF text23 CODE >147:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+4D0 text22 CODE >6:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
+4D0 text22 CODE >8:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
+4D5 text22 CODE >9:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
+4DC text22 CODE >11:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
+4E0 text22 CODE >12:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
+4E3 text22 CODE >13:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
+4E3 text22 CODE >14:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
+4EA text22 CODE >16:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
+4EE text22 CODE >17:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
+4F1 text22 CODE >18:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
+4F1 text22 CODE >20:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
+4F5 text22 CODE >22:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
+4F7 text22 CODE >23:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
+4F8 text22 CODE >24:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
+4FB text22 CODE >25:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
+4FB text22 CODE >26:D:\Universidade\5ano\SCE\SCE_Project\interruptions.c
+629 text21 CODE >182:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+629 text21 CODE >185:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+558 text20 CODE >164:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+558 text20 CODE >168:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+55A text20 CODE >169:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+562 text20 CODE >171:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+569 text20 CODE >173:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+56F text20 CODE >174:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+56F text20 CODE >175:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+570 text18 CODE >63:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+570 text18 CODE >67:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+572 text18 CODE >69:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+573 text18 CODE >71:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+574 text18 CODE >73:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+575 text18 CODE >75:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+576 text18 CODE >77:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+577 text18 CODE >79:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+578 text18 CODE >81:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+57A text18 CODE >83:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+57B text18 CODE >85:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+57C text18 CODE >87:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+57D text18 CODE >89:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+57E text18 CODE >91:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+57F text18 CODE >93:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+580 text18 CODE >95:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+581 text18 CODE >97:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+582 text18 CODE >99:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+584 text18 CODE >101:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+585 text18 CODE >104:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+60F text17 CODE >50:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
+60F text17 CODE >51:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
+614 text17 CODE >52:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
+5EB text16 CODE >59:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
+5EB text16 CODE >64:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
+5ED text16 CODE >65:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
+5EE text16 CODE >67:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
+5F5 text16 CODE >68:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
+5F7 text16 CODE >70:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/ext_int.c
+5F8 text15 CODE >60:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
+5F8 text15 CODE >63:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
+5FB text15 CODE >65:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
+5FC text15 CODE >67:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
+5FD text15 CODE >69:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
+5FF text15 CODE >71:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
+600 text15 CODE >72:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
+49D text14 CODE >57:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+49D text14 CODE >62:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+49F text14 CODE >63:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4A0 text14 CODE >64:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4A1 text14 CODE >65:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4A2 text14 CODE >66:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4A3 text14 CODE >71:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4A5 text14 CODE >72:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4A7 text14 CODE >73:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4A9 text14 CODE >74:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4AB text14 CODE >75:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4AD text14 CODE >80:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4B0 text14 CODE >81:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4B2 text14 CODE >82:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4B4 text14 CODE >83:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4B6 text14 CODE >84:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4B8 text14 CODE >89:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4B9 text14 CODE >90:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4BA text14 CODE >91:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4BB text14 CODE >92:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4BC text14 CODE >93:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4BD text14 CODE >98:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4BE text14 CODE >99:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4BF text14 CODE >100:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4C0 text14 CODE >101:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4C1 text14 CODE >102:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4C2 text14 CODE >107:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4C4 text14 CODE >108:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4C6 text14 CODE >109:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4C8 text14 CODE >110:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4CA text14 CODE >111:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4CC text14 CODE >120:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+4CF text14 CODE >121:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/pin_manager.c
+601 text13 CODE >74:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
+601 text13 CODE >77:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
+603 text13 CODE >79:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
+604 text13 CODE >81:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
+605 text13 CODE >83:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
+606 text13 CODE >85:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
+607 text13 CODE >87:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
+608 text13 CODE >88:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
+609 text12 CODE >178:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+609 text12 CODE >179:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+60E text12 CODE >180:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+53A text11 CODE >64:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+53A text11 CODE >69:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+53C text11 CODE >72:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+53D text11 CODE >75:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+53F text11 CODE >78:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+541 text11 CODE >81:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+543 text11 CODE >84:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+54A text11 CODE >87:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+54C text11 CODE >90:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+54D text11 CODE >93:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+554 text11 CODE >96:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+557 text11 CODE >97:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+59B text10 CODE >50:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
+59B text10 CODE >52:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
+59E text10 CODE >53:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
+5A1 text10 CODE >54:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
+5A4 text10 CODE >55:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
+5A7 text10 CODE >56:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
+5AA text10 CODE >57:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
+5AD text10 CODE >58:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/mcc.c
+3FF text9 CODE >5:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
+3FF text9 CODE >12:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
+400 text9 CODE >13:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
+404 text9 CODE >14:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
+409 text9 CODE >15:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
+40C text9 CODE >16:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
+40C text9 CODE >17:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
+410 text9 CODE >18:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
+416 text9 CODE >19:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
+41C text9 CODE >20:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
+41E text9 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
+41F text9 CODE >22:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
+424 text9 CODE >23:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
+429 text9 CODE >21:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
+429 text9 CODE >24:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
+42F text9 CODE >25:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
+42F text9 CODE >26:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
+439 text9 CODE >27:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
+43E text9 CODE >28:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
+443 text9 CODE >29:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
+44B text9 CODE >30:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
+44B text9 CODE >31:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
+450 text9 CODE >32:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
+456 text9 CODE >33:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
+45B text9 CODE >34:C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
+586 text8 CODE >130:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+587 text8 CODE >133:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+58A text8 CODE >136:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+58B text8 CODE >139:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+58C text8 CODE >142:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+58D text8 CODE >145:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+58E text8 CODE >148:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+58F text8 CODE >148:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+58F text8 CODE >150:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+595 text8 CODE >154:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+59A text8 CODE >155:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/adcc.c
+45C text7 CODE >7:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+45C text7 CODE >10:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+460 text7 CODE >13:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+469 text7 CODE >14:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+472 text7 CODE >15:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+474 text7 CODE >16:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+47E text7 CODE >17:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+482 text7 CODE >18:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+48C text7 CODE >19:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+490 text7 CODE >20:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+491 text7 CODE >21:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+496 text7 CODE >22:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+497 text7 CODE >24:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+49C text7 CODE >26:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+5DE text6 CODE >202:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
+5DE text6 CODE >204:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
+5E1 text6 CODE >205:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
+5E3 text6 CODE >206:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
+5E4 text6 CODE >207:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
+5E5 text6 CODE >208:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
+5E6 text6 CODE >209:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
+5E7 text6 CODE >211:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
+5EA text6 CODE >212:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
+51B text5 CODE >180:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
+51B text5 CODE >182:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
+51F text5 CODE >184:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
+522 text5 CODE >185:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
+524 text5 CODE >186:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
+526 text5 CODE >187:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
+527 text5 CODE >188:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
+528 text5 CODE >189:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
+529 text5 CODE >190:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
+52B text5 CODE >191:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
+52D text5 CODE >192:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
+52E text5 CODE >194:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
+52F text5 CODE >194:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
+52F text5 CODE >196:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
+533 text5 CODE >198:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
+534 text5 CODE >199:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
+539 text5 CODE >200:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/memory.c
+622 text4 CODE >99:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+622 text4 CODE >102:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+624 text4 CODE >103:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+61F text3 CODE >105:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+61F text3 CODE >108:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
+621 text3 CODE >109:D:\Universidade\5ano\SCE\SCE_Project\mcc_generated_files/tmr1.c
 49 text2 CODE >45:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
 49 text2 CODE >47:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
 57 text2 CODE >48:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
 65 text2 CODE >51:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
 99 text2 CODE >52:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-9E text2 CODE >53:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-A0 text2 CODE >54:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-AB text2 CODE >55:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-B7 text2 CODE >56:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-BF text2 CODE >57:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-C7 text2 CODE >58:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-D3 text2 CODE >59:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-E0 text2 CODE >60:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-E0 text2 CODE >63:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-E3 text2 CODE >64:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-E8 text2 CODE >65:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-EC text2 CODE >66:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-F0 text2 CODE >67:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-F3 text2 CODE >69:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-F6 text2 CODE >70:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-F8 text2 CODE >72:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-FE text2 CODE >73:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+9C text2 CODE >53:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+9E text2 CODE >54:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+A9 text2 CODE >55:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+B5 text2 CODE >56:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+BD text2 CODE >57:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+C5 text2 CODE >58:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+D1 text2 CODE >59:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+DE text2 CODE >60:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+DE text2 CODE >63:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+E1 text2 CODE >64:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+E6 text2 CODE >65:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+EA text2 CODE >66:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+EE text2 CODE >67:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+F1 text2 CODE >70:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+FD text2 CODE >71:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+109 text2 CODE >73:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
 10C text2 CODE >74:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-11B text2 CODE >75:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-11B text2 CODE >77:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-13E text2 CODE >79:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-140 text2 CODE >80:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-14D text2 CODE >81:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-150 text2 CODE >82:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-151 text2 CODE >83:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-159 text2 CODE >84:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-159 text2 CODE >87:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-15B text2 CODE >88:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-168 text2 CODE >90:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-16F text2 CODE >91:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-170 text2 CODE >92:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-176 text2 CODE >93:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-176 text2 CODE >96:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-181 text2 CODE >97:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-18D text2 CODE >99:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-19B text2 CODE >100:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-1A9 text2 CODE >101:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-1B7 text2 CODE >102:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-1C5 text2 CODE >103:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-1D4 text2 CODE >104:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-1D4 text2 CODE >107:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-1E2 text2 CODE >108:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-1F0 text2 CODE >109:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-1FE text2 CODE >110:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-20C text2 CODE >112:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-21A text2 CODE >113:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-226 text2 CODE >114:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-232 text2 CODE >115:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-23E text2 CODE >116:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-24A text2 CODE >117:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-257 text2 CODE >118:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-257 text2 CODE >120:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-266 text2 CODE >121:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-272 text2 CODE >122:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-27E text2 CODE >123:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-28A text2 CODE >124:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-296 text2 CODE >125:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-2A3 text2 CODE >126:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-2A3 text2 CODE >128:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-2B2 text2 CODE >129:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-2BE text2 CODE >130:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-2CA text2 CODE >131:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-2D6 text2 CODE >132:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-2E2 text2 CODE >133:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-2EF text2 CODE >134:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-2EF text2 CODE >136:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-2FE text2 CODE >137:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-30A text2 CODE >138:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-316 text2 CODE >139:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-322 text2 CODE >140:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-32E text2 CODE >141:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-33B text2 CODE >142:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-33B text2 CODE >145:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-35A text2 CODE >147:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-360 text2 CODE >148:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-360 text2 CODE >150:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-4E2 text1 CODE >28:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-4E2 text1 CODE >29:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-4EF text1 CODE >30:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-4F2 text1 CODE >31:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-4F3 text1 CODE >32:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-4F6 text1 CODE >33:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-4F6 text1 CODE >35:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-4FA text1 CODE >37:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-4FC text1 CODE >38:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-4FD text1 CODE >39:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-500 text1 CODE >40:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-500 text1 CODE >41:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
-361 maintext CODE >56:D:\Universidade\5ano\SCE\SCE_Project\main.c
-361 maintext CODE >59:D:\Universidade\5ano\SCE\SCE_Project\main.c
-364 maintext CODE >65:D:\Universidade\5ano\SCE\SCE_Project\main.c
-365 maintext CODE >68:D:\Universidade\5ano\SCE\SCE_Project\main.c
-366 maintext CODE >76:D:\Universidade\5ano\SCE\SCE_Project\main.c
-36D maintext CODE >78:D:\Universidade\5ano\SCE\SCE_Project\main.c
-374 maintext CODE >80:D:\Universidade\5ano\SCE\SCE_Project\main.c
-378 maintext CODE >82:D:\Universidade\5ano\SCE\SCE_Project\main.c
-378 maintext CODE >84:D:\Universidade\5ano\SCE\SCE_Project\main.c
-37D maintext CODE >85:D:\Universidade\5ano\SCE\SCE_Project\main.c
-392 maintext CODE >87:D:\Universidade\5ano\SCE\SCE_Project\main.c
-39A maintext CODE >88:D:\Universidade\5ano\SCE\SCE_Project\main.c
-3A2 maintext CODE >90:D:\Universidade\5ano\SCE\SCE_Project\main.c
-3A2 maintext CODE >92:D:\Universidade\5ano\SCE\SCE_Project\main.c
-3B3 maintext CODE >94:D:\Universidade\5ano\SCE\SCE_Project\main.c
-3B3 maintext CODE >96:D:\Universidade\5ano\SCE\SCE_Project\main.c
-3CA maintext CODE >99:D:\Universidade\5ano\SCE\SCE_Project\main.c
-3D6 maintext CODE >101:D:\Universidade\5ano\SCE\SCE_Project\main.c
-3DD maintext CODE >104:D:\Universidade\5ano\SCE\SCE_Project\main.c
-3E0 maintext CODE >105:D:\Universidade\5ano\SCE\SCE_Project\main.c
-3E1 maintext CODE >106:D:\Universidade\5ano\SCE\SCE_Project\main.c
-3E2 maintext CODE >111:D:\Universidade\5ano\SCE\SCE_Project\main.c
-3E3 maintext CODE >112:D:\Universidade\5ano\SCE\SCE_Project\main.c
+10E text2 CODE >76:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+114 text2 CODE >77:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+124 text2 CODE >78:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+135 text2 CODE >79:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+135 text2 CODE >81:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+158 text2 CODE >83:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+15A text2 CODE >84:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+167 text2 CODE >85:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+16A text2 CODE >86:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+16B text2 CODE >87:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+173 text2 CODE >88:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+173 text2 CODE >91:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+175 text2 CODE >92:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+182 text2 CODE >94:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+189 text2 CODE >95:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+18A text2 CODE >96:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+190 text2 CODE >97:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+190 text2 CODE >100:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+19B text2 CODE >101:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+1A7 text2 CODE >103:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+1B5 text2 CODE >104:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+1C3 text2 CODE >105:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+1D1 text2 CODE >106:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+1DF text2 CODE >107:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+1EE text2 CODE >108:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+1EE text2 CODE >111:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+1FC text2 CODE >112:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+20A text2 CODE >113:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+218 text2 CODE >114:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+226 text2 CODE >116:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+234 text2 CODE >117:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+240 text2 CODE >118:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+24C text2 CODE >119:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+258 text2 CODE >120:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+264 text2 CODE >121:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+271 text2 CODE >122:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+271 text2 CODE >124:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+280 text2 CODE >125:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+28C text2 CODE >126:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+298 text2 CODE >127:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+2A4 text2 CODE >128:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+2B0 text2 CODE >129:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+2BD text2 CODE >130:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+2BD text2 CODE >132:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+2CC text2 CODE >133:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+2D8 text2 CODE >134:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+2E4 text2 CODE >135:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+2F0 text2 CODE >136:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+2FC text2 CODE >137:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+309 text2 CODE >138:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+309 text2 CODE >140:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+318 text2 CODE >141:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+324 text2 CODE >142:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+330 text2 CODE >143:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+33C text2 CODE >144:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+348 text2 CODE >145:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+355 text2 CODE >146:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+355 text2 CODE >149:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+374 text2 CODE >151:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+37A text2 CODE >152:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+37A text2 CODE >154:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+4FC text1 CODE >28:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+4FC text1 CODE >29:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+509 text1 CODE >30:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+50C text1 CODE >31:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+50D text1 CODE >32:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+510 text1 CODE >33:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+510 text1 CODE >35:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+514 text1 CODE >37:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+516 text1 CODE >38:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+517 text1 CODE >39:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+51A text1 CODE >40:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+51A text1 CODE >41:D:\Universidade\5ano\SCE\SCE_Project\measureAndSaveFunctions.c
+37B maintext CODE >56:D:\Universidade\5ano\SCE\SCE_Project\main.c
+37B maintext CODE >59:D:\Universidade\5ano\SCE\SCE_Project\main.c
+37E maintext CODE >65:D:\Universidade\5ano\SCE\SCE_Project\main.c
+37F maintext CODE >68:D:\Universidade\5ano\SCE\SCE_Project\main.c
+380 maintext CODE >76:D:\Universidade\5ano\SCE\SCE_Project\main.c
+387 maintext CODE >78:D:\Universidade\5ano\SCE\SCE_Project\main.c
+38E maintext CODE >80:D:\Universidade\5ano\SCE\SCE_Project\main.c
+392 maintext CODE >82:D:\Universidade\5ano\SCE\SCE_Project\main.c
+392 maintext CODE >84:D:\Universidade\5ano\SCE\SCE_Project\main.c
+397 maintext CODE >85:D:\Universidade\5ano\SCE\SCE_Project\main.c
+3AC maintext CODE >87:D:\Universidade\5ano\SCE\SCE_Project\main.c
+3B4 maintext CODE >88:D:\Universidade\5ano\SCE\SCE_Project\main.c
+3BC maintext CODE >90:D:\Universidade\5ano\SCE\SCE_Project\main.c
+3BC maintext CODE >92:D:\Universidade\5ano\SCE\SCE_Project\main.c
+3CD maintext CODE >94:D:\Universidade\5ano\SCE\SCE_Project\main.c
+3CD maintext CODE >96:D:\Universidade\5ano\SCE\SCE_Project\main.c
+3E4 maintext CODE >99:D:\Universidade\5ano\SCE\SCE_Project\main.c
+3F0 maintext CODE >101:D:\Universidade\5ano\SCE\SCE_Project\main.c
+3F7 maintext CODE >104:D:\Universidade\5ano\SCE\SCE_Project\main.c
+3FA maintext CODE >105:D:\Universidade\5ano\SCE\SCE_Project\main.c
+3FB maintext CODE >106:D:\Universidade\5ano\SCE\SCE_Project\main.c
+3FC maintext CODE >111:D:\Universidade\5ano\SCE\SCE_Project\main.c
+3FD maintext CODE >112:D:\Universidade\5ano\SCE\SCE_Project\main.c
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -562,10 +564,10 @@ __Hspace_3 0 0 ABS 0 - -
 __HidataBANK0 0 0 ABS 0 idataBANK0 -
 __Heeprom_data 0 0 EEDATA 3 eeprom_data -
 __CFG_MCLRE$ON 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
-_INT_CallBack B6C 0 CODE 0 text25 dist/default/debug\SCE_Project.debug.o
+_INT_CallBack BA0 0 CODE 0 text25 dist/default/debug\SCE_Project.debug.o
 _T1CONbits 20E 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 __size_of_EXT_INT_Initialize 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
-_PMD_Initialize BCE 0 CODE 0 text13 dist/default/debug\SCE_Project.debug.o
+_PMD_Initialize C02 0 CODE 0 text13 dist/default/debug\SCE_Project.debug.o
 __Hstrings 0 0 ABS 0 strings -
 __CFG_WDTCCS$SC 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 _ALAF 40 0 BANK0 1 bssBANK0 dist/default/debug\SCE_Project.debug.o
@@ -580,18 +582,18 @@ _PMD2 798 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 _PMD3 799 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 _PMD4 79A 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 _PMD5 79B 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
-_PMON C1A 0 STRCODE 0 stringtext2 dist/default/debug\SCE_Project.debug.o
+_PMON C4E 0 STRCODE 0 stringtext2 dist/default/debug\SCE_Project.debug.o
 _WPUA F39 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 _WPUB F44 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 _WPUC F4F 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 _WPUD F5A 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 _WPUE F65 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
-___sp 0 0 STACK 2 stack C:\Users\Rui\AppData\Local\Temp\s4p0.o
-_main 6C2 0 CODE 0 maintext dist/default/debug\SCE_Project.debug.o
+___sp 0 0 STACK 2 stack C:\Users\Rui\AppData\Local\Temp\s9bk.o
+_main 6F6 0 CODE 0 maintext dist/default/debug\SCE_Project.debug.o
 _mins 7A 0 COMMON 1 bssCOMMON dist/default/debug\SCE_Project.debug.o
 _secs 42 0 BANK0 1 bssBANK0 dist/default/debug\SCE_Project.debug.o
 btemp 7E 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
-start 52 0 CODE 0 init C:\Users\Rui\AppData\Local\Temp\s4p0.o
+start 52 0 CODE 0 init C:\Users\Rui\AppData\Local\Temp\s9bk.o
 __size_of___awmod 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 __size_of_main 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 __HbssCOMMON 0 0 ABS 0 bssCOMMON -
@@ -607,24 +609,24 @@ __size_of_TMR1_WriteTimer 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 ___awmod@sign 78 0 COMMON 1 cstackCOMMON dist/default/debug\SCE_Project.debug.o
 sensor_timer@updateNumRegsSaved 30 0 BANK0 1 cstackBANK0 dist/default/debug\SCE_Project.debug.o
 __size_of_SYSTEM_Initialize 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
-intlevel0 0 0 ENTRY 0 functab C:\Users\Rui\AppData\Local\Temp\s4p0.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\Rui\AppData\Local\Temp\s4p0.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\Rui\AppData\Local\Temp\s4p0.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\Rui\AppData\Local\Temp\s4p0.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\Rui\AppData\Local\Temp\s4p0.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\Rui\AppData\Local\Temp\s4p0.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\Rui\AppData\Local\Temp\s9bk.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\Rui\AppData\Local\Temp\s9bk.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\Rui\AppData\Local\Temp\s9bk.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\Rui\AppData\Local\Temp\s9bk.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\Rui\AppData\Local\Temp\s9bk.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\Rui\AppData\Local\Temp\s9bk.o
 __size_of_INT_CallBack 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 wtemp0 7E 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 __Hfunctab 0 0 ENTRY 0 functab -
-_get_luminosity 884 0 CODE 0 text7 dist/default/debug\SCE_Project.debug.o
-__end_of_PMD_Initialize BDE 0 CODE 0 text13 dist/default/debug\SCE_Project.debug.o
+_get_luminosity 8B8 0 CODE 0 text7 dist/default/debug\SCE_Project.debug.o
+__end_of_PMD_Initialize C12 0 CODE 0 text13 dist/default/debug\SCE_Project.debug.o
 __size_of_TMR1_DefaultInterruptHandler 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
-sensor_timer@numRegsSaved 3A 0 BANK0 1 cstackBANK0 dist/default/debug\SCE_Project.debug.o
+sensor_timer@numRegsSaved 38 0 BANK0 1 cstackBANK0 dist/default/debug\SCE_Project.debug.o
 _sensor_timer 92 0 CODE 0 text2 dist/default/debug\SCE_Project.debug.o
 __Hclrtext 0 0 ABS 0 clrtext -
-sensor_timer@localHour 32 0 BANK0 1 cstackBANK0 dist/default/debug\SCE_Project.debug.o
-__end_of_TMR1_DefaultInterruptHandler C20 0 CODE 0 text21 dist/default/debug\SCE_Project.debug.o
+sensor_timer@localHour 34 0 BANK0 1 cstackBANK0 dist/default/debug\SCE_Project.debug.o
+__end_of_TMR1_DefaultInterruptHandler C54 0 CODE 0 text21 dist/default/debug\SCE_Project.debug.o
 _ADACCH 91 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 _ADACCL 90 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 _ADCON0 93 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
@@ -647,34 +649,34 @@ _ANSELD F59 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 _ANSELE F64 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 DATAEE_WriteByte@GIEBitValue 75 0 COMMON 1 cstackCOMMON dist/default/debug\SCE_Project.debug.o
 __size_of_ADCC_GetSingleConversion 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
-__end_of_INT_CallBack B88 0 CODE 0 text25 dist/default/debug\SCE_Project.debug.o
+__end_of_INT_CallBack BBC 0 CODE 0 text25 dist/default/debug\SCE_Project.debug.o
 __end_of_INTERRUPT_InterruptManager 52 0 CODE 0 intentry dist/default/debug\SCE_Project.debug.o
 __size_of_TMR1_SetInterruptHandler 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 ADCC_GetSingleConversion@channel 75 0 COMMON 1 cstackCOMMON dist/default/debug\SCE_Project.debug.o
 __Lmaintext 0 0 ABS 0 maintext -
 __LnvBANK0 0 0 ABS 0 nvBANK0 -
 __size_of_INT_SetInterruptHandler 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
-__end_of___awmod 884 0 CODE 0 text9 dist/default/debug\SCE_Project.debug.o
+__end_of___awmod 8B8 0 CODE 0 text9 dist/default/debug\SCE_Project.debug.o
 __CFG_FEXTOSC$OFF 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 __size_of_sensor_timer 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
-__end_of_DATAEE_ReadByte BA2 0 CODE 0 text6 dist/default/debug\SCE_Project.debug.o
+__end_of_DATAEE_ReadByte BD6 0 CODE 0 text6 dist/default/debug\SCE_Project.debug.o
 _INTPPS E90 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
-__end_of_get_luminosity 906 0 CODE 0 text7 dist/default/debug\SCE_Project.debug.o
+__end_of_get_luminosity 93A 0 CODE 0 text7 dist/default/debug\SCE_Project.debug.o
 sensor_timer@lum 76 0 COMMON 1 cstackCOMMON dist/default/debug\SCE_Project.debug.o
 __size_of_INT_ISR 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 __size_of_changeleds 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 ?_get_luminosity 76 0 COMMON 1 cstackCOMMON dist/default/debug\SCE_Project.debug.o
-_PIN_MANAGER_Initialize 906 0 CODE 0 text14 dist/default/debug\SCE_Project.debug.o
+_PIN_MANAGER_Initialize 93A 0 CODE 0 text14 dist/default/debug\SCE_Project.debug.o
 start_initialization 56 0 CODE 0 cinit dist/default/debug\SCE_Project.debug.o
 _ODCONA F3A 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 _ODCONB F45 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 _ODCONC F50 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 _ODCOND F5B 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 _ODCONE F66 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
-_setLedLuminosity 9C4 0 CODE 0 text1 dist/default/debug\SCE_Project.debug.o
+_setLedLuminosity 9F8 0 CODE 0 text1 dist/default/debug\SCE_Project.debug.o
 _OSCFRQ 893 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
-__end_of_s1Pressed B6C 0 CODE 0 text27 dist/default/debug\SCE_Project.debug.o
-__end_of_sensor_timer 6C2 0 CODE 0 text2 dist/default/debug\SCE_Project.debug.o
+__end_of_s1Pressed BA0 0 CODE 0 text27 dist/default/debug\SCE_Project.debug.o
+__end_of_sensor_timer 6F6 0 CODE 0 text2 dist/default/debug\SCE_Project.debug.o
 __CFG_WDTCPS$WDTCPS_31 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 __size_of_s1Pressed 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 _ADFLTRH 115 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
@@ -683,19 +685,19 @@ _ADPREVH 8F 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 _ADPREVL 8E 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 _ADSTPTH 113 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 _ADSTPTL 112 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
-_DATAEE_WriteByte A02 0 CODE 0 text5 dist/default/debug\SCE_Project.debug.o
-__end_of_SYSTEM_Initialize B28 0 CODE 0 text10 dist/default/debug\SCE_Project.debug.o
+_DATAEE_WriteByte A36 0 CODE 0 text5 dist/default/debug\SCE_Project.debug.o
+__end_of_SYSTEM_Initialize B5C 0 CODE 0 text10 dist/default/debug\SCE_Project.debug.o
 sensor_timer@temp 78 0 COMMON 1 cstackCOMMON dist/default/debug\SCE_Project.debug.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/debug\SCE_Project.debug.o
 _T1GATE 210 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 _T1GCON 20F 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
-__end_of_ADCC_GetSingleConversion B02 0 CODE 0 text8 dist/default/debug\SCE_Project.debug.o
+__end_of_ADCC_GetSingleConversion B36 0 CODE 0 text8 dist/default/debug\SCE_Project.debug.o
 _TempThreshold 4C 0 BANK0 1 dataBANK0 dist/default/debug\SCE_Project.debug.o
-_DATAEE_ReadByte B88 0 CODE 0 text6 dist/default/debug\SCE_Project.debug.o
-_s1Pressed B4C 0 CODE 0 text27 dist/default/debug\SCE_Project.debug.o
-__end_of_TMR1_SetInterruptHandler BEA 0 CODE 0 text12 dist/default/debug\SCE_Project.debug.o
-__end_of_ADCC_Initialize AD8 0 CODE 0 text18 dist/default/debug\SCE_Project.debug.o
-___int_sp 0 0 STACK 2 stack C:\Users\Rui\AppData\Local\Temp\s4p0.o
+_DATAEE_ReadByte BBC 0 CODE 0 text6 dist/default/debug\SCE_Project.debug.o
+_s1Pressed B80 0 CODE 0 text27 dist/default/debug\SCE_Project.debug.o
+__end_of_TMR1_SetInterruptHandler C1E 0 CODE 0 text12 dist/default/debug\SCE_Project.debug.o
+__end_of_ADCC_Initialize B0C 0 CODE 0 text18 dist/default/debug\SCE_Project.debug.o
+___int_sp 0 0 STACK 2 stack C:\Users\Rui\AppData\Local\Temp\s9bk.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -707,7 +709,7 @@ __Hbank7 0 0 ABS 0 bank7 -
 __Hbank8 0 0 ABS 0 bank8 -
 __Hbank9 0 0 ABS 0 bank9 -
 __Hcinit 92 0 CODE 0 cinit -
-_INT_DefaultInterruptHandler C20 0 CODE 0 text26 dist/default/debug\SCE_Project.debug.o
+_INT_DefaultInterruptHandler C54 0 CODE 0 text26 dist/default/debug\SCE_Project.debug.o
 __Hidloc 0 0 IDLOC 0 idloc -
 __size_of_OSCILLATOR_Initialize 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 __Hsfr10 0 0 ABS 0 sfr10 -
@@ -801,7 +803,7 @@ __Lsfr29 0 0 ABS 0 sfr29 -
 __Lsfr30 0 0 ABS 0 sfr30 -
 __Lsfr31 0 0 ABS 0 sfr31 -
 __Lstack 0 0 STACK 2 stack -
-_TMR1_StopTimer C0A 0 CODE 0 text3 dist/default/debug\SCE_Project.debug.o
+_TMR1_StopTimer C3E 0 CODE 0 text3 dist/default/debug\SCE_Project.debug.o
 _PORTAbits C 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 _INTCONbits B 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 __Habs1 0 0 ABS 0 abs1 -
@@ -832,13 +834,13 @@ __Lsfr7 0 0 ABS 0 sfr7 -
 __Lsfr8 0 0 ABS 0 sfr8 -
 __Lsfr9 0 0 ABS 0 sfr9 -
 __Ltext 0 0 ABS 0 text -
-__pstringtext1 C16 0 STRCODE 0 stringtext1 dist/default/debug\SCE_Project.debug.o
-__pstringtext2 C1A 0 STRCODE 0 stringtext2 dist/default/debug\SCE_Project.debug.o
+__pstringtext1 C4A 0 STRCODE 0 stringtext1 dist/default/debug\SCE_Project.debug.o
+__pstringtext2 C4E 0 STRCODE 0 stringtext2 dist/default/debug\SCE_Project.debug.o
 __pnvBANK0 46 0 BANK0 1 nvBANK0 dist/default/debug\SCE_Project.debug.o
 __CFG_WDTCWS$WDTCWS_7 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 __LcstackBANK0 0 0 ABS 0 cstackBANK0 -
 int$flags 7E 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
-__end_of_INT_ISR C02 0 CODE 0 text24 dist/default/debug\SCE_Project.debug.o
+__end_of_INT_ISR C36 0 CODE 0 text24 dist/default/debug\SCE_Project.debug.o
 sensor_timer@lastTempEntry 2C 0 BANK0 1 cstackBANK0 dist/default/debug\SCE_Project.debug.o
 __HcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __size_of_INTERRUPT_InterruptManager 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
@@ -848,20 +850,20 @@ __S2 0 0 ABS 0 - -
 __S3 0 0 ABS 0 - -
 _hrs 44 0 BANK0 1 bssBANK0 dist/default/debug\SCE_Project.debug.o
 __size_of_TMR1_ISR 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
-__end_of_setLedLuminosity A02 0 CODE 0 text1 dist/default/debug\SCE_Project.debug.o
+__end_of_setLedLuminosity A36 0 CODE 0 text1 dist/default/debug\SCE_Project.debug.o
 sensor_timer@minTemp 26 0 BANK0 1 cstackBANK0 dist/default/debug\SCE_Project.debug.o
-_ADCC_Initialize AAC 0 CODE 0 text18 dist/default/debug\SCE_Project.debug.o
+_ADCC_Initialize AE0 0 CODE 0 text18 dist/default/debug\SCE_Project.debug.o
 _LumThreshold 4E 0 BANK0 1 dataBANK0 dist/default/debug\SCE_Project.debug.o
 __size_of_setLedLuminosity 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
-__end_of_DATAEE_WriteByte A40 0 CODE 0 text5 dist/default/debug\SCE_Project.debug.o
-_SYSTEM_Initialize B02 0 CODE 0 text10 dist/default/debug\SCE_Project.debug.o
+__end_of_DATAEE_WriteByte A74 0 CODE 0 text5 dist/default/debug\SCE_Project.debug.o
+_SYSTEM_Initialize B36 0 CODE 0 text10 dist/default/debug\SCE_Project.debug.o
 __CFG_BOREN$ON 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 __size_of_DATAEE_WriteByte 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 __HnvBANK0 0 0 ABS 0 nvBANK0 -
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\Rui\AppData\Local\Temp\s4p0.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\Rui\AppData\Local\Temp\s9bk.o
 __size_of_DATAEE_ReadByte 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
-__end_of_TMR1_StopTimer C10 0 CODE 0 text3 dist/default/debug\SCE_Project.debug.o
+__end_of_TMR1_StopTimer C44 0 CODE 0 text3 dist/default/debug\SCE_Project.debug.o
 __pdataBANK0 4C 0 BANK0 1 dataBANK0 dist/default/debug\SCE_Project.debug.o
 __LbssBANK0 0 0 ABS 0 bssBANK0 -
 __CFG_FCMEN$ON 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
@@ -873,27 +875,27 @@ ___awmod@counter 77 0 COMMON 1 cstackCOMMON dist/default/debug\SCE_Project.debug
 __size_of_PMD_Initialize 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 _PIE0bits 716 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 _PIE4bits 71A 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
-__end_of_EXT_INT_Initialize BBC 0 CODE 0 text16 dist/default/debug\SCE_Project.debug.o
-_TMR1_ISR A7C 0 CODE 0 text20 dist/default/debug\SCE_Project.debug.o
-__ptext10 B02 0 CODE 0 text10 dist/default/debug\SCE_Project.debug.o
-__ptext11 A40 0 CODE 0 text11 dist/default/debug\SCE_Project.debug.o
-__ptext12 BDE 0 CODE 0 text12 dist/default/debug\SCE_Project.debug.o
-__ptext13 BCE 0 CODE 0 text13 dist/default/debug\SCE_Project.debug.o
-__ptext14 906 0 CODE 0 text14 dist/default/debug\SCE_Project.debug.o
-__ptext15 BBC 0 CODE 0 text15 dist/default/debug\SCE_Project.debug.o
-__ptext16 BA2 0 CODE 0 text16 dist/default/debug\SCE_Project.debug.o
-__ptext17 BEA 0 CODE 0 text17 dist/default/debug\SCE_Project.debug.o
-__ptext18 AAC 0 CODE 0 text18 dist/default/debug\SCE_Project.debug.o
-__ptext20 A7C 0 CODE 0 text20 dist/default/debug\SCE_Project.debug.o
-__ptext21 C1E 0 CODE 0 text21 dist/default/debug\SCE_Project.debug.o
-__ptext22 96C 0 CODE 0 text22 dist/default/debug\SCE_Project.debug.o
-__ptext23 B28 0 CODE 0 text23 dist/default/debug\SCE_Project.debug.o
-__ptext24 BF6 0 CODE 0 text24 dist/default/debug\SCE_Project.debug.o
-__ptext25 B6C 0 CODE 0 text25 dist/default/debug\SCE_Project.debug.o
-__ptext26 C20 0 CODE 0 text26 dist/default/debug\SCE_Project.debug.o
-__ptext27 B4C 0 CODE 0 text27 dist/default/debug\SCE_Project.debug.o
-__end_of_PIN_MANAGER_Initialize 96C 0 CODE 0 text14 dist/default/debug\SCE_Project.debug.o
-___awmod 7CA 0 CODE 0 text9 dist/default/debug\SCE_Project.debug.o
+__end_of_EXT_INT_Initialize BF0 0 CODE 0 text16 dist/default/debug\SCE_Project.debug.o
+_TMR1_ISR AB0 0 CODE 0 text20 dist/default/debug\SCE_Project.debug.o
+__ptext10 B36 0 CODE 0 text10 dist/default/debug\SCE_Project.debug.o
+__ptext11 A74 0 CODE 0 text11 dist/default/debug\SCE_Project.debug.o
+__ptext12 C12 0 CODE 0 text12 dist/default/debug\SCE_Project.debug.o
+__ptext13 C02 0 CODE 0 text13 dist/default/debug\SCE_Project.debug.o
+__ptext14 93A 0 CODE 0 text14 dist/default/debug\SCE_Project.debug.o
+__ptext15 BF0 0 CODE 0 text15 dist/default/debug\SCE_Project.debug.o
+__ptext16 BD6 0 CODE 0 text16 dist/default/debug\SCE_Project.debug.o
+__ptext17 C1E 0 CODE 0 text17 dist/default/debug\SCE_Project.debug.o
+__ptext18 AE0 0 CODE 0 text18 dist/default/debug\SCE_Project.debug.o
+__ptext20 AB0 0 CODE 0 text20 dist/default/debug\SCE_Project.debug.o
+__ptext21 C52 0 CODE 0 text21 dist/default/debug\SCE_Project.debug.o
+__ptext22 9A0 0 CODE 0 text22 dist/default/debug\SCE_Project.debug.o
+__ptext23 B5C 0 CODE 0 text23 dist/default/debug\SCE_Project.debug.o
+__ptext24 C2A 0 CODE 0 text24 dist/default/debug\SCE_Project.debug.o
+__ptext25 BA0 0 CODE 0 text25 dist/default/debug\SCE_Project.debug.o
+__ptext26 C54 0 CODE 0 text26 dist/default/debug\SCE_Project.debug.o
+__ptext27 B80 0 CODE 0 text27 dist/default/debug\SCE_Project.debug.o
+__end_of_PIN_MANAGER_Initialize 9A0 0 CODE 0 text14 dist/default/debug\SCE_Project.debug.o
+___awmod 7FE 0 CODE 0 text9 dist/default/debug\SCE_Project.debug.o
 __Lbank10 0 0 ABS 0 bank10 -
 __Lbank11 0 0 ABS 0 bank11 -
 __Lbank12 0 0 ABS 0 bank12 -
@@ -916,7 +918,7 @@ __Lbank28 0 0 BANK28 1 bank28 -
 __Lbank29 0 0 BANK29 1 bank29 -
 __Lbank30 0 0 BANK30 1 bank30 -
 __Lbank31 0 0 BANK31 1 bank31 -
-__pmaintext 6C2 0 CODE 0 maintext dist/default/debug\SCE_Project.debug.o
+__pmaintext 6F6 0 CODE 0 maintext dist/default/debug\SCE_Project.debug.o
 __Lbigram 0 0 ABS 0 bigram -
 __CFG_BORV$LO 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 __CFG_RSTOSC$HFINT1 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
@@ -924,15 +926,15 @@ __Lcommon 0 0 ABS 0 common -
 __Lconfig 1000E 0 CONFIG 0 config -
 __CFG_CP$OFF 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 __CFG_WDTE$OFF 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
-__end_of_TMR1_ISR AAC 0 CODE 0 text20 dist/default/debug\SCE_Project.debug.o
+__end_of_TMR1_ISR AE0 0 CODE 0 text20 dist/default/debug\SCE_Project.debug.o
 _LATAbits 16 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 main@luminosity 3C 0 BANK0 1 cstackBANK0 dist/default/debug\SCE_Project.debug.o
 setLedLuminosity@lum 72 0 COMMON 1 cstackCOMMON dist/default/debug\SCE_Project.debug.o
-stackhi 23EF 0 ABS 0 - C:\Users\Rui\AppData\Local\Temp\s4p0.o
-stacklo 2030 0 ABS 0 - C:\Users\Rui\AppData\Local\Temp\s4p0.o
+stackhi 23EF 0 ABS 0 - C:\Users\Rui\AppData\Local\Temp\s9bk.o
+stacklo 2030 0 ABS 0 - C:\Users\Rui\AppData\Local\Temp\s9bk.o
 _adcResult 3E 0 BANK0 1 bssBANK0 dist/default/debug\SCE_Project.debug.o
-sensor_timer@lastRegSaved 38 0 BANK0 1 cstackBANK0 dist/default/debug\SCE_Project.debug.o
-_EXT_INT_Initialize BA2 0 CODE 0 text16 dist/default/debug\SCE_Project.debug.o
+sensor_timer@lastRegSaved 3A 0 BANK0 1 cstackBANK0 dist/default/debug\SCE_Project.debug.o
+_EXT_INT_Initialize BD6 0 CODE 0 text16 dist/default/debug\SCE_Project.debug.o
 sensor_timer@newRegIndex 2E 0 BANK0 1 cstackBANK0 dist/default/debug\SCE_Project.debug.o
 _OSCCON1 88D 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 _OSCCON3 88F 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
@@ -958,34 +960,34 @@ __CFG_CSWEN$ON 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 __LcstackCOMMON 0 0 ABS 0 cstackCOMMON -
 __CFG_ZCD$OFF 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 end_of_initialization 8A 0 CODE 0 cinit dist/default/debug\SCE_Project.debug.o
-sensor_timer@localMin 34 0 BANK0 1 cstackBANK0 dist/default/debug\SCE_Project.debug.o
-sensor_timer@localSec 36 0 BANK0 1 cstackBANK0 dist/default/debug\SCE_Project.debug.o
+sensor_timer@localMin 36 0 BANK0 1 cstackBANK0 dist/default/debug\SCE_Project.debug.o
+sensor_timer@localSec 32 0 BANK0 1 cstackBANK0 dist/default/debug\SCE_Project.debug.o
 __Hintentry 52 0 CODE 0 intentry -
 __CFG_STVREN$ON 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 __Lstrings 0 0 ABS 0 strings -
 ?___awmod 72 0 COMMON 1 cstackCOMMON dist/default/debug\SCE_Project.debug.o
 __Hreset_vec 4 0 CODE 0 reset_vec -
 TMR1_SetInterruptHandler@InterruptHandler 72 0 COMMON 1 cstackCOMMON dist/default/debug\SCE_Project.debug.o
-_INT_SetInterruptHandler BEA 0 CODE 0 text17 dist/default/debug\SCE_Project.debug.o
+_INT_SetInterruptHandler C1E 0 CODE 0 text17 dist/default/debug\SCE_Project.debug.o
 __HbssBANK0 0 0 ABS 0 bssBANK0 -
 ___awmod@dividend 74 0 COMMON 1 cstackCOMMON dist/default/debug\SCE_Project.debug.o
-__end_of_INT_SetInterruptHandler BF6 0 CODE 0 text17 dist/default/debug\SCE_Project.debug.o
-__ptext1 9C4 0 CODE 0 text1 dist/default/debug\SCE_Project.debug.o
+__end_of_INT_SetInterruptHandler C2A 0 CODE 0 text17 dist/default/debug\SCE_Project.debug.o
+__ptext1 9F8 0 CODE 0 text1 dist/default/debug\SCE_Project.debug.o
 __ptext2 92 0 CODE 0 text2 dist/default/debug\SCE_Project.debug.o
-__ptext3 C0A 0 CODE 0 text3 dist/default/debug\SCE_Project.debug.o
-__ptext4 C10 0 CODE 0 text4 dist/default/debug\SCE_Project.debug.o
-__ptext5 A02 0 CODE 0 text5 dist/default/debug\SCE_Project.debug.o
-__ptext6 B88 0 CODE 0 text6 dist/default/debug\SCE_Project.debug.o
-__ptext7 884 0 CODE 0 text7 dist/default/debug\SCE_Project.debug.o
-__ptext8 AD8 0 CODE 0 text8 dist/default/debug\SCE_Project.debug.o
-__ptext9 7CA 0 CODE 0 text9 dist/default/debug\SCE_Project.debug.o
+__ptext3 C3E 0 CODE 0 text3 dist/default/debug\SCE_Project.debug.o
+__ptext4 C44 0 CODE 0 text4 dist/default/debug\SCE_Project.debug.o
+__ptext5 A36 0 CODE 0 text5 dist/default/debug\SCE_Project.debug.o
+__ptext6 BBC 0 CODE 0 text6 dist/default/debug\SCE_Project.debug.o
+__ptext7 8B8 0 CODE 0 text7 dist/default/debug\SCE_Project.debug.o
+__ptext8 B0C 0 CODE 0 text8 dist/default/debug\SCE_Project.debug.o
+__ptext9 7FE 0 CODE 0 text9 dist/default/debug\SCE_Project.debug.o
 DATAEE_WriteByte@bAdd 72 0 COMMON 1 cstackCOMMON dist/default/debug\SCE_Project.debug.o
 __Lpowerup 0 0 CODE 0 powerup -
 __Leeprom_data 0 0 EEDATA 3 eeprom_data -
 TMR1_WriteTimer@timerVal 70 0 COMMON 1 cstackCOMMON dist/default/debug\SCE_Project.debug.o
-__end_of_TMR1_Initialize A7C 0 CODE 0 text11 dist/default/debug\SCE_Project.debug.o
-__end_of_TMR1_StartTimer C16 0 CODE 0 text4 dist/default/debug\SCE_Project.debug.o
-__end_of_TMR1_WriteTimer B4C 0 CODE 0 text23 dist/default/debug\SCE_Project.debug.o
+__end_of_TMR1_Initialize AB0 0 CODE 0 text11 dist/default/debug\SCE_Project.debug.o
+__end_of_TMR1_StartTimer C4A 0 CODE 0 text4 dist/default/debug\SCE_Project.debug.o
+__end_of_TMR1_WriteTimer B80 0 CODE 0 text23 dist/default/debug\SCE_Project.debug.o
 __Lreset_vec 0 0 CODE 0 reset_vec -
 __Hstringtext1 0 0 ABS 0 stringtext1 -
 __Hstringtext2 0 0 ABS 0 stringtext2 -
@@ -1000,23 +1002,23 @@ __CFG_CLKOUTEN$OFF 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 __end_of__initialization 8A 0 CODE 0 cinit dist/default/debug\SCE_Project.debug.o
 DATAEE_ReadByte@bAdd 72 0 COMMON 1 cstackCOMMON dist/default/debug\SCE_Project.debug.o
 ___awmod@divisor 72 0 COMMON 1 cstackCOMMON dist/default/debug\SCE_Project.debug.o
-_INT_ISR BF6 0 CODE 0 text24 dist/default/debug\SCE_Project.debug.o
+_INT_ISR C2A 0 CODE 0 text24 dist/default/debug\SCE_Project.debug.o
 __Lfunctab 0 0 ENTRY 0 functab -
 _ADSTATbits 97 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 _NVMCON1bits 81E 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
-__pidataBANK0 C02 0 CODE 0 idataBANK0 dist/default/debug\SCE_Project.debug.o
-_changeleds 96C 0 CODE 0 text22 dist/default/debug\SCE_Project.debug.o
+__pidataBANK0 C36 0 CODE 0 idataBANK0 dist/default/debug\SCE_Project.debug.o
+_changeleds 9A0 0 CODE 0 text22 dist/default/debug\SCE_Project.debug.o
 __Lclrtext 0 0 ABS 0 clrtext -
 _timer1ReloadVal 4A 0 BANK0 1 nvBANK0 dist/default/debug\SCE_Project.debug.o
 INT_SetInterruptHandler@InterruptHandler 72 0 COMMON 1 cstackCOMMON dist/default/debug\SCE_Project.debug.o
-_TMR1_DefaultInterruptHandler C1E 0 CODE 0 text21 dist/default/debug\SCE_Project.debug.o
+_TMR1_DefaultInterruptHandler C52 0 CODE 0 text21 dist/default/debug\SCE_Project.debug.o
 __pcstackCOMMON 70 0 COMMON 1 cstackCOMMON dist/default/debug\SCE_Project.debug.o
 DATAEE_WriteByte@bData 74 0 COMMON 1 cstackCOMMON dist/default/debug\SCE_Project.debug.o
 __Hend_init 56 0 CODE 0 end_init -
 __size_of_INT_DefaultInterruptHandler 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
-__end_of_PMON C1E 0 STRCODE 0 stringtext2 dist/default/debug\SCE_Project.debug.o
-__end_of_TALA C1A 0 STRCODE 0 stringtext1 dist/default/debug\SCE_Project.debug.o
-__end_of_main 7CA 0 CODE 0 maintext dist/default/debug\SCE_Project.debug.o
+__end_of_PMON C52 0 STRCODE 0 stringtext2 dist/default/debug\SCE_Project.debug.o
+__end_of_TALA C4E 0 STRCODE 0 stringtext1 dist/default/debug\SCE_Project.debug.o
+__end_of_main 7FE 0 CODE 0 maintext dist/default/debug\SCE_Project.debug.o
 _ADACQ 9D 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 _ADACT 99 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 _ADCAP 9B 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
@@ -1038,25 +1040,25 @@ _TRISD 14 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 _TRISE 15 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 __Hram 0 0 ABS 0 ram -
 __Lram 0 0 ABS 0 ram -
-_TMR1_Initialize A40 0 CODE 0 text11 dist/default/debug\SCE_Project.debug.o
-_TMR1_StartTimer C10 0 CODE 0 text4 dist/default/debug\SCE_Project.debug.o
-_TMR1_WriteTimer B28 0 CODE 0 text23 dist/default/debug\SCE_Project.debug.o
+_TMR1_Initialize A74 0 CODE 0 text11 dist/default/debug\SCE_Project.debug.o
+_TMR1_StartTimer C44 0 CODE 0 text4 dist/default/debug\SCE_Project.debug.o
+_TMR1_WriteTimer B5C 0 CODE 0 text23 dist/default/debug\SCE_Project.debug.o
 __CFG_CPD$OFF 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 __size_of_PIN_MANAGER_Initialize 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 __pintentry 8 0 CODE 0 intentry dist/default/debug\SCE_Project.debug.o
 __HdataBANK0 0 0 ABS 0 dataBANK0 -
-__end_of_OSCILLATOR_Initialize BCE 0 CODE 0 text15 dist/default/debug\SCE_Project.debug.o
+__end_of_OSCILLATOR_Initialize C02 0 CODE 0 text15 dist/default/debug\SCE_Project.debug.o
 __CFG_PPS1WAY$ON 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
 __initialization 56 0 CODE 0 cinit dist/default/debug\SCE_Project.debug.o
 __CFG_PWRTE$OFF 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
-_ADCC_GetSingleConversion AD8 0 CODE 0 text8 dist/default/debug\SCE_Project.debug.o
+_ADCC_GetSingleConversion B0C 0 CODE 0 text8 dist/default/debug\SCE_Project.debug.o
 __pbssBANK0 3E 0 BANK0 1 bssBANK0 dist/default/debug\SCE_Project.debug.o
-__end_of_INT_DefaultInterruptHandler C22 0 CODE 0 text26 dist/default/debug\SCE_Project.debug.o
+__end_of_INT_DefaultInterruptHandler C56 0 CODE 0 text26 dist/default/debug\SCE_Project.debug.o
 __CFG_WRT$OFF 0 0 ABS 0 - dist/default/debug\SCE_Project.debug.o
-_TMR1_SetInterruptHandler BDE 0 CODE 0 text12 dist/default/debug\SCE_Project.debug.o
-__end_of_changeleds 9C4 0 CODE 0 text22 dist/default/debug\SCE_Project.debug.o
+_TMR1_SetInterruptHandler C12 0 CODE 0 text12 dist/default/debug\SCE_Project.debug.o
+__end_of_changeleds 9F8 0 CODE 0 text22 dist/default/debug\SCE_Project.debug.o
 _TMR1_InterruptHandler 48 0 BANK0 1 nvBANK0 dist/default/debug\SCE_Project.debug.o
-_OSCILLATOR_Initialize BBC 0 CODE 0 text15 dist/default/debug\SCE_Project.debug.o
+_OSCILLATOR_Initialize BF0 0 CODE 0 text15 dist/default/debug\SCE_Project.debug.o
 # %SPLITSTAB Section
 # This section enumerates all the psect splits performed by the assembler.
 # The beginning of the section is indicated by %SPLITSTAB.
@@ -1082,10 +1084,10 @@ _OSCILLATOR_Initialize BBC 0 CODE 0 text15 dist/default/debug\SCE_Project.debug.
 # and size are in units of delta. The file address is in units of bytes.
 # All other numeric quantities are in decimal.
 %SEGMENTS
-text21 0 60F C1E 2 2
+text21 0 629 C52 2 2
 cstackCOMMON 1 70 70 C 1
 cstackBANK0 1 20 20 30 1
-stringtext1 0 60B C16 4 2
-intentry 0 4 8 607 2
+stringtext1 0 625 C4A 4 2
+intentry 0 4 8 621 2
 reset_vec 0 0 0 2 2
 config 0 8007 1000E 5 2

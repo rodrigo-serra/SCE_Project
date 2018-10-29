@@ -25,12 +25,14 @@ volatile int hrs = 0;
 volatile int mins = 0;
 volatile int secs = 0;
 const int PMON = 3;
-volatile int ALAF = 0;
-volatile int control_ALAF = 0;
+volatile int ALAF = 1;
+volatile int alarm = 0;
+volatile int control_alarm = 0;
 const int TALA = 2;
 adc_result_t adcResult = 0;
 volatile int LumThreshold = 2;
-volatile int TempThreshold = 30;
+volatile int TempThreshold = 25;
+
 
 #endif	/* GLOBALVARIABLES_H */
 

@@ -1,4 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
+[v F12696 `(v ~T0 @X0 0 tf ]
+[v F12698 `(v ~T0 @X0 0 tf ]
 "390 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 390:     struct {
 [s S33 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -1688,41 +1690,53 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 3 `i
 ]
 "28
-[; ;./globalvariables.h: 28: volatile int ALAF = 0;
+[; ;./globalvariables.h: 28: volatile int ALAF = 1;
 [v _ALAF `Vi ~T0 @X0 1 e ]
 [i _ALAF
--> 0 `i
+-> 1 `i
 ]
 "29
-[; ;./globalvariables.h: 29: volatile int control_ALAF = 0;
-[v _control_ALAF `Vi ~T0 @X0 1 e ]
-[i _control_ALAF
+[; ;./globalvariables.h: 29: volatile int alarm = 0;
+[v _alarm `Vi ~T0 @X0 1 e ]
+[i _alarm
 -> 0 `i
 ]
 "30
-[; ;./globalvariables.h: 30: const int TALA = 2;
+[; ;./globalvariables.h: 30: volatile int control_alarm = 0;
+[v _control_alarm `Vi ~T0 @X0 1 e ]
+[i _control_alarm
+-> 0 `i
+]
+"31
+[; ;./globalvariables.h: 31: const int TALA = 2;
 [v _TALA `Ci ~T0 @X0 1 e ]
 [i _TALA
 -> 2 `i
 ]
-"31
-[; ;./globalvariables.h: 31: adc_result_t adcResult = 0;
+"32
+[; ;./globalvariables.h: 32: adc_result_t adcResult = 0;
 [v _adcResult `us ~T0 @X0 1 e ]
 [i _adcResult
 -> -> 0 `i `us
 ]
-"32
-[; ;./globalvariables.h: 32: volatile int LumThreshold = 2;
+"33
+[; ;./globalvariables.h: 33: volatile int LumThreshold = 2;
 [v _LumThreshold `Vi ~T0 @X0 1 e ]
 [i _LumThreshold
 -> 2 `i
 ]
-"33
-[; ;./globalvariables.h: 33: volatile int TempThreshold = 30;
+"34
+[; ;./globalvariables.h: 34: volatile int TempThreshold = 25;
 [v _TempThreshold `Vi ~T0 @X0 1 e ]
 [i _TempThreshold
--> 30 `i
+-> 25 `i
 ]
+"77 ./mcc_generated_files/i2c1_driver.h
+[; ;./mcc_generated_files/i2c1_driver.h: 77: void (*i2c1_driver_busCollisionISR)(void);
+[v _i2c1_driver_busCollisionISR `*F12696 ~T0 @X0 1 e ]
+"78
+[; ;./mcc_generated_files/i2c1_driver.h: 78: void (*i2c1_driver_i2cISR)(void);
+[v _i2c1_driver_i2cISR `*F12698 ~T0 @X0 1 e ]
 "6 interruptions.c
 [; ;interruptions.c: 6: void changeleds(void){
 [v _changeleds `(v ~T0 @X0 1 ef ]
@@ -1734,7 +1748,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e =+ _secs -> -> 1 `i `Vi ]
 "9
 [; ;interruptions.c: 9:     if(secs == 60)
-[e $ ! == _secs -> 60 `i 1626  ]
+[e $ ! == _secs -> 60 `i 1628  ]
 "10
 [; ;interruptions.c: 10:     {
 {
@@ -1747,10 +1761,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "13
 [; ;interruptions.c: 13:     }
 }
-[e :U 1626 ]
+[e :U 1628 ]
 "14
 [; ;interruptions.c: 14:     if(mins == 60)
-[e $ ! == _mins -> 60 `i 1627  ]
+[e $ ! == _mins -> 60 `i 1629  ]
 "15
 [; ;interruptions.c: 15:     {
 {
@@ -1763,40 +1777,40 @@ Version 4.0 HI-TECH Software Intermediate Code
 "18
 [; ;interruptions.c: 18:     }
 }
-[e :U 1627 ]
+[e :U 1629 ]
 "20
 [; ;interruptions.c: 20:     if(PORTAbits.RA7 == 0)
-[e $ ! == -> . . _PORTAbits 0 7 `i -> 0 `i 1628  ]
+[e $ ! == -> . . _PORTAbits 0 7 `i -> 0 `i 1630  ]
 "21
 [; ;interruptions.c: 21:     {
 {
 "22
 [; ;interruptions.c: 22:         do { LATAbits.LATA7 = 1; } while(0);
-[e :U 1631 ]
+[e :U 1633 ]
 {
 [e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
 }
-[e :U 1630 ]
+[e :U 1632 ]
 "23
 [; ;interruptions.c: 23:     }else{
 }
-[e $U 1632  ]
-[e :U 1628 ]
+[e $U 1634  ]
+[e :U 1630 ]
 {
 "24
 [; ;interruptions.c: 24:         do { LATAbits.LATA7 = 0; } while(0);
-[e :U 1635 ]
+[e :U 1637 ]
 {
 [e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
 }
-[e :U 1634 ]
+[e :U 1636 ]
 "25
 [; ;interruptions.c: 25:     }
 }
-[e :U 1632 ]
+[e :U 1634 ]
 "26
 [; ;interruptions.c: 26: }
-[e :UE 1625 ]
+[e :UE 1627 ]
 }
 "28
 [; ;interruptions.c: 28: void s1Pressed(void){
@@ -1805,12 +1819,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _s1Pressed ]
 [f ]
 "29
-[; ;interruptions.c: 29:     ALAF = 0;
-[e = _ALAF -> 0 `i ]
+[; ;interruptions.c: 29:     alarm = 0;
+[e = _alarm -> 0 `i ]
 "31
 [; ;interruptions.c: 31:     _delay((unsigned long)((5)*(1000000/4000.0)));
 [e ( __delay (1 -> * -> -> 5 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "32
 [; ;interruptions.c: 32: }
-[e :UE 1636 ]
+[e :UE 1638 ]
 }

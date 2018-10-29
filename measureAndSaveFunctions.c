@@ -148,7 +148,7 @@ void sensor_timer(int lum, int temp){
 
     if(temp >= TempThreshold || lum >= LumThreshold){
         //set alarm control as active                 
-        ALAF = 1;
+        alarm = 1;
     }
     
 }

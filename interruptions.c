@@ -26,7 +26,7 @@ void changeleds(void){
 }
 
 void s1Pressed(void){
-    ALAF = 0;
+    alarm = 0;
     
     __delay_ms(5);
 }

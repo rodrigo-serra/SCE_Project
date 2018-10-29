@@ -18,12 +18,13 @@
         <itemPath>mcc_generated_files/tmr2.h</itemPath>
         <itemPath>mcc_generated_files/tmr3.h</itemPath>
         <itemPath>mcc_generated_files/pwm6.h</itemPath>
+        <itemPath>mcc_generated_files/i2c1_driver.h</itemPath>
       </logicalFolder>
       <itemPath>globalvariables.h</itemPath>
       <itemPath>interruptions.h</itemPath>
-      <itemPath>registers.h</itemPath>
       <itemPath>measureAndSaveFunctions.h</itemPath>
       <itemPath>pwmAlarm.h</itemPath>
+      <itemPath>i2c.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -46,12 +47,13 @@
         <itemPath>mcc_generated_files/tmr2.c</itemPath>
         <itemPath>mcc_generated_files/tmr3.c</itemPath>
         <itemPath>mcc_generated_files/pwm6.c</itemPath>
+        <itemPath>mcc_generated_files/i2c1_driver.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>interruptions.c</itemPath>
-      <itemPath>registers.c</itemPath>
       <itemPath>measureAndSaveFunctions.c</itemPath>
       <itemPath>pwmAlarm.c</itemPath>
+      <itemPath>i2c.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

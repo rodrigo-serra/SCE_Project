@@ -47,7 +47,7 @@
 #include "measureAndSaveFunctions.h"
 #include "mcc_generated_files/adcc.h"
 #include "pwmAlarm.h"
-
+#include "i2c.h"
 
 
 
@@ -59,6 +59,13 @@ void main(void)
     // initialize the device
     SYSTEM_Initialize();
  
+    //initialize I2C
+    i2c1_driver_open();
+    I2C_SCL = 1;
+    I2C_SDA = 1;
+    WPUC3 = 1;
+    WPUC4 = 1;
+    
     // When using interrupts, you need to set the Global and Peripheral Interrupt Enable bits
     // Use the following macros to:
 
@@ -82,6 +89,9 @@ void main(void)
     TMR3_StopTimer();
     
     int luminosity = 0;
+    unsigned char c;
+    int temperature = 0 ;
+    TempThreshold = 25;
     
     while (1)
     {
@@ -95,22 +105,26 @@ void main(void)
         
         if(secs%PMON == 1){
             //get temperature
+             NOP();
+             c = tsttc();       	
+             temperature = c;
+             NOP();
         }
         
         if(secs%PMON == 2){
             //call function to save (it checks if its a new value or not --
             //                       or max or min -- checks thresholds)
-            sensor_timer(luminosity, 20);
+            sensor_timer(luminosity, temperature);
             //if alarm is on call function to change brightness
-            if(ALAF == 1 && control_ALAF == 0){
+            if(alarm == 1 && control_alarm == 0 && ALAF == 1){
                 //change brightness with pwm for TALA duration
                 
                 TMR2_StartTimer();
                 TMR3_StartTimer();
-                control_ALAF = 1;
-            }else if(ALAF == 0 && control_ALAF == 1){
+                control_alarm = 1;
+            }else if(alarm == 0 && control_alarm == 1){
                 PWM6_LoadDutyValue(0);
-                control_ALAF = 0;
+                control_alarm = 0;
             }
             
            

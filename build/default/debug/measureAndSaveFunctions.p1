@@ -1,4 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
+[v F12690 `(v ~T0 @X0 0 tf ]
+[v F12692 `(v ~T0 @X0 0 tf ]
 "13 measureAndSaveFunctions.c
 [; ;measureAndSaveFunctions.c: 13:     adcResult = ADCC_GetSingleConversion(POT);
 [c E12238 0 60 61 62 63 .. ]
@@ -1692,41 +1694,53 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 3 `i
 ]
 "28
-[; ;./globalvariables.h: 28: volatile int ALAF = 0;
+[; ;./globalvariables.h: 28: volatile int ALAF = 1;
 [v _ALAF `Vi ~T0 @X0 1 e ]
 [i _ALAF
--> 0 `i
+-> 1 `i
 ]
 "29
-[; ;./globalvariables.h: 29: volatile int control_ALAF = 0;
-[v _control_ALAF `Vi ~T0 @X0 1 e ]
-[i _control_ALAF
+[; ;./globalvariables.h: 29: volatile int alarm = 0;
+[v _alarm `Vi ~T0 @X0 1 e ]
+[i _alarm
 -> 0 `i
 ]
 "30
-[; ;./globalvariables.h: 30: const int TALA = 2;
+[; ;./globalvariables.h: 30: volatile int control_alarm = 0;
+[v _control_alarm `Vi ~T0 @X0 1 e ]
+[i _control_alarm
+-> 0 `i
+]
+"31
+[; ;./globalvariables.h: 31: const int TALA = 2;
 [v _TALA `Ci ~T0 @X0 1 e ]
 [i _TALA
 -> 2 `i
 ]
-"31
-[; ;./globalvariables.h: 31: adc_result_t adcResult = 0;
+"32
+[; ;./globalvariables.h: 32: adc_result_t adcResult = 0;
 [v _adcResult `us ~T0 @X0 1 e ]
 [i _adcResult
 -> -> 0 `i `us
 ]
-"32
-[; ;./globalvariables.h: 32: volatile int LumThreshold = 2;
+"33
+[; ;./globalvariables.h: 33: volatile int LumThreshold = 2;
 [v _LumThreshold `Vi ~T0 @X0 1 e ]
 [i _LumThreshold
 -> 2 `i
 ]
-"33
-[; ;./globalvariables.h: 33: volatile int TempThreshold = 30;
+"34
+[; ;./globalvariables.h: 34: volatile int TempThreshold = 25;
 [v _TempThreshold `Vi ~T0 @X0 1 e ]
 [i _TempThreshold
--> 30 `i
+-> 25 `i
 ]
+"77 ./mcc_generated_files/i2c1_driver.h
+[; ;./mcc_generated_files/i2c1_driver.h: 77: void (*i2c1_driver_busCollisionISR)(void);
+[v _i2c1_driver_busCollisionISR `*F12690 ~T0 @X0 1 e ]
+"78
+[; ;./mcc_generated_files/i2c1_driver.h: 78: void (*i2c1_driver_i2cISR)(void);
+[v _i2c1_driver_i2cISR `*F12692 ~T0 @X0 1 e ]
 "7 measureAndSaveFunctions.c
 [; ;measureAndSaveFunctions.c: 7: int get_luminosity (void){
 [v _get_luminosity `(i ~T0 @X0 1 ef ]
@@ -1742,7 +1756,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _adcResult ( _ADCC_GetSingleConversion (1 . `E12238 0 ]
 "14
 [; ;measureAndSaveFunctions.c: 14:     if(adcResult < 256){
-[e $ ! < -> _adcResult `ui -> -> 256 `i `ui 1626  ]
+[e $ ! < -> _adcResult `ui -> -> 256 `i `ui 1628  ]
 {
 "15
 [; ;measureAndSaveFunctions.c: 15:         lum = 0;
@@ -1750,9 +1764,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "16
 [; ;measureAndSaveFunctions.c: 16:     }else if(adcResult < 512){
 }
-[e $U 1627  ]
-[e :U 1626 ]
-[e $ ! < -> _adcResult `ui -> -> 512 `i `ui 1628  ]
+[e $U 1629  ]
+[e :U 1628 ]
+[e $ ! < -> _adcResult `ui -> -> 512 `i `ui 1630  ]
 {
 "17
 [; ;measureAndSaveFunctions.c: 17:         lum = 1;
@@ -1760,9 +1774,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "18
 [; ;measureAndSaveFunctions.c: 18:     } else if(adcResult < 768){
 }
-[e $U 1629  ]
-[e :U 1628 ]
-[e $ ! < -> _adcResult `ui -> -> 768 `i `ui 1630  ]
+[e $U 1631  ]
+[e :U 1630 ]
+[e $ ! < -> _adcResult `ui -> -> 768 `i `ui 1632  ]
 {
 "19
 [; ;measureAndSaveFunctions.c: 19:         lum = 2;
@@ -1770,8 +1784,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "20
 [; ;measureAndSaveFunctions.c: 20:     }else{
 }
-[e $U 1631  ]
-[e :U 1630 ]
+[e $U 1633  ]
+[e :U 1632 ]
 {
 "21
 [; ;measureAndSaveFunctions.c: 21:         lum = 3;
@@ -1779,16 +1793,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22
 [; ;measureAndSaveFunctions.c: 22:     }
 }
+[e :U 1633 ]
 [e :U 1631 ]
 [e :U 1629 ]
-[e :U 1627 ]
 "24
 [; ;measureAndSaveFunctions.c: 24:     return lum;
 [e ) _lum ]
-[e $UE 1625  ]
+[e $UE 1627  ]
 "26
 [; ;measureAndSaveFunctions.c: 26: }
-[e :UE 1625 ]
+[e :UE 1627 ]
 }
 "28
 [; ;measureAndSaveFunctions.c: 28: void setLedLuminosity(int lum){
@@ -1799,65 +1813,65 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "29
 [; ;measureAndSaveFunctions.c: 29:     if(lum > 1){
-[e $ ! > _lum -> 1 `i 1633  ]
+[e $ ! > _lum -> 1 `i 1635  ]
 {
 "30
 [; ;measureAndSaveFunctions.c: 30:         do { LATAbits.LATA5 = 1; } while(0);
-[e :U 1636 ]
+[e :U 1638 ]
 {
 [e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
 }
-[e :U 1635 ]
+[e :U 1637 ]
 "31
 [; ;measureAndSaveFunctions.c: 31:     }else{
 }
-[e $U 1637  ]
-[e :U 1633 ]
+[e $U 1639  ]
+[e :U 1635 ]
 {
 "32
 [; ;measureAndSaveFunctions.c: 32:         do { LATAbits.LATA5 = 0; } while(0);
-[e :U 1640 ]
+[e :U 1642 ]
 {
 [e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
 }
-[e :U 1639 ]
+[e :U 1641 ]
 "33
 [; ;measureAndSaveFunctions.c: 33:     }
 }
-[e :U 1637 ]
+[e :U 1639 ]
 "35
 [; ;measureAndSaveFunctions.c: 35:     if(lum%2 == 1)
-[e $ ! == % _lum -> 2 `i -> 1 `i 1641  ]
+[e $ ! == % _lum -> 2 `i -> 1 `i 1643  ]
 "36
 [; ;measureAndSaveFunctions.c: 36:     {
 {
 "37
 [; ;measureAndSaveFunctions.c: 37:         do { LATAbits.LATA4 = 1; } while(0);
-[e :U 1644 ]
+[e :U 1646 ]
 {
 [e = . . _LATAbits 0 4 -> -> 1 `i `uc ]
 }
-[e :U 1643 ]
+[e :U 1645 ]
 "38
 [; ;measureAndSaveFunctions.c: 38:     }else{
 }
-[e $U 1645  ]
-[e :U 1641 ]
+[e $U 1647  ]
+[e :U 1643 ]
 {
 "39
 [; ;measureAndSaveFunctions.c: 39:         do { LATAbits.LATA4 = 0; } while(0);
-[e :U 1648 ]
+[e :U 1650 ]
 {
 [e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
 }
-[e :U 1647 ]
+[e :U 1649 ]
 "40
 [; ;measureAndSaveFunctions.c: 40:     }
 }
-[e :U 1645 ]
+[e :U 1647 ]
 "41
 [; ;measureAndSaveFunctions.c: 41: }
-[e :UE 1632 ]
+[e :UE 1634 ]
 }
 "45
 [; ;measureAndSaveFunctions.c: 45: void sensor_timer(int lum, int temp){
@@ -1877,7 +1891,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _lastRegSaved -> ( _DATAEE_ReadByte (1 -> -> 28772 `i `us `i ]
 "51
 [; ;measureAndSaveFunctions.c: 51:     if( numRegsSaved == 0 || ((numRegsSaved != lastRegSaved) && numRegsSaved != 20) || numRegsSaved > 20 || lastRegSaved > 20){
-[e $ ! || || || == _numRegsSaved -> 0 `i && != _numRegsSaved _lastRegSaved != _numRegsSaved -> 20 `i > _numRegsSaved -> 20 `i > _lastRegSaved -> 20 `i 1650  ]
+[e $ ! || || || == _numRegsSaved -> 0 `i && != _numRegsSaved _lastRegSaved != _numRegsSaved -> 20 `i > _numRegsSaved -> 20 `i > _lastRegSaved -> 20 `i 1652  ]
 {
 "52
 [; ;measureAndSaveFunctions.c: 52:         numRegsSaved = 0;
@@ -1906,7 +1920,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "60
 [; ;measureAndSaveFunctions.c: 60:     }
 }
-[e :U 1650 ]
+[e :U 1652 ]
 "63
 [; ;measureAndSaveFunctions.c: 63:     TMR1_StopTimer();
 [e ( _TMR1_StopTimer ..  ]
@@ -1941,7 +1955,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _lastTempEntry -> 0 `i ]
 "76
 [; ;measureAndSaveFunctions.c: 76:     if(numRegsSaved != 0){
-[e $ ! != _numRegsSaved -> 0 `i 1651  ]
+[e $ ! != _numRegsSaved -> 0 `i 1653  ]
 {
 "77
 [; ;measureAndSaveFunctions.c: 77:         lastLumEntry = DATAEE_ReadByte(0x7000 + lastRegSaved-1 + 4);
@@ -1952,10 +1966,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "79
 [; ;measureAndSaveFunctions.c: 79:     }
 }
-[e :U 1651 ]
+[e :U 1653 ]
 "81
 [; ;measureAndSaveFunctions.c: 81:     if(((lum != lastLumEntry || temp != lastTempEntry) && numRegsSaved != 0) || numRegsSaved == 0){
-[e $ ! || && || != _lum _lastLumEntry != _temp _lastTempEntry != _numRegsSaved -> 0 `i == _numRegsSaved -> 0 `i 1652  ]
+[e $ ! || && || != _lum _lastLumEntry != _temp _lastTempEntry != _numRegsSaved -> 0 `i == _numRegsSaved -> 0 `i 1654  ]
 {
 "83
 [; ;measureAndSaveFunctions.c: 83:         int newRegIndex = 0;
@@ -1963,7 +1977,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _newRegIndex -> 0 `i ]
 "84
 [; ;measureAndSaveFunctions.c: 84:         if(lastRegSaved >= 19){
-[e $ ! >= _lastRegSaved -> 19 `i 1653  ]
+[e $ ! >= _lastRegSaved -> 19 `i 1655  ]
 {
 "85
 [; ;measureAndSaveFunctions.c: 85:             newRegIndex = 0;
@@ -1971,8 +1985,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "86
 [; ;measureAndSaveFunctions.c: 86:         }else{
 }
-[e $U 1654  ]
-[e :U 1653 ]
+[e $U 1656  ]
+[e :U 1655 ]
 {
 "87
 [; ;measureAndSaveFunctions.c: 87:             newRegIndex = lastRegSaved + 1;
@@ -1980,14 +1994,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "88
 [; ;measureAndSaveFunctions.c: 88:         }
 }
-[e :U 1654 ]
+[e :U 1656 ]
 "91
 [; ;measureAndSaveFunctions.c: 91:         int updateNumRegsSaved = 0;
 [v _updateNumRegsSaved `i ~T0 @X0 1 a ]
 [e = _updateNumRegsSaved -> 0 `i ]
 "92
 [; ;measureAndSaveFunctions.c: 92:         if(numRegsSaved < 20)
-[e $ ! < _numRegsSaved -> 20 `i 1655  ]
+[e $ ! < _numRegsSaved -> 20 `i 1657  ]
 "93
 [; ;measureAndSaveFunctions.c: 93:         {
 {
@@ -1997,8 +2011,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "95
 [; ;measureAndSaveFunctions.c: 95:         }else{
 }
-[e $U 1656  ]
-[e :U 1655 ]
+[e $U 1658  ]
+[e :U 1657 ]
 {
 "96
 [; ;measureAndSaveFunctions.c: 96:             updateNumRegsSaved = numRegsSaved;
@@ -2006,7 +2020,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "97
 [; ;measureAndSaveFunctions.c: 97:         }
 }
-[e :U 1656 ]
+[e :U 1658 ]
 "100
 [; ;measureAndSaveFunctions.c: 100:         DATAEE_WriteByte(0x7064, newRegIndex);
 [e ( _DATAEE_WriteByte (2 , -> -> 28772 `i `us -> _newRegIndex `uc ]
@@ -2031,7 +2045,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 "108
 [; ;measureAndSaveFunctions.c: 108:     }
 }
-[e :U 1652 ]
+[e :U 1654 ]
 "111
 [; ;measureAndSaveFunctions.c: 111:     int maxTemp = DATAEE_ReadByte(0x706D + 3);
 [v _maxTemp `i ~T0 @X0 1 a ]
@@ -2050,7 +2064,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e = _minLum -> ( _DATAEE_ReadByte (1 -> + -> 28786 `i -> 4 `i `us `i ]
 "116
 [; ;measureAndSaveFunctions.c: 116:     if(temp >= maxTemp){
-[e $ ! >= _temp _maxTemp 1657  ]
+[e $ ! >= _temp _maxTemp 1659  ]
 {
 "117
 [; ;measureAndSaveFunctions.c: 117:         DATAEE_WriteByte(0x706D + 0x7066, localHour);
@@ -2070,10 +2084,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "122
 [; ;measureAndSaveFunctions.c: 122:     }
 }
-[e :U 1657 ]
+[e :U 1659 ]
 "124
 [; ;measureAndSaveFunctions.c: 124:     if(lum >= maxLum){
-[e $ ! >= _lum _maxLum 1658  ]
+[e $ ! >= _lum _maxLum 1660  ]
 {
 "125
 [; ;measureAndSaveFunctions.c: 125:         DATAEE_WriteByte(0x7068 + 0x7066, localHour);
@@ -2093,10 +2107,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "130
 [; ;measureAndSaveFunctions.c: 130:     }
 }
-[e :U 1658 ]
+[e :U 1660 ]
 "132
 [; ;measureAndSaveFunctions.c: 132:     if(temp <= minTemp){
-[e $ ! <= _temp _minTemp 1659  ]
+[e $ ! <= _temp _minTemp 1661  ]
 {
 "133
 [; ;measureAndSaveFunctions.c: 133:         DATAEE_WriteByte(0x7077 + 0x7066, localHour);
@@ -2116,10 +2130,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "138
 [; ;measureAndSaveFunctions.c: 138:     }
 }
-[e :U 1659 ]
+[e :U 1661 ]
 "140
 [; ;measureAndSaveFunctions.c: 140:     if(lum <= minLum){
-[e $ ! <= _lum _minLum 1660  ]
+[e $ ! <= _lum _minLum 1662  ]
 {
 "141
 [; ;measureAndSaveFunctions.c: 141:         DATAEE_WriteByte(0x7072 + 0x7066, localHour);
@@ -2139,19 +2153,19 @@ Version 4.0 HI-TECH Software Intermediate Code
 "146
 [; ;measureAndSaveFunctions.c: 146:     }
 }
-[e :U 1660 ]
+[e :U 1662 ]
 "149
 [; ;measureAndSaveFunctions.c: 149:     if(temp >= TempThreshold || lum >= LumThreshold){
-[e $ ! || >= _temp _TempThreshold >= _lum _LumThreshold 1661  ]
+[e $ ! || >= _temp _TempThreshold >= _lum _LumThreshold 1663  ]
 {
 "151
-[; ;measureAndSaveFunctions.c: 151:         ALAF = 1;
-[e = _ALAF -> 1 `i ]
+[; ;measureAndSaveFunctions.c: 151:         alarm = 1;
+[e = _alarm -> 1 `i ]
 "152
 [; ;measureAndSaveFunctions.c: 152:     }
 }
-[e :U 1661 ]
+[e :U 1663 ]
 "154
 [; ;measureAndSaveFunctions.c: 154: }
-[e :UE 1649 ]
+[e :UE 1651 ]
 }

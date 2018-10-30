@@ -147,32 +147,16 @@ void sensor_timer(int lum, int temp){
     
 }
 
-/*void sensor_timer(){
-		int lum, temp;
-		
-		if(lum!=get_last_entry(vector)[4] || temp !=get_last_entry(vector)[3]){
-			char * new_entry=malloc(sizeof(char[5]));
-			new_entry[0]=watch->hours;
-			new_entry[1]=watch->minutes;
-			new_entry[2]=watch->seconds;
-			new_entry[3]=temp;
-			new_entry[4]=lum;
-			free(add_entry(data_vect,new_entry));
-			
-			if(temp>MAX_TEMP)
-				MAX_TEMP=temp;
-			if(lum>MAX_LUM)
-				MAX_LUM=lum;
-			if(temp>MIN_TEMP)
-				MIN_TEMP=temp;
-			if(lum>MIN_LUM)
-				MIN_LUM=lum;
-			
-			if(temp>=MAX_allowed_temp || temp<=MIN_allowed_temp || lum>MAX_allowed_lum || lum<MIN_allowed_lum){
-					start_Danger_timer();
-					set_LED_min_ramp_luminosity;
-                    //activate alarm variable 
-				}
-			}
-		
-	}*/
+
+void getValuesFromPreviousSession(){
+    //check if it is the first session
+    int numRegsSaved = DATAEE_ReadByte(NUM_REGS_SAVED);
+    int lastRegSaved = DATAEE_ReadByte(LAST_WRITTEN);
+    
+    //check if it connected for the first time
+    if( (numRegsSaved == 20 || ((numRegsSaved == lastRegSaved) && numRegsSaved != 20)) && numRegsSaved <= 20 && lastRegSaved <= 20){
+    //update time if not
+        hrs = DATAEE_ReadByte(HOUR);
+        mins = DATAEE_ReadByte(MINUTE);
+    }
+}

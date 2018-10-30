@@ -1766,17 +1766,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 50 `i
 ]
 "42
-[; ;./globalvariables.h: 42: const int max_lum = 10;
+[; ;./globalvariables.h: 42: const int max_lum = 4;
 [v _max_lum `Ci ~T0 @X0 1 e ]
 [i _max_lum
--> 10 `i
+-> 4 `i
 ]
 "45
 [; ;./globalvariables.h: 45: volatile int LED_to_blink;
 [v _LED_to_blink `Vi ~T0 @X0 1 e ]
 "46
-[; ;./globalvariables.h: 46: volatile int blink;
+[; ;./globalvariables.h: 46: volatile int blink = 0;
 [v _blink `Vi ~T0 @X0 1 e ]
+[i _blink
+-> 0 `i
+]
 "77 ./mcc_generated_files/i2c1_driver.h
 [; ;./mcc_generated_files/i2c1_driver.h: 77: void (*i2c1_driver_busCollisionISR)(void);
 [v _i2c1_driver_busCollisionISR `*F12698 ~T0 @X0 1 e ]
@@ -2199,4 +2202,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 "148
 [; ;measureAndSaveFunctions.c: 148: }
 [e :UE 1651 ]
+}
+"151
+[; ;measureAndSaveFunctions.c: 151: void getValuesFromPreviousSession(){
+[v _getValuesFromPreviousSession `(v ~T0 @X0 1 ef ]
+{
+[e :U _getValuesFromPreviousSession ]
+[f ]
+"153
+[; ;measureAndSaveFunctions.c: 153:     int numRegsSaved = DATAEE_ReadByte(0x7065);
+[v _numRegsSaved `i ~T0 @X0 1 a ]
+[e = _numRegsSaved -> ( _DATAEE_ReadByte (1 -> -> 28773 `i `us `i ]
+"154
+[; ;measureAndSaveFunctions.c: 154:     int lastRegSaved = DATAEE_ReadByte(0x7064);
+[v _lastRegSaved `i ~T0 @X0 1 a ]
+[e = _lastRegSaved -> ( _DATAEE_ReadByte (1 -> -> 28772 `i `us `i ]
+"157
+[; ;measureAndSaveFunctions.c: 157:     if( (numRegsSaved == 20 || ((numRegsSaved == lastRegSaved) && numRegsSaved != 20)) && numRegsSaved <= 20 && lastRegSaved <= 20){
+[e $ ! && && || == _numRegsSaved -> 20 `i && == _numRegsSaved _lastRegSaved != _numRegsSaved -> 20 `i <= _numRegsSaved -> 20 `i <= _lastRegSaved -> 20 `i 1664  ]
+{
+"159
+[; ;measureAndSaveFunctions.c: 159:         hrs = DATAEE_ReadByte(0x7066);
+[e = _hrs -> ( _DATAEE_ReadByte (1 -> -> 28774 `i `us `i ]
+"160
+[; ;measureAndSaveFunctions.c: 160:         mins = DATAEE_ReadByte(0x7067);
+[e = _mins -> ( _DATAEE_ReadByte (1 -> -> 28775 `i `us `i ]
+"161
+[; ;measureAndSaveFunctions.c: 161:     }
+}
+[e :U 1664 ]
+"162
+[; ;measureAndSaveFunctions.c: 162: }
+[e :UE 1663 ]
 }

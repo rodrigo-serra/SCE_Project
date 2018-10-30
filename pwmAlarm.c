@@ -3,7 +3,8 @@
 #include "mcc_generated_files/tmr2.h"
 #include "mcc_generated_files/tmr3.h"
 #include "mcc_generated_files/pin_manager.h"
-#include "sleepWakeUp.h"
+#include "mcc_generated_files/memory.h"
+#include "globalvariables.h"
 
 void PWM_Enable(void){
     PPSLOCK = 0x55;
@@ -40,5 +41,26 @@ void change_PWM(void){
         TMR3_StopTimer();
         pwm_value = 0;
         PWM6_LoadDutyValue(1020);
+    }
+}
+
+void checkVariablesForAlarm(int temperature, int luminosity){
+    LumThreshold = DATAEE_ReadByte(THRESHLUM);
+    TempThreshold = DATAEE_ReadByte(THRESHTEMP);
+    
+    if(luminosity >= LumThreshold || temperature >= TempThreshold){
+        //set alarm control as active                 
+        alarm = 1;
+    }
+    //fazer funçao
+    if(alarm == 1 && control_alarm == 0 && ALAF == 1){
+        //change brightness with pwm for TALA duration
+
+        TMR2_StartTimer();
+        TMR3_StartTimer();
+        control_alarm = 1;
+    }else if(alarm == 0 && control_alarm == 1){
+        PWM6_LoadDutyValue(0);
+        control_alarm = 0;
     }
 }

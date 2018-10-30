@@ -12,6 +12,7 @@
 void sensor_timer(int lum, int temp);
 int get_luminosity (void);
 void setLedLuminosity(int);
+void getValuesFromPreviousSession();
 # 1 "interruptions.c" 2
 
 # 1 "./mcc_generated_files/pin_manager.h" 1
@@ -21709,18 +21710,12 @@ void OSCILLATOR_Initialize(void);
 void PMD_Initialize(void);
 # 4 "interruptions.c" 2
 
-# 1 "./sleepWakeUp.h" 1
-# 20 "./sleepWakeUp.h"
-void GoToSleep(void);
-void WakeUp(void);
-# 5 "interruptions.c" 2
-
-# 1 "./Set_clock_thresholds.h" 1
-# 14 "./Set_clock_thresholds.h"
+# 1 "./stateModifiers.h" 1
+# 14 "./stateModifiers.h"
 void s2Pressed();
 void s1Pressed();
 void clearLeds(void);
-# 6 "interruptions.c" 2
+# 5 "interruptions.c" 2
 
 
 void changeleds(void){
@@ -21749,6 +21744,7 @@ void s1PressedInterruptHandler(void){
 
     if(alarm == 1){
         alarm = 0;
+        PWM6_LoadDutyValue(0);
     }else{
         if(mode_s == -1){
             clearLeds();

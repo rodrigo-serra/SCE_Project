@@ -21710,6 +21710,7 @@ volatile int blink = 0;
 void sensor_timer(int lum, int temp);
 int get_luminosity (void);
 void setLedLuminosity(int);
+void getValuesFromPreviousSession();
 # 47 "main.c" 2
 
 
@@ -21721,6 +21722,7 @@ void PWM_Enable(void);
 
 void PWM_Disable(void);
 void change_PWM(void);
+void checkVariablesForAlarm(int temperature, int luminosity);
 # 49 "main.c" 2
 
 # 1 "./i2c.h" 1
@@ -21740,18 +21742,12 @@ signed char getsI2C( unsigned char *rdptr, unsigned char length );
 unsigned char tsttc (void);
 # 50 "main.c" 2
 
-# 1 "./sleepWakeUp.h" 1
-# 20 "./sleepWakeUp.h"
-void GoToSleep(void);
-void WakeUp(void);
-# 51 "main.c" 2
-
-# 1 "./Set_clock_thresholds.h" 1
-# 14 "./Set_clock_thresholds.h"
+# 1 "./stateModifiers.h" 1
+# 14 "./stateModifiers.h"
 void s2Pressed();
 void s1Pressed();
 void clearLeds(void);
-# 52 "main.c" 2
+# 51 "main.c" 2
 
 
 
@@ -21799,6 +21795,9 @@ void main(void)
     int temperature = 0 ;
     TempThreshold = 25;
 
+
+    getValuesFromPreviousSession();
+
     while (1)
     {
         if(mode_s == -1){
@@ -21807,22 +21806,7 @@ void main(void)
                 luminosity = get_luminosity();
                 setLedLuminosity(luminosity);
 
-                if(luminosity >= LumThreshold){
-
-                    alarm = 1;
-                }
-
-                if(alarm == 1 && control_alarm == 0 && ALAF == 1){
-
-
-                    TMR2_StartTimer();
-                    TMR3_StartTimer();
-                    control_alarm = 1;
-                }else if(alarm == 0 && control_alarm == 1){
-                    PWM6_LoadDutyValue(0);
-                    control_alarm = 0;
-                }
-
+                checkVariablesForAlarm(0,luminosity);
 
                 if(alarm == 0)
                     __asm("sleep");
@@ -21831,28 +21815,15 @@ void main(void)
 
             if(secs%PMON == 1){
 
-                 __nop();
-                 c = tsttc();
-                 temperature = c;
-                 __nop();
+                __nop();
+                c = tsttc();
+                temperature = c;
+                __nop();
 
-                 if(temperature >= TempThreshold){
+                checkVariablesForAlarm(temperature,0);
 
-                    alarm = 1;
-                }
-
-                if(alarm == 1 && control_alarm == 0 && ALAF == 1){
-
-
-                    TMR2_StartTimer();
-                    TMR3_StartTimer();
-                    control_alarm = 1;
-                }else if(alarm == 0 && control_alarm == 1){
-                    PWM6_LoadDutyValue(0);
-                    control_alarm = 0;
-                }
-                 if(alarm == 0)
-                    __asm("sleep");
+                if(alarm == 0)
+                   __asm("sleep");
 
             }
 
@@ -21861,21 +21832,20 @@ void main(void)
 
                 sensor_timer(luminosity, temperature);
 
+                checkVariablesForAlarm(0,0);
 
-                __nop();
                 __asm("sleep");
-
             }
         }else{
 
             TMR1_StopTimer();
             TMR4_StartTimer();
-            int previous =1;
+            int previous = 1;
             while(mode_s != -1){
                 if(PORTCbits.RC5 == 0 && previous == 1){
                     s2Pressed();
                     _delay((unsigned long)((50)*(1000000/4000.0)));
-                    previous=0;
+                    previous = 0;
                 }else {
                     if(PORTCbits.RC5 == 1 && previous == 0)
                         previous = 1;

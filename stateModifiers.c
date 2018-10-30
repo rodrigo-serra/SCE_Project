@@ -2,7 +2,7 @@
 #include "mcc_generated_files/interrupt_manager.h"
 #include "mcc_generated_files/pin_manager.h"
 #include "mcc_generated_files/mcc.h"
-#include "Set_clock_thresholds.h"
+#include "stateModifiers.h"
 #include "globalvariables.h"
 
 void update_lights(int number ){
@@ -157,78 +157,80 @@ void s1Pressed(){
 
     switch (mode_s){
         case 0: //LED_D4_blink_timer_start();
-                clearLeds();
-                LED_to_blink=4;
-                mode_s=5;
-                break;
+            clearLeds();
+            LED_to_blink=4;
+            mode_s=5;
+            break;
         case 1: 
-                remainder=DATAEE_ReadByte(HOUR);
-                update_lights(remainder);
-                mode_s=2;
+            remainder=DATAEE_ReadByte(HOUR);
+            update_lights(remainder);
+            mode_s=2;
             break;
         case 2:	
-                remainder=DATAEE_ReadByte(MINUTE)%10;
-                update_lights(remainder);
-                mode_s=3;
-                break;
+            remainder=DATAEE_ReadByte(MINUTE)%10;
+            update_lights(remainder);
+            mode_s=3;
+            break;
         case 3:	
-                remainder=DATAEE_ReadByte(MINUTE);
-                update_lights(remainder);
-                mode_s=4;
-                break;			
+            remainder=DATAEE_ReadByte(MINUTE);
+            update_lights(remainder);
+            mode_s=4;
+            break;			
         case 4:	
-                update_lights(remainder);
-                mode_s=5;
-                break;
+            update_lights(remainder);
+            mode_s=5;
+            break;
         //MUDAR ALAF
-        case 5: mode_s=7;
-                clearLeds();
-                LED_to_blink=3;
-                break;
-        case 6: mode_s =7;
-                clearLeds();
-                LED_to_blink=3;
-                break;
+        case 5: 
+            mode_s=7;
+            clearLeds();
+            LED_to_blink=3;
+            break;
+        case 6: 
+            mode_s =7;
+            clearLeds();
+            LED_to_blink=3;
+            break;
         // mudar temp threshold
         case 7:	
-                //LED_D2_blink_timer_start();
-                clearLeds();
-                LED_to_blink=2;
-                mode_s=10;
-                break;
+            //LED_D2_blink_timer_start();
+            clearLeds();
+            LED_to_blink=2;
+            mode_s=10;
+            break;
 
         case 8:	
-                //LED_D3_blink_timer_stop();
-                clearLeds();
-                LED_to_blink=-1;
-                remainder=DATAEE_ReadByte(THRESHTEMP);
-                update_lights(remainder);						
-                mode_s=9;
-                break;
+            //LED_D3_blink_timer_stop();
+            clearLeds();
+            LED_to_blink=-1;
+            remainder=DATAEE_ReadByte(THRESHTEMP);
+            update_lights(remainder);						
+            mode_s=9;
+            break;
         case 9:	
-                mode_s=10;
-                break;
+            mode_s=10;
+            break;
         //mudar lum threshold
 
         case 10:	
-                //LED_D2_blink_timer_stop();
-                clearLeds();
-                LED_to_blink=-1;			
-                mode_s=-1;
+            //LED_D2_blink_timer_stop();
+            clearLeds();
+            LED_to_blink=-1;			
+            mode_s=-1;
 
-                break;
+            break;
         case 11:	
-                //LED_D2_blink_timer_stop();
-                clearLeds();
-                LED_to_blink=-1;
-                mode_s=-1;
-                break;
+            //LED_D2_blink_timer_stop();
+            clearLeds();
+            LED_to_blink=-1;
+            mode_s=-1;
+            break;
         case -1: 
-                //LED_D3_blink_timer_start();
-                clearLeds();
-                LED_to_blink=3;
-                break;
-                mode_s=0;
+            //LED_D3_blink_timer_start();
+            clearLeds();
+            LED_to_blink=3;
+            break;
+        mode_s=0;
     }
 }
 

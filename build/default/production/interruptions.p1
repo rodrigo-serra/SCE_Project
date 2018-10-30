@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F12704 `(v ~T0 @X0 0 tf ]
-[v F12706 `(v ~T0 @X0 0 tf ]
+[v F12705 `(v ~T0 @X0 0 tf ]
+[v F12707 `(v ~T0 @X0 0 tf ]
 "390 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 390:     struct {
 [s S33 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -23,16 +23,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "967
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 967: extern volatile LATAbits_t LATAbits __attribute__((address(0x016)));
 [v _LATAbits `VS52 ~T0 @X0 0 e@22 ]
-"16 ./Set_clock_thresholds.h
-[; ;./Set_clock_thresholds.h: 16: void clearLeds(void);
-[v _clearLeds `(v ~T0 @X0 0 ef ]
-[v F12210 `(v ~T0 @X0 1 tf1`ul ]
-"92 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic.h
-[v __delay `JF12210 ~T0 @X0 0 e ]
-[p i __delay ]
 "129 ./mcc_generated_files/pwm6.h
 [; ;./mcc_generated_files/pwm6.h: 129:  void PWM6_LoadDutyValue(uint16_t dutyValue);
 [v _PWM6_LoadDutyValue `(v ~T0 @X0 0 ef1`us ]
+"16 ./stateModifiers.h
+[; ;./stateModifiers.h: 16: void clearLeds(void);
+[v _clearLeds `(v ~T0 @X0 0 ef ]
+[v F12211 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic.h
+[v __delay `JF12211 ~T0 @X0 0 e ]
+[p i __delay ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1784,98 +1784,101 @@ Version 4.0 HI-TECH Software Intermediate Code
 ]
 "77 ./mcc_generated_files/i2c1_driver.h
 [; ;./mcc_generated_files/i2c1_driver.h: 77: void (*i2c1_driver_busCollisionISR)(void);
-[v _i2c1_driver_busCollisionISR `*F12704 ~T0 @X0 1 e ]
+[v _i2c1_driver_busCollisionISR `*F12705 ~T0 @X0 1 e ]
 "78
 [; ;./mcc_generated_files/i2c1_driver.h: 78: void (*i2c1_driver_i2cISR)(void);
-[v _i2c1_driver_i2cISR `*F12706 ~T0 @X0 1 e ]
-"8 interruptions.c
-[; ;interruptions.c: 8: void changeleds(void){
+[v _i2c1_driver_i2cISR `*F12707 ~T0 @X0 1 e ]
+"7 interruptions.c
+[; ;interruptions.c: 7: void changeleds(void){
 [v _changeleds `(v ~T0 @X0 1 ef ]
 {
 [e :U _changeleds ]
 [f ]
-"10
-[; ;interruptions.c: 10:     secs +=1;
+"9
+[; ;interruptions.c: 9:     secs +=1;
 [e =+ _secs -> -> 1 `i `Vi ]
-"11
-[; ;interruptions.c: 11:     if(secs == 60)
+"10
+[; ;interruptions.c: 10:     if(secs == 60)
 [e $ ! == _secs -> 60 `i 1628  ]
-"12
-[; ;interruptions.c: 12:     {
+"11
+[; ;interruptions.c: 11:     {
 {
-"13
-[; ;interruptions.c: 13:         mins += 1;
+"12
+[; ;interruptions.c: 12:         mins += 1;
 [e =+ _mins -> -> 1 `i `Vi ]
-"14
-[; ;interruptions.c: 14:         secs = 0;
+"13
+[; ;interruptions.c: 13:         secs = 0;
 [e = _secs -> 0 `i ]
-"15
-[; ;interruptions.c: 15:     }
+"14
+[; ;interruptions.c: 14:     }
 }
 [e :U 1628 ]
-"16
-[; ;interruptions.c: 16:     if(mins == 60)
+"15
+[; ;interruptions.c: 15:     if(mins == 60)
 [e $ ! == _mins -> 60 `i 1629  ]
-"17
-[; ;interruptions.c: 17:     {
+"16
+[; ;interruptions.c: 16:     {
 {
-"18
-[; ;interruptions.c: 18:         hrs += 1;
+"17
+[; ;interruptions.c: 17:         hrs += 1;
 [e =+ _hrs -> -> 1 `i `Vi ]
-"19
-[; ;interruptions.c: 19:         mins = 0;
+"18
+[; ;interruptions.c: 18:         mins = 0;
 [e = _mins -> 0 `i ]
-"20
-[; ;interruptions.c: 20:     }
+"19
+[; ;interruptions.c: 19:     }
 }
 [e :U 1629 ]
-"22
-[; ;interruptions.c: 22:     if(PORTAbits.RA7 == 0)
+"21
+[; ;interruptions.c: 21:     if(PORTAbits.RA7 == 0)
 [e $ ! == -> . . _PORTAbits 0 7 `i -> 0 `i 1630  ]
-"23
-[; ;interruptions.c: 23:     {
+"22
+[; ;interruptions.c: 22:     {
 {
-"24
-[; ;interruptions.c: 24:         do { LATAbits.LATA7 = 1; } while(0);
+"23
+[; ;interruptions.c: 23:         do { LATAbits.LATA7 = 1; } while(0);
 [e :U 1633 ]
 {
 [e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
 }
 [e :U 1632 ]
-"25
-[; ;interruptions.c: 25:     }else{
+"24
+[; ;interruptions.c: 24:     }else{
 }
 [e $U 1634  ]
 [e :U 1630 ]
 {
-"26
-[; ;interruptions.c: 26:         do { LATAbits.LATA7 = 0; } while(0);
+"25
+[; ;interruptions.c: 25:         do { LATAbits.LATA7 = 0; } while(0);
 [e :U 1637 ]
 {
 [e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
 }
 [e :U 1636 ]
-"27
-[; ;interruptions.c: 27:     }
+"26
+[; ;interruptions.c: 26:     }
 }
 [e :U 1634 ]
-"28
-[; ;interruptions.c: 28: }
+"27
+[; ;interruptions.c: 27: }
 [e :UE 1627 ]
 }
-"30
-[; ;interruptions.c: 30: void s1PressedInterruptHandler(void){
+"29
+[; ;interruptions.c: 29: void s1PressedInterruptHandler(void){
 [v _s1PressedInterruptHandler `(v ~T0 @X0 1 ef ]
 {
 [e :U _s1PressedInterruptHandler ]
 [f ]
-"32
-[; ;interruptions.c: 32:     if(alarm == 1){
+"31
+[; ;interruptions.c: 31:     if(alarm == 1){
 [e $ ! == _alarm -> 1 `i 1639  ]
 {
-"33
-[; ;interruptions.c: 33:         alarm = 0;
+"32
+[; ;interruptions.c: 32:         alarm = 0;
 [e = _alarm -> 0 `i ]
+"33
+[; ;interruptions.c: 33:         PWM6_LoadDutyValue(0);
+[e ( _PWM6_LoadDutyValue (1 -> -> 0 `i `us ]
 "34
 [; ;interruptions.c: 34:     }else{
 }

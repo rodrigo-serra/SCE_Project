@@ -26,8 +26,7 @@
       <itemPath>measureAndSaveFunctions.h</itemPath>
       <itemPath>pwmAlarm.h</itemPath>
       <itemPath>i2c.h</itemPath>
-      <itemPath>sleepWakeUp.h</itemPath>
-      <itemPath>Set_clock_thresholds.h</itemPath>
+      <itemPath>stateModifiers.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -58,8 +57,7 @@
       <itemPath>measureAndSaveFunctions.c</itemPath>
       <itemPath>pwmAlarm.c</itemPath>
       <itemPath>i2c.c</itemPath>
-      <itemPath>sleepWakeUp.c</itemPath>
-      <itemPath>Set_clock_thresholds.c</itemPath>
+      <itemPath>stateModifiers.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"

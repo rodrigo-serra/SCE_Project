@@ -2,8 +2,7 @@
 #include "mcc_generated_files/pin_manager.h"
 #include "globalvariables.h"
 #include "mcc_generated_files/mcc.h"
-#include "sleepWakeUp.h"
-#include "Set_clock_thresholds.h"
+#include "stateModifiers.h"
 
 void changeleds(void){
     //WakeUp();
@@ -31,6 +30,7 @@ void s1PressedInterruptHandler(void){
    
     if(alarm == 1){
         alarm = 0;
+        PWM6_LoadDutyValue(0);
     }else{
         if(mode_s == -1){
             clearLeds();

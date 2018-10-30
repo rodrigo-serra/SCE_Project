@@ -6,5 +6,4 @@ build/default/production\main.p1: main.c mcc_generated_files/mcc.h \
   mcc_generated_files/tmr1.h mcc_generated_files/tmr2.h \
   mcc_generated_files/adcc.h mcc_generated_files/ext_int.h \
   mcc_generated_files/memory.h interruptions.h globalvariables.h \
-  measureAndSaveFunctions.h pwmAlarm.h i2c.h sleepWakeUp.h \
-  Set_clock_thresholds.h
+  measureAndSaveFunctions.h pwmAlarm.h i2c.h stateModifiers.h

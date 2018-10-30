@@ -26,3 +26,4 @@ void PWM_Enable(void);
 
 void PWM_Disable(void);
 void change_PWM(void);
+void checkVariablesForAlarm(int temperature, int luminosity);

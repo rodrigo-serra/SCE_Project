@@ -20963,11 +20963,11 @@ volatile int mode_s = -1;
 const int max_hour = 24;
 const int max_min = 60;
 const int max_temp =50;
-const int max_lum = 10;
+const int max_lum = 4;
 
 
 volatile int LED_to_blink;
-volatile int blink;
+volatile int blink = 0;
 # 2 "measureAndSaveFunctions.c" 2
 
 # 1 "./mcc_generated_files/mcc.h" 1
@@ -21846,4 +21846,18 @@ void sensor_timer(int lum, int temp){
         DATAEE_WriteByte(0x7072 + 4, lum);
     }
 
+}
+
+
+void getValuesFromPreviousSession(){
+
+    int numRegsSaved = DATAEE_ReadByte(0x7065);
+    int lastRegSaved = DATAEE_ReadByte(0x7064);
+
+
+    if( (numRegsSaved == 20 || ((numRegsSaved == lastRegSaved) && numRegsSaved != 20)) && numRegsSaved <= 20 && lastRegSaved <= 20){
+
+        hrs = DATAEE_ReadByte(0x7066);
+        mins = DATAEE_ReadByte(0x7067);
+    }
 }

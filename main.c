@@ -48,8 +48,7 @@
 #include "mcc_generated_files/adcc.h"
 #include "pwmAlarm.h"
 #include "i2c.h"
-#include "sleepWakeUp.h"
-#include "Set_clock_thresholds.h"
+#include "stateModifiers.h"
 
 
 void main(void)
@@ -96,6 +95,9 @@ void main(void)
     int temperature = 0 ;
     TempThreshold = 25;
     
+    //checks if it's a reset to resume the tim
+    getValuesFromPreviousSession();
+    
     while (1)
     {   
         if(mode_s == -1){
@@ -104,75 +106,46 @@ void main(void)
                 luminosity = get_luminosity();
                 setLedLuminosity(luminosity); 
                 
-                if(luminosity >= LumThreshold){
-                    //set alarm control as active                 
-                    alarm = 1;
-                }
-                //fazer funçao
-                if(alarm == 1 && control_alarm == 0 && ALAF == 1){
-                    //change brightness with pwm for TALA duration
+                checkVariablesForAlarm(0,luminosity);
 
-                    TMR2_StartTimer();
-                    TMR3_StartTimer();
-                    control_alarm = 1;
-                }else if(alarm == 0 && control_alarm == 1){
-                    PWM6_LoadDutyValue(0);
-                    control_alarm = 0;
-                }
-                
-                //NOP();
                 if(alarm == 0)
                     SLEEP();
-                //NOP();
+             
             }
 
             if(secs%PMON == 1){
                 //get temperature
-                 NOP();
-                 c = tsttc();       	
-                 temperature = c;
-                 NOP();
+                NOP();
+                c = tsttc();       	
+                temperature = c;
+                NOP();
                  
-                 if(temperature >= TempThreshold){
-                    //set alarm control as active                 
-                    alarm = 1;
-                }
+                checkVariablesForAlarm(temperature,0);                        
+                
+                if(alarm == 0)
+                   SLEEP();
                  
-                if(alarm == 1 && control_alarm == 0 && ALAF == 1){
-                    //change brightness with pwm for TALA duration
-
-                    TMR2_StartTimer();
-                    TMR3_StartTimer();
-                    control_alarm = 1;
-                }else if(alarm == 0 && control_alarm == 1){
-                    PWM6_LoadDutyValue(0);
-                    control_alarm = 0;
-                }
-                 if(alarm == 0)
-                    SLEEP();
-                 //NOP();
             }
 
             if(secs%PMON == 2){
                 //call function to save (it checks if its a new value or not --
                 //                       or max or min -- checks thresholds)
                 sensor_timer(luminosity, temperature);
-                //if alarm is on call function to change brightness
-                
-                NOP();
-                SLEEP();
-                //NOP();
+                //check if the alarm has been turned off
+                checkVariablesForAlarm(0,0);
+            
+                SLEEP();   
             }
         }else{
             //call function to modify states
             TMR1_StopTimer();
             TMR4_StartTimer();
-            int previous =HIGH;
+            int previous = HIGH;
             while(mode_s != -1){
                 if(S2_GetValue() == LOW && previous == HIGH){
                     s2Pressed();
                     __delay_ms(50);
-                    previous=LOW;
+                    previous = LOW;
                 }else {
                     if(S2_GetValue() == HIGH && previous == LOW)
                         previous = HIGH;

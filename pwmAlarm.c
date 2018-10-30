@@ -3,6 +3,7 @@
 #include "mcc_generated_files/tmr2.h"
 #include "mcc_generated_files/tmr3.h"
 #include "mcc_generated_files/pin_manager.h"
+#include "sleepWakeUp.h"
 
 void PWM_Enable(void){
     PPSLOCK = 0x55;
@@ -29,7 +30,7 @@ void PWM_Disable(void){
 }
 
 void change_PWM(void){
-
+    //WakeUp();
     if(pwm_value == 0)
         PWM_Enable();
     

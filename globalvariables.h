@@ -33,6 +33,18 @@ adc_result_t adcResult = 0;
 volatile int LumThreshold = 2;
 volatile int TempThreshold = 25;
 
+volatile int s1_pressed = 0;
+volatile int mode_s = -1;
+
+const int  max_hour = 24;
+const int  max_min = 60;
+const int  max_temp =50;
+const int  max_lum = 4;
+
+
+volatile int LED_to_blink;
+volatile int blink = 0;
+
 
 #endif	/* GLOBALVARIABLES_H */
 

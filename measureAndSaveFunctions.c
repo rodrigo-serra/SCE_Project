@@ -144,12 +144,6 @@ void sensor_timer(int lum, int temp){
         DATAEE_WriteByte(MINLUM + TEMP, temp);
         DATAEE_WriteByte(MINLUM + LUM, lum);
     }
-
-
-    if(temp >= TempThreshold || lum >= LumThreshold){
-        //set alarm control as active                 
-        alarm = 1;
-    }
     
 }
 

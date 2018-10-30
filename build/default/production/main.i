@@ -21104,6 +21104,230 @@ extern void (*TMR3_InterruptHandler)(void);
 void TMR3_DefaultInterruptHandler(void);
 # 56 "./mcc_generated_files/mcc.h" 2
 
+# 1 "./mcc_generated_files/tmr4.h" 1
+# 79 "./mcc_generated_files/tmr4.h"
+typedef enum
+{
+# 89 "./mcc_generated_files/tmr4.h"
+   TMR4_ROP_STARTS_TMRON,
+
+
+
+
+   TMR4_ROP_STARTS_TMRON_ERSHIGH,
+
+
+
+
+   TMR4_ROP_STARTS_TMRON_ERSLOW,
+
+
+
+
+   TMR4_ROP_RESETS_ERSBOTHEDGE,
+
+
+
+
+   TMR4_ROP_RESETS_ERSRISINGEDGE,
+
+
+
+
+   TMR4_ROP_RESETS_ERSFALLINGEDGE,
+
+
+
+
+   TMR4_ROP_RESETS_ERSLOW,
+
+
+
+
+   TMR4_ROP_RESETS_ERSHIGH,
+# 135 "./mcc_generated_files/tmr4.h"
+   TMR4_OS_STARTS_TMRON,
+
+
+
+
+   TMR4_OS_STARTS_ERSRISINGEDGE ,
+
+
+
+
+   TMR4_OS_STARTS_ERSFALLINGEDGE ,
+
+
+
+
+   TMR4_OS_STARTS_ERSBOTHEDGE,
+
+
+
+
+
+   TMR4_OS_STARTS_ERSFIRSTRISINGEDGE,
+
+
+
+
+
+   TMR4_OS_STARTS_ERSFIRSTFALLINGEDGE,
+
+
+
+
+
+   TMR4_OS_STARTS_ERSRISINGEDGEDETECT,
+
+
+
+
+   TMR4_OS_STARTS_ERSFALLINGEDGEDETECT,
+
+
+
+
+   TMR4_OS_STARTS_TMRON_ERSHIGH = 0x16,
+
+
+
+
+   TMR4_OS_STARTS_TMRON_ERSLOW = 0x17,
+# 192 "./mcc_generated_files/tmr4.h"
+   TMR4_MS_STARTS_TMRON_ERSRISINGEDGEDETECT = 0x11,
+
+
+
+
+   TMR4_MS_STARTS_TMRON_ERSFALLINGEDGEDETECT = 0x12,
+
+
+
+
+
+   TMR4_MS_STARTS_TMRON_ERSBOTHEDGE = 0x13
+
+} TMR4_HLT_MODE;
+# 220 "./mcc_generated_files/tmr4.h"
+typedef enum
+{
+
+
+    TMR4_T4INPPS,
+
+
+
+    TMR4_T2POSTSCALED,
+
+
+
+    TMR4_RESERVED,
+
+
+
+    TMR4_T6POSTSCALED,
+
+
+    TMR4_CCP1_OUT,
+
+
+
+    TMR4_CCP2_OUT,
+
+
+
+    TMR4_CCP3_OUT,
+
+
+
+    TMR4_CCP4_OUT,
+
+
+
+    TMR4_CCP5_OUT,
+
+
+
+    TMR4_PWM6_OUT,
+
+
+
+    TMR4_PWM7_OUT,
+
+
+
+    TMR4_C1_OUT_SYNC,
+
+
+
+    TMR4_C2_OUT_SYNC,
+
+
+
+    TMR4_ZCD_OUTPUT,
+
+
+
+    TMR4_CLC1_OUT,
+
+
+
+    TMR4_CLC2_OUT,
+
+
+
+    TMR4_CLC3_OUT,
+
+
+
+    TMR4_CLC4_OUT
+
+} TMR4_HLT_EXT_RESET_SOURCE;
+# 335 "./mcc_generated_files/tmr4.h"
+void TMR4_Initialize(void);
+# 371 "./mcc_generated_files/tmr4.h"
+void TMR4_ModeSet(TMR4_HLT_MODE mode);
+# 406 "./mcc_generated_files/tmr4.h"
+void TMR4_ExtResetSourceSet(TMR4_HLT_EXT_RESET_SOURCE reset);
+# 435 "./mcc_generated_files/tmr4.h"
+void TMR4_Start(void);
+# 464 "./mcc_generated_files/tmr4.h"
+void TMR4_StartTimer(void);
+# 496 "./mcc_generated_files/tmr4.h"
+void TMR4_Stop(void);
+# 528 "./mcc_generated_files/tmr4.h"
+void TMR4_StopTimer(void);
+# 563 "./mcc_generated_files/tmr4.h"
+uint8_t TMR4_Counter8BitGet(void);
+# 598 "./mcc_generated_files/tmr4.h"
+uint8_t TMR4_ReadTimer(void);
+# 637 "./mcc_generated_files/tmr4.h"
+void TMR4_Counter8BitSet(uint8_t timerVal);
+# 676 "./mcc_generated_files/tmr4.h"
+void TMR4_WriteTimer(uint8_t timerVal);
+# 728 "./mcc_generated_files/tmr4.h"
+void TMR4_Period8BitSet(uint8_t periodVal);
+# 780 "./mcc_generated_files/tmr4.h"
+void TMR4_LoadPeriodRegister(uint8_t periodVal);
+# 798 "./mcc_generated_files/tmr4.h"
+void TMR4_ISR(void);
+# 816 "./mcc_generated_files/tmr4.h"
+ void TMR4_SetInterruptHandler(void (* InterruptHandler)(void));
+# 834 "./mcc_generated_files/tmr4.h"
+extern void (*TMR4_InterruptHandler)(void);
+# 852 "./mcc_generated_files/tmr4.h"
+void TMR4_DefaultInterruptHandler(void);
+# 57 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/pwm6.h" 1
+# 102 "./mcc_generated_files/pwm6.h"
+ void PWM6_Initialize(void);
+# 129 "./mcc_generated_files/pwm6.h"
+ void PWM6_LoadDutyValue(uint16_t dutyValue);
+# 58 "./mcc_generated_files/mcc.h" 2
+
 # 1 "./mcc_generated_files/tmr1.h" 1
 # 100 "./mcc_generated_files/tmr1.h"
 void TMR1_Initialize(void);
@@ -21129,14 +21353,7 @@ void TMR1_ISR(void);
 extern void (*TMR1_InterruptHandler)(void);
 # 421 "./mcc_generated_files/tmr1.h"
 void TMR1_DefaultInterruptHandler(void);
-# 57 "./mcc_generated_files/mcc.h" 2
-
-# 1 "./mcc_generated_files/pwm6.h" 1
-# 102 "./mcc_generated_files/pwm6.h"
- void PWM6_Initialize(void);
-# 129 "./mcc_generated_files/pwm6.h"
- void PWM6_LoadDutyValue(uint16_t dutyValue);
-# 58 "./mcc_generated_files/mcc.h" 2
+# 59 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/tmr2.h" 1
 # 79 "./mcc_generated_files/tmr2.h"
@@ -21347,7 +21564,7 @@ void TMR2_Period8BitSet(uint8_t periodVal);
 void TMR2_LoadPeriodRegister(uint8_t periodVal);
 # 818 "./mcc_generated_files/tmr2.h"
 _Bool TMR2_HasOverflowOccured(void);
-# 59 "./mcc_generated_files/mcc.h" 2
+# 60 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/adcc.h" 1
 # 72 "./mcc_generated_files/adcc.h"
@@ -21415,7 +21632,7 @@ _Bool ADCC_HasErrorCrossedUpperThreshold(void);
 _Bool ADCC_HasErrorCrossedLowerThreshold(void);
 # 827 "./mcc_generated_files/adcc.h"
 uint8_t ADCC_GetConversionStageStatus(void);
-# 60 "./mcc_generated_files/mcc.h" 2
+# 61 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/ext_int.h" 1
 # 250 "./mcc_generated_files/ext_int.h"
@@ -21430,34 +21647,35 @@ void INT_SetInterruptHandler(void (* InterruptHandler)(void));
 extern void (*INT_InterruptHandler)(void);
 # 367 "./mcc_generated_files/ext_int.h"
 void INT_DefaultInterruptHandler(void);
-# 61 "./mcc_generated_files/mcc.h" 2
+# 62 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/memory.h" 1
-# 115 "./mcc_generated_files/memory.h"
+# 118 "./mcc_generated_files/memory.h"
 uint16_t FLASH_ReadWord(uint16_t flashAddr);
-# 144 "./mcc_generated_files/memory.h"
+# 147 "./mcc_generated_files/memory.h"
 void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word);
-# 180 "./mcc_generated_files/memory.h"
+# 183 "./mcc_generated_files/memory.h"
 int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray);
-# 205 "./mcc_generated_files/memory.h"
+# 208 "./mcc_generated_files/memory.h"
 void FLASH_EraseBlock(uint16_t startAddr);
-# 238 "./mcc_generated_files/memory.h"
+# 241 "./mcc_generated_files/memory.h"
 void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData);
-# 264 "./mcc_generated_files/memory.h"
+# 267 "./mcc_generated_files/memory.h"
 uint8_t DATAEE_ReadByte(uint16_t bAdd);
-# 62 "./mcc_generated_files/mcc.h" 2
-# 77 "./mcc_generated_files/mcc.h"
+# 63 "./mcc_generated_files/mcc.h" 2
+# 78 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 90 "./mcc_generated_files/mcc.h"
+# 91 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 103 "./mcc_generated_files/mcc.h"
+# 104 "./mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 44 "main.c" 2
 
 # 1 "./interruptions.h" 1
 # 23 "./interruptions.h"
 void changeleds(void);
-void s1Pressed(void);
+void s1PressedInterruptHandler(void);
+void LED_blink_function(void);
 # 45 "main.c" 2
 
 # 1 "./globalvariables.h" 1
@@ -21473,6 +21691,18 @@ const int TALA = 2;
 adc_result_t adcResult = 0;
 volatile int LumThreshold = 2;
 volatile int TempThreshold = 25;
+
+volatile int s1_pressed = 0;
+volatile int mode_s = -1;
+
+const int max_hour = 24;
+const int max_min = 60;
+const int max_temp =50;
+const int max_lum = 4;
+
+
+volatile int LED_to_blink;
+volatile int blink = 0;
 # 46 "main.c" 2
 
 # 1 "./measureAndSaveFunctions.h" 1
@@ -21510,9 +21740,18 @@ signed char getsI2C( unsigned char *rdptr, unsigned char length );
 unsigned char tsttc (void);
 # 50 "main.c" 2
 
+# 1 "./sleepWakeUp.h" 1
+# 20 "./sleepWakeUp.h"
+void GoToSleep(void);
+void WakeUp(void);
+# 51 "main.c" 2
 
-
-
+# 1 "./Set_clock_thresholds.h" 1
+# 14 "./Set_clock_thresholds.h"
+void s2Pressed();
+void s1Pressed();
+void clearLeds(void);
+# 52 "main.c" 2
 
 
 
@@ -21545,10 +21784,15 @@ void main(void)
 
     TMR1_SetInterruptHandler(&changeleds);
 
-    INT_SetInterruptHandler(&s1Pressed);
+    TMR4_SetInterruptHandler(&LED_blink_function);
+
+    INT_SetInterruptHandler(&s1PressedInterruptHandler);
 
     TMR3_SetInterruptHandler(&change_PWM);
     TMR3_StopTimer();
+    TMR4_StopTimer();
+    PWM_Enable();
+    PWM6_LoadDutyValue(0);
 
     int luminosity = 0;
     unsigned char c;
@@ -21557,43 +21801,93 @@ void main(void)
 
     while (1)
     {
-        secs +=1;
-        if(secs%PMON == 0){
+        if(mode_s == -1){
+            if(secs%PMON == 0){
 
-            luminosity = get_luminosity();
-            setLedLuminosity(luminosity);
+                luminosity = get_luminosity();
+                setLedLuminosity(luminosity);
 
-        }
+                if(luminosity >= LumThreshold){
 
-        if(secs%PMON == 1){
+                    alarm = 1;
+                }
 
-             __nop();
-             c = tsttc();
-             temperature = c;
-             __nop();
-        }
-
-        if(secs%PMON == 2){
+                if(alarm == 1 && control_alarm == 0 && ALAF == 1){
 
 
-            sensor_timer(luminosity, temperature);
+                    TMR2_StartTimer();
+                    TMR3_StartTimer();
+                    control_alarm = 1;
+                }else if(alarm == 0 && control_alarm == 1){
+                    PWM6_LoadDutyValue(0);
+                    control_alarm = 0;
+                }
 
-            if(alarm == 1 && control_alarm == 0 && ALAF == 1){
 
+                if(alarm == 0)
+                    __asm("sleep");
 
-                TMR2_StartTimer();
-                TMR3_StartTimer();
-                control_alarm = 1;
-            }else if(alarm == 0 && control_alarm == 1){
-                PWM6_LoadDutyValue(0);
-                control_alarm = 0;
             }
 
+            if(secs%PMON == 1){
 
+                 __nop();
+                 c = tsttc();
+                 temperature = c;
+                 __nop();
+
+                 if(temperature >= TempThreshold){
+
+                    alarm = 1;
+                }
+
+                if(alarm == 1 && control_alarm == 0 && ALAF == 1){
+
+
+                    TMR2_StartTimer();
+                    TMR3_StartTimer();
+                    control_alarm = 1;
+                }else if(alarm == 0 && control_alarm == 1){
+                    PWM6_LoadDutyValue(0);
+                    control_alarm = 0;
+                }
+                 if(alarm == 0)
+                    __asm("sleep");
+
+            }
+
+            if(secs%PMON == 2){
+
+
+                sensor_timer(luminosity, temperature);
+
+
+                __nop();
+                __asm("sleep");
+
+            }
+        }else{
+
+            TMR1_StopTimer();
+            TMR4_StartTimer();
+            int previous =1;
+            while(mode_s != -1){
+                if(PORTCbits.RC5 == 0 && previous == 1){
+                    s2Pressed();
+                    _delay((unsigned long)((50)*(1000000/4000.0)));
+                    previous=0;
+                }else {
+                    if(PORTCbits.RC5 == 1 && previous == 0)
+                        previous = 1;
+                }
+                if(s1_pressed == 1){
+                    s1_pressed = 0;
+                    s1Pressed();
+                    _delay((unsigned long)((50)*(1000000/4000.0)));
+                }
+            }
+            TMR4_StopTimer();
+            TMR1_StartTimer();
         }
-
-
-
-
     }
 }

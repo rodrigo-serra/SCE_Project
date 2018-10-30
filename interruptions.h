@@ -21,7 +21,8 @@ extern "C" {
 
 
 void changeleds(void);
-void s1Pressed(void);
+void s1PressedInterruptHandler(void);
+void LED_blink_function(void);
 
 #endif	/* INTERRUPTIONS_H */
 

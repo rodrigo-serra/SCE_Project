@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F12690 `(v ~T0 @X0 0 tf ]
-[v F12692 `(v ~T0 @X0 0 tf ]
+[v F12698 `(v ~T0 @X0 0 tf ]
+[v F12700 `(v ~T0 @X0 0 tf ]
 "13 measureAndSaveFunctions.c
 [; ;measureAndSaveFunctions.c: 13:     adcResult = ADCC_GetSingleConversion(POT);
 [c E12238 0 60 61 62 63 .. ]
@@ -19,11 +19,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "967
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 967: extern volatile LATAbits_t LATAbits __attribute__((address(0x016)));
 [v _LATAbits `VS52 ~T0 @X0 0 e@22 ]
-"264 ./mcc_generated_files/memory.h
-[; ;./mcc_generated_files/memory.h: 264: uint8_t DATAEE_ReadByte(uint16_t bAdd);
+"267 ./mcc_generated_files/memory.h
+[; ;./mcc_generated_files/memory.h: 267: uint8_t DATAEE_ReadByte(uint16_t bAdd);
 [v _DATAEE_ReadByte `(uc ~T0 @X0 0 ef1`us ]
-"238
-[; ;./mcc_generated_files/memory.h: 238: void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData);
+"241
+[; ;./mcc_generated_files/memory.h: 241: void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData);
 [v _DATAEE_WriteByte `(v ~T0 @X0 0 ef2`us`uc ]
 "161 ./mcc_generated_files/tmr1.h
 [; ;./mcc_generated_files/tmr1.h: 161: void TMR1_StopTimer(void);
@@ -1735,12 +1735,54 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _TempThreshold
 -> 25 `i
 ]
+"36
+[; ;./globalvariables.h: 36: volatile int s1_pressed = 0;
+[v _s1_pressed `Vi ~T0 @X0 1 e ]
+[i _s1_pressed
+-> 0 `i
+]
+"37
+[; ;./globalvariables.h: 37: volatile int mode_s = -1;
+[v _mode_s `Vi ~T0 @X0 1 e ]
+[i _mode_s
+-U -> 1 `i
+]
+"39
+[; ;./globalvariables.h: 39: const int max_hour = 24;
+[v _max_hour `Ci ~T0 @X0 1 e ]
+[i _max_hour
+-> 24 `i
+]
+"40
+[; ;./globalvariables.h: 40: const int max_min = 60;
+[v _max_min `Ci ~T0 @X0 1 e ]
+[i _max_min
+-> 60 `i
+]
+"41
+[; ;./globalvariables.h: 41: const int max_temp =50;
+[v _max_temp `Ci ~T0 @X0 1 e ]
+[i _max_temp
+-> 50 `i
+]
+"42
+[; ;./globalvariables.h: 42: const int max_lum = 10;
+[v _max_lum `Ci ~T0 @X0 1 e ]
+[i _max_lum
+-> 10 `i
+]
+"45
+[; ;./globalvariables.h: 45: volatile int LED_to_blink;
+[v _LED_to_blink `Vi ~T0 @X0 1 e ]
+"46
+[; ;./globalvariables.h: 46: volatile int blink;
+[v _blink `Vi ~T0 @X0 1 e ]
 "77 ./mcc_generated_files/i2c1_driver.h
 [; ;./mcc_generated_files/i2c1_driver.h: 77: void (*i2c1_driver_busCollisionISR)(void);
-[v _i2c1_driver_busCollisionISR `*F12690 ~T0 @X0 1 e ]
+[v _i2c1_driver_busCollisionISR `*F12698 ~T0 @X0 1 e ]
 "78
 [; ;./mcc_generated_files/i2c1_driver.h: 78: void (*i2c1_driver_i2cISR)(void);
-[v _i2c1_driver_i2cISR `*F12692 ~T0 @X0 1 e ]
+[v _i2c1_driver_i2cISR `*F12700 ~T0 @X0 1 e ]
 "7 measureAndSaveFunctions.c
 [; ;measureAndSaveFunctions.c: 7: int get_luminosity (void){
 [v _get_luminosity `(i ~T0 @X0 1 ef ]
@@ -2154,18 +2196,7 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;measureAndSaveFunctions.c: 146:     }
 }
 [e :U 1662 ]
-"149
-[; ;measureAndSaveFunctions.c: 149:     if(temp >= TempThreshold || lum >= LumThreshold){
-[e $ ! || >= _temp _TempThreshold >= _lum _LumThreshold 1663  ]
-{
-"151
-[; ;measureAndSaveFunctions.c: 151:         alarm = 1;
-[e = _alarm -> 1 `i ]
-"152
-[; ;measureAndSaveFunctions.c: 152:     }
-}
-[e :U 1663 ]
-"154
-[; ;measureAndSaveFunctions.c: 154: }
+"148
+[; ;measureAndSaveFunctions.c: 148: }
 [e :UE 1651 ]
 }

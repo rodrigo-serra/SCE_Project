@@ -1,6 +1,6 @@
 Version 4.0 HI-TECH Software Intermediate Code
-[v F12696 `(v ~T0 @X0 0 tf ]
-[v F12698 `(v ~T0 @X0 0 tf ]
+[v F12704 `(v ~T0 @X0 0 tf ]
+[v F12706 `(v ~T0 @X0 0 tf ]
 "390 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 390:     struct {
 [s S33 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -23,10 +23,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 "967
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 967: extern volatile LATAbits_t LATAbits __attribute__((address(0x016)));
 [v _LATAbits `VS52 ~T0 @X0 0 e@22 ]
+"16 ./Set_clock_thresholds.h
+[; ;./Set_clock_thresholds.h: 16: void clearLeds(void);
+[v _clearLeds `(v ~T0 @X0 0 ef ]
 [v F12210 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic.h
 [v __delay `JF12210 ~T0 @X0 0 e ]
 [p i __delay ]
+"129 ./mcc_generated_files/pwm6.h
+[; ;./mcc_generated_files/pwm6.h: 129:  void PWM6_LoadDutyValue(uint16_t dutyValue);
+[v _PWM6_LoadDutyValue `(v ~T0 @X0 0 ef1`us ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -1731,100 +1737,319 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _TempThreshold
 -> 25 `i
 ]
+"36
+[; ;./globalvariables.h: 36: volatile int s1_pressed = 0;
+[v _s1_pressed `Vi ~T0 @X0 1 e ]
+[i _s1_pressed
+-> 0 `i
+]
+"37
+[; ;./globalvariables.h: 37: volatile int mode_s = -1;
+[v _mode_s `Vi ~T0 @X0 1 e ]
+[i _mode_s
+-U -> 1 `i
+]
+"39
+[; ;./globalvariables.h: 39: const int max_hour = 24;
+[v _max_hour `Ci ~T0 @X0 1 e ]
+[i _max_hour
+-> 24 `i
+]
+"40
+[; ;./globalvariables.h: 40: const int max_min = 60;
+[v _max_min `Ci ~T0 @X0 1 e ]
+[i _max_min
+-> 60 `i
+]
+"41
+[; ;./globalvariables.h: 41: const int max_temp =50;
+[v _max_temp `Ci ~T0 @X0 1 e ]
+[i _max_temp
+-> 50 `i
+]
+"42
+[; ;./globalvariables.h: 42: const int max_lum = 10;
+[v _max_lum `Ci ~T0 @X0 1 e ]
+[i _max_lum
+-> 10 `i
+]
+"45
+[; ;./globalvariables.h: 45: volatile int LED_to_blink;
+[v _LED_to_blink `Vi ~T0 @X0 1 e ]
+"46
+[; ;./globalvariables.h: 46: volatile int blink = 0;
+[v _blink `Vi ~T0 @X0 1 e ]
+[i _blink
+-> 0 `i
+]
 "77 ./mcc_generated_files/i2c1_driver.h
 [; ;./mcc_generated_files/i2c1_driver.h: 77: void (*i2c1_driver_busCollisionISR)(void);
-[v _i2c1_driver_busCollisionISR `*F12696 ~T0 @X0 1 e ]
+[v _i2c1_driver_busCollisionISR `*F12704 ~T0 @X0 1 e ]
 "78
 [; ;./mcc_generated_files/i2c1_driver.h: 78: void (*i2c1_driver_i2cISR)(void);
-[v _i2c1_driver_i2cISR `*F12698 ~T0 @X0 1 e ]
-"6 interruptions.c
-[; ;interruptions.c: 6: void changeleds(void){
+[v _i2c1_driver_i2cISR `*F12706 ~T0 @X0 1 e ]
+"8 interruptions.c
+[; ;interruptions.c: 8: void changeleds(void){
 [v _changeleds `(v ~T0 @X0 1 ef ]
 {
 [e :U _changeleds ]
 [f ]
-"8
-[; ;interruptions.c: 8:     secs +=1;
-[e =+ _secs -> -> 1 `i `Vi ]
-"9
-[; ;interruptions.c: 9:     if(secs == 60)
-[e $ ! == _secs -> 60 `i 1628  ]
 "10
-[; ;interruptions.c: 10:     {
-{
+[; ;interruptions.c: 10:     secs +=1;
+[e =+ _secs -> -> 1 `i `Vi ]
 "11
-[; ;interruptions.c: 11:         mins += 1;
-[e =+ _mins -> -> 1 `i `Vi ]
+[; ;interruptions.c: 11:     if(secs == 60)
+[e $ ! == _secs -> 60 `i 1628  ]
 "12
-[; ;interruptions.c: 12:         secs = 0;
-[e = _secs -> 0 `i ]
+[; ;interruptions.c: 12:     {
+{
 "13
-[; ;interruptions.c: 13:     }
+[; ;interruptions.c: 13:         mins += 1;
+[e =+ _mins -> -> 1 `i `Vi ]
+"14
+[; ;interruptions.c: 14:         secs = 0;
+[e = _secs -> 0 `i ]
+"15
+[; ;interruptions.c: 15:     }
 }
 [e :U 1628 ]
-"14
-[; ;interruptions.c: 14:     if(mins == 60)
-[e $ ! == _mins -> 60 `i 1629  ]
-"15
-[; ;interruptions.c: 15:     {
-{
 "16
-[; ;interruptions.c: 16:         hrs += 1;
-[e =+ _hrs -> -> 1 `i `Vi ]
+[; ;interruptions.c: 16:     if(mins == 60)
+[e $ ! == _mins -> 60 `i 1629  ]
 "17
-[; ;interruptions.c: 17:         mins = 0;
-[e = _mins -> 0 `i ]
+[; ;interruptions.c: 17:     {
+{
 "18
-[; ;interruptions.c: 18:     }
+[; ;interruptions.c: 18:         hrs += 1;
+[e =+ _hrs -> -> 1 `i `Vi ]
+"19
+[; ;interruptions.c: 19:         mins = 0;
+[e = _mins -> 0 `i ]
+"20
+[; ;interruptions.c: 20:     }
 }
 [e :U 1629 ]
-"20
-[; ;interruptions.c: 20:     if(PORTAbits.RA7 == 0)
-[e $ ! == -> . . _PORTAbits 0 7 `i -> 0 `i 1630  ]
-"21
-[; ;interruptions.c: 21:     {
-{
 "22
-[; ;interruptions.c: 22:         do { LATAbits.LATA7 = 1; } while(0);
+[; ;interruptions.c: 22:     if(PORTAbits.RA7 == 0)
+[e $ ! == -> . . _PORTAbits 0 7 `i -> 0 `i 1630  ]
+"23
+[; ;interruptions.c: 23:     {
+{
+"24
+[; ;interruptions.c: 24:         do { LATAbits.LATA7 = 1; } while(0);
 [e :U 1633 ]
 {
 [e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
 }
 [e :U 1632 ]
-"23
-[; ;interruptions.c: 23:     }else{
+"25
+[; ;interruptions.c: 25:     }else{
 }
 [e $U 1634  ]
 [e :U 1630 ]
 {
-"24
-[; ;interruptions.c: 24:         do { LATAbits.LATA7 = 0; } while(0);
+"26
+[; ;interruptions.c: 26:         do { LATAbits.LATA7 = 0; } while(0);
 [e :U 1637 ]
 {
 [e = . . _LATAbits 0 7 -> -> 0 `i `uc ]
 }
 [e :U 1636 ]
-"25
-[; ;interruptions.c: 25:     }
+"27
+[; ;interruptions.c: 27:     }
 }
 [e :U 1634 ]
-"26
-[; ;interruptions.c: 26: }
+"28
+[; ;interruptions.c: 28: }
 [e :UE 1627 ]
 }
-"28
-[; ;interruptions.c: 28: void s1Pressed(void){
-[v _s1Pressed `(v ~T0 @X0 1 ef ]
+"30
+[; ;interruptions.c: 30: void s1PressedInterruptHandler(void){
+[v _s1PressedInterruptHandler `(v ~T0 @X0 1 ef ]
 {
-[e :U _s1Pressed ]
+[e :U _s1PressedInterruptHandler ]
 [f ]
-"29
-[; ;interruptions.c: 29:     alarm = 0;
-[e = _alarm -> 0 `i ]
-"31
-[; ;interruptions.c: 31:     _delay((unsigned long)((5)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
 "32
-[; ;interruptions.c: 32: }
+[; ;interruptions.c: 32:     if(alarm == 1){
+[e $ ! == _alarm -> 1 `i 1639  ]
+{
+"33
+[; ;interruptions.c: 33:         alarm = 0;
+[e = _alarm -> 0 `i ]
+"34
+[; ;interruptions.c: 34:     }else{
+}
+[e $U 1640  ]
+[e :U 1639 ]
+{
+"35
+[; ;interruptions.c: 35:         if(mode_s == -1){
+[e $ ! == _mode_s -U -> 1 `i 1641  ]
+{
+"36
+[; ;interruptions.c: 36:             clearLeds();
+[e ( _clearLeds ..  ]
+"37
+[; ;interruptions.c: 37:             LED_to_blink=5;
+[e = _LED_to_blink -> 5 `i ]
+"38
+[; ;interruptions.c: 38:             mode_s = 0;
+[e = _mode_s -> 0 `i ]
+"39
+[; ;interruptions.c: 39:         }else{
+}
+[e $U 1642  ]
+[e :U 1641 ]
+{
+"40
+[; ;interruptions.c: 40:             s1_pressed = 1;
+[e = _s1_pressed -> 1 `i ]
+"41
+[; ;interruptions.c: 41:         }
+}
+[e :U 1642 ]
+"42
+[; ;interruptions.c: 42:     }
+}
+[e :U 1640 ]
+"45
+[; ;interruptions.c: 45:     _delay((unsigned long)((5)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 5 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"46
+[; ;interruptions.c: 46: }
 [e :UE 1638 ]
+}
+"48
+[; ;interruptions.c: 48: void LED_blink_function(void){
+[v _LED_blink_function `(v ~T0 @X0 1 ef ]
+{
+[e :U _LED_blink_function ]
+[f ]
+"49
+[; ;interruptions.c: 49:     if (LED_to_blink!=-1){
+[e $ ! != _LED_to_blink -U -> 1 `i 1644  ]
+{
+"50
+[; ;interruptions.c: 50:         if (!blink){
+[e $ ! ! != _blink -> 0 `i 1645  ]
+{
+"51
+[; ;interruptions.c: 51:             switch(LED_to_blink){
+[e $U 1647  ]
+{
+"52
+[; ;interruptions.c: 52:                 case 2: do { LATAbits.LATA4 = 1; } while(0); break;
+[e :U 1648 ]
+[e :U 1651 ]
+{
+[e = . . _LATAbits 0 4 -> -> 1 `i `uc ]
+}
+[e :U 1650 ]
+[e $U 1646  ]
+"53
+[; ;interruptions.c: 53:                 case 3: do { LATAbits.LATA5 = 1; } while(0); break;
+[e :U 1652 ]
+[e :U 1655 ]
+{
+[e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
+}
+[e :U 1654 ]
+[e $U 1646  ]
+"54
+[; ;interruptions.c: 54:                 case 4: PWM6_LoadDutyValue(1020); break;
+[e :U 1656 ]
+[e ( _PWM6_LoadDutyValue (1 -> -> 1020 `i `us ]
+[e $U 1646  ]
+"55
+[; ;interruptions.c: 55:                 case 5: do { LATAbits.LATA7 = 1; } while(0); break;
+[e :U 1657 ]
+[e :U 1660 ]
+{
+[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
+}
+[e :U 1659 ]
+[e $U 1646  ]
+"56
+[; ;interruptions.c: 56:             }
+}
+[e $U 1646  ]
+[e :U 1647 ]
+[e [\ _LED_to_blink , $ -> 2 `i 1648
+ , $ -> 3 `i 1652
+ , $ -> 4 `i 1656
+ , $ -> 5 `i 1657
+ 1646 ]
+[e :U 1646 ]
+"57
+[; ;interruptions.c: 57:             blink=1;
+[e = _blink -> 1 `i ]
+"58
+[; ;interruptions.c: 58:         }
+}
+[e $U 1661  ]
+"59
+[; ;interruptions.c: 59:         else{
+[e :U 1645 ]
+{
+"60
+[; ;interruptions.c: 60:             switch(LED_to_blink){
+[e $U 1663  ]
+{
+"61
+[; ;interruptions.c: 61:                 case 2: do { LATAbits.LATA4 = 0; } while(0); break;
+[e :U 1664 ]
+[e :U 1667 ]
+{
+[e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
+}
+[e :U 1666 ]
+[e $U 1662  ]
+"62
+[; ;interruptions.c: 62:                 case 3: do { LATAbits.LATA5 = 0; } while(0); break;
+[e :U 1668 ]
+[e :U 1671 ]
+{
+[e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
+}
+[e :U 1670 ]
+[e $U 1662  ]
+"63
+[; ;interruptions.c: 63:                 case 4: PWM6_LoadDutyValue(0); break;
+[e :U 1672 ]
+[e ( _PWM6_LoadDutyValue (1 -> -> 0 `i `us ]
+[e $U 1662  ]
+"64
+[; ;interruptions.c: 64:                 case 5: do { LATAbits.LATA7 = 1; } while(0); break;
+[e :U 1673 ]
+[e :U 1676 ]
+{
+[e = . . _LATAbits 0 7 -> -> 1 `i `uc ]
+}
+[e :U 1675 ]
+[e $U 1662  ]
+"65
+[; ;interruptions.c: 65:             }
+}
+[e $U 1662  ]
+[e :U 1663 ]
+[e [\ _LED_to_blink , $ -> 2 `i 1664
+ , $ -> 3 `i 1668
+ , $ -> 4 `i 1672
+ , $ -> 5 `i 1673
+ 1662 ]
+[e :U 1662 ]
+"66
+[; ;interruptions.c: 66:             blink=0;
+[e = _blink -> 0 `i ]
+"67
+[; ;interruptions.c: 67:         }
+}
+[e :U 1661 ]
+"68
+[; ;interruptions.c: 68:     }
+}
+[e :U 1644 ]
+"69
+[; ;interruptions.c: 69: }
+[e :UE 1643 ]
 }

@@ -48,10 +48,8 @@
 #include "mcc_generated_files/adcc.h"
 #include "pwmAlarm.h"
 #include "i2c.h"
-
-
-
-
+#include "sleepWakeUp.h"
+#include "Set_clock_thresholds.h"
 
 
 void main(void)
@@ -83,10 +81,15 @@ void main(void)
     
     TMR1_SetInterruptHandler(&changeleds);
     
-    INT_SetInterruptHandler(&s1Pressed);
+    TMR4_SetInterruptHandler(&LED_blink_function);
+    
+    INT_SetInterruptHandler(&s1PressedInterruptHandler);
     
     TMR3_SetInterruptHandler(&change_PWM);
     TMR3_StopTimer();
+    TMR4_StopTimer();
+    PWM_Enable();
+    PWM6_LoadDutyValue(0);
     
     int luminosity = 0;
     unsigned char c;
@@ -94,45 +97,95 @@ void main(void)
     TempThreshold = 25;
     
     while (1)
-    {
-        secs +=1;       
-        if(secs%PMON == 0){
-            //get luminosity lvl
-            luminosity = get_luminosity();
-            setLedLuminosity(luminosity); 
-            
-        }
-        
-        if(secs%PMON == 1){
-            //get temperature
-             NOP();
-             c = tsttc();       	
-             temperature = c;
-             NOP();
-        }
-        
-        if(secs%PMON == 2){
-            //call function to save (it checks if its a new value or not --
-            //                       or max or min -- checks thresholds)
-            sensor_timer(luminosity, temperature);
-            //if alarm is on call function to change brightness
-            if(alarm == 1 && control_alarm == 0 && ALAF == 1){
-                //change brightness with pwm for TALA duration
+    {   
+        if(mode_s == -1){
+            if(secs%PMON == 0){
+                //get luminosity lvl
+                luminosity = get_luminosity();
+                setLedLuminosity(luminosity); 
                 
-                TMR2_StartTimer();
-                TMR3_StartTimer();
-                control_alarm = 1;
-            }else if(alarm == 0 && control_alarm == 1){
-                PWM6_LoadDutyValue(0);
-                control_alarm = 0;
+                if(luminosity >= LumThreshold){
+                    //set alarm control as active                 
+                    alarm = 1;
+                }
+                //fazer funçao
+                if(alarm == 1 && control_alarm == 0 && ALAF == 1){
+                    //change brightness with pwm for TALA duration
+
+                    TMR2_StartTimer();
+                    TMR3_StartTimer();
+                    control_alarm = 1;
+                }else if(alarm == 0 && control_alarm == 1){
+                    PWM6_LoadDutyValue(0);
+                    control_alarm = 0;
+                }
+                
+                //NOP();
+                if(alarm == 0)
+                    SLEEP();
+                //NOP();
             }
-            
-           
-        }
-        
-        
-        
-        
+
+            if(secs%PMON == 1){
+                //get temperature
+                 NOP();
+                 c = tsttc();       	
+                 temperature = c;
+                 NOP();
+                 
+                 if(temperature >= TempThreshold){
+                    //set alarm control as active                 
+                    alarm = 1;
+                }
+                 
+                if(alarm == 1 && control_alarm == 0 && ALAF == 1){
+                    //change brightness with pwm for TALA duration
+
+                    TMR2_StartTimer();
+                    TMR3_StartTimer();
+                    control_alarm = 1;
+                }else if(alarm == 0 && control_alarm == 1){
+                    PWM6_LoadDutyValue(0);
+                    control_alarm = 0;
+                }
+                 if(alarm == 0)
+                    SLEEP();
+                 //NOP();
+            }
+
+            if(secs%PMON == 2){
+                //call function to save (it checks if its a new value or not --
+                //                       or max or min -- checks thresholds)
+                sensor_timer(luminosity, temperature);
+                //if alarm is on call function to change brightness
+                
+                NOP();
+                SLEEP();
+                //NOP();
+            }
+        }else{
+            //call function to modify states
+            TMR1_StopTimer();
+            TMR4_StartTimer();
+            int previous =HIGH;
+            while(mode_s != -1){
+                if(S2_GetValue() == LOW && previous == HIGH){
+                    s2Pressed();
+                    __delay_ms(50);
+                    previous=LOW;
+                }else {
+                    if(S2_GetValue() == HIGH && previous == LOW)
+                        previous = HIGH;
+                }
+                if(s1_pressed == 1){
+                    s1_pressed = 0;
+                    s1Pressed();
+                    __delay_ms(50);
+                }
+            }
+            TMR4_StopTimer();
+            TMR1_StartTimer();
+        }    
     }
 }
 

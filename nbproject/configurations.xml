@@ -19,12 +19,15 @@
         <itemPath>mcc_generated_files/tmr3.h</itemPath>
         <itemPath>mcc_generated_files/pwm6.h</itemPath>
         <itemPath>mcc_generated_files/i2c1_driver.h</itemPath>
+        <itemPath>mcc_generated_files/tmr4.h</itemPath>
       </logicalFolder>
       <itemPath>globalvariables.h</itemPath>
       <itemPath>interruptions.h</itemPath>
       <itemPath>measureAndSaveFunctions.h</itemPath>
       <itemPath>pwmAlarm.h</itemPath>
       <itemPath>i2c.h</itemPath>
+      <itemPath>sleepWakeUp.h</itemPath>
+      <itemPath>Set_clock_thresholds.h</itemPath>
     </logicalFolder>
     <logicalFolder name="LinkerScript"
                    displayName="Linker Files"
@@ -48,12 +51,15 @@
         <itemPath>mcc_generated_files/tmr3.c</itemPath>
         <itemPath>mcc_generated_files/pwm6.c</itemPath>
         <itemPath>mcc_generated_files/i2c1_driver.c</itemPath>
+        <itemPath>mcc_generated_files/tmr4.c</itemPath>
       </logicalFolder>
       <itemPath>main.c</itemPath>
       <itemPath>interruptions.c</itemPath>
       <itemPath>measureAndSaveFunctions.c</itemPath>
       <itemPath>pwmAlarm.c</itemPath>
       <itemPath>i2c.c</itemPath>
+      <itemPath>sleepWakeUp.c</itemPath>
+      <itemPath>Set_clock_thresholds.c</itemPath>
     </logicalFolder>
     <logicalFolder name="ExternalFiles"
                    displayName="Important Files"
@@ -182,7 +188,6 @@
         <property key="ToolFirmwareFilePath"
                   value="Press to browse for a specific firmware version"/>
         <property key="ToolFirmwareOption.UseLatestFirmware" value="true"/>
-        <property key="firmware.download.all" value="false"/>
         <property key="memories.configurationmemory" value="true"/>
         <property key="memories.dataflash" value="true"/>
         <property key="memories.eeprom" value="true"/>

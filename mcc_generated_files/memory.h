@@ -78,8 +78,8 @@
 #define MINLUM                   0x7072
 #define MINTEMP                  0x7077
         
-#define THRESHTEMP               0x7078
-#define THRESHLUM                0x7079        
+#define THRESHTEMP               0x707C
+#define THRESHLUM                0x707D        
         
 #define HOURS                   0
 #define MINUTES                 1        

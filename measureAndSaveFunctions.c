@@ -158,5 +158,10 @@ void getValuesFromPreviousSession(){
     //update time if not
         hrs = DATAEE_ReadByte(HOUR);
         mins = DATAEE_ReadByte(MINUTE);
+        LumThreshold = DATAEE_ReadByte(THRESHLUM);
+        TempThreshold = DATAEE_ReadByte(THRESHTEMP);
+    }else{
+        DATAEE_WriteByte(THRESHLUM, LumThreshold);
+        DATAEE_WriteByte(THRESHTEMP, TempThreshold);
     }
 }

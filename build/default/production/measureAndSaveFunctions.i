@@ -21859,5 +21859,10 @@ void getValuesFromPreviousSession(){
 
         hrs = DATAEE_ReadByte(0x7066);
         mins = DATAEE_ReadByte(0x7067);
+        LumThreshold = DATAEE_ReadByte(0x707D);
+        TempThreshold = DATAEE_ReadByte(0x707C);
+    }else{
+        DATAEE_WriteByte(0x707D, LumThreshold);
+        DATAEE_WriteByte(0x707C, TempThreshold);
     }
 }

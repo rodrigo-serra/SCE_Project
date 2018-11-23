@@ -2228,10 +2228,28 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;measureAndSaveFunctions.c: 160:         mins = DATAEE_ReadByte(0x7067);
 [e = _mins -> ( _DATAEE_ReadByte (1 -> -> 28775 `i `us `i ]
 "161
-[; ;measureAndSaveFunctions.c: 161:     }
-}
-[e :U 1664 ]
+[; ;measureAndSaveFunctions.c: 161:         LumThreshold = DATAEE_ReadByte(0x707D);
+[e = _LumThreshold -> ( _DATAEE_ReadByte (1 -> -> 28797 `i `us `i ]
 "162
-[; ;measureAndSaveFunctions.c: 162: }
+[; ;measureAndSaveFunctions.c: 162:         TempThreshold = DATAEE_ReadByte(0x707C);
+[e = _TempThreshold -> ( _DATAEE_ReadByte (1 -> -> 28796 `i `us `i ]
+"163
+[; ;measureAndSaveFunctions.c: 163:     }else{
+}
+[e $U 1665  ]
+[e :U 1664 ]
+{
+"164
+[; ;measureAndSaveFunctions.c: 164:         DATAEE_WriteByte(0x707D, LumThreshold);
+[e ( _DATAEE_WriteByte (2 , -> -> 28797 `i `us -> _LumThreshold `uc ]
+"165
+[; ;measureAndSaveFunctions.c: 165:         DATAEE_WriteByte(0x707C, TempThreshold);
+[e ( _DATAEE_WriteByte (2 , -> -> 28796 `i `us -> _TempThreshold `uc ]
+"166
+[; ;measureAndSaveFunctions.c: 166:     }
+}
+[e :U 1665 ]
+"167
+[; ;measureAndSaveFunctions.c: 167: }
 [e :UE 1663 ]
 }

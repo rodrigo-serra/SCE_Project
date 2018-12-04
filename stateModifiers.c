@@ -241,3 +241,11 @@ void clearLeds(void){
     PWM6_LoadDutyValue(0);
     LED_D5_SetLow();
 }
+
+void updateGlobalVariables(void){
+    hrs = DATAEE_ReadByte(HOUR);
+    mins = DATAEE_ReadByte(MINUTES);
+    secs = DATAEE_ReadByte(SECONDS);
+    LumThreshold = DATAEE_ReadByte(THRESHLUM);
+    TempThreshold = DATAEE_ReadByte(THRESHTEMP);
+}

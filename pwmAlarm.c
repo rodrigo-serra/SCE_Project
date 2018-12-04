@@ -60,7 +60,7 @@ void checkVariablesForAlarm(int temperature, int luminosity){
     LumThreshold = DATAEE_ReadByte(THRESHLUM);
     TempThreshold = DATAEE_ReadByte(THRESHTEMP);
     
-    if(luminosity >= LumThreshold || temperature >= TempThreshold){
+    if((luminosity >= LumThreshold || temperature >= TempThreshold) && ALAF == 1){
         //set alarm control as active                 
         alarm = 1;
     }
@@ -71,7 +71,9 @@ void checkVariablesForAlarm(int temperature, int luminosity){
         TMR2_StartTimer();
         TMR3_StartTimer();
         control_alarm = 1;
-    }else if(alarm == 0 && control_alarm == 1){
+    }else if((alarm == 0 && control_alarm == 1) || (ALAF == 0 && alarm = 1)){
+        if(alarm == 1)
+            alarm=0;
         PWM6_LoadDutyValue(0);
         control_alarm = 0;
     }

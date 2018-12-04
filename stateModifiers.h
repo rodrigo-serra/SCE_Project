@@ -14,6 +14,7 @@ extern "C" {
 void s2Pressed();
 void s1Pressed();
 void clearLeds(void);
+void updateGlobalVariables();
 
 #ifdef	__cplusplus
 }

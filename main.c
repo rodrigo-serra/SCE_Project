@@ -162,6 +162,7 @@ void main(void)
             }
             TMR4_StopTimer();
             TMR1_StartTimer();
+            updateGlobalVariables();
         }    
     }
 }

@@ -70,16 +70,21 @@
 
 #define START_INDEX              0x7000
 #define LAST_WRITTEN             0x7064 //100(20x5) adresses after start
-#define NUM_REGS_SAVED           0x7065
-#define HOUR                     0x7066
-#define MINUTE                   0x7067
-#define MAXLUM                   0x7068
-#define MAXTEMP                  0x706D
-#define MINLUM                   0x7072
-#define MINTEMP                  0x7077
+#define LAST_READ                0x7065
+#define NUM_REGS_SAVED           0x7066
+#define HOUR                     0x7067
+#define MINUTE                   0x7068
+#define MAXLUM                   0x7069
+#define MAXTEMP                  0x706E
+#define MINLUM                   0x7073
+#define MINTEMP                  0x7078
         
-#define THRESHTEMP               0x707C
-#define THRESHLUM                0x707D        
+#define THRESHTEMP               0x707D
+#define THRESHLUM                0x707E
+
+#define TALAvalue                0x707F
+#define PMONvalue                0x7080
+#define ALAFvalue                0x7081        
         
 #define HOURS                   0
 #define MINUTES                 1        

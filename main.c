@@ -49,7 +49,7 @@
 #include "pwmAlarm.h"
 #include "i2c.h"
 #include "stateModifiers.h"
-
+#include "coms.h"
 
 void main(void)
 {
@@ -90,9 +90,8 @@ void main(void)
     PWM_Enable();
     PWM6_LoadDutyValue(0);
     
-    int luminosity = 0;
+   
     unsigned char c;
-    int temperature = 0 ;
     TempThreshold = 25;
     
     //checks if it's a reset to resume the tim
@@ -108,8 +107,8 @@ void main(void)
                 
                 checkVariablesForAlarm(0,luminosity);
 
-                if(alarm == 0)
-                    SLEEP();
+                //if(alarm == 0)
+                    //SLEEP();
              
             }
 
@@ -122,8 +121,8 @@ void main(void)
                  
                 checkVariablesForAlarm(temperature,0);                        
                 
-                if(alarm == 0)
-                   SLEEP();
+                //if(alarm == 0)
+                   //SLEEP();
                  
             }
 
@@ -134,8 +133,13 @@ void main(void)
                 //check if the alarm has been turned off
                 checkVariablesForAlarm(0,0);
             
-                SLEEP();   
+                //SLEEP();   
             }
+            //Leitura eCos
+            while(EUSART_is_rx_ready() != 0){
+                readbytes();
+            }
+            
         }else{
             //call function to modify states
             TMR1_StopTimer();

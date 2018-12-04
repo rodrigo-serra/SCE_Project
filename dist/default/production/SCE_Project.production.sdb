@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F18875 ]
 [d frameptr 6 ]
-"106 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/adcc.c
+"106 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/adcc.c
 [e E12236 . `uc
 POT 0
 channel_VSS 60
@@ -11,7 +11,7 @@ channel_Temp 61
 channel_DAC1 62
 channel_FVR_buf1 63
 ]
-"88 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/tmr2.c
+"88 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/tmr2.c
 [e E12235 . `uc
 TMR2_ROP_STARTS_TMRON 0
 TMR2_ROP_STARTS_TMRON_ERSHIGH 1
@@ -56,7 +56,7 @@ TMR2_CLC2_OUT 15
 TMR2_CLC3_OUT 16
 TMR2_CLC4_OUT 17
 ]
-"96 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/tmr4.c
+"96 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/tmr4.c
 [e E12235 . `uc
 TMR4_ROP_STARTS_TMRON 0
 TMR4_ROP_STARTS_TMRON_ERSHIGH 1
@@ -101,7 +101,7 @@ TMR4_CLC2_OUT 15
 TMR4_CLC3_OUT 16
 TMR4_CLC4_OUT 17
 ]
-"13 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\measureAndSaveFunctions.c
+"13 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\measureAndSaveFunctions.c
 [e E12238 . `uc
 POT 0
 channel_VSS 60
@@ -113,35 +113,81 @@ channel_FVR_buf1 63
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 "5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
+"3 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\ceilf.c
+[v _ceilf ceilf `(f  1 e 4 0 ]
+"43 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
 "10 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
+"8 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
 "15 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\Umul16.c
 [v ___wmul __wmul `(ui  1 e 2 0 ]
 "4 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+"10 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 "6 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\pic\__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"32 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\i2c.c
+"6 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\coms.c
+[v _readbytes readbytes `(v  1 e 1 0 ]
+"24
+[v _interp_msg interp_msg `(v  1 e 1 0 ]
+"264
+[v _writebytes writebytes `(v  1 e 1 0 ]
+"32 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\i2c.c
 [v _ReadI2C ReadI2C `(uc  1 e 1 0 ]
 "47
 [v _WriteI2C WriteI2C `(c  1 e 1 0 ]
 "81
 [v _tsttc tsttc `(uc  1 e 1 0 ]
-"7 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\interruptions.c
+"7 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\interruptions.c
 [v _changeleds changeleds `(v  1 e 1 0 ]
 "29
 [v _s1PressedInterruptHandler s1PressedInterruptHandler `(v  1 e 1 0 ]
 "48
 [v _LED_blink_function LED_blink_function `(v  1 e 1 0 ]
-"54 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\main.c
+"54 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\main.c
 [v _main main `(v  1 e 1 0 ]
-"63 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/adcc.c
+"63 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/adcc.c
 [v _ADCC_Initialize ADCC_Initialize `(v  1 e 1 0 ]
 "130
 [v _ADCC_GetSingleConversion ADCC_GetSingleConversion `(us  1 e 2 0 ]
-"32 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/ext_int.c
+"85 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/eusart.c
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+"129
+[v _EUSART_is_tx_ready EUSART_is_tx_ready `(uc  1 e 1 0 ]
+"134
+[v _EUSART_is_rx_ready EUSART_is_rx_ready `(uc  1 e 1 0 ]
+"148
+[v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
+"170
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+"203
+[v _EUSART_Transmit_ISR EUSART_Transmit_ISR `(v  1 e 1 0 ]
+"222
+[v _EUSART_Receive_ISR EUSART_Receive_ISR `(v  1 e 1 0 ]
+"246
+[v _EUSART_RxDataHandler EUSART_RxDataHandler `(v  1 e 1 0 ]
+"256
+[v _EUSART_DefaultFramingErrorHandler EUSART_DefaultFramingErrorHandler `(v  1 e 1 0 ]
+"258
+[v _EUSART_DefaultOverrunErrorHandler EUSART_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
+"266
+[v _EUSART_DefaultErrorHandler EUSART_DefaultErrorHandler `(v  1 e 1 0 ]
+"270
+[v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
+"274
+[v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
+"278
+[v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
+"282
+[v _EUSART_SetTxInterruptHandler EUSART_SetTxInterruptHandler `(v  1 e 1 0 ]
+"286
+[v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
+"32 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/ext_int.c
 [v _INT_ISR INT_ISR `(v  1 e 1 0 ]
 "41
 [v _INT_CallBack INT_CallBack `(v  1 e 1 0 ]
@@ -151,17 +197,17 @@ channel_FVR_buf1 63
 [v _INT_DefaultInterruptHandler INT_DefaultInterruptHandler `(v  1 e 1 0 ]
 "59
 [v _EXT_INT_Initialize EXT_INT_Initialize `(v  1 e 1 0 ]
-"83 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/i2c1_driver.c
+"83 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/i2c1_driver.c
 [v _i2c1_driver_open i2c1_driver_open `(b  1 e 0 0 ]
-"52 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/interrupt_manager.c
+"52 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
-"50 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/mcc.c
+"50 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
-"64
+"65
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
-"78
+"79
 [v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
-"58 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/memory.c
+"58 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/memory.c
 [v _FLASH_ReadWord FLASH_ReadWord `(us  1 e 2 0 ]
 "94
 [v _FLASH_WriteBlock FLASH_WriteBlock `(c  1 e 1 0 ]
@@ -171,14 +217,14 @@ channel_FVR_buf1 63
 [v _DATAEE_WriteByte DATAEE_WriteByte `(v  1 e 1 0 ]
 "202
 [v _DATAEE_ReadByte DATAEE_ReadByte `(uc  1 e 1 0 ]
-"57 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/pin_manager.c
+"57 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
-"58 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/pwm6.c
+"58 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/pwm6.c
 [v _PWM6_Initialize PWM6_Initialize `(v  1 e 1 0 ]
 "74
 [v _PWM6_LoadDutyValue PWM6_LoadDutyValue `(v  1 e 1 0 ]
 [v i1_PWM6_LoadDutyValue PWM6_LoadDutyValue `(v  1 e 1 0 ]
-"64 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/tmr1.c
+"64 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/tmr1.c
 [v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
 "99
 [v _TMR1_StartTimer TMR1_StartTimer `(v  1 e 1 0 ]
@@ -192,7 +238,7 @@ channel_FVR_buf1 63
 [v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
 "182
 [v _TMR1_DefaultInterruptHandler TMR1_DefaultInterruptHandler `(v  1 e 1 0 ]
-"62 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/tmr2.c
+"62 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/tmr2.c
 [v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
 "100
 [v _TMR2_Start TMR2_Start `(v  1 e 1 0 ]
@@ -206,7 +252,7 @@ channel_FVR_buf1 63
 [v _TMR2_Counter8BitSet TMR2_Counter8BitSet `(v  1 e 1 0 ]
 "147
 [v _TMR2_Period8BitSet TMR2_Period8BitSet `(v  1 e 1 0 ]
-"64 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/tmr3.c
+"64 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/tmr3.c
 [v _TMR3_Initialize TMR3_Initialize `(v  1 e 1 0 ]
 "99
 [v _TMR3_StartTimer TMR3_StartTimer `(v  1 e 1 0 ]
@@ -221,7 +267,7 @@ channel_FVR_buf1 63
 [v _TMR3_SetInterruptHandler TMR3_SetInterruptHandler `(v  1 e 1 0 ]
 "182
 [v _TMR3_DefaultInterruptHandler TMR3_DefaultInterruptHandler `(v  1 e 1 0 ]
-"64 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/tmr4.c
+"64 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/tmr4.c
 [v _TMR4_Initialize TMR4_Initialize `(v  1 e 1 0 ]
 "108
 [v _TMR4_Start TMR4_Start `(v  1 e 1 0 ]
@@ -243,7 +289,7 @@ channel_FVR_buf1 63
 [v _TMR4_SetInterruptHandler TMR4_SetInterruptHandler `(v  1 e 1 0 ]
 "182
 [v _TMR4_DefaultInterruptHandler TMR4_DefaultInterruptHandler `(v  1 e 1 0 ]
-"7 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\measureAndSaveFunctions.c
+"7 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\measureAndSaveFunctions.c
 [v _get_luminosity get_luminosity `(i  1 e 2 0 ]
 "28
 [v _setLedLuminosity setLedLuminosity `(v  1 e 1 0 ]
@@ -251,75 +297,91 @@ channel_FVR_buf1 63
 [v _sensor_timer sensor_timer `(v  1 e 1 0 ]
 "151
 [v _getValuesFromPreviousSession getValuesFromPreviousSession `(v  1 e 1 0 ]
-"9 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\pwmAlarm.c
+"10 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\pwmAlarm.c
 [v _PWM_Enable PWM_Enable `(v  1 e 1 0 ]
 [v i1_PWM_Enable PWM_Enable `(v  1 e 1 0 ]
-"33
+"34
 [v _change_PWM change_PWM `(v  1 e 1 0 ]
-"47
+"59
 [v _checkVariablesForAlarm checkVariablesForAlarm `(v  1 e 1 0 ]
-"8 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\stateModifiers.c
+"8 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\stateModifiers.c
 [v _update_lights update_lights `(v  1 e 1 0 ]
 "27
 [v _incrementor incrementor `(i  1 e 2 0 ]
 "62
 [v _s2Pressed s2Pressed `(v  1 e 1 0 ]
-"155
+"156
 [v _s1Pressed s1Pressed `(v  1 e 1 0 ]
-"237
+"238
 [v _clearLeds clearLeds `(v  1 e 1 0 ]
 [v i1_clearLeds clearLeds `(v  1 e 1 0 ]
-"24 C:\Users\Rodrigo\Documents\GitHub\SCE_Project/globalvariables.h
+"37 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project/coms.h
+[v _msg_array msg_array `VE[20]i  1 e 40 0 ]
+"38
+[v _pointer_array pointer_array `VEi  1 e 2 0 ]
+"24 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project/globalvariables.h
 [v _hrs hrs `VEi  1 e 2 0 ]
 "25
 [v _mins mins `VEi  1 e 2 0 ]
 "26
 [v _secs secs `VEi  1 e 2 0 ]
 "27
-[v _PMON PMON `DCi  1 e 2 0 ]
+[v _PMON PMON `VEi  1 e 2 0 ]
 "28
 [v _ALAF ALAF `VEi  1 e 2 0 ]
 "29
 [v _alarm alarm `VEi  1 e 2 0 ]
 "30
 [v _control_alarm control_alarm `VEi  1 e 2 0 ]
+"31
+[v _TALA TALA `VEi  1 e 2 0 ]
 "32
 [v _adcResult adcResult `us  1 e 2 0 ]
 "33
 [v _LumThreshold LumThreshold `VEi  1 e 2 0 ]
 "34
 [v _TempThreshold TempThreshold `VEi  1 e 2 0 ]
+"35
+[v _temperature temperature `VEi  1 e 2 0 ]
 "36
+[v _luminosity luminosity `VEi  1 e 2 0 ]
+"38
 [v _s1_pressed s1_pressed `VEi  1 e 2 0 ]
-"37
-[v _mode_s mode_s `VEi  1 e 2 0 ]
 "39
-[v _max_hour max_hour `DCi  1 e 2 0 ]
-"40
-[v _max_min max_min `DCi  1 e 2 0 ]
+[v _mode_s mode_s `VEi  1 e 2 0 ]
 "41
-[v _max_temp max_temp `DCi  1 e 2 0 ]
+[v _max_hour max_hour `DCi  1 e 2 0 ]
 "42
+[v _max_min max_min `DCi  1 e 2 0 ]
+"43
+[v _max_temp max_temp `DCi  1 e 2 0 ]
+"44
 [v _max_lum max_lum `DCi  1 e 2 0 ]
-"45
+"47
 [v _LED_to_blink LED_to_blink `VEi  1 e 2 0 ]
-"46
+"48
 [v _blink blink `VEi  1 e 2 0 ]
-"77 C:\Users\Rodrigo\Documents\GitHub\SCE_Project/mcc_generated_files/i2c1_driver.h
+"50
+[v _blink_ctr blink_ctr `VEi  1 e 2 0 ]
+"96 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project/mcc_generated_files/eusart.h
+[v _EUSART_TxDefaultInterruptHandler EUSART_TxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
+"97
+[v _EUSART_RxDefaultInterruptHandler EUSART_RxDefaultInterruptHandler `*.37(v  1 e 2 0 ]
+"77 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project/mcc_generated_files/i2c1_driver.h
 [v _i2c1_driver_busCollisionISR i2c1_driver_busCollisionISR `*.37(v  1 e 2 0 ]
 "78
 [v _i2c1_driver_i2cISR i2c1_driver_i2cISR `*.37(v  1 e 2 0 ]
-"15 C:\Users\Rodrigo\Documents\GitHub\SCE_Project/pwmAlarm.h
+"15 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project/pwmAlarm.h
 [v _pwm_value pwm_value `VEi  1 e 2 0 ]
-[s S343 . 1 `uc 1 INTEDG 1 0 :1:0 
+[s S355 . 1 `uc 1 INTEDG 1 0 :1:0 
 `uc 1 . 1 0 :5:1 
 `uc 1 PEIE 1 0 :1:6 
 `uc 1 GIE 1 0 :1:7 
 ]
 "364 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h
-[u S348 . 1 `S343 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES348  1 e 1 @11 ]
-[s S2177 . 1 `uc 1 RA0 1 0 :1:0 
+[u S360 . 1 `S355 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES360  1 e 1 @11 ]
+[s S2218 . 1 `uc 1 RA0 1 0 :1:0 
 `uc 1 RA1 1 0 :1:1 
 `uc 1 RA2 1 0 :1:2 
 `uc 1 RA3 1 0 :1:3 
@@ -329,9 +391,9 @@ channel_FVR_buf1 63
 `uc 1 RA7 1 0 :1:7 
 ]
 "401
-[u S2186 . 1 `S2177 1 . 1 0 ]
-[v _PORTAbits PORTAbits `VES2186  1 e 1 @12 ]
-[s S2088 . 1 `uc 1 RC0 1 0 :1:0 
+[u S2227 . 1 `S2218 1 . 1 0 ]
+[v _PORTAbits PORTAbits `VES2227  1 e 1 @12 ]
+[s S2122 . 1 `uc 1 RC0 1 0 :1:0 
 `uc 1 RC1 1 0 :1:1 
 `uc 1 RC2 1 0 :1:2 
 `uc 1 RC3 1 0 :1:3 
@@ -341,15 +403,15 @@ channel_FVR_buf1 63
 `uc 1 RC7 1 0 :1:7 
 ]
 "525
-[u S2097 . 1 `S2088 1 . 1 0 ]
-[v _PORTCbits PORTCbits `VES2097  1 e 1 @14 ]
+[u S2131 . 1 `S2122 1 . 1 0 ]
+[v _PORTCbits PORTCbits `VES2131  1 e 1 @14 ]
 "670
 [v _TRISA TRISA `VEuc  1 e 1 @17 ]
 "732
 [v _TRISB TRISB `VEuc  1 e 1 @18 ]
 "794
 [v _TRISC TRISC `VEuc  1 e 1 @19 ]
-[s S1994 . 1 `uc 1 TRISC0 1 0 :1:0 
+[s S2020 . 1 `uc 1 TRISC0 1 0 :1:0 
 `uc 1 TRISC1 1 0 :1:1 
 `uc 1 TRISC2 1 0 :1:2 
 `uc 1 TRISC3 1 0 :1:3 
@@ -359,15 +421,15 @@ channel_FVR_buf1 63
 `uc 1 TRISC7 1 0 :1:7 
 ]
 "811
-[u S2003 . 1 `S1994 1 . 1 0 ]
-[v _TRISCbits TRISCbits `VES2003  1 e 1 @19 ]
+[u S2029 . 1 `S2020 1 . 1 0 ]
+[v _TRISCbits TRISCbits `VES2029  1 e 1 @19 ]
 "856
 [v _TRISD TRISD `VEuc  1 e 1 @20 ]
 "918
 [v _TRISE TRISE `VEuc  1 e 1 @21 ]
 "950
 [v _LATA LATA `VEuc  1 e 1 @22 ]
-[s S2198 . 1 `uc 1 LATA0 1 0 :1:0 
+[s S2239 . 1 `uc 1 LATA0 1 0 :1:0 
 `uc 1 LATA1 1 0 :1:1 
 `uc 1 LATA2 1 0 :1:2 
 `uc 1 LATA3 1 0 :1:3 
@@ -377,8 +439,8 @@ channel_FVR_buf1 63
 `uc 1 LATA7 1 0 :1:7 
 ]
 "967
-[u S2207 . 1 `S2198 1 . 1 0 ]
-[v _LATAbits LATAbits `VES2207  1 e 1 @22 ]
+[u S2248 . 1 `S2239 1 . 1 0 ]
+[v _LATAbits LATAbits `VES2248  1 e 1 @22 ]
 "1012
 [v _LATB LATB `VEuc  1 e 1 @23 ]
 "1074
@@ -401,7 +463,7 @@ channel_FVR_buf1 63
 [v _ADACCH ADACCH `VEuc  1 e 1 @145 ]
 "2126
 [v _ADCON0 ADCON0 `VEuc  1 e 1 @147 ]
-[s S520 . 1 `uc 1 ADGO 1 0 :1:0 
+[s S538 . 1 `uc 1 ADGO 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ADFM 1 0 :2:2 
 `uc 1 ADCS 1 0 :1:4 
@@ -410,44 +472,44 @@ channel_FVR_buf1 63
 `uc 1 ADON 1 0 :1:7 
 ]
 "2162
-[s S528 . 1 `uc 1 DONE 1 0 :1:0 
+[s S546 . 1 `uc 1 DONE 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ADFRM 1 0 :2:2 
 ]
-[s S532 . 1 `uc 1 nDONE 1 0 :1:0 
+[s S550 . 1 `uc 1 nDONE 1 0 :1:0 
 ]
-[s S534 . 1 `uc 1 GO 1 0 :1:0 
+[s S552 . 1 `uc 1 GO 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ADFM0 1 0 :1:2 
 `uc 1 ADFM1 1 0 :1:3 
 ]
-[s S539 . 1 `uc 1 GO_nDONE 1 0 :1:0 
+[s S557 . 1 `uc 1 GO_nDONE 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 ADFRM0 1 0 :1:2 
 `uc 1 ADFRM1 1 0 :1:3 
 ]
-[u S544 . 1 `S520 1 . 1 0 `S528 1 . 1 0 `S532 1 . 1 0 `S534 1 . 1 0 `S539 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES544  1 e 1 @147 ]
+[u S562 . 1 `S538 1 . 1 0 `S546 1 . 1 0 `S550 1 . 1 0 `S552 1 . 1 0 `S557 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES562  1 e 1 @147 ]
 "2237
 [v _ADCON1 ADCON1 `VEuc  1 e 1 @148 ]
-[s S675 . 1 `uc 1 ADDSEN 1 0 :1:0 
+[s S693 . 1 `uc 1 ADDSEN 1 0 :1:0 
 `uc 1 . 1 0 :4:1 
 `uc 1 ADGPOL 1 0 :1:5 
 `uc 1 ADIPEN 1 0 :1:6 
 `uc 1 ADPPOL 1 0 :1:7 
 ]
 "2251
-[u S681 . 1 `S675 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES681  1 e 1 @148 ]
+[u S699 . 1 `S693 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES699  1 e 1 @148 ]
 "2276
 [v _ADCON2 ADCON2 `VEuc  1 e 1 @149 ]
-[s S611 . 1 `uc 1 ADMD 1 0 :3:0 
+[s S629 . 1 `uc 1 ADMD 1 0 :3:0 
 `uc 1 ADACLR 1 0 :1:3 
 `uc 1 ADCRS 1 0 :3:4 
 `uc 1 ADPSIS 1 0 :1:7 
 ]
 "2298
-[s S616 . 1 `uc 1 ADMD0 1 0 :1:0 
+[s S634 . 1 `uc 1 ADMD0 1 0 :1:0 
 `uc 1 ADMD1 1 0 :1:1 
 `uc 1 ADMD2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -455,11 +517,11 @@ channel_FVR_buf1 63
 `uc 1 ADCRS1 1 0 :1:5 
 `uc 1 ADCRS2 1 0 :1:6 
 ]
-[u S624 . 1 `S611 1 . 1 0 `S616 1 . 1 0 ]
-[v _ADCON2bits ADCON2bits `VES624  1 e 1 @149 ]
+[u S642 . 1 `S629 1 . 1 0 `S634 1 . 1 0 ]
+[v _ADCON2bits ADCON2bits `VES642  1 e 1 @149 ]
 "2353
 [v _ADCON3 ADCON3 `VEuc  1 e 1 @150 ]
-[s S581 . 1 `uc 1 ADTMD0 1 0 :1:0 
+[s S599 . 1 `uc 1 ADTMD0 1 0 :1:0 
 `uc 1 ADTMD1 1 0 :1:1 
 `uc 1 ADTMD2 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
@@ -468,15 +530,15 @@ channel_FVR_buf1 63
 `uc 1 ADCALC2 1 0 :1:6 
 ]
 "2374
-[s S589 . 1 `uc 1 ADTMD 1 0 :3:0 
+[s S607 . 1 `uc 1 ADTMD 1 0 :3:0 
 `uc 1 ADSOI 1 0 :1:3 
 `uc 1 ADCALC 1 0 :3:4 
 ]
-[u S593 . 1 `S581 1 . 1 0 `S589 1 . 1 0 ]
-[v _ADCON3bits ADCON3bits `VES593  1 e 1 @150 ]
+[u S611 . 1 `S599 1 . 1 0 `S607 1 . 1 0 ]
+[v _ADCON3bits ADCON3bits `VES611  1 e 1 @150 ]
 "2424
 [v _ADSTAT ADSTAT `VEuc  1 e 1 @151 ]
-[s S643 . 1 `uc 1 ADSTAT 1 0 :3:0 
+[s S661 . 1 `uc 1 ADSTAT 1 0 :3:0 
 `uc 1 ADMACT 1 0 :1:3 
 `uc 1 ADMATH 1 0 :1:4 
 `uc 1 ADLTHR 1 0 :1:5 
@@ -484,12 +546,12 @@ channel_FVR_buf1 63
 `uc 1 ADAOV 1 0 :1:7 
 ]
 "2444
-[s S650 . 1 `uc 1 ADSTAT0 1 0 :1:0 
+[s S668 . 1 `uc 1 ADSTAT0 1 0 :1:0 
 `uc 1 ADSTAT1 1 0 :1:1 
 `uc 1 ADSTAT2 1 0 :1:2 
 ]
-[u S654 . 1 `S643 1 . 1 0 `S650 1 . 1 0 ]
-[v _ADSTATbits ADSTATbits `VES654  1 e 1 @151 ]
+[u S672 . 1 `S661 1 . 1 0 `S668 1 . 1 0 ]
+[v _ADSTATbits ADSTATbits `VES672  1 e 1 @151 ]
 "2494
 [v _ADCLK ADCLK `VEuc  1 e 1 @152 ]
 "2552
@@ -528,6 +590,44 @@ channel_FVR_buf1 63
 [v _ADERRL ADERRL `VEuc  1 e 1 @278 ]
 "3700
 [v _ADERRH ADERRH `VEuc  1 e 1 @279 ]
+"3770
+[v _RC1REG RC1REG `VEuc  1 e 1 @281 ]
+"3824
+[v _TX1REG TX1REG `VEuc  1 e 1 @282 ]
+"3885
+[v _SP1BRGL SP1BRGL `VEuc  1 e 1 @283 ]
+"3955
+[v _SP1BRGH SP1BRGH `VEuc  1 e 1 @284 ]
+"4009
+[v _RC1STA RC1STA `VEuc  1 e 1 @285 ]
+[s S2803 . 1 `uc 1 RX9D 1 0 :1:0 
+`uc 1 OERR 1 0 :1:1 
+`uc 1 FERR 1 0 :1:2 
+`uc 1 ADDEN 1 0 :1:3 
+`uc 1 CREN 1 0 :1:4 
+`uc 1 SREN 1 0 :1:5 
+`uc 1 RX9 1 0 :1:6 
+`uc 1 SPEN 1 0 :1:7 
+]
+"4035
+[u S2812 . 1 `S2803 1 . 1 0 ]
+[v _RC1STAbits RC1STAbits `VES2812  1 e 1 @285 ]
+"4189
+[v _TX1STA TX1STA `VEuc  1 e 1 @286 ]
+[s S2781 . 1 `uc 1 TX9D 1 0 :1:0 
+`uc 1 TRMT 1 0 :1:1 
+`uc 1 BRGH 1 0 :1:2 
+`uc 1 SENDB 1 0 :1:3 
+`uc 1 SYNC 1 0 :1:4 
+`uc 1 TXEN 1 0 :1:5 
+`uc 1 TX9 1 0 :1:6 
+`uc 1 CSRC 1 0 :1:7 
+]
+"4215
+[u S2790 . 1 `S2781 1 . 1 0 ]
+[v _TX1STAbits TX1STAbits `VES2790  1 e 1 @286 ]
+"4369
+[v _BAUD1CON BAUD1CON `VEuc  1 e 1 @287 ]
 "4615
 [v _SSP1BUF SSP1BUF `VEuc  1 e 1 @396 ]
 "4635
@@ -536,7 +636,7 @@ channel_FVR_buf1 63
 [v _SSP1MSK SSP1MSK `VEuc  1 e 1 @398 ]
 "4825
 [v _SSP1STAT SSP1STAT `VEuc  1 e 1 @399 ]
-[s S1427 . 1 `uc 1 BF 1 0 :1:0 
+[s S1449 . 1 `uc 1 BF 1 0 :1:0 
 `uc 1 UA 1 0 :1:1 
 `uc 1 R_nW 1 0 :1:2 
 `uc 1 S 1 0 :1:3 
@@ -546,33 +646,33 @@ channel_FVR_buf1 63
 `uc 1 SMP 1 0 :1:7 
 ]
 "4934
-[s S1436 . 1 `uc 1 . 1 0 :2:0 
+[s S1458 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A 1 0 :1:5 
 ]
-[s S1441 . 1 `uc 1 . 1 0 :2:0 
+[s S1463 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA 1 0 :1:5 
 ]
-[s S1446 . 1 `uc 1 . 1 0 :2:0 
+[s S1468 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS 1 0 :1:5 
 ]
-[s S1451 . 1 `uc 1 . 1 0 :2:0 
+[s S1473 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 DATA_ADDRESS 1 0 :1:5 
 ]
-[s S1456 . 1 `uc 1 . 1 0 :2:0 
+[s S1478 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ 1 0 :1:2 
 `uc 1 I2C_START 1 0 :1:3 
 `uc 1 I2C_STOP 1 0 :1:4 
 `uc 1 I2C_DAT 1 0 :1:5 
 ]
-[s S1462 . 1 `uc 1 BF1 1 0 :1:0 
+[s S1484 . 1 `uc 1 BF1 1 0 :1:0 
 `uc 1 UA1 1 0 :1:1 
 `uc 1 R 1 0 :1:2 
 `uc 1 START 1 0 :1:3 
@@ -581,66 +681,66 @@ channel_FVR_buf1 63
 `uc 1 CKE1 1 0 :1:6 
 `uc 1 SMP1 1 0 :1:7 
 ]
-[s S1471 . 1 `uc 1 . 1 0 :2:0 
+[s S1493 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW 1 0 :1:2 
 `uc 1 START1 1 0 :1:3 
 `uc 1 STOP1 1 0 :1:4 
 `uc 1 DA 1 0 :1:5 
 ]
-[s S1477 . 1 `uc 1 . 1 0 :2:0 
+[s S1499 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 RW1 1 0 :1:2 
 `uc 1 I2C_START1 1 0 :1:3 
 `uc 1 I2C_STOP2 1 0 :1:4 
 `uc 1 DA1 1 0 :1:5 
 ]
-[s S1483 . 1 `uc 1 . 1 0 :2:0 
+[s S1505 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 I2C_READ1 1 0 :1:2 
 `uc 1 S2 1 0 :1:3 
 `uc 1 P2 1 0 :1:4 
 `uc 1 DATA_ADDRESS1 1 0 :1:5 
 ]
-[s S1489 . 1 `uc 1 . 1 0 :2:0 
+[s S1511 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 READ_WRITE1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_A1 1 0 :1:5 
 ]
-[s S1494 . 1 `uc 1 . 1 0 :2:0 
+[s S1516 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_W1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 D_nA1 1 0 :1:5 
 ]
-[s S1499 . 1 `uc 1 . 1 0 :2:0 
+[s S1521 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 R_nW1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 I2C_DAT1 1 0 :1:5 
 ]
-[s S1504 . 1 `uc 1 . 1 0 :2:0 
+[s S1526 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nW2 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nA2 1 0 :1:5 
 ]
-[s S1509 . 1 `uc 1 . 1 0 :2:0 
+[s S1531 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nWRITE1 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 nADDRESS1 1 0 :1:5 
 ]
-[u S1514 . 1 `S1427 1 . 1 0 `S1436 1 . 1 0 `S1441 1 . 1 0 `S1446 1 . 1 0 `S1451 1 . 1 0 `S1456 1 . 1 0 `S1462 1 . 1 0 `S1471 1 . 1 0 `S1477 1 . 1 0 `S1483 1 . 1 0 `S1489 1 . 1 0 `S1494 1 . 1 0 `S1499 1 . 1 0 `S1504 1 . 1 0 `S1509 1 . 1 0 ]
-[v _SSP1STATbits SSP1STATbits `VES1514  1 e 1 @399 ]
+[u S1536 . 1 `S1449 1 . 1 0 `S1458 1 . 1 0 `S1463 1 . 1 0 `S1468 1 . 1 0 `S1473 1 . 1 0 `S1478 1 . 1 0 `S1484 1 . 1 0 `S1493 1 . 1 0 `S1499 1 . 1 0 `S1505 1 . 1 0 `S1511 1 . 1 0 `S1516 1 . 1 0 `S1521 1 . 1 0 `S1526 1 . 1 0 `S1531 1 . 1 0 ]
+[v _SSP1STATbits SSP1STATbits `VES1536  1 e 1 @399 ]
 "5189
 [v _SSP1CON1 SSP1CON1 `VEuc  1 e 1 @400 ]
-[s S1273 . 1 `uc 1 SSPM 1 0 :4:0 
+[s S1295 . 1 `uc 1 SSPM 1 0 :4:0 
 `uc 1 CKP 1 0 :1:4 
 `uc 1 SSPEN 1 0 :1:5 
 `uc 1 SSPOV 1 0 :1:6 
 `uc 1 WCOL 1 0 :1:7 
 ]
 "5219
-[s S1279 . 1 `uc 1 SSPM0 1 0 :1:0 
+[s S1301 . 1 `uc 1 SSPM0 1 0 :1:0 
 `uc 1 SSPM1 1 0 :1:1 
 `uc 1 SSPM2 1 0 :1:2 
 `uc 1 SSPM3 1 0 :1:3 
 ]
-[s S1284 . 1 `uc 1 SSPM01 1 0 :1:0 
+[s S1306 . 1 `uc 1 SSPM01 1 0 :1:0 
 `uc 1 SSPM11 1 0 :1:1 
 `uc 1 SSPM21 1 0 :1:2 
 `uc 1 SSPM31 1 0 :1:3 
@@ -649,11 +749,11 @@ channel_FVR_buf1 63
 `uc 1 SSPOV1 1 0 :1:6 
 `uc 1 WCOL1 1 0 :1:7 
 ]
-[u S1293 . 1 `S1273 1 . 1 0 `S1279 1 . 1 0 `S1284 1 . 1 0 ]
-[v _SSP1CON1bits SSP1CON1bits `VES1293  1 e 1 @400 ]
+[u S1315 . 1 `S1295 1 . 1 0 `S1301 1 . 1 0 `S1306 1 . 1 0 ]
+[v _SSP1CON1bits SSP1CON1bits `VES1315  1 e 1 @400 ]
 "5309
 [v _SSP1CON2 SSP1CON2 `VEuc  1 e 1 @401 ]
-[s S1348 . 1 `uc 1 SEN 1 0 :1:0 
+[s S1370 . 1 `uc 1 SEN 1 0 :1:0 
 `uc 1 RSEN 1 0 :1:1 
 `uc 1 PEN 1 0 :1:2 
 `uc 1 RCEN 1 0 :1:3 
@@ -663,17 +763,17 @@ channel_FVR_buf1 63
 `uc 1 GCEN 1 0 :1:7 
 ]
 "5356
-[s S1357 . 1 `uc 1 . 1 0 :1:0 
+[s S1379 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADMSK 1 0 :5:1 
 ]
-[s S1360 . 1 `uc 1 . 1 0 :1:0 
+[s S1382 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 ADMSK1 1 0 :1:1 
 `uc 1 ADMSK2 1 0 :1:2 
 `uc 1 ADMSK3 1 0 :1:3 
 `uc 1 ADMSK4 1 0 :1:4 
 `uc 1 ADMSK5 1 0 :1:5 
 ]
-[s S1367 . 1 `uc 1 SEN1 1 0 :1:0 
+[s S1389 . 1 `uc 1 SEN1 1 0 :1:0 
 `uc 1 ADMSK11 1 0 :1:1 
 `uc 1 ADMSK21 1 0 :1:2 
 `uc 1 ADMSK31 1 0 :1:3 
@@ -682,47 +782,47 @@ channel_FVR_buf1 63
 `uc 1 ACKSTAT1 1 0 :1:6 
 `uc 1 GCEN1 1 0 :1:7 
 ]
-[s S1376 . 1 `uc 1 . 1 0 :1:0 
+[s S1398 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 RSEN1 1 0 :1:1 
 `uc 1 PEN1 1 0 :1:2 
 `uc 1 RCEN1 1 0 :1:3 
 `uc 1 ADMSK41 1 0 :1:4 
 `uc 1 ADMSK51 1 0 :1:5 
 ]
-[u S1383 . 1 `S1348 1 . 1 0 `S1357 1 . 1 0 `S1360 1 . 1 0 `S1367 1 . 1 0 `S1376 1 . 1 0 ]
-[v _SSP1CON2bits SSP1CON2bits `VES1383  1 e 1 @401 ]
+[u S1405 . 1 `S1370 1 . 1 0 `S1379 1 . 1 0 `S1382 1 . 1 0 `S1389 1 . 1 0 `S1398 1 . 1 0 ]
+[v _SSP1CON2bits SSP1CON2bits `VES1405  1 e 1 @401 ]
 "6508
 [v _TMR1L TMR1L `VEuc  1 e 1 @524 ]
 "6678
 [v _TMR1H TMR1H `VEuc  1 e 1 @525 ]
 "6798
 [v _T1CON T1CON `VEuc  1 e 1 @526 ]
-[s S168 . 1 `uc 1 ON 1 0 :1:0 
+[s S178 . 1 `uc 1 ON 1 0 :1:0 
 `uc 1 RD16 1 0 :1:1 
 `uc 1 nSYNC 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 CKPS 1 0 :2:4 
 ]
 "6829
-[s S174 . 1 `uc 1 TMR1ON 1 0 :1:0 
+[s S184 . 1 `uc 1 TMR1ON 1 0 :1:0 
 `uc 1 T1RD16 1 0 :1:1 
 `uc 1 nT1SYNC 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 T1CKPS0 1 0 :1:4 
 `uc 1 T1CKPS1 1 0 :1:5 
 ]
-[s S181 . 1 `uc 1 . 1 0 :4:0 
+[s S191 . 1 `uc 1 . 1 0 :4:0 
 `uc 1 CKPS0 1 0 :1:4 
 `uc 1 CKPS1 1 0 :1:5 
 ]
-[s S185 . 1 `uc 1 . 1 0 :1:0 
+[s S195 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 RD161 1 0 :1:1 
 ]
-[u S188 . 1 `S168 1 . 1 0 `S174 1 . 1 0 `S181 1 . 1 0 `S185 1 . 1 0 ]
-[v _T1CONbits T1CONbits `VES188  1 e 1 @526 ]
+[u S198 . 1 `S178 1 . 1 0 `S184 1 . 1 0 `S191 1 . 1 0 `S195 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES198  1 e 1 @526 ]
 "6894
 [v _T1GCON T1GCON `VEuc  1 e 1 @527 ]
-[s S214 . 1 `uc 1 . 1 0 :2:0 
+[s S224 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 GVAL 1 0 :1:2 
 `uc 1 GGO_nDONE 1 0 :1:3 
 `uc 1 GSPM 1 0 :1:4 
@@ -731,7 +831,7 @@ channel_FVR_buf1 63
 `uc 1 GE 1 0 :1:7 
 ]
 "6928
-[s S222 . 1 `uc 1 . 1 0 :2:0 
+[s S232 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T1GVAL 1 0 :1:2 
 `uc 1 T1GGO_nDONE 1 0 :1:3 
 `uc 1 T1GSPM 1 0 :1:4 
@@ -739,11 +839,11 @@ channel_FVR_buf1 63
 `uc 1 T1GPOL 1 0 :1:6 
 `uc 1 T1GE 1 0 :1:7 
 ]
-[s S230 . 1 `uc 1 . 1 0 :3:0 
+[s S240 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 T1GGO 1 0 :1:3 
 ]
-[u S233 . 1 `S214 1 . 1 0 `S222 1 . 1 0 `S230 1 . 1 0 ]
-[v _T1GCONbits T1GCONbits `VES233  1 e 1 @527 ]
+[u S243 . 1 `S224 1 . 1 0 `S232 1 . 1 0 `S240 1 . 1 0 ]
+[v _T1GCONbits T1GCONbits `VES243  1 e 1 @527 ]
 "7090
 [v _T1GATE T1GATE `VEuc  1 e 1 @528 ]
 "7256
@@ -755,22 +855,22 @@ channel_FVR_buf1 63
 "7695
 [v _T3CON T3CON `VEuc  1 e 1 @532 ]
 "7726
-[s S1115 . 1 `uc 1 TMR3ON 1 0 :1:0 
+[s S1135 . 1 `uc 1 TMR3ON 1 0 :1:0 
 `uc 1 T3RD16 1 0 :1:1 
 `uc 1 nT3SYNC 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 T3CKPS0 1 0 :1:4 
 `uc 1 T3CKPS1 1 0 :1:5 
 ]
-[s S1126 . 1 `uc 1 . 1 0 :1:0 
+[s S1146 . 1 `uc 1 . 1 0 :1:0 
 `uc 1 RD163 1 0 :1:1 
 ]
-[u S1129 . 1 `S168 1 . 1 0 `S1115 1 . 1 0 `S181 1 . 1 0 `S1126 1 . 1 0 ]
-[v _T3CONbits T3CONbits `VES1129  1 e 1 @532 ]
+[u S1149 . 1 `S178 1 . 1 0 `S1135 1 . 1 0 `S191 1 . 1 0 `S1146 1 . 1 0 ]
+[v _T3CONbits T3CONbits `VES1149  1 e 1 @532 ]
 "7791
 [v _T3GCON T3GCON `VEuc  1 e 1 @533 ]
 "7825
-[s S1163 . 1 `uc 1 . 1 0 :2:0 
+[s S1183 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T3GVAL 1 0 :1:2 
 `uc 1 T3GGO_nDONE 1 0 :1:3 
 `uc 1 T3GSPM 1 0 :1:4 
@@ -778,29 +878,29 @@ channel_FVR_buf1 63
 `uc 1 T3GPOL 1 0 :1:6 
 `uc 1 T3GE 1 0 :1:7 
 ]
-[s S1171 . 1 `uc 1 . 1 0 :3:0 
+[s S1191 . 1 `uc 1 . 1 0 :3:0 
 `uc 1 T3GGO 1 0 :1:3 
 ]
-[u S1174 . 1 `S214 1 . 1 0 `S1163 1 . 1 0 `S1171 1 . 1 0 ]
-[v _T3GCONbits T3GCONbits `VES1174  1 e 1 @533 ]
+[u S1194 . 1 `S224 1 . 1 0 `S1183 1 . 1 0 `S1191 1 . 1 0 ]
+[v _T3GCONbits T3GCONbits `VES1194  1 e 1 @533 ]
 "7987
 [v _T3GATE T3GATE `VEuc  1 e 1 @534 ]
 "8153
 [v _T3CLK T3CLK `VEuc  1 e 1 @535 ]
-[s S1239 . 1 `uc 1 C5TSEL 1 0 :2:0 
+[s S1259 . 1 `uc 1 C5TSEL 1 0 :2:0 
 `uc 1 P6TSEL 1 0 :2:2 
 `uc 1 P7TSEL 1 0 :2:4 
 ]
 "9300
-[s S1243 . 1 `uc 1 C5TSEL0 1 0 :1:0 
+[s S1263 . 1 `uc 1 C5TSEL0 1 0 :1:0 
 `uc 1 C5TSEL1 1 0 :1:1 
 `uc 1 P6TSEL0 1 0 :1:2 
 `uc 1 P6TSEL1 1 0 :1:3 
 `uc 1 P7TSEL0 1 0 :1:4 
 `uc 1 P7TSEL1 1 0 :1:5 
 ]
-[u S1250 . 1 `S1239 1 . 1 0 `S1243 1 . 1 0 ]
-[v _CCPTMRS1bits CCPTMRS1bits `VES1250  1 e 1 @543 ]
+[u S1270 . 1 `S1259 1 . 1 0 `S1263 1 . 1 0 ]
+[v _CCPTMRS1bits CCPTMRS1bits `VES1270  1 e 1 @543 ]
 "9350
 [v _T2TMR T2TMR `VEuc  1 e 1 @652 ]
 "9355
@@ -811,16 +911,16 @@ channel_FVR_buf1 63
 [v _PR2 PR2 `VEuc  1 e 1 @653 ]
 "9426
 [v _T2CON T2CON `VEuc  1 e 1 @654 ]
-[s S974 . 1 `uc 1 OUTPS 1 0 :4:0 
+[s S994 . 1 `uc 1 OUTPS 1 0 :4:0 
 `uc 1 CKPS 1 0 :3:4 
 `uc 1 ON 1 0 :1:7 
 ]
 "9462
-[s S978 . 1 `uc 1 T2OUTPS 1 0 :4:0 
+[s S998 . 1 `uc 1 T2OUTPS 1 0 :4:0 
 `uc 1 T2CKPS 1 0 :3:4 
 `uc 1 T2ON 1 0 :1:7 
 ]
-[s S982 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
+[s S1002 . 1 `uc 1 T2OUTPS0 1 0 :1:0 
 `uc 1 T2OUTPS1 1 0 :1:1 
 `uc 1 T2OUTPS2 1 0 :1:2 
 `uc 1 T2OUTPS3 1 0 :1:3 
@@ -828,7 +928,7 @@ channel_FVR_buf1 63
 `uc 1 T2CKPS1 1 0 :1:5 
 `uc 1 T2CKPS2 1 0 :1:6 
 ]
-[s S990 . 1 `uc 1 OUTPS0 1 0 :1:0 
+[s S1010 . 1 `uc 1 OUTPS0 1 0 :1:0 
 `uc 1 OUTPS1 1 0 :1:1 
 `uc 1 OUTPS2 1 0 :1:2 
 `uc 1 OUTPS3 1 0 :1:3 
@@ -837,58 +937,58 @@ channel_FVR_buf1 63
 `uc 1 CKPS2 1 0 :1:6 
 `uc 1 TMR2ON 1 0 :1:7 
 ]
-[u S999 . 1 `S974 1 . 1 0 `S978 1 . 1 0 `S982 1 . 1 0 `S990 1 . 1 0 ]
-[v _T2CONbits T2CONbits `VES999  1 e 1 @654 ]
+[u S1019 . 1 `S994 1 . 1 0 `S998 1 . 1 0 `S1002 1 . 1 0 `S1010 1 . 1 0 ]
+[v _T2CONbits T2CONbits `VES1019  1 e 1 @654 ]
 "9572
 [v _T2HLT T2HLT `VEuc  1 e 1 @655 ]
-[s S867 . 1 `uc 1 MODE 1 0 :5:0 
+[s S887 . 1 `uc 1 MODE 1 0 :5:0 
 `uc 1 CKSYNC 1 0 :1:5 
 `uc 1 CKPOL 1 0 :1:6 
 `uc 1 PSYNC 1 0 :1:7 
 ]
 "9605
-[s S872 . 1 `uc 1 MODE0 1 0 :1:0 
+[s S892 . 1 `uc 1 MODE0 1 0 :1:0 
 `uc 1 MODE1 1 0 :1:1 
 `uc 1 MODE2 1 0 :1:2 
 `uc 1 MODE3 1 0 :1:3 
 `uc 1 MODE4 1 0 :1:4 
 ]
-[s S878 . 1 `uc 1 T2MODE 1 0 :5:0 
+[s S898 . 1 `uc 1 T2MODE 1 0 :5:0 
 `uc 1 T2CKSYNC 1 0 :1:5 
 `uc 1 T2CKPOL 1 0 :1:6 
 `uc 1 T2PSYNC 1 0 :1:7 
 ]
-[s S883 . 1 `uc 1 T2MODE0 1 0 :1:0 
+[s S903 . 1 `uc 1 T2MODE0 1 0 :1:0 
 `uc 1 T2MODE1 1 0 :1:1 
 `uc 1 T2MODE2 1 0 :1:2 
 `uc 1 T2MODE3 1 0 :1:3 
 `uc 1 T2MODE4 1 0 :1:4 
 ]
-[u S889 . 1 `S867 1 . 1 0 `S872 1 . 1 0 `S878 1 . 1 0 `S883 1 . 1 0 ]
-[v _T2HLTbits T2HLTbits `VES889  1 e 1 @655 ]
+[u S909 . 1 `S887 1 . 1 0 `S892 1 . 1 0 `S898 1 . 1 0 `S903 1 . 1 0 ]
+[v _T2HLTbits T2HLTbits `VES909  1 e 1 @655 ]
 "9700
 [v _T2CLKCON T2CLKCON `VEuc  1 e 1 @656 ]
 "9858
 [v _T2RST T2RST `VEuc  1 e 1 @657 ]
-[s S936 . 1 `uc 1 RSEL 1 0 :5:0 
+[s S956 . 1 `uc 1 RSEL 1 0 :5:0 
 ]
 "9885
-[s S938 . 1 `uc 1 RSEL0 1 0 :1:0 
+[s S958 . 1 `uc 1 RSEL0 1 0 :1:0 
 `uc 1 RSEL1 1 0 :1:1 
 `uc 1 RSEL2 1 0 :1:2 
 `uc 1 RSEL3 1 0 :1:3 
 `uc 1 RSEL4 1 0 :1:4 
 ]
-[s S944 . 1 `uc 1 T2RSEL 1 0 :5:0 
+[s S964 . 1 `uc 1 T2RSEL 1 0 :5:0 
 ]
-[s S946 . 1 `uc 1 T2RSEL0 1 0 :1:0 
+[s S966 . 1 `uc 1 T2RSEL0 1 0 :1:0 
 `uc 1 T2RSEL1 1 0 :1:1 
 `uc 1 T2RSEL2 1 0 :1:2 
 `uc 1 T2RSEL3 1 0 :1:3 
 `uc 1 T2RSEL4 1 0 :1:4 
 ]
-[u S952 . 1 `S936 1 . 1 0 `S938 1 . 1 0 `S944 1 . 1 0 `S946 1 . 1 0 ]
-[v _T2RSTbits T2RSTbits `VES952  1 e 1 @657 ]
+[u S972 . 1 `S956 1 . 1 0 `S958 1 . 1 0 `S964 1 . 1 0 `S966 1 . 1 0 ]
+[v _T2RSTbits T2RSTbits `VES972  1 e 1 @657 ]
 "9950
 [v _T4TMR T4TMR `VEuc  1 e 1 @658 ]
 "9955
@@ -900,11 +1000,11 @@ channel_FVR_buf1 63
 "10026
 [v _T4CON T4CON `VEuc  1 e 1 @660 ]
 "10062
-[s S1889 . 1 `uc 1 T4OUTPS 1 0 :4:0 
+[s S1913 . 1 `uc 1 T4OUTPS 1 0 :4:0 
 `uc 1 T4CKPS 1 0 :3:4 
 `uc 1 T4ON 1 0 :1:7 
 ]
-[s S1893 . 1 `uc 1 T4OUTPS0 1 0 :1:0 
+[s S1917 . 1 `uc 1 T4OUTPS0 1 0 :1:0 
 `uc 1 T4OUTPS1 1 0 :1:1 
 `uc 1 T4OUTPS2 1 0 :1:2 
 `uc 1 T4OUTPS3 1 0 :1:3 
@@ -912,7 +1012,7 @@ channel_FVR_buf1 63
 `uc 1 T4CKPS1 1 0 :1:5 
 `uc 1 T4CKPS2 1 0 :1:6 
 ]
-[s S1901 . 1 `uc 1 OUTPS0 1 0 :1:0 
+[s S1925 . 1 `uc 1 OUTPS0 1 0 :1:0 
 `uc 1 OUTPS1 1 0 :1:1 
 `uc 1 OUTPS2 1 0 :1:2 
 `uc 1 OUTPS3 1 0 :1:3 
@@ -921,54 +1021,54 @@ channel_FVR_buf1 63
 `uc 1 CKPS2 1 0 :1:6 
 `uc 1 TMR4ON 1 0 :1:7 
 ]
-[u S1910 . 1 `S974 1 . 1 0 `S1889 1 . 1 0 `S1893 1 . 1 0 `S1901 1 . 1 0 ]
-[v _T4CONbits T4CONbits `VES1910  1 e 1 @660 ]
+[u S1934 . 1 `S994 1 . 1 0 `S1913 1 . 1 0 `S1917 1 . 1 0 `S1925 1 . 1 0 ]
+[v _T4CONbits T4CONbits `VES1934  1 e 1 @660 ]
 "10172
 [v _T4HLT T4HLT `VEuc  1 e 1 @661 ]
 "10205
-[s S1789 . 1 `uc 1 T4MODE 1 0 :5:0 
+[s S1813 . 1 `uc 1 T4MODE 1 0 :5:0 
 `uc 1 T4CKSYNC 1 0 :1:5 
 `uc 1 T4CKPOL 1 0 :1:6 
 `uc 1 T4PSYNC 1 0 :1:7 
 ]
-[s S1794 . 1 `uc 1 T4MODE0 1 0 :1:0 
+[s S1818 . 1 `uc 1 T4MODE0 1 0 :1:0 
 `uc 1 T4MODE1 1 0 :1:1 
 `uc 1 T4MODE2 1 0 :1:2 
 `uc 1 T4MODE3 1 0 :1:3 
 `uc 1 T4MODE4 1 0 :1:4 
 ]
-[u S1800 . 1 `S867 1 . 1 0 `S872 1 . 1 0 `S1789 1 . 1 0 `S1794 1 . 1 0 ]
-[v _T4HLTbits T4HLTbits `VES1800  1 e 1 @661 ]
+[u S1824 . 1 `S887 1 . 1 0 `S892 1 . 1 0 `S1813 1 . 1 0 `S1818 1 . 1 0 ]
+[v _T4HLTbits T4HLTbits `VES1824  1 e 1 @661 ]
 "10300
 [v _T4CLKCON T4CLKCON `VEuc  1 e 1 @662 ]
 "10458
 [v _T4RST T4RST `VEuc  1 e 1 @663 ]
 "10485
-[s S1855 . 1 `uc 1 T4RSEL 1 0 :5:0 
+[s S1879 . 1 `uc 1 T4RSEL 1 0 :5:0 
 ]
-[s S1857 . 1 `uc 1 T4RSEL0 1 0 :1:0 
+[s S1881 . 1 `uc 1 T4RSEL0 1 0 :1:0 
 `uc 1 T4RSEL1 1 0 :1:1 
 `uc 1 T4RSEL2 1 0 :1:2 
 `uc 1 T4RSEL3 1 0 :1:3 
 `uc 1 T4RSEL4 1 0 :1:4 
 ]
-[u S1863 . 1 `S936 1 . 1 0 `S938 1 . 1 0 `S1855 1 . 1 0 `S1857 1 . 1 0 ]
-[v _T4RSTbits T4RSTbits `VES1863  1 e 1 @663 ]
+[u S1887 . 1 `S956 1 . 1 0 `S958 1 . 1 0 `S1879 1 . 1 0 `S1881 1 . 1 0 ]
+[v _T4RSTbits T4RSTbits `VES1887  1 e 1 @663 ]
 "12447
 [v _PWM6DCL PWM6DCL `VEuc  1 e 1 @908 ]
 "12513
 [v _PWM6DCH PWM6DCH `VEuc  1 e 1 @909 ]
 "12683
 [v _PWM6CON PWM6CON `VEuc  1 e 1 @910 ]
-[s S326 . 1 `uc 1 INTF 1 0 :1:0 
+[s S338 . 1 `uc 1 INTF 1 0 :1:0 
 `uc 1 . 1 0 :3:1 
 `uc 1 IOCIF 1 0 :1:4 
 `uc 1 TMR0IF 1 0 :1:5 
 ]
 "21425
-[u S331 . 1 `S326 1 . 1 0 ]
-[v _PIR0bits PIR0bits `VES331  1 e 1 @1804 ]
-[s S373 . 1 `uc 1 SSP1IF 1 0 :1:0 
+[u S343 . 1 `S338 1 . 1 0 ]
+[v _PIR0bits PIR0bits `VES343  1 e 1 @1804 ]
+[s S385 . 1 `uc 1 SSP1IF 1 0 :1:0 
 `uc 1 BCL1IF 1 0 :1:1 
 `uc 1 SSP2IF 1 0 :1:2 
 `uc 1 BCL2IF 1 0 :1:3 
@@ -976,9 +1076,9 @@ channel_FVR_buf1 63
 `uc 1 RCIF 1 0 :1:5 
 ]
 "21532
-[u S380 . 1 `S373 1 . 1 0 ]
-[v _PIR3bits PIR3bits `VES380  1 e 1 @1807 ]
-[s S123 . 1 `uc 1 TMR1IF 1 0 :1:0 
+[u S392 . 1 `S385 1 . 1 0 ]
+[v _PIR3bits PIR3bits `VES392  1 e 1 @1807 ]
+[s S133 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 TMR3IF 1 0 :1:2 
 `uc 1 TMR4IF 1 0 :1:3 
@@ -986,17 +1086,17 @@ channel_FVR_buf1 63
 `uc 1 TMR6IF 1 0 :1:5 
 ]
 "21582
-[u S130 . 1 `S123 1 . 1 0 ]
-[v _PIR4bits PIR4bits `VES130  1 e 1 @1808 ]
-[s S313 . 1 `uc 1 INTE 1 0 :1:0 
+[u S140 . 1 `S133 1 . 1 0 ]
+[v _PIR4bits PIR4bits `VES140  1 e 1 @1808 ]
+[s S325 . 1 `uc 1 INTE 1 0 :1:0 
 `uc 1 . 1 0 :3:1 
 `uc 1 IOCIE 1 0 :1:4 
 `uc 1 TMR0IE 1 0 :1:5 
 ]
 "21847
-[u S318 . 1 `S313 1 . 1 0 ]
-[v _PIE0bits PIE0bits `VES318  1 e 1 @1814 ]
-[s S356 . 1 `uc 1 SSP1IE 1 0 :1:0 
+[u S330 . 1 `S325 1 . 1 0 ]
+[v _PIE0bits PIE0bits `VES330  1 e 1 @1814 ]
+[s S368 . 1 `uc 1 SSP1IE 1 0 :1:0 
 `uc 1 BCL1IE 1 0 :1:1 
 `uc 1 SSP2IE 1 0 :1:2 
 `uc 1 BCL2IE 1 0 :1:3 
@@ -1004,9 +1104,9 @@ channel_FVR_buf1 63
 `uc 1 RCIE 1 0 :1:5 
 ]
 "21954
-[u S363 . 1 `S356 1 . 1 0 ]
-[v _PIE3bits PIE3bits `VES363  1 e 1 @1817 ]
-[s S140 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[u S375 . 1 `S368 1 . 1 0 ]
+[v _PIE3bits PIE3bits `VES375  1 e 1 @1817 ]
+[s S150 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 TMR3IE 1 0 :1:2 
 `uc 1 TMR4IE 1 0 :1:3 
@@ -1014,8 +1114,8 @@ channel_FVR_buf1 63
 `uc 1 TMR6IE 1 0 :1:5 
 ]
 "22004
-[u S147 . 1 `S140 1 . 1 0 ]
-[v _PIE4bits PIE4bits `VES147  1 e 1 @1818 ]
+[u S157 . 1 `S150 1 . 1 0 ]
+[v _PIE4bits PIE4bits `VES157  1 e 1 @1818 ]
 "22256
 [v _PMD0 PMD0 `VEuc  1 e 1 @1942 ]
 "22313
@@ -1036,7 +1136,7 @@ channel_FVR_buf1 63
 [v _NVMDATL NVMDATL `VEuc  1 e 1 @2076 ]
 "23437
 [v _NVMDATH NVMDATH `VEuc  1 e 1 @2077 ]
-[s S762 . 1 `uc 1 RD 1 0 :1:0 
+[s S782 . 1 `uc 1 RD 1 0 :1:0 
 `uc 1 WR 1 0 :1:1 
 `uc 1 WREN 1 0 :1:2 
 `uc 1 WRERR 1 0 :1:3 
@@ -1045,8 +1145,8 @@ channel_FVR_buf1 63
 `uc 1 NVMREGS 1 0 :1:6 
 ]
 "23503
-[u S770 . 1 `S762 1 . 1 0 ]
-[v _NVMCON1bits NVMCON1bits `VES770  1 e 1 @2078 ]
+[u S790 . 1 `S782 1 . 1 0 ]
+[v _NVMCON1bits NVMCON1bits `VES790  1 e 1 @2078 ]
 "23543
 [v _NVMCON2 NVMCON2 `VEuc  1 e 1 @2079 ]
 "23607
@@ -1061,23 +1161,27 @@ channel_FVR_buf1 63
 [v _OSCFRQ OSCFRQ `VEuc  1 e 1 @2195 ]
 "30046
 [v _PPSLOCK PPSLOCK `VEuc  1 e 1 @3727 ]
-[s S2339 . 1 `uc 1 PPSLOCKED 1 0 :1:0 
+[s S2392 . 1 `uc 1 PPSLOCKED 1 0 :1:0 
 ]
 "30056
-[u S2341 . 1 `S2339 1 . 1 0 ]
-[v _PPSLOCKbits PPSLOCKbits `VES2341  1 e 1 @3727 ]
+[u S2394 . 1 `S2392 1 . 1 0 ]
+[v _PPSLOCKbits PPSLOCKbits `VES2394  1 e 1 @3727 ]
 "30066
 [v _INTPPS INTPPS `VEuc  1 e 1 @3728 ]
 "31672
 [v _SSP1CLKPPS SSP1CLKPPS `VEuc  1 e 1 @3781 ]
 "31724
 [v _SSP1DATPPS SSP1DATPPS `VEuc  1 e 1 @3782 ]
+"31984
+[v _RXPPS RXPPS `VEuc  1 e 1 @3787 ]
 "32388
 [v _RA6PPS RA6PPS `VEuc  1 e 1 @3862 ]
 "33038
 [v _RC3PPS RC3PPS `VEuc  1 e 1 @3875 ]
 "33088
 [v _RC4PPS RC4PPS `VEuc  1 e 1 @3876 ]
+"33188
+[v _RC6PPS RC6PPS `VEuc  1 e 1 @3878 ]
 "33838
 [v _ANSELA ANSELA `VEuc  1 e 1 @3896 ]
 "33900
@@ -1122,36 +1226,64 @@ channel_FVR_buf1 63
 [v _WPUC3 WPUC3 `VEb  1 e 0 @31355 ]
 "45039
 [v _WPUC4 WPUC4 `VEb  1 e 0 @31356 ]
-"30 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/ext_int.c
+"62 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/eusart.c
+[v _eusartTxHead eusartTxHead `VEuc  1 e 1 0 ]
+"63
+[v _eusartTxTail eusartTxTail `VEuc  1 e 1 0 ]
+"64
+[v _eusartTxBuffer eusartTxBuffer `VE[8]uc  1 e 8 0 ]
+"65
+[v _eusartTxBufferRemaining eusartTxBufferRemaining `VEuc  1 e 1 0 ]
+"67
+[v _eusartRxHead eusartRxHead `VEuc  1 e 1 0 ]
+"68
+[v _eusartRxTail eusartRxTail `VEuc  1 e 1 0 ]
+"69
+[v _eusartRxBuffer eusartRxBuffer `VE[8]uc  1 e 8 0 ]
+[s S2705 . 1 `uc 1 perr 1 0 :1:0 
+`uc 1 ferr 1 0 :1:1 
+`uc 1 oerr 1 0 :1:2 
+`uc 1 reserved 1 0 :5:3 
+]
+"70
+[u S2710 . 1 `S2705 1 . 1 0 `uc 1 status 1 0 ]
+[v _eusartRxStatusBuffer eusartRxStatusBuffer `VE[8]S2710  1 e 8 0 ]
+"71
+[v _eusartRxCount eusartRxCount `VEuc  1 e 1 0 ]
+"72
+[v _eusartRxLastError eusartRxLastError `VES2710  1 e 1 0 ]
+"77
+[v _EUSART_FramingErrorHandler EUSART_FramingErrorHandler `*.37(v  1 e 2 0 ]
+"78
+[v _EUSART_OverrunErrorHandler EUSART_OverrunErrorHandler `*.37(v  1 e 2 0 ]
+"79
+[v _EUSART_ErrorHandler EUSART_ErrorHandler `*.37(v  1 e 2 0 ]
+"30 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/ext_int.c
 [v _INT_InterruptHandler INT_InterruptHandler `*.37(v  1 e 2 0 ]
-"57 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/tmr1.c
+"57 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/tmr1.c
 [v _timer1ReloadVal timer1ReloadVal `VEus  1 e 2 0 ]
 "58
 [v _TMR1_InterruptHandler TMR1_InterruptHandler `*.37(v  1 e 2 0 ]
-"57 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/tmr3.c
+"57 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/tmr3.c
 [v _timer3ReloadVal timer3ReloadVal `VEus  1 e 2 0 ]
 "58
 [v _TMR3_InterruptHandler TMR3_InterruptHandler `*.37(v  1 e 2 0 ]
-"58 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/tmr4.c
+"58 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/tmr4.c
 [v _TMR4_InterruptHandler TMR4_InterruptHandler `*.37(v  1 e 2 0 ]
-"54 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\main.c
+"54 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\main.c
 [v _main main `(v  1 e 1 0 ]
 {
-"143
-[v main@previous previous `i  1 a 2 3 ]
-"93
-[v main@luminosity luminosity `i  1 a 2 5 ]
-"95
-[v main@temperature temperature `i  1 a 2 1 ]
+"147
+[v main@previous previous `i  1 a 2 52 ]
 "94
-[v main@c c `uc  1 a 1 0 ]
-"163
+[v main@c c `uc  1 a 1 51 ]
+"167
 } 0
-"81 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\i2c.c
+"81 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\i2c.c
 [v _tsttc tsttc `(uc  1 e 1 0 ]
 {
 "83
-[v tsttc@value value `uc  1 a 1 1 ]
+[v tsttc@value value `uc  1 a 1 3 ]
 "108
 } 0
 "47
@@ -1160,7 +1292,7 @@ channel_FVR_buf1 63
 [v WriteI2C@data_out data_out `uc  1 a 1 wreg ]
 [v WriteI2C@data_out data_out `uc  1 a 1 wreg ]
 "49
-[v WriteI2C@data_out data_out `uc  1 a 1 5 ]
+[v WriteI2C@data_out data_out `uc  1 a 1 1 ]
 "78
 } 0
 "32
@@ -1168,47 +1300,47 @@ channel_FVR_buf1 63
 {
 "38
 } 0
-"28 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\measureAndSaveFunctions.c
+"28 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\measureAndSaveFunctions.c
 [v _setLedLuminosity setLedLuminosity `(v  1 e 1 0 ]
 {
-[v setLedLuminosity@lum lum `i  1 p 2 4 ]
+[v setLedLuminosity@lum lum `i  1 p 2 0 ]
 "41
 } 0
 "45
 [v _sensor_timer sensor_timer `(v  1 e 1 0 ]
 {
 "91
-[v sensor_timer@updateNumRegsSaved updateNumRegsSaved `i  1 a 2 23 ]
+[v sensor_timer@updateNumRegsSaved updateNumRegsSaved `i  1 a 2 37 ]
 "83
-[v sensor_timer@newRegIndex newRegIndex `i  1 a 2 21 ]
+[v sensor_timer@newRegIndex newRegIndex `i  1 a 2 35 ]
 "48
-[v sensor_timer@lastRegSaved lastRegSaved `i  1 a 2 33 ]
+[v sensor_timer@lastRegSaved lastRegSaved `i  1 a 2 47 ]
 "47
-[v sensor_timer@numRegsSaved numRegsSaved `i  1 a 2 31 ]
+[v sensor_timer@numRegsSaved numRegsSaved `i  1 a 2 45 ]
 "65
-[v sensor_timer@localMin localMin `i  1 a 2 29 ]
+[v sensor_timer@localMin localMin `i  1 a 2 43 ]
 "64
-[v sensor_timer@localHour localHour `i  1 a 2 27 ]
+[v sensor_timer@localHour localHour `i  1 a 2 41 ]
 "66
-[v sensor_timer@localSec localSec `i  1 a 2 25 ]
+[v sensor_timer@localSec localSec `i  1 a 2 39 ]
 "74
-[v sensor_timer@lastTempEntry lastTempEntry `i  1 a 2 19 ]
+[v sensor_timer@lastTempEntry lastTempEntry `i  1 a 2 33 ]
 "73
-[v sensor_timer@lastLumEntry lastLumEntry `i  1 a 2 17 ]
+[v sensor_timer@lastLumEntry lastLumEntry `i  1 a 2 31 ]
 "114
-[v sensor_timer@minLum minLum `i  1 a 2 15 ]
+[v sensor_timer@minLum minLum `i  1 a 2 29 ]
 "113
-[v sensor_timer@minTemp minTemp `i  1 a 2 13 ]
+[v sensor_timer@minTemp minTemp `i  1 a 2 27 ]
 "112
-[v sensor_timer@maxLum maxLum `i  1 a 2 11 ]
+[v sensor_timer@maxLum maxLum `i  1 a 2 25 ]
 "111
-[v sensor_timer@maxTemp maxTemp `i  1 a 2 9 ]
+[v sensor_timer@maxTemp maxTemp `i  1 a 2 23 ]
 "45
-[v sensor_timer@lum lum `i  1 p 2 3 ]
-[v sensor_timer@temp temp `i  1 p 2 5 ]
+[v sensor_timer@lum lum `i  1 p 2 17 ]
+[v sensor_timer@temp temp `i  1 p 2 19 ]
 "148
 } 0
-"105 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/tmr1.c
+"105 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/tmr1.c
 [v _TMR1_StopTimer TMR1_StopTimer `(v  1 e 1 0 ]
 {
 "109
@@ -1218,132 +1350,187 @@ channel_FVR_buf1 63
 {
 "103
 } 0
-"62 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\stateModifiers.c
+"62 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\stateModifiers.c
 [v _s2Pressed s2Pressed `(v  1 e 1 0 ]
 {
 "64
-[v s2Pressed@remainder remainder `i  1 a 2 30 ]
-"150
+[v s2Pressed@remainder remainder `i  1 a 2 40 ]
+"151
 } 0
 "27
 [v _incrementor incrementor `(i  1 e 2 0 ]
 {
 "45
-[v incrementor@old_val old_val `i  1 a 2 22 ]
+[v incrementor@old_val old_val `i  1 a 2 32 ]
 "28
-[v incrementor@remainder remainder `i  1 a 2 26 ]
-[v incrementor@top_val top_val `i  1 a 2 24 ]
+[v incrementor@remainder remainder `i  1 a 2 36 ]
+[v incrementor@top_val top_val `i  1 a 2 34 ]
 "27
-[v incrementor@t_addr t_addr `us  1 p 2 14 ]
-[v incrementor@decimal decimal `i  1 p 2 16 ]
-[v incrementor@mode mode `i  1 p 2 18 ]
+[v incrementor@t_addr t_addr `us  1 p 2 24 ]
+[v incrementor@decimal decimal `i  1 p 2 26 ]
+[v incrementor@mode mode `i  1 p 2 28 ]
 "54
-} 0
-"15 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\Umul16.c
-[v ___wmul __wmul `(ui  1 e 2 0 ]
-{
-"17
-[v ___wmul@product product `ui  1 a 2 12 ]
-"15
-[v ___wmul@multiplier multiplier `ui  1 p 2 8 ]
-[v ___wmul@multiplicand multiplicand `ui  1 p 2 10 ]
-"53
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 {
 "10
-[v ___awdiv@quotient quotient `i  1 a 2 6 ]
+[v ___awdiv@quotient quotient `i  1 a 2 7 ]
 "11
-[v ___awdiv@sign sign `uc  1 a 1 5 ]
-[v ___awdiv@counter counter `uc  1 a 1 4 ]
+[v ___awdiv@sign sign `uc  1 a 1 6 ]
+[v ___awdiv@counter counter `uc  1 a 1 5 ]
 "5
 [v ___awdiv@divisor divisor `i  1 p 2 0 ]
 [v ___awdiv@dividend dividend `i  1 p 2 2 ]
 "41
 } 0
-"155 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\stateModifiers.c
+"156 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\stateModifiers.c
 [v _s1Pressed s1Pressed `(v  1 e 1 0 ]
 {
-"156
-[v s1Pressed@remainder remainder `i  1 a 2 9 ]
-"235
+"157
+[v s1Pressed@remainder remainder `i  1 a 2 26 ]
+"236
 } 0
 "8
 [v _update_lights update_lights `(v  1 e 1 0 ]
 {
-[v update_lights@number number `i  1 p 2 2 ]
+[v update_lights@number number `i  1 p 2 4 ]
 "26
 } 0
-"237
+"238
 [v _clearLeds clearLeds `(v  1 e 1 0 ]
 {
-"242
+"243
 } 0
 "5 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
 {
 "10
-[v ___awmod@sign sign `uc  1 a 1 6 ]
-[v ___awmod@counter counter `uc  1 a 1 5 ]
+[v ___awmod@sign sign `uc  1 a 1 23 ]
+[v ___awmod@counter counter `uc  1 a 1 22 ]
 "5
-[v ___awmod@divisor divisor `i  1 p 2 0 ]
-[v ___awmod@dividend dividend `i  1 p 2 2 ]
+[v ___awmod@divisor divisor `i  1 p 2 17 ]
+[v ___awmod@dividend dividend `i  1 p 2 19 ]
 "34
 } 0
-"83 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/i2c1_driver.c
+"6 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\coms.c
+[v _readbytes readbytes `(v  1 e 1 0 ]
+{
+"7
+[v readbytes@data data `uc  1 a 1 35 ]
+"22
+} 0
+"24
+[v _interp_msg interp_msg `(v  1 e 1 0 ]
+{
+"231
+[v interp_msg@i_2964 i `i  1 a 2 23 ]
+"193
+[v interp_msg@i i `i  1 a 2 21 ]
+"27
+[v interp_msg@data data `i  1 a 2 31 ]
+"29
+[v interp_msg@iread iread `i  1 a 2 29 ]
+"28
+[v interp_msg@n n `i  1 a 2 27 ]
+"30
+[v interp_msg@numregs numregs `i  1 a 2 25 ]
+"26
+[v interp_msg@cmd cmd `i  1 a 2 19 ]
+"262
+} 0
+"264
+[v _writebytes writebytes `(v  1 e 1 0 ]
+{
+[v writebytes@data data `uc  1 a 1 wreg ]
+[v writebytes@data data `uc  1 a 1 wreg ]
+"266
+[v writebytes@data data `uc  1 a 1 2 ]
+"270
+} 0
+"129 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/eusart.c
+[v _EUSART_is_tx_ready EUSART_is_tx_ready `(uc  1 e 1 0 ]
+{
+"132
+} 0
+"170
+[v _EUSART_Write EUSART_Write `(v  1 e 1 0 ]
+{
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 wreg ]
+[v EUSART_Write@txData txData `uc  1 a 1 1 ]
+"191
+} 0
+"15 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\Umul16.c
+[v ___wmul __wmul `(ui  1 e 2 0 ]
+{
+"17
+[v ___wmul@product product `ui  1 a 2 13 ]
+"15
+[v ___wmul@multiplier multiplier `ui  1 p 2 9 ]
+[v ___wmul@multiplicand multiplicand `ui  1 p 2 11 ]
+"53
+} 0
+"148 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/eusart.c
+[v _EUSART_Read EUSART_Read `(uc  1 e 1 0 ]
+{
+"150
+[v EUSART_Read@readValue readValue `uc  1 a 1 1 ]
+"168
+} 0
+"83 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/i2c1_driver.c
 [v _i2c1_driver_open i2c1_driver_open `(b  1 e 0 0 ]
 {
 "95
 } 0
-"7 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\measureAndSaveFunctions.c
+"7 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\measureAndSaveFunctions.c
 [v _get_luminosity get_luminosity `(i  1 e 2 0 ]
 {
 "10
-[v get_luminosity@lum lum `i  1 a 2 5 ]
+[v get_luminosity@lum lum `i  1 a 2 6 ]
 "26
 } 0
-"130 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/adcc.c
+"130 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/adcc.c
 [v _ADCC_GetSingleConversion ADCC_GetSingleConversion `(us  1 e 2 0 ]
 {
 [v ADCC_GetSingleConversion@channel channel `E12236  1 a 1 wreg ]
 [v ADCC_GetSingleConversion@channel channel `E12236  1 a 1 wreg ]
 "133
-[v ADCC_GetSingleConversion@channel channel `E12236  1 a 1 4 ]
+[v ADCC_GetSingleConversion@channel channel `E12236  1 a 1 3 ]
 "155
 } 0
-"151 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\measureAndSaveFunctions.c
+"151 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\measureAndSaveFunctions.c
 [v _getValuesFromPreviousSession getValuesFromPreviousSession `(v  1 e 1 0 ]
 {
 "153
-[v getValuesFromPreviousSession@numRegsSaved numRegsSaved `i  1 a 2 7 ]
+[v getValuesFromPreviousSession@numRegsSaved numRegsSaved `i  1 a 2 21 ]
 "154
-[v getValuesFromPreviousSession@lastRegSaved lastRegSaved `i  1 a 2 5 ]
-"167
+[v getValuesFromPreviousSession@lastRegSaved lastRegSaved `i  1 a 2 19 ]
+"173
 } 0
-"180 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/memory.c
+"180 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/memory.c
 [v _DATAEE_WriteByte DATAEE_WriteByte `(v  1 e 1 0 ]
 {
 "182
-[v DATAEE_WriteByte@GIEBitValue GIEBitValue `uc  1 a 1 4 ]
+[v DATAEE_WriteByte@GIEBitValue GIEBitValue `uc  1 a 1 3 ]
 "180
 [v DATAEE_WriteByte@bAdd bAdd `us  1 p 2 0 ]
 [v DATAEE_WriteByte@bData bData `uc  1 p 1 2 ]
 "200
 } 0
-"47 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\pwmAlarm.c
+"59 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\pwmAlarm.c
 [v _checkVariablesForAlarm checkVariablesForAlarm `(v  1 e 1 0 ]
 {
-[v checkVariablesForAlarm@temperature temperature `i  1 p 2 2 ]
-[v checkVariablesForAlarm@luminosity luminosity `i  1 p 2 4 ]
-"66
+[v checkVariablesForAlarm@temperature temperature `i  1 p 2 17 ]
+[v checkVariablesForAlarm@luminosity luminosity `i  1 p 2 19 ]
+"78
 } 0
-"99 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/tmr3.c
+"99 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/tmr3.c
 [v _TMR3_StartTimer TMR3_StartTimer `(v  1 e 1 0 ]
 {
 "103
 } 0
-"106 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/tmr2.c
+"106 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/tmr2.c
 [v _TMR2_StartTimer TMR2_StartTimer `(v  1 e 1 0 ]
 {
 "109
@@ -1353,19 +1540,19 @@ channel_FVR_buf1 63
 {
 "104
 } 0
-"74 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/pwm6.c
+"74 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/pwm6.c
 [v _PWM6_LoadDutyValue PWM6_LoadDutyValue `(v  1 e 1 0 ]
 {
-[v PWM6_LoadDutyValue@dutyValue dutyValue `us  1 p 2 4 ]
+[v PWM6_LoadDutyValue@dutyValue dutyValue `us  1 p 2 0 ]
 "81
 } 0
-"202 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/memory.c
+"202 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/memory.c
 [v _DATAEE_ReadByte DATAEE_ReadByte `(uc  1 e 1 0 ]
 {
-[v DATAEE_ReadByte@bAdd bAdd `us  1 p 2 4 ]
+[v DATAEE_ReadByte@bAdd bAdd `us  1 p 2 15 ]
 "212
 } 0
-"125 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/tmr4.c
+"125 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/tmr4.c
 [v _TMR4_StopTimer TMR4_StopTimer `(v  1 e 1 0 ]
 {
 "128
@@ -1385,17 +1572,17 @@ channel_FVR_buf1 63
 {
 "112
 } 0
-"105 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/tmr3.c
+"105 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/tmr3.c
 [v _TMR3_StopTimer TMR3_StopTimer `(v  1 e 1 0 ]
 {
 "109
 } 0
-"50 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/mcc.c
+"50 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/mcc.c
 [v _SYSTEM_Initialize SYSTEM_Initialize `(v  1 e 1 0 ]
 {
-"62
+"63
 } 0
-"64 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/tmr4.c
+"64 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/tmr4.c
 [v _TMR4_Initialize TMR4_Initialize `(v  1 e 1 0 ]
 {
 "94
@@ -1403,10 +1590,10 @@ channel_FVR_buf1 63
 "178
 [v _TMR4_SetInterruptHandler TMR4_SetInterruptHandler `(v  1 e 1 0 ]
 {
-[v TMR4_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 4 ]
+[v TMR4_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "180
 } 0
-"64 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/tmr3.c
+"64 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/tmr3.c
 [v _TMR3_Initialize TMR3_Initialize `(v  1 e 1 0 ]
 {
 "97
@@ -1414,15 +1601,15 @@ channel_FVR_buf1 63
 "178
 [v _TMR3_SetInterruptHandler TMR3_SetInterruptHandler `(v  1 e 1 0 ]
 {
-[v TMR3_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 4 ]
+[v TMR3_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "180
 } 0
-"62 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/tmr2.c
+"62 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/tmr2.c
 [v _TMR2_Initialize TMR2_Initialize `(v  1 e 1 0 ]
 {
 "86
 } 0
-"64 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/tmr1.c
+"64 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/tmr1.c
 [v _TMR1_Initialize TMR1_Initialize `(v  1 e 1 0 ]
 {
 "97
@@ -1430,30 +1617,30 @@ channel_FVR_buf1 63
 "178
 [v _TMR1_SetInterruptHandler TMR1_SetInterruptHandler `(v  1 e 1 0 ]
 {
-[v TMR1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 4 ]
+[v TMR1_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "180
 } 0
-"58 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/pwm6.c
+"58 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/pwm6.c
 [v _PWM6_Initialize PWM6_Initialize `(v  1 e 1 0 ]
 {
 "72
 } 0
-"78 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/mcc.c
+"79 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/mcc.c
 [v _PMD_Initialize PMD_Initialize `(v  1 e 1 0 ]
 {
-"92
+"93
 } 0
-"57 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/pin_manager.c
+"57 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/pin_manager.c
 [v _PIN_MANAGER_Initialize PIN_MANAGER_Initialize `(v  1 e 1 0 ]
 {
-"125
+"127
 } 0
-"64 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/mcc.c
+"65 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/mcc.c
 [v _OSCILLATOR_Initialize OSCILLATOR_Initialize `(v  1 e 1 0 ]
 {
-"76
+"77
 } 0
-"59 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/ext_int.c
+"59 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/ext_int.c
 [v _EXT_INT_Initialize EXT_INT_Initialize `(v  1 e 1 0 ]
 {
 "70
@@ -1461,40 +1648,80 @@ channel_FVR_buf1 63
 "50
 [v _INT_SetInterruptHandler INT_SetInterruptHandler `(v  1 e 1 0 ]
 {
-[v INT_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 4 ]
+[v INT_SetInterruptHandler@InterruptHandler InterruptHandler `*.37(v  1 p 2 0 ]
 "52
 } 0
-"63 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/adcc.c
+"85 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/eusart.c
+[v _EUSART_Initialize EUSART_Initialize `(v  1 e 1 0 ]
+{
+"127
+} 0
+"282
+[v _EUSART_SetTxInterruptHandler EUSART_SetTxInterruptHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetTxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"284
+} 0
+"286
+[v _EUSART_SetRxInterruptHandler EUSART_SetRxInterruptHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetRxInterruptHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"288
+} 0
+"274
+[v _EUSART_SetOverrunErrorHandler EUSART_SetOverrunErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetOverrunErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"276
+} 0
+"270
+[v _EUSART_SetFramingErrorHandler EUSART_SetFramingErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetFramingErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"272
+} 0
+"278
+[v _EUSART_SetErrorHandler EUSART_SetErrorHandler `(v  1 e 1 0 ]
+{
+[v EUSART_SetErrorHandler@interruptHandler interruptHandler `*.37(v  1 p 2 0 ]
+"280
+} 0
+"63 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/adcc.c
 [v _ADCC_Initialize ADCC_Initialize `(v  1 e 1 0 ]
 {
 "104
 } 0
-"9 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\pwmAlarm.c
+"10 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\pwmAlarm.c
 [v _PWM_Enable PWM_Enable `(v  1 e 1 0 ]
 {
-"19
+"20
 } 0
-"52 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/interrupt_manager.c
+"134 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/eusart.c
+[v _EUSART_is_rx_ready EUSART_is_rx_ready `(uc  1 e 1 0 ]
+{
+"137
+} 0
+"52 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/interrupt_manager.c
 [v _INTERRUPT_InterruptManager INTERRUPT_InterruptManager `II(v  1 e 1 0 ]
 {
-"90
+"98
 } 0
-"165 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/tmr4.c
+"165 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/tmr4.c
 [v _TMR4_ISR TMR4_ISR `(v  1 e 1 0 ]
 {
 "175
 } 0
-"48 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\interruptions.c
+"48 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\interruptions.c
 [v _LED_blink_function LED_blink_function `(v  1 e 1 0 ]
 {
 "69
 } 0
-"182 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/tmr4.c
+"182 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/tmr4.c
 [v _TMR4_DefaultInterruptHandler TMR4_DefaultInterruptHandler `(v  1 e 1 0 ]
 {
 "185
 } 0
-"164 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/tmr3.c
+"164 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/tmr3.c
 [v _TMR3_ISR TMR3_ISR `(v  1 e 1 0 ]
 {
 "175
@@ -1504,28 +1731,91 @@ channel_FVR_buf1 63
 {
 "185
 } 0
-"33 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\pwmAlarm.c
+"34 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\pwmAlarm.c
 [v _change_PWM change_PWM `(v  1 e 1 0 ]
 {
-"45
+"39
+[v change_PWM@incrementor incrementor `i  1 a 2 62 ]
+"57
 } 0
-"105 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/tmr3.c
+"105 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/tmr3.c
 [v i1_TMR3_StopTimer TMR3_StopTimer `(v  1 e 1 0 ]
 {
 "109
 } 0
-"9 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\pwmAlarm.c
+"10 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\pwmAlarm.c
 [v i1_PWM_Enable PWM_Enable `(v  1 e 1 0 ]
 {
-"19
+"20
 } 0
-"127 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/tmr3.c
+"3 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\ceilf.c
+[v _ceilf ceilf `(f  1 e 4 0 ]
+{
+[u S3343 . 4 `f 1 f 4 0 `ul 1 i 4 0 ]
+"5
+[v ceilf@u u `S3343  1 a 4 42 ]
+"7
+[v ceilf@m m `ul  1 a 4 36 ]
+"6
+[v ceilf@e e `i  1 a 2 40 ]
+"3
+[v ceilf@x x `f  1 p 4 26 ]
+"4
+[v ceilf@F514 F514 `S3343  1 s 4 F514 ]
+"27
+} 0
+"10 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 10 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 9 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 0 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 8 ]
+"44
+} 0
+"43 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+{
+"45
+[v ___fltol@exp1 exp1 `uc  1 a 1 56 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 55 ]
+"43
+[v ___fltol@f1 f1 `d  1 p 4 46 ]
+"70
+} 0
+"8 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\sources\c99\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 20 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 13 ]
+"20
+[v ___fldiv@new_exp new_exp `i  1 a 2 18 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 25 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 24 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 17 ]
+"8
+[v ___fldiv@a a `d  1 p 4 0 ]
+[v ___fldiv@b b `d  1 p 4 4 ]
+"185
+} 0
+"127 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/tmr3.c
 [v _TMR3_WriteTimer TMR3_WriteTimer `(v  1 e 1 0 ]
 {
 [v TMR3_WriteTimer@timerVal timerVal `us  1 p 2 0 ]
 "147
 } 0
-"164 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/tmr1.c
+"164 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/tmr1.c
 [v _TMR1_ISR TMR1_ISR `(v  1 e 1 0 ]
 {
 "175
@@ -1535,18 +1825,18 @@ channel_FVR_buf1 63
 {
 "185
 } 0
-"7 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\interruptions.c
+"7 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\interruptions.c
 [v _changeleds changeleds `(v  1 e 1 0 ]
 {
 "27
 } 0
-"127 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/tmr1.c
+"127 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/tmr1.c
 [v _TMR1_WriteTimer TMR1_WriteTimer `(v  1 e 1 0 ]
 {
 [v TMR1_WriteTimer@timerVal timerVal `us  1 p 2 0 ]
 "147
 } 0
-"32 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/ext_int.c
+"32 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/ext_int.c
 [v _INT_ISR INT_ISR `(v  1 e 1 0 ]
 {
 "38
@@ -1561,19 +1851,48 @@ channel_FVR_buf1 63
 {
 "57
 } 0
-"29 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\interruptions.c
+"29 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\interruptions.c
 [v _s1PressedInterruptHandler s1PressedInterruptHandler `(v  1 e 1 0 ]
 {
 "46
 } 0
-"237 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\stateModifiers.c
+"238 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\stateModifiers.c
 [v i1_clearLeds clearLeds `(v  1 e 1 0 ]
 {
-"242
+"243
 } 0
-"74 C:\Users\Rodrigo\Documents\GitHub\SCE_Project\mcc_generated_files/pwm6.c
+"74 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/pwm6.c
 [v i1_PWM6_LoadDutyValue PWM6_LoadDutyValue `(v  1 e 1 0 ]
 {
 [v i1PWM6_LoadDutyValue@dutyValue dutyValue `us  1 p 2 0 ]
 "81
+} 0
+"203 C:\Users\Rodrigo\OneDrive\Documentos\SCE\SCE_Project\mcc_generated_files/eusart.c
+[v _EUSART_Transmit_ISR EUSART_Transmit_ISR `(v  1 e 1 0 ]
+{
+"220
+} 0
+"222
+[v _EUSART_Receive_ISR EUSART_Receive_ISR `(v  1 e 1 0 ]
+{
+"244
+} 0
+"258
+[v _EUSART_DefaultOverrunErrorHandler EUSART_DefaultOverrunErrorHandler `(v  1 e 1 0 ]
+{
+"264
+} 0
+"256
+[v _EUSART_DefaultFramingErrorHandler EUSART_DefaultFramingErrorHandler `(v  1 e 1 0 ]
+{
+} 0
+"266
+[v _EUSART_DefaultErrorHandler EUSART_DefaultErrorHandler `(v  1 e 1 0 ]
+{
+"268
+} 0
+"246
+[v _EUSART_RxDataHandler EUSART_RxDataHandler `(v  1 e 1 0 ]
+{
+"254
 } 0

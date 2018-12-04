@@ -8,9 +8,9 @@
 # 2 "<built-in>" 2
 # 1 "measureAndSaveFunctions.c" 2
 # 1 "./mcc_generated_files/pin_manager.h" 1
-# 244 "./mcc_generated_files/pin_manager.h"
+# 268 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_Initialize (void);
-# 256 "./mcc_generated_files/pin_manager.h"
+# 280 "./mcc_generated_files/pin_manager.h"
 void PIN_MANAGER_IOC(void);
 # 1 "measureAndSaveFunctions.c" 2
 
@@ -20948,14 +20948,16 @@ uint8_t ADCC_GetConversionStageStatus(void);
 volatile int hrs = 0;
 volatile int mins = 0;
 volatile int secs = 0;
-const int PMON = 3;
+volatile int PMON = 3;
 volatile int ALAF = 1;
 volatile int alarm = 0;
 volatile int control_alarm = 0;
-const int TALA = 2;
+volatile int TALA = 2;
 adc_result_t adcResult = 0;
 volatile int LumThreshold = 2;
 volatile int TempThreshold = 25;
+volatile int temperature = 0 ;
+volatile int luminosity = 0;
 
 volatile int s1_pressed = 0;
 volatile int mode_s = -1;
@@ -20963,11 +20965,13 @@ volatile int mode_s = -1;
 const int max_hour = 24;
 const int max_min = 60;
 const int max_temp =50;
-const int max_lum = 10;
+const int max_lum = 4;
 
 
 volatile int LED_to_blink;
-volatile int blink;
+volatile int blink = 0;
+
+volatile int blink_ctr = 0;
 # 2 "measureAndSaveFunctions.c" 2
 
 # 1 "./mcc_generated_files/mcc.h" 1
@@ -21419,13 +21423,6 @@ extern void (*TMR4_InterruptHandler)(void);
 void TMR4_DefaultInterruptHandler(void);
 # 57 "./mcc_generated_files/mcc.h" 2
 
-# 1 "./mcc_generated_files/pwm6.h" 1
-# 102 "./mcc_generated_files/pwm6.h"
- void PWM6_Initialize(void);
-# 129 "./mcc_generated_files/pwm6.h"
- void PWM6_LoadDutyValue(uint16_t dutyValue);
-# 58 "./mcc_generated_files/mcc.h" 2
-
 # 1 "./mcc_generated_files/tmr1.h" 1
 # 100 "./mcc_generated_files/tmr1.h"
 void TMR1_Initialize(void);
@@ -21451,6 +21448,13 @@ void TMR1_ISR(void);
 extern void (*TMR1_InterruptHandler)(void);
 # 421 "./mcc_generated_files/tmr1.h"
 void TMR1_DefaultInterruptHandler(void);
+# 58 "./mcc_generated_files/mcc.h" 2
+
+# 1 "./mcc_generated_files/pwm6.h" 1
+# 102 "./mcc_generated_files/pwm6.h"
+ void PWM6_Initialize(void);
+# 129 "./mcc_generated_files/pwm6.h"
+ void PWM6_LoadDutyValue(uint16_t dutyValue);
 # 59 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/tmr2.h" 1
@@ -21681,24 +21685,80 @@ void INT_DefaultInterruptHandler(void);
 # 62 "./mcc_generated_files/mcc.h" 2
 
 # 1 "./mcc_generated_files/memory.h" 1
-# 118 "./mcc_generated_files/memory.h"
+# 123 "./mcc_generated_files/memory.h"
 uint16_t FLASH_ReadWord(uint16_t flashAddr);
-# 147 "./mcc_generated_files/memory.h"
+# 152 "./mcc_generated_files/memory.h"
 void FLASH_WriteWord(uint16_t flashAddr, uint16_t *ramBuf, uint16_t word);
-# 183 "./mcc_generated_files/memory.h"
+# 188 "./mcc_generated_files/memory.h"
 int8_t FLASH_WriteBlock(uint16_t writeAddr, uint16_t *flashWordArray);
-# 208 "./mcc_generated_files/memory.h"
+# 213 "./mcc_generated_files/memory.h"
 void FLASH_EraseBlock(uint16_t startAddr);
-# 241 "./mcc_generated_files/memory.h"
+# 246 "./mcc_generated_files/memory.h"
 void DATAEE_WriteByte(uint16_t bAdd, uint8_t bData);
-# 267 "./mcc_generated_files/memory.h"
+# 272 "./mcc_generated_files/memory.h"
 uint8_t DATAEE_ReadByte(uint16_t bAdd);
 # 63 "./mcc_generated_files/mcc.h" 2
-# 78 "./mcc_generated_files/mcc.h"
+
+# 1 "./mcc_generated_files/eusart.h" 1
+# 76 "./mcc_generated_files/eusart.h"
+typedef union {
+    struct {
+        unsigned perr : 1;
+        unsigned ferr : 1;
+        unsigned oerr : 1;
+        unsigned reserved : 5;
+    };
+    uint8_t status;
+}eusart_status_t;
+
+
+
+
+extern volatile uint8_t eusartTxBufferRemaining;
+extern volatile uint8_t eusartRxCount;
+
+
+
+
+
+void (*EUSART_TxDefaultInterruptHandler)(void);
+void (*EUSART_RxDefaultInterruptHandler)(void);
+# 119 "./mcc_generated_files/eusart.h"
+void EUSART_Initialize(void);
+# 172 "./mcc_generated_files/eusart.h"
+uint8_t EUSART_is_tx_ready(void);
+# 224 "./mcc_generated_files/eusart.h"
+uint8_t EUSART_is_rx_ready(void);
+# 271 "./mcc_generated_files/eusart.h"
+_Bool EUSART_is_tx_done(void);
+# 319 "./mcc_generated_files/eusart.h"
+eusart_status_t EUSART_get_last_status(void);
+# 339 "./mcc_generated_files/eusart.h"
+uint8_t EUSART_Read(void);
+# 359 "./mcc_generated_files/eusart.h"
+void EUSART_Write(uint8_t txData);
+# 380 "./mcc_generated_files/eusart.h"
+void EUSART_Transmit_ISR(void);
+# 401 "./mcc_generated_files/eusart.h"
+void EUSART_Receive_ISR(void);
+# 422 "./mcc_generated_files/eusart.h"
+void EUSART_RxDataHandler(void);
+# 440 "./mcc_generated_files/eusart.h"
+void EUSART_SetFramingErrorHandler(void (* interruptHandler)(void));
+# 458 "./mcc_generated_files/eusart.h"
+void EUSART_SetOverrunErrorHandler(void (* interruptHandler)(void));
+# 476 "./mcc_generated_files/eusart.h"
+void EUSART_SetErrorHandler(void (* interruptHandler)(void));
+# 496 "./mcc_generated_files/eusart.h"
+void EUSART_SetTxInterruptHandler(void (* interruptHandler)(void));
+# 516 "./mcc_generated_files/eusart.h"
+void EUSART_SetRxInterruptHandler(void (* interruptHandler)(void));
+# 64 "./mcc_generated_files/mcc.h" 2
+# 79 "./mcc_generated_files/mcc.h"
 void SYSTEM_Initialize(void);
-# 91 "./mcc_generated_files/mcc.h"
+# 92 "./mcc_generated_files/mcc.h"
 void OSCILLATOR_Initialize(void);
-# 104 "./mcc_generated_files/mcc.h"
+# 105 "./mcc_generated_files/mcc.h"
 void PMD_Initialize(void);
 # 3 "measureAndSaveFunctions.c" 2
 
@@ -21745,19 +21805,19 @@ void setLedLuminosity(int lum){
 
 void sensor_timer(int lum, int temp){
 
-    int numRegsSaved = DATAEE_ReadByte(0x7065);
+    int numRegsSaved = DATAEE_ReadByte(0x7066);
     int lastRegSaved = DATAEE_ReadByte(0x7064);
 
 
     if( numRegsSaved == 0 || ((numRegsSaved != lastRegSaved) && numRegsSaved != 20) || numRegsSaved > 20 || lastRegSaved > 20){
         numRegsSaved = 0;
         lastRegSaved = 0;
-        DATAEE_WriteByte(0x7065, numRegsSaved);
+        DATAEE_WriteByte(0x7066, numRegsSaved);
         DATAEE_WriteByte(0x7064, lastRegSaved);
-        DATAEE_WriteByte(0x706D + 3, 0);
-        DATAEE_WriteByte(0x7068 + 4, 0);
-        DATAEE_WriteByte(0x7077 + 3, 200);
-        DATAEE_WriteByte(0x7072 + 4, 5);
+        DATAEE_WriteByte(0x706E + 3, 0);
+        DATAEE_WriteByte(0x7069 + 4, 0);
+        DATAEE_WriteByte(0x7078 + 3, 200);
+        DATAEE_WriteByte(0x7073 + 4, 5);
     }
 
 
@@ -21768,8 +21828,8 @@ void sensor_timer(int lum, int temp){
     TMR1_StartTimer();
 
 
-    DATAEE_WriteByte(0x7066, localHour);
-    DATAEE_WriteByte(0x7067, localMin);
+    DATAEE_WriteByte(0x7067, localHour);
+    DATAEE_WriteByte(0x7068, localMin);
 
     int lastLumEntry = 0;
     int lastTempEntry = 0;
@@ -21799,7 +21859,7 @@ void sensor_timer(int lum, int temp){
 
 
         DATAEE_WriteByte(0x7064, newRegIndex);
-        DATAEE_WriteByte(0x7065, updateNumRegsSaved);
+        DATAEE_WriteByte(0x7066, updateNumRegsSaved);
 
         DATAEE_WriteByte(0x7000 + lastRegSaved + 0, localHour);
         DATAEE_WriteByte(0x7000 + lastRegSaved + 1, localMin);
@@ -21809,41 +21869,66 @@ void sensor_timer(int lum, int temp){
     }
 
 
-    int maxTemp = DATAEE_ReadByte(0x706D + 3);
-    int maxLum = DATAEE_ReadByte(0x7068 + 4);
-    int minTemp = DATAEE_ReadByte(0x7077 + 3);
-    int minLum = DATAEE_ReadByte(0x7072 + 4);
+    int maxTemp = DATAEE_ReadByte(0x706E + 3);
+    int maxLum = DATAEE_ReadByte(0x7069 + 4);
+    int minTemp = DATAEE_ReadByte(0x7078 + 3);
+    int minLum = DATAEE_ReadByte(0x7073 + 4);
 
     if(temp >= maxTemp){
-        DATAEE_WriteByte(0x706D + 0x7066, localHour);
-        DATAEE_WriteByte(0x706D + 1, localMin);
-        DATAEE_WriteByte(0x706D + 2, localSec);
-        DATAEE_WriteByte(0x706D + 3, temp);
-        DATAEE_WriteByte(0x706D + 4, lum);
+        DATAEE_WriteByte(0x706E + 0x7067, localHour);
+        DATAEE_WriteByte(0x706E + 1, localMin);
+        DATAEE_WriteByte(0x706E + 2, localSec);
+        DATAEE_WriteByte(0x706E + 3, temp);
+        DATAEE_WriteByte(0x706E + 4, lum);
     }
 
     if(lum >= maxLum){
-        DATAEE_WriteByte(0x7068 + 0x7066, localHour);
-        DATAEE_WriteByte(0x7068 + 1, localMin);
-        DATAEE_WriteByte(0x7068 + 2, localSec);
-        DATAEE_WriteByte(0x7068 + 3, temp);
-        DATAEE_WriteByte(0x7068 + 4, lum);
+        DATAEE_WriteByte(0x7069 + 0x7067, localHour);
+        DATAEE_WriteByte(0x7069 + 1, localMin);
+        DATAEE_WriteByte(0x7069 + 2, localSec);
+        DATAEE_WriteByte(0x7069 + 3, temp);
+        DATAEE_WriteByte(0x7069 + 4, lum);
     }
 
     if(temp <= minTemp){
-        DATAEE_WriteByte(0x7077 + 0x7066, localHour);
-        DATAEE_WriteByte(0x7077 + 1, localMin);
-        DATAEE_WriteByte(0x7077 + 2, localSec);
-        DATAEE_WriteByte(0x7077 + 3, temp);
-        DATAEE_WriteByte(0x7077 + 4, lum);
+        DATAEE_WriteByte(0x7078 + 0x7067, localHour);
+        DATAEE_WriteByte(0x7078 + 1, localMin);
+        DATAEE_WriteByte(0x7078 + 2, localSec);
+        DATAEE_WriteByte(0x7078 + 3, temp);
+        DATAEE_WriteByte(0x7078 + 4, lum);
     }
 
     if(lum <= minLum){
-        DATAEE_WriteByte(0x7072 + 0x7066, localHour);
-        DATAEE_WriteByte(0x7072 + 1, localMin);
-        DATAEE_WriteByte(0x7072 + 2, localSec);
-        DATAEE_WriteByte(0x7072 + 3, temp);
-        DATAEE_WriteByte(0x7072 + 4, lum);
+        DATAEE_WriteByte(0x7073 + 0x7067, localHour);
+        DATAEE_WriteByte(0x7073 + 1, localMin);
+        DATAEE_WriteByte(0x7073 + 2, localSec);
+        DATAEE_WriteByte(0x7073 + 3, temp);
+        DATAEE_WriteByte(0x7073 + 4, lum);
     }
 
+}
+
+
+void getValuesFromPreviousSession(){
+
+    int numRegsSaved = DATAEE_ReadByte(0x7066);
+    int lastRegSaved = DATAEE_ReadByte(0x7064);
+
+
+    if( (numRegsSaved == 20 || ((numRegsSaved == lastRegSaved) && numRegsSaved != 20)) && numRegsSaved <= 20 && lastRegSaved <= 20){
+
+        hrs = DATAEE_ReadByte(0x7067);
+        mins = DATAEE_ReadByte(0x7068);
+        LumThreshold = DATAEE_ReadByte(0x707E);
+        TempThreshold = DATAEE_ReadByte(0x707D);
+        PMON = DATAEE_ReadByte(0x7080);
+        TALA = DATAEE_ReadByte(0x707F);
+        ALAF = DATAEE_ReadByte(0x7081);
+    }else{
+        DATAEE_WriteByte(0x707E, LumThreshold);
+        DATAEE_WriteByte(0x707D, TempThreshold);
+        DATAEE_WriteByte(0x7080, PMON);
+        DATAEE_WriteByte(0x707F, TALA);
+        DATAEE_WriteByte(0x707F, ALAF);
+    }
 }

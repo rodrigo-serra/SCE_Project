@@ -160,8 +160,14 @@ void getValuesFromPreviousSession(){
         mins = DATAEE_ReadByte(MINUTE);
         LumThreshold = DATAEE_ReadByte(THRESHLUM);
         TempThreshold = DATAEE_ReadByte(THRESHTEMP);
+        PMON = DATAEE_ReadByte(PMONvalue);
+        TALA = DATAEE_ReadByte(TALAvalue); 
+        ALAF = DATAEE_ReadByte(ALAFvalue); 
     }else{
         DATAEE_WriteByte(THRESHLUM, LumThreshold);
         DATAEE_WriteByte(THRESHTEMP, TempThreshold);
+        DATAEE_WriteByte(PMONvalue, PMON);
+        DATAEE_WriteByte(TALAvalue, TALA);
+        DATAEE_WriteByte(TALAvalue, ALAF);
     }
 }

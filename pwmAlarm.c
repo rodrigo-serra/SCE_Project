@@ -5,6 +5,7 @@
 #include "mcc_generated_files/pin_manager.h"
 #include "mcc_generated_files/memory.h"
 #include "globalvariables.h"
+#include <math.h>
 
 void PWM_Enable(void){
     PPSLOCK = 0x55;
@@ -35,9 +36,20 @@ void change_PWM(void){
     if(pwm_value == 0)
         PWM_Enable();
     
-    pwm_value += 100;
-    PWM6_LoadDutyValue(pwm_value);
-    if(pwm_value == 1000){
+    int incrementor;
+    incrementor = ceil(1000/(TALA/0.2));
+    pwm_value += incrementor;
+    
+    if(blink_ctr == 0){
+        PWM6_LoadDutyValue(1020);
+        blink_ctr = 1;
+    }else{
+        PWM6_LoadDutyValue(0);
+        blink_ctr = 0;
+    }
+    //PWM6_LoadDutyValue(pwm_value);
+    
+    if(pwm_value >= 1000){
         TMR3_StopTimer();
         pwm_value = 0;
         PWM6_LoadDutyValue(1020);

@@ -109,6 +109,7 @@ void s2Pressed(){
                 ALAF=1;
                 LED_D2_SetHigh();                       
             }
+            DATAEE_WriteByte(ALAFvalue,ALAF);
             break;	
         // mudar temp threshold
         case 7:	

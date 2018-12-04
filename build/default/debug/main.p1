@@ -1,9 +1,11 @@
 Version 4.0 HI-TECH Software Intermediate Code
 [v F12636 `(v ~T0 @X0 0 tf ]
 [v F12638 `(v ~T0 @X0 0 tf ]
+[v F12890 `(v ~T0 @X0 0 tf ]
+[v F12892 `(v ~T0 @X0 0 tf ]
 [p mainexit ]
-"78 ./mcc_generated_files/mcc.h
-[; ;./mcc_generated_files/mcc.h: 78: void SYSTEM_Initialize(void);
+"79 ./mcc_generated_files/mcc.h
+[; ;./mcc_generated_files/mcc.h: 79: void SYSTEM_Initialize(void);
 [v _SYSTEM_Initialize `(v ~T0 @X0 0 ef ]
 "48 ./mcc_generated_files/i2c1_driver.h
 [; ;./mcc_generated_files/i2c1_driver.h: 48: __bit i2c1_driver_open(void);
@@ -36,10 +38,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "364
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 364: extern volatile INTCONbits_t INTCONbits __attribute__((address(0x00B)));
 [v _INTCONbits `VS30 ~T0 @X0 0 e@11 ]
-[v F12740 `(v ~T0 @X0 0 tf ]
+[v F12737 `(v ~T0 @X0 0 tf ]
 "385 ./mcc_generated_files/tmr1.h
 [; ;./mcc_generated_files/tmr1.h: 385:  void TMR1_SetInterruptHandler(void (* InterruptHandler)(void));
-[v _TMR1_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F12740 ]
+[v _TMR1_SetInterruptHandler `(v ~T0 @X0 0 ef1`*F12737 ]
 "23 ./interruptions.h
 [; ;./interruptions.h: 23: void changeleds(void);
 [v _changeleds `(v ~T0 @X0 0 ef ]
@@ -76,18 +78,18 @@ Version 4.0 HI-TECH Software Intermediate Code
 "129 ./mcc_generated_files/pwm6.h
 [; ;./mcc_generated_files/pwm6.h: 129:  void PWM6_LoadDutyValue(uint16_t dutyValue);
 [v _PWM6_LoadDutyValue `(v ~T0 @X0 0 ef1`us ]
-"23 ./measureAndSaveFunctions.h
+"25 ./measureAndSaveFunctions.h
+[; ;./measureAndSaveFunctions.h: 25: void getValuesFromPreviousSession();
+[v _getValuesFromPreviousSession `(v ~T0 @X0 0 e? ]
+"23
 [; ;./measureAndSaveFunctions.h: 23: int get_luminosity (void);
 [v _get_luminosity `(i ~T0 @X0 0 ef ]
 "24
 [; ;./measureAndSaveFunctions.h: 24: void setLedLuminosity(int);
 [v _setLedLuminosity `(v ~T0 @X0 0 ef1`i ]
-"464 ./mcc_generated_files/tmr2.h
-[; ;./mcc_generated_files/tmr2.h: 464: void TMR2_StartTimer(void);
-[v _TMR2_StartTimer `(v ~T0 @X0 0 ef ]
-"129 ./mcc_generated_files/tmr3.h
-[; ;./mcc_generated_files/tmr3.h: 129: void TMR3_StartTimer(void);
-[v _TMR3_StartTimer `(v ~T0 @X0 0 ef ]
+"29 ./pwmAlarm.h
+[; ;./pwmAlarm.h: 29: void checkVariablesForAlarm(int temperature, int luminosity);
+[v _checkVariablesForAlarm `(v ~T0 @X0 0 ef2`i`i ]
 "31 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic.h
 [v ___nop `(v ~T0 @X0 0 ef ]
 [p i ___nop ]
@@ -97,6 +99,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22 ./measureAndSaveFunctions.h
 [; ;./measureAndSaveFunctions.h: 22: void sensor_timer(int lum, int temp);
 [v _sensor_timer `(v ~T0 @X0 0 ef2`i`i ]
+"40 ./coms.h
+[; ;./coms.h: 40: void readbytes(void);
+[v _readbytes `(v ~T0 @X0 0 ef ]
+"224 ./mcc_generated_files/eusart.h
+[; ;./mcc_generated_files/eusart.h: 224: uint8_t EUSART_is_rx_ready(void);
+[v _EUSART_is_rx_ready `(uc ~T0 @X0 0 ef ]
 "161 ./mcc_generated_files/tmr1.h
 [; ;./mcc_generated_files/tmr1.h: 161: void TMR1_StopTimer(void);
 [v _TMR1_StopTimer `(v ~T0 @X0 0 ef ]
@@ -114,15 +122,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 "525
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 525: extern volatile PORTCbits_t PORTCbits __attribute__((address(0x00E)));
 [v _PORTCbits `VS36 ~T0 @X0 0 e@14 ]
-"14 ./Set_clock_thresholds.h
-[; ;./Set_clock_thresholds.h: 14: void s2Pressed();
+"14 ./stateModifiers.h
+[; ;./stateModifiers.h: 14: void s2Pressed();
 [v _s2Pressed `(v ~T0 @X0 0 e? ]
 [v F12202 `(v ~T0 @X0 1 tf1`ul ]
 "92 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic.h
 [v __delay `JF12202 ~T0 @X0 0 e ]
 [p i __delay ]
-"15 ./Set_clock_thresholds.h
-[; ;./Set_clock_thresholds.h: 15: void s1Pressed();
+"15 ./stateModifiers.h
+[; ;./stateModifiers.h: 15: void s1Pressed();
 [v _s1Pressed `(v ~T0 @X0 0 e? ]
 "129 ./mcc_generated_files/tmr1.h
 [; ;./mcc_generated_files/tmr1.h: 129: void TMR1_StartTimer(void);
@@ -1771,6 +1779,12 @@ Version 4.0 HI-TECH Software Intermediate Code
 "78
 [; ;./mcc_generated_files/i2c1_driver.h: 78: void (*i2c1_driver_i2cISR)(void);
 [v _i2c1_driver_i2cISR `*F12638 ~T0 @X0 1 e ]
+"96 ./mcc_generated_files/eusart.h
+[; ;./mcc_generated_files/eusart.h: 96: void (*EUSART_TxDefaultInterruptHandler)(void);
+[v _EUSART_TxDefaultInterruptHandler `*F12890 ~T0 @X0 1 e ]
+"97
+[; ;./mcc_generated_files/eusart.h: 97: void (*EUSART_RxDefaultInterruptHandler)(void);
+[v _EUSART_RxDefaultInterruptHandler `*F12892 ~T0 @X0 1 e ]
 "24 ./globalvariables.h
 [; ;./globalvariables.h: 24: volatile int hrs = 0;
 [v _hrs `Vi ~T0 @X0 1 e ]
@@ -1790,8 +1804,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 "27
-[; ;./globalvariables.h: 27: const int PMON = 3;
-[v _PMON `Ci ~T0 @X0 1 e ]
+[; ;./globalvariables.h: 27: volatile int PMON = 3;
+[v _PMON `Vi ~T0 @X0 1 e ]
 [i _PMON
 -> 3 `i
 ]
@@ -1814,8 +1828,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 0 `i
 ]
 "31
-[; ;./globalvariables.h: 31: const int TALA = 2;
-[v _TALA `Ci ~T0 @X0 1 e ]
+[; ;./globalvariables.h: 31: volatile int TALA = 2;
+[v _TALA `Vi ~T0 @X0 1 e ]
 [i _TALA
 -> 2 `i
 ]
@@ -1837,49 +1851,67 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _TempThreshold
 -> 25 `i
 ]
+"35
+[; ;./globalvariables.h: 35: volatile int temperature = 0 ;
+[v _temperature `Vi ~T0 @X0 1 e ]
+[i _temperature
+-> 0 `i
+]
 "36
-[; ;./globalvariables.h: 36: volatile int s1_pressed = 0;
+[; ;./globalvariables.h: 36: volatile int luminosity = 0;
+[v _luminosity `Vi ~T0 @X0 1 e ]
+[i _luminosity
+-> 0 `i
+]
+"38
+[; ;./globalvariables.h: 38: volatile int s1_pressed = 0;
 [v _s1_pressed `Vi ~T0 @X0 1 e ]
 [i _s1_pressed
 -> 0 `i
 ]
-"37
-[; ;./globalvariables.h: 37: volatile int mode_s = -1;
+"39
+[; ;./globalvariables.h: 39: volatile int mode_s = -1;
 [v _mode_s `Vi ~T0 @X0 1 e ]
 [i _mode_s
 -U -> 1 `i
 ]
-"39
-[; ;./globalvariables.h: 39: const int max_hour = 24;
+"41
+[; ;./globalvariables.h: 41: const int max_hour = 24;
 [v _max_hour `Ci ~T0 @X0 1 e ]
 [i _max_hour
 -> 24 `i
 ]
-"40
-[; ;./globalvariables.h: 40: const int max_min = 60;
+"42
+[; ;./globalvariables.h: 42: const int max_min = 60;
 [v _max_min `Ci ~T0 @X0 1 e ]
 [i _max_min
 -> 60 `i
 ]
-"41
-[; ;./globalvariables.h: 41: const int max_temp =50;
+"43
+[; ;./globalvariables.h: 43: const int max_temp =50;
 [v _max_temp `Ci ~T0 @X0 1 e ]
 [i _max_temp
 -> 50 `i
 ]
-"42
-[; ;./globalvariables.h: 42: const int max_lum = 10;
+"44
+[; ;./globalvariables.h: 44: const int max_lum = 4;
 [v _max_lum `Ci ~T0 @X0 1 e ]
 [i _max_lum
--> 10 `i
+-> 4 `i
 ]
-"45
-[; ;./globalvariables.h: 45: volatile int LED_to_blink;
+"47
+[; ;./globalvariables.h: 47: volatile int LED_to_blink;
 [v _LED_to_blink `Vi ~T0 @X0 1 e ]
-"46
-[; ;./globalvariables.h: 46: volatile int blink = 0;
+"48
+[; ;./globalvariables.h: 48: volatile int blink = 0;
 [v _blink `Vi ~T0 @X0 1 e ]
 [i _blink
+-> 0 `i
+]
+"50
+[; ;./globalvariables.h: 50: volatile int blink_ctr = 0;
+[v _blink_ctr `Vi ~T0 @X0 1 e ]
+[i _blink_ctr
 -> 0 `i
 ]
 "15 ./pwmAlarm.h
@@ -1888,321 +1920,254 @@ Version 4.0 HI-TECH Software Intermediate Code
 [i _pwm_value
 -> 0 `i
 ]
+"37 ./coms.h
+[; ;./coms.h: 37: volatile int msg_array[20];
+[v _msg_array `Vi ~T0 @X0 -> 20 `i e ]
+"38
+[; ;./coms.h: 38: volatile int pointer_array=0;
+[v _pointer_array `Vi ~T0 @X0 1 e ]
+[i _pointer_array
+-> 0 `i
+]
 [v $root$_main `(v ~T0 @X0 0 e ]
-"55 main.c
-[; ;main.c: 55: void main(void)
+"54 main.c
+[; ;main.c: 54: void main(void)
 [v _main `(v ~T0 @X0 1 ef ]
-"56
-[; ;main.c: 56: {
+"55
+[; ;main.c: 55: {
 {
 [e :U _main ]
 [f ]
-"58
-[; ;main.c: 58:     SYSTEM_Initialize();
+"57
+[; ;main.c: 57:     SYSTEM_Initialize();
 [e ( _SYSTEM_Initialize ..  ]
-"61
-[; ;main.c: 61:     i2c1_driver_open();
+"60
+[; ;main.c: 60:     i2c1_driver_open();
 [e ( _i2c1_driver_open ..  ]
-"62
-[; ;main.c: 62:     TRISCbits.TRISC3 = 1;
+"61
+[; ;main.c: 61:     TRISCbits.TRISC3 = 1;
 [e = . . _TRISCbits 0 3 -> -> 1 `i `uc ]
-"63
-[; ;main.c: 63:     TRISCbits.TRISC4 = 1;
+"62
+[; ;main.c: 62:     TRISCbits.TRISC4 = 1;
 [e = . . _TRISCbits 0 4 -> -> 1 `i `uc ]
-"64
-[; ;main.c: 64:     WPUC3 = 1;
+"63
+[; ;main.c: 63:     WPUC3 = 1;
 [e = _WPUC3 -> -> 1 `i `b ]
-"65
-[; ;main.c: 65:     WPUC4 = 1;
+"64
+[; ;main.c: 64:     WPUC4 = 1;
 [e = _WPUC4 -> -> 1 `i `b ]
-"71
-[; ;main.c: 71:     (INTCONbits.GIE = 1);
+"70
+[; ;main.c: 70:     (INTCONbits.GIE = 1);
 [e = . . _INTCONbits 0 3 -> -> 1 `i `uc ]
-"74
-[; ;main.c: 74:     (INTCONbits.PEIE = 1);
+"73
+[; ;main.c: 73:     (INTCONbits.PEIE = 1);
 [e = . . _INTCONbits 0 2 -> -> 1 `i `uc ]
-"82
-[; ;main.c: 82:     TMR1_SetInterruptHandler(&changeleds);
+"81
+[; ;main.c: 81:     TMR1_SetInterruptHandler(&changeleds);
 [e ( _TMR1_SetInterruptHandler (1 &U _changeleds ]
-"84
-[; ;main.c: 84:     TMR4_SetInterruptHandler(&LED_blink_function);
+"83
+[; ;main.c: 83:     TMR4_SetInterruptHandler(&LED_blink_function);
 [e ( _TMR4_SetInterruptHandler (1 &U _LED_blink_function ]
-"86
-[; ;main.c: 86:     INT_SetInterruptHandler(&s1PressedInterruptHandler);
+"85
+[; ;main.c: 85:     INT_SetInterruptHandler(&s1PressedInterruptHandler);
 [e ( _INT_SetInterruptHandler (1 &U _s1PressedInterruptHandler ]
-"88
-[; ;main.c: 88:     TMR3_SetInterruptHandler(&change_PWM);
+"87
+[; ;main.c: 87:     TMR3_SetInterruptHandler(&change_PWM);
 [e ( _TMR3_SetInterruptHandler (1 &U _change_PWM ]
-"89
-[; ;main.c: 89:     TMR3_StopTimer();
+"88
+[; ;main.c: 88:     TMR3_StopTimer();
 [e ( _TMR3_StopTimer ..  ]
-"90
-[; ;main.c: 90:     TMR4_StopTimer();
+"89
+[; ;main.c: 89:     TMR4_StopTimer();
 [e ( _TMR4_StopTimer ..  ]
-"91
-[; ;main.c: 91:     PWM_Enable();
+"90
+[; ;main.c: 90:     PWM_Enable();
 [e ( _PWM_Enable ..  ]
-"92
-[; ;main.c: 92:     PWM6_LoadDutyValue(0);
+"91
+[; ;main.c: 91:     PWM6_LoadDutyValue(0);
 [e ( _PWM6_LoadDutyValue (1 -> -> 0 `i `us ]
 "94
-[; ;main.c: 94:     int luminosity = 0;
-[v _luminosity `i ~T0 @X0 1 a ]
-[e = _luminosity -> 0 `i ]
-"95
-[; ;main.c: 95:     unsigned char c;
+[; ;main.c: 94:     unsigned char c;
 [v _c `uc ~T0 @X0 1 a ]
-"96
-[; ;main.c: 96:     int temperature = 0 ;
-[v _temperature `i ~T0 @X0 1 a ]
-[e = _temperature -> 0 `i ]
-"97
-[; ;main.c: 97:     TempThreshold = 25;
+"95
+[; ;main.c: 95:     TempThreshold = 25;
 [e = _TempThreshold -> 25 `i ]
-"99
-[; ;main.c: 99:     while (1)
-[e :U 1629 ]
+"98
+[; ;main.c: 98:     getValuesFromPreviousSession();
+[e ( _getValuesFromPreviousSession ..  ]
 "100
-[; ;main.c: 100:     {
-{
+[; ;main.c: 100:     while (1)
+[e :U 1631 ]
 "101
-[; ;main.c: 101:         if(mode_s == -1){
-[e $ ! == _mode_s -U -> 1 `i 1631  ]
+[; ;main.c: 101:     {
 {
 "102
-[; ;main.c: 102:             if(secs%PMON == 0){
-[e $ ! == % _secs _PMON -> 0 `i 1632  ]
+[; ;main.c: 102:         if(mode_s == -1){
+[e $ ! == _mode_s -U -> 1 `i 1633  ]
 {
-"104
-[; ;main.c: 104:                 luminosity = get_luminosity();
-[e = _luminosity ( _get_luminosity ..  ]
+"103
+[; ;main.c: 103:             if(secs%PMON == 0){
+[e $ ! == % _secs _PMON -> 0 `i 1634  ]
+{
 "105
-[; ;main.c: 105:                 setLedLuminosity(luminosity);
+[; ;main.c: 105:                 luminosity = get_luminosity();
+[e = _luminosity ( _get_luminosity ..  ]
+"106
+[; ;main.c: 106:                 setLedLuminosity(luminosity);
 [e ( _setLedLuminosity (1 _luminosity ]
-"107
-[; ;main.c: 107:                 if(luminosity >= LumThreshold){
-[e $ ! >= _luminosity _LumThreshold 1633  ]
-{
-"109
-[; ;main.c: 109:                     alarm = 1;
-[e = _alarm -> 1 `i ]
-"110
-[; ;main.c: 110:                 }
+"108
+[; ;main.c: 108:                 checkVariablesForAlarm(0,luminosity);
+[e ( _checkVariablesForAlarm (2 , -> 0 `i _luminosity ]
+"113
+[; ;main.c: 113:             }
 }
-[e :U 1633 ]
-"112
-[; ;main.c: 112:                 if(alarm == 1 && control_alarm == 0 && ALAF == 1){
-[e $ ! && && == _alarm -> 1 `i == _control_alarm -> 0 `i == _ALAF -> 1 `i 1634  ]
-{
-"115
-[; ;main.c: 115:                     TMR2_StartTimer();
-[e ( _TMR2_StartTimer ..  ]
-"116
-[; ;main.c: 116:                     TMR3_StartTimer();
-[e ( _TMR3_StartTimer ..  ]
-"117
-[; ;main.c: 117:                     control_alarm = 1;
-[e = _control_alarm -> 1 `i ]
-"118
-[; ;main.c: 118:                 }else if(alarm == 0 && control_alarm == 1){
-}
-[e $U 1635  ]
 [e :U 1634 ]
-[e $ ! && == _alarm -> 0 `i == _control_alarm -> 1 `i 1636  ]
+"115
+[; ;main.c: 115:             if(secs%PMON == 1){
+[e $ ! == % _secs _PMON -> 1 `i 1635  ]
 {
+"117
+[; ;main.c: 117:                 __nop();
+[e ( ___nop ..  ]
+"118
+[; ;main.c: 118:                 c = tsttc();
+[e = _c ( _tsttc ..  ]
 "119
-[; ;main.c: 119:                     PWM6_LoadDutyValue(0);
-[e ( _PWM6_LoadDutyValue (1 -> -> 0 `i `us ]
+[; ;main.c: 119:                 temperature = c;
+[e = _temperature -> _c `i ]
 "120
-[; ;main.c: 120:                     control_alarm = 0;
-[e = _control_alarm -> 0 `i ]
-"121
-[; ;main.c: 121:                 }
+[; ;main.c: 120:                 __nop();
+[e ( ___nop ..  ]
+"122
+[; ;main.c: 122:                 checkVariablesForAlarm(temperature,0);
+[e ( _checkVariablesForAlarm (2 , _temperature -> 0 `i ]
+"127
+[; ;main.c: 127:             }
+}
+[e :U 1635 ]
+"129
+[; ;main.c: 129:             if(secs%PMON == 2){
+[e $ ! == % _secs _PMON -> 2 `i 1636  ]
+{
+"132
+[; ;main.c: 132:                 sensor_timer(luminosity, temperature);
+[e ( _sensor_timer (2 , _luminosity _temperature ]
+"134
+[; ;main.c: 134:                 checkVariablesForAlarm(0,0);
+[e ( _checkVariablesForAlarm (2 , -> 0 `i -> 0 `i ]
+"137
+[; ;main.c: 137:             }
 }
 [e :U 1636 ]
-[e :U 1635 ]
-"123
-[; ;main.c: 123:                 __nop();
-[e ( ___nop ..  ]
-"125
-[; ;main.c: 125:                 __nop();
-[e ( ___nop ..  ]
-"126
-[; ;main.c: 126:             }
-}
-[e :U 1632 ]
-"128
-[; ;main.c: 128:             if(secs%PMON == 1){
-[e $ ! == % _secs _PMON -> 1 `i 1637  ]
-{
-"130
-[; ;main.c: 130:                  __nop();
-[e ( ___nop ..  ]
-"131
-[; ;main.c: 131:                  c = tsttc();
-[e = _c ( _tsttc ..  ]
-"132
-[; ;main.c: 132:                  temperature = c;
-[e = _temperature -> _c `i ]
-"133
-[; ;main.c: 133:                  __nop();
-[e ( ___nop ..  ]
-"135
-[; ;main.c: 135:                  if(temperature >= TempThreshold){
-[e $ ! >= _temperature _TempThreshold 1638  ]
-{
-"137
-[; ;main.c: 137:                     alarm = 1;
-[e = _alarm -> 1 `i ]
-"138
-[; ;main.c: 138:                 }
-}
+"139
+[; ;main.c: 139:             while(EUSART_is_rx_ready() != 0){
+[e $U 1637  ]
 [e :U 1638 ]
+{
 "140
-[; ;main.c: 140:                 if(alarm == 1 && control_alarm == 0 && ALAF == 1){
-[e $ ! && && == _alarm -> 1 `i == _control_alarm -> 0 `i == _ALAF -> 1 `i 1639  ]
-{
-"143
-[; ;main.c: 143:                     TMR2_StartTimer();
-[e ( _TMR2_StartTimer ..  ]
-"144
-[; ;main.c: 144:                     TMR3_StartTimer();
-[e ( _TMR3_StartTimer ..  ]
-"145
-[; ;main.c: 145:                     control_alarm = 1;
-[e = _control_alarm -> 1 `i ]
-"146
-[; ;main.c: 146:                 }else if(alarm == 0 && control_alarm == 1){
-}
-[e $U 1640  ]
-[e :U 1639 ]
-[e $ ! && == _alarm -> 0 `i == _control_alarm -> 1 `i 1641  ]
-{
-"147
-[; ;main.c: 147:                     PWM6_LoadDutyValue(0);
-[e ( _PWM6_LoadDutyValue (1 -> -> 0 `i `us ]
-"148
-[; ;main.c: 148:                     control_alarm = 0;
-[e = _control_alarm -> 0 `i ]
-"149
-[; ;main.c: 149:                 }
-}
-[e :U 1641 ]
-[e :U 1640 ]
-"152
-[; ;main.c: 152:             }
+[; ;main.c: 140:                 readbytes();
+[e ( _readbytes ..  ]
+"141
+[; ;main.c: 141:             }
 }
 [e :U 1637 ]
-"154
-[; ;main.c: 154:             if(secs%PMON == 2){
-[e $ ! == % _secs _PMON -> 2 `i 1642  ]
-{
-"157
-[; ;main.c: 157:                 sensor_timer(luminosity, temperature);
-[e ( _sensor_timer (2 , _luminosity _temperature ]
-"160
-[; ;main.c: 160:                 __nop();
-[e ( ___nop ..  ]
-"162
-[; ;main.c: 162:                 __nop();
-[e ( ___nop ..  ]
-"163
-[; ;main.c: 163:             }
+"139
+[; ;main.c: 139:             while(EUSART_is_rx_ready() != 0){
+[e $ != -> ( _EUSART_is_rx_ready ..  `i -> 0 `i 1638  ]
+[e :U 1639 ]
+"143
+[; ;main.c: 143:         }else{
 }
-[e :U 1642 ]
-"164
-[; ;main.c: 164:         }else{
-}
-[e $U 1643  ]
-[e :U 1631 ]
+[e $U 1640  ]
+[e :U 1633 ]
 {
-"166
-[; ;main.c: 166:             TMR1_StopTimer();
+"145
+[; ;main.c: 145:             TMR1_StopTimer();
 [e ( _TMR1_StopTimer ..  ]
-"167
-[; ;main.c: 167:             TMR4_StartTimer();
+"146
+[; ;main.c: 146:             TMR4_StartTimer();
 [e ( _TMR4_StartTimer ..  ]
-"168
-[; ;main.c: 168:             int previous =1;
+"147
+[; ;main.c: 147:             int previous = 1;
 [v _previous `i ~T0 @X0 1 a ]
 [e = _previous -> 1 `i ]
-"169
-[; ;main.c: 169:             while(mode_s != -1){
-[e $U 1644  ]
-[e :U 1645 ]
+"148
+[; ;main.c: 148:             while(mode_s != -1){
+[e $U 1641  ]
+[e :U 1642 ]
 {
-"170
-[; ;main.c: 170:                 if(PORTCbits.RC5 == 0 && previous == 1){
-[e $ ! && == -> . . _PORTCbits 0 5 `i -> 0 `i == _previous -> 1 `i 1647  ]
+"149
+[; ;main.c: 149:                 if(PORTCbits.RC5 == 0 && previous == 1){
+[e $ ! && == -> . . _PORTCbits 0 5 `i -> 0 `i == _previous -> 1 `i 1644  ]
 {
-"171
-[; ;main.c: 171:                     s2Pressed();
+"150
+[; ;main.c: 150:                     s2Pressed();
 [e ( _s2Pressed ..  ]
-"172
-[; ;main.c: 172:                     _delay((unsigned long)((50)*(1000000/4000.0)));
+"151
+[; ;main.c: 151:                     _delay((unsigned long)((50)*(1000000/4000.0)));
 [e ( __delay (1 -> * -> -> 50 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"173
-[; ;main.c: 173:                     previous=0;
+"152
+[; ;main.c: 152:                     previous = 0;
 [e = _previous -> 0 `i ]
-"174
-[; ;main.c: 174:                 }else {
+"153
+[; ;main.c: 153:                 }else {
 }
-[e $U 1648  ]
-[e :U 1647 ]
-{
-"175
-[; ;main.c: 175:                     if(PORTCbits.RC5 == 1 && previous == 0)
-[e $ ! && == -> . . _PORTCbits 0 5 `i -> 1 `i == _previous -> 0 `i 1649  ]
-"176
-[; ;main.c: 176:                         previous = 1;
-[e = _previous -> 1 `i ]
-[e :U 1649 ]
-"177
-[; ;main.c: 177:                 }
-}
-[e :U 1648 ]
-"178
-[; ;main.c: 178:                 if(s1_pressed == 1){
-[e $ ! == _s1_pressed -> 1 `i 1650  ]
-{
-"179
-[; ;main.c: 179:                     s1_pressed = 0;
-[e = _s1_pressed -> 0 `i ]
-"180
-[; ;main.c: 180:                     s1Pressed();
-[e ( _s1Pressed ..  ]
-"181
-[; ;main.c: 181:                     _delay((unsigned long)((50)*(1000000/4000.0)));
-[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
-"182
-[; ;main.c: 182:                 }
-}
-[e :U 1650 ]
-"183
-[; ;main.c: 183:             }
-}
+[e $U 1645  ]
 [e :U 1644 ]
-"169
-[; ;main.c: 169:             while(mode_s != -1){
-[e $ != _mode_s -U -> 1 `i 1645  ]
+{
+"154
+[; ;main.c: 154:                     if(PORTCbits.RC5 == 1 && previous == 0)
+[e $ ! && == -> . . _PORTCbits 0 5 `i -> 1 `i == _previous -> 0 `i 1646  ]
+"155
+[; ;main.c: 155:                         previous = 1;
+[e = _previous -> 1 `i ]
 [e :U 1646 ]
-"184
-[; ;main.c: 184:             TMR4_StopTimer();
-[e ( _TMR4_StopTimer ..  ]
-"185
-[; ;main.c: 185:             TMR1_StartTimer();
-[e ( _TMR1_StartTimer ..  ]
-"186
-[; ;main.c: 186:         }
+"156
+[; ;main.c: 156:                 }
 }
+[e :U 1645 ]
+"157
+[; ;main.c: 157:                 if(s1_pressed == 1){
+[e $ ! == _s1_pressed -> 1 `i 1647  ]
+{
+"158
+[; ;main.c: 158:                     s1_pressed = 0;
+[e = _s1_pressed -> 0 `i ]
+"159
+[; ;main.c: 159:                     s1Pressed();
+[e ( _s1Pressed ..  ]
+"160
+[; ;main.c: 160:                     _delay((unsigned long)((50)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"161
+[; ;main.c: 161:                 }
+}
+[e :U 1647 ]
+"162
+[; ;main.c: 162:             }
+}
+[e :U 1641 ]
+"148
+[; ;main.c: 148:             while(mode_s != -1){
+[e $ != _mode_s -U -> 1 `i 1642  ]
 [e :U 1643 ]
-"187
-[; ;main.c: 187:     }
+"163
+[; ;main.c: 163:             TMR4_StopTimer();
+[e ( _TMR4_StopTimer ..  ]
+"164
+[; ;main.c: 164:             TMR1_StartTimer();
+[e ( _TMR1_StartTimer ..  ]
+"165
+[; ;main.c: 165:         }
 }
-[e :U 1628 ]
-[e $U 1629  ]
+[e :U 1640 ]
+"166
+[; ;main.c: 166:     }
+}
 [e :U 1630 ]
-"188
-[; ;main.c: 188: }
-[e :UE 1627 ]
+[e $U 1631  ]
+[e :U 1632 ]
+"167
+[; ;main.c: 167: }
+[e :UE 1629 ]
 }

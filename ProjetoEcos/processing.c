@@ -11,7 +11,7 @@ int date_calculator(cloc start, cloc end,cloc to_check);
 
 void calc(cloc start_time,cloc end_time,int *results){
 	int maxL=0,minL=0,maxT=0,minT=0,mediaL=0,mediaT=0,values_to_mean=0;
-	cloc curr_sample_time=malloc(sizeof(cloc));
+	cloc curr_sample_time=malloc(sizeof(cloc_));
 	int i = 0;
 	
 	for (i =0;i<nmbr_reg;i++){

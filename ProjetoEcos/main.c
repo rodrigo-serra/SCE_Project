@@ -210,8 +210,8 @@ void processing_program(cyg_addrword_t data)
 	time_t seconds = 0, time_ref;
 	time_ref = time(NULL);
 	
-	cloc init_time=malloc(sizeof(cloc));
-	cloc end_time=malloc(sizeof(cloc));
+	cloc init_time=malloc(sizeof(cloc_));
+	cloc end_time=malloc(sizeof(cloc_));
 	
 	while(exitControl == 0){
 		seconds = time(NULL)-time_ref;

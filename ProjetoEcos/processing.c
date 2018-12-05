@@ -102,4 +102,20 @@ void checkThresholds(void){
 
 void saveRegister(int registo[5]){
 	//Verificar se a hora do registo é mais atual que a ultima hora guardada
+	int i = 0;
+	if(iwrite == -1){
+		for(i = 0; i < 5 ; i++)
+			registers[0][i] = registo[i];
+		iwrite = 0;
+	}else if(registo[1]>=registers[iwrite][1] && registo[2]>registers[iwrite][2]){
+		if(iwrite < NRBUF){
+			iwrite += 1;
+		}else{
+			iwrite = 0;
+		}
+		
+		for(i = 0; i < 5 ; i++)
+			registers[iwrite][i] = registo[i];
+	}
+	return;
 }

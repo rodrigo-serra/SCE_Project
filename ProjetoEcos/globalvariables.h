@@ -44,7 +44,7 @@ volatile int exitControl = 0;
 volatile int p = 10;
 
 //Variáveis dos registos
-volatile int iread = 0, iwrite = 0; nr = 0;
+volatile int iread = 0, iwrite = -1; nr = 0;
 int NRBUF = 100;
 volatile int registers[NRBUF][5]; 
 

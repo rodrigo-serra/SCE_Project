@@ -39,7 +39,7 @@ extern "C" {
 //Variáveis globais de controlo
 volatile int registerRequest = 0;
 volatile int makeCalculations = 0;
-volatile int LumThreshold, TempThreshold;
+volatile int LumThreshold = 2, TempThreshold = 30;
 volatile int exitControl = 0;
 volatile int p = 10;
 
@@ -61,6 +61,13 @@ cyg_mbox mbxS, mbxR, mbxIP, mbxPI;
 
 /* and now a mutex to protect calls to the C library */
 cyg_mutex_t cliblock;
+
+ struct cloc_{
+	int hours;
+	int minutes;
+	int seconds;
+	};
+typedef struct cloc_ * cloc;
 
 
 #endif	/* GLOBALVARIABLES_H */

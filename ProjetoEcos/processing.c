@@ -1,21 +1,15 @@
 #include <stdio.h>
 #include <malloc.h>
+#include "globalvariables.h"
 
 int ** vector;
 int nmbr_reg;
-
- struct cloc_{
-	int hours;
-	int minutes;
-	int seconds;
-	};
-typedef struct cloc_ * cloc;
 
 void checker(int * minL,int * maxL, int * minT, int * maxT, int vector[6]);
 
 int date_calculator(cloc start, cloc end,cloc to_check);
 
-void calc(cloc start_time,cloc end_time,int results[6]){
+void calc(cloc start_time,cloc end_time,int *results){
 	int maxL=0,minL=0,maxT=0,minT=0,mediaL=0,mediaT=0,values_to_mean=0;
 	cloc curr_sample_time=malloc(sizeof(cloc));
 
@@ -104,4 +98,8 @@ void checker(int * minL,int * maxL, int * minT, int * maxT, int vector[6]){
 void checkThresholds(void){
 	
 	
+}
+
+void saveRegister(int registo[5]){
+	//Verificar se a hora do registo é mais atual que a ultima hora guardada
 }

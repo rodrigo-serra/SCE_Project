@@ -28,6 +28,7 @@ cyg_thread_entry_t processing_program;
 extern void monitor (void);
 extern void cmd_ini(int argc, char **argv);
 extern void checkThresholds(void);
+extern void saveRegister(int registo[5]);
 
 /* we install our own startup routine which sets up threads */
 void cyg_user_start(void)
@@ -92,8 +93,11 @@ void receiver_program(cyg_addrword_t data)
 {
 	unsigned int n, i;
 	unsigned char bufr[50], buffer[10];
+	int registo[5];
 	n=1;
+	int nregs = 0, iregs = 0;
 	i=0;
+	int nmfl_received = 0, trgc_received = 0, trgi_received = 0;
 	while(exitControl == 0)
 	{
 		err = cyg_io_read(serH, buffer, &n);
@@ -105,9 +109,62 @@ void receiver_program(cyg_addrword_t data)
 		{
 			cyg_mbox_put( mbxRh, bufr );
 			//clean variables
+			if(nmfl_received == 1)
+				nmfl_received = 0;
+			if(trgc_received == 1)
+				trgc_received = 0;
+			if(trgi_received == 1)
+				trgi_received = 0;
 			i=0;
+		}else if(buffer[0] == NMFL){
+			//se for o comando de memoria meia cheia, ativa o controlo para começar a ler registos periodicamente
+			registerRequest = 1;
+			nmfl_received = 1;
+		}else if(buffer[0] == TRGC || trgc_received == 1){
+			//se for transferencia de resgistos, nao vai guardar no bufr, mas na variavel global
+			if(trgc_received == 0){
+				trgc_received = 1;
+				bufr[0] = buffer[0];
+				bufr[1] = CMD_OK;
+				i=13; //i a 13 para nao ler registos, mas guardar o valor de n
+			}else{
+				if(i < 5){
+					registo[i]=buffer[0];
+					i++;
+				}
+				if(i == 13){ // guarda o n e coloca o i a 0 para poder começar o if anterior
+					nregs = buffer[0];
+					i = 0;
+				}
+				if(i == 5){//a full register has been obtained, save and reset i
+					saveRegister(registo);
+					i=0;
+				}
+			}
+		}else if(buffer[0] == TRGI || trgi_received == 1){
+			if(trgc_received == 0){
+				trgi_received = 1;
+				bufr[0] = buffer[0];
+			}else{
+				if(i < 5){
+					registo[i]=buffer[0];		
+					i++;
+				}
+				if(i == 12){
+					iregs = buffer[0];
+					i = 0;
+				}
+				if(i == 13){ // guarda o n e coloca o i a 12 para ler o i (posiçao que acabou de ler)
+					nregs = buffer[0];
+					i = 12;
+				}
+				if(i == 5){//a full register has been obtained, save and reset i
+					saveRegister(registo);
+					i=0;
+				}
+			}
 		}else{
-			if(buffer[0] != SOM)
+			if(buffer[0] != SOM && nmfl_received == 0)
 			{
 				//add register if to store in memory rather than in bufr
 				bufr[i] = buffer[0];
@@ -120,33 +177,25 @@ void receiver_program(cyg_addrword_t data)
 /* this is the processing thread */
 void processing_program(cyg_addrword_t data)
 {
-	unsigned char bufw[5];
+	unsigned char bufw[6];
 	unsigned char *bufr;
+	int results[6];
+	int i = 0;
 	time_t seconds = 0, time_ref;
 	time_ref = time(NULL);
+	
+	cloc init_time=malloc(sizeof(cloc));
+	cloc end_time=malloc(sizeof(cloc));
 	
 	while(exitControl == 0){
 		seconds = time(NULL)-time_ref;
 		if(registerRequest == 1 && seconds >= p ) //add time
-		{
-			//request thresholds
-			bufw[0]=SOM;
-			bufw[1]=RALA;
-			bufw[2]=EOM;
-	
-			cyg_mbox_put( mbxSh, bufw );
-			//mail box get
-			bufr = (unsigned char *)cyg_mbox_get(mbxRh);
-			//save thresholds
-			TempThreshold = bufr[1];
-			LumThreshold = bufr[2];
-			
+		{	
 			//request registers
 			bufw[0]=SOM;
-			bufw[1]=TRI;
-			bufw[2]=20;
-			bufw[3]=0;
-			bufw[2]=EOM;
+			bufw[1]=TRGC;
+			bufw[2]=10;
+			bufw[3]=EOM;
 			
 			cyg_mbox_put( mbxSh, bufw );
 			//get mail box
@@ -154,7 +203,6 @@ void processing_program(cyg_addrword_t data)
 			if(bufr[1]==CMD_OK)
 			{
 				checkThresholds();
-				registerRequest = 0;
 				//update time
 				time_ref = time(NULL);
 			}
@@ -165,8 +213,19 @@ void processing_program(cyg_addrword_t data)
 			//get from mail box IP
 			bufr = (unsigned char *)cyg_mbox_get(mbxIPh);
 			//make calcs 
+			init_time->hours = bufr[0];
+			init_time->minutes = bufr[1];
+			init_time->seconds = bufr[2];
+			end_time->hours = bufr[3];
+			end_time->minutes = bufr[4];
+			end_time->seconds = bufr[5];
 			
+			calc(init_time,end_time,results);
 			//put calcs in mail box PI
+			for(i=0; i<6; i++)
+				bufw[i]=results[i];
+			
+			cyg_mbox_put(mbxPIh, bufw);
 			
 			makeCalculations = 0;
 		}

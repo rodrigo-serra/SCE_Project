@@ -27,8 +27,8 @@ cyg_thread_entry_t processing_program;
 /*declare external functions*/
 extern void monitor (void);
 extern void cmd_ini(int argc, char **argv);
-extern void checkThresholds(void);
-extern void saveRegister(int registo[5]);
+extern void checkThresholds(int n);
+extern int saveRegister(int registo[5]);
 
 /* we install our own startup routine which sets up threads */
 void cyg_user_start(void)
@@ -95,7 +95,7 @@ void receiver_program(cyg_addrword_t data)
 	unsigned char bufr[50], buffer[10];
 	int registo[5];
 	n=1;
-	int nregs = 0, iregs = 0;
+	int nregs = 0, iregs = 0, regs_saved = 0;
 	i=0;
 	int nmfl_received = 0, trgc_received = 0, trgi_received = 0;
 	while(exitControl == 0)
@@ -115,7 +115,8 @@ void receiver_program(cyg_addrword_t data)
 				trgc_received = 0;
 			if(trgi_received == 1)
 				trgi_received = 0;
-			i=0;
+			regs_saved = 0;
+			i=0;			
 		}else if(buffer[0] == NMFL){
 			//se for o comando de memoria meia cheia, ativa o controlo para começar a ler registos periodicamente
 			registerRequest = 1;
@@ -137,7 +138,8 @@ void receiver_program(cyg_addrword_t data)
 					i = 0;
 				}
 				if(i == 5){//a full register has been obtained, save and reset i
-					saveRegister(registo);
+					regs_saved+=saveRegister(registo);
+					bufr[2]=regs_saved;
 					i=0;
 				}
 			}
@@ -159,7 +161,8 @@ void receiver_program(cyg_addrword_t data)
 					i = 12;
 				}
 				if(i == 5){//a full register has been obtained, save and reset i
-					saveRegister(registo);
+					regs_saved+=saveRegister(registo);
+					bufr[2]=regs_saved;
 					i=0;
 				}
 			}
@@ -202,7 +205,7 @@ void processing_program(cyg_addrword_t data)
 			bufr = (unsigned char *)cyg_mbox_get(mbxRh);
 			if(bufr[1]==CMD_OK)
 			{
-				checkThresholds();
+				checkThresholds(bufr[2]);
 				//update time
 				time_ref = time(NULL);
 			}

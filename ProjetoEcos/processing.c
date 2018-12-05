@@ -95,18 +95,35 @@ void checker(int * minL,int * maxL, int * minT, int * maxT, int vector[6]){
 	
 }
 
-void checkThresholds(void){
-	
+void checkThresholds(int n){
+	int i = 0;
+	for(i=n-1; i >= 0; i--)
+	{
+		if(registers[iwrite-i][3] > TempThreshold)
+		{
+			cyg_mutex_lock(&cliblock);
+			printf("%d:%d:%d excedeu %d. Temperatura = %d",registers[iwrite-i][0],registers[iwrite-i][1],registers[iwrite-i][2],TempThreshold,registers[iwrite-i][3]);
+			cyg_mutex_unlock(&cliblock);
+		}
+		
+		if(registers[iwrite-i][4] > LumThreshold)
+		{
+			cyg_mutex_lock(&cliblock);
+			printf("%d:%d:%d excedeu %d. Luminosidade = %d",registers[iwrite-i][0],registers[iwrite-i][1],registers[iwrite-i][2],LumThreshold,registers[iwrite-i][4]);
+			cyg_mutex_unlock(&cliblock);
+		}
+	}
 	
 }
 
-void saveRegister(int registo[5]){
+int saveRegister(int registo[5]){
 	//Verificar se a hora do registo é mais atual que a ultima hora guardada
 	int i = 0;
 	if(iwrite == -1){
 		for(i = 0; i < 5 ; i++)
 			registers[0][i] = registo[i];
 		iwrite = 0;
+		return 1;
 	}else if(registo[1]>=registers[iwrite][1] && registo[2]>registers[iwrite][2]){
 		if(iwrite < NRBUF){
 			iwrite += 1;
@@ -116,6 +133,7 @@ void saveRegister(int registo[5]){
 		
 		for(i = 0; i < 5 ; i++)
 			registers[iwrite][i] = registo[i];
+		return 1;
 	}
-	return;
+	return 0;
 }

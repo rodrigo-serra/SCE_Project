@@ -65,16 +65,16 @@ void cyg_user_start(void)
 	cyg_mbox_create( &mbxIPh, &mbxIP);
 	cyg_mbox_create( &mbxPIh, &mbxPI);
 
-	cyg_thread_create(4, interface_program, (cyg_addrword_t) 0,
+	cyg_thread_create(5, interface_program, (cyg_addrword_t) 0,
 		"Interface Thread", (void *) stack[0], 4096,
 		&interface_thread, &thread_s[0]);
-	cyg_thread_create(5, sender_program, (cyg_addrword_t) 1,
+	cyg_thread_create(4, sender_program, (cyg_addrword_t) 1,
 		"Sender Thread", (void *) stack[1], 4096,
 		&sender_thread, &thread_s[1]);
-	cyg_thread_create(6, receiver_program, (cyg_addrword_t) 2,
+	cyg_thread_create(3, receiver_program, (cyg_addrword_t) 2,
 		"Receiver Thread", (void *) stack[2], 4096,
 		&receiver_thread, &thread_s[2]);
-	cyg_thread_create(3, processing_program, (cyg_addrword_t) 3,
+	cyg_thread_create(6, processing_program, (cyg_addrword_t) 3,
 		"Processing Thread", (void *) stack[3], 4096,
 		&processing_thread, &thread_s[3]);
 

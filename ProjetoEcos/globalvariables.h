@@ -16,6 +16,9 @@ extern "C" {
 }
 #endif
 
+#include <cyg/kernel/kapi.h>
+#include <cyg/io/io.h>
+
 #define SOM 0xFD /* start of message */
 #define EOM 0xFE /* end of message */
 #define RCLK 0xC0 /* read clock */
@@ -37,30 +40,27 @@ extern "C" {
 #define CMD_ERROR 0xFF /* error in command */
 
 //Variáveis globais de controlo
-volatile int registerRequest = 0;
-volatile int makeCalculations = 0;
-volatile int LumThreshold = 2, TempThreshold = 30;
-volatile int exitControl = 0;
-volatile int p = 10;
+extern volatile int registerRequest;
+extern volatile int makeCalculations;
+extern volatile int LumThreshold, TempThreshold;
+extern volatile int exitControl;
+extern volatile int p;
 
 //Variáveis dos registos
-volatile int iread = 0, iwrite = -1; nr = 0;
-int NRBUF = 100;
-volatile int registers[NRBUF][5]; 
+extern volatile int iread, iwrite, nr;
+extern int NRBUF;
+extern volatile int registers[100][5]; 
 
 /*error variable*/
-volatile Cyg_ErrNo err;
-volatile cyg_io_handle_t serH;
-
-#include <cyg/kernel/kapi.h>
-#include <cyg/io/io.h>
+extern volatile Cyg_ErrNo err;
+extern volatile cyg_io_handle_t serH;
 
 /*Mail boxes handlers and objects for receiver and sender*/
-cyg_handle_t mbxSh, mbxRh, mbxIPh, mbxPIh;
-cyg_mbox mbxS, mbxR, mbxIP, mbxPI;
+extern cyg_handle_t mbxSh, mbxRh, mbxIPh, mbxPIh;
+extern cyg_mbox mbxS, mbxR, mbxIP, mbxPI;
 
 /* and now a mutex to protect calls to the C library */
-cyg_mutex_t cliblock;
+extern cyg_mutex_t cliblock;
 
  struct cloc_{
 	int hours;

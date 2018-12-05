@@ -30,6 +30,29 @@ extern void cmd_ini(int argc, char **argv);
 extern void checkThresholds(int n);
 extern int saveRegister(int registo[5]);
 
+//Variáveis globais de controlo
+volatile int registerRequest = 0;
+volatile int makeCalculations = 0;
+volatile int LumThreshold = 2, TempThreshold = 30;
+volatile int exitControl = 0;
+volatile int p = 10;
+
+//Variáveis dos registos
+volatile int iread = 0, iwrite = -1, nr = 0;
+int NRBUF = 100;
+volatile int registers[100][5]; 
+
+/*error variable*/
+volatile Cyg_ErrNo err;
+volatile cyg_io_handle_t serH;
+
+/*Mail boxes handlers and objects for receiver and sender*/
+cyg_handle_t mbxSh, mbxRh, mbxIPh, mbxPIh;
+cyg_mbox mbxS, mbxR, mbxIP, mbxPI;
+
+/* and now a mutex to protect calls to the C library */
+cyg_mutex_t cliblock;
+
 /* we install our own startup routine which sets up threads */
 void cyg_user_start(void)
 {

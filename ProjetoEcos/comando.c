@@ -140,39 +140,39 @@ void cmd_rc (int argc, char** argv)
 +--------------------------------------------------------------------------*/
 void cmd_sc (int argc, char** argv)
 {
-	unsigned int n, i;
+	unsigned int n= 5, i;
 	unsigned char bufw[6];
 	unsigned char *bufr;
 	
 	do{
-	bufw[0]=SOM;
-	bufw[1]=SCLK;
-	if ((n=argc) == 4) {
-		unsigned int x;
-		sscanf(argv[1], "%x", &x); 
-		bufw[2]=(unsigned char)x;
-		sscanf(argv[2], "%x", &x); 
-		bufw[3]=(unsigned char)x;
-		sscanf(argv[3], "%x", &x); 
-		bufw[4]=(unsigned char)x;
-	}else{
+		bufw[0]=SOM;
+		bufw[1]=SCLK;
+		if ((n=argc) == 4) {
+			unsigned int x;
+			sscanf(argv[1], "%x", &x); 
+			bufw[2]=(unsigned char)x;
+			sscanf(argv[2], "%x", &x); 
+			bufw[3]=(unsigned char)x;
+			sscanf(argv[3], "%x", &x); 
+			bufw[4]=(unsigned char)x;
+		}else{
+			cyg_mutex_lock(&cliblock);
+			printf("Wrong arguments for sc");
+			cyg_mutex_unlock(&cliblock);
+			return;
+		}
+		bufw[5]=EOM;
+		
+		cyg_mbox_put( mbxSh, bufw );
+		
 		cyg_mutex_lock(&cliblock);
-		printf("Wrong arguments for sc");
+		for (i=0; i<n; i++)
+		  printf("buf[%d]=%x\n", i, bufw[i]);
 		cyg_mutex_unlock(&cliblock);
-		return;
-	}
-	bufw[5]=EOM;
-	
-	cyg_mbox_put( mbxSh, bufw );
-    
-	cyg_mutex_lock(&cliblock);
-    for (i=0; i<n; i++)
-      printf("buf[%d]=%x\n", i, bufw[i]);
-	cyg_mutex_unlock(&cliblock);
-	
-	bufr = (unsigned char *)cyg_mbox_get(mbxRh);
-	//obter error message
-	}while(bufr[1]!=CMD_OK)
+		
+		bufr = (unsigned char *)cyg_mbox_get(mbxRh);
+		//obter error message
+	}while(bufr[1]!=CMD_OK);
   
 }
 
@@ -231,7 +231,7 @@ void cmd_rp (int argc, char** argv)
 +--------------------------------------------------------------------------*/
 void cmd_mmp (int argc, char** argv)
 {
-	unsigned int n, i;
+	unsigned int n = 4, i;
 	unsigned char bufw[4];
 	unsigned char *bufr;
 	
@@ -262,7 +262,7 @@ void cmd_mmp (int argc, char** argv)
 +--------------------------------------------------------------------------*/
 void cmd_mta (int argc, char** argv)
 {
-	unsigned int n, i;
+	unsigned int n = 4, i;
 	unsigned char bufw[4];
 	unsigned char *bufr;
 	
@@ -293,7 +293,7 @@ void cmd_mta (int argc, char** argv)
 +--------------------------------------------------------------------------*/
 void cmd_ra (int argc, char** argv)
 {
-	unsigned int n, i;
+	unsigned int n = 3, i;
 	unsigned char bufw[3];
 	unsigned char *bufr;
 	
@@ -316,7 +316,7 @@ void cmd_ra (int argc, char** argv)
 +--------------------------------------------------------------------------*/
 void cmd_dtl (int argc, char** argv)
 {
-	unsigned int n, i;
+	unsigned int n = 5, i;
 	unsigned char bufw[5];
 	unsigned char *bufr;
 	
@@ -349,7 +349,7 @@ void cmd_dtl (int argc, char** argv)
 +--------------------------------------------------------------------------*/
 void cmd_aa (int argc, char** argv)
 {
-	unsigned int n, i;
+	unsigned int n = 3, i;
 	unsigned char bufw[4];
 	unsigned char *bufr;
 	
@@ -380,7 +380,7 @@ void cmd_aa (int argc, char** argv)
 +--------------------------------------------------------------------------*/
 void cmd_rmm (int argc, char** argv)
 {
-	unsigned int n, i;
+	unsigned int n= 3, i;
 	unsigned char bufw[3];
 	unsigned char *bufr;
 	
@@ -409,7 +409,7 @@ void cmd_rmm (int argc, char** argv)
 +--------------------------------------------------------------------------*/
 void cmd_cmm (int argc, char** argv)
 {
-	unsigned int n, i;
+	unsigned int n=3, i;
 	unsigned char bufw[3];
 	unsigned char *bufr;
 	
@@ -432,7 +432,7 @@ void cmd_cmm (int argc, char** argv)
 +--------------------------------------------------------------------------*/
 void cmd_ir (int argc, char** argv)
 {
-	unsigned int n, i;
+	unsigned int n=3, i;
 	unsigned char bufw[3];
 	unsigned char *bufr;
 	

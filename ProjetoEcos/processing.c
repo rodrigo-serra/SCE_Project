@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <malloc.h>
 #include "globalvariables.h"
 
 int ** vector;
@@ -12,8 +11,9 @@ int date_calculator(cloc start, cloc end,cloc to_check);
 void calc(cloc start_time,cloc end_time,int *results){
 	int maxL=0,minL=0,maxT=0,minT=0,mediaL=0,mediaT=0,values_to_mean=0;
 	cloc curr_sample_time=malloc(sizeof(cloc));
-
-	for (int i =0;i<nmbr_reg;i++){
+	int i = 0;
+	
+	for (i =0;i<nmbr_reg;i++){
 		if(vector[i][6]!=0){//new entry
 			checker(&minL,&maxL,&minT,&maxT,vector[i]);
 			vector[i][6]=0;

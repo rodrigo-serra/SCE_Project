@@ -254,6 +254,9 @@ void processing_program(cyg_addrword_t data)
 			cyg_mbox_put(mbxPIh, bufw);
 			
 			makeCalculations = 0;
+			
 		}
 	}
+	free(init_time);
+	free(end_time);
 }

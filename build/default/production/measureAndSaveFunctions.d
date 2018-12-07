@@ -7,4 +7,4 @@ build/default/production\measureAndSaveFunctions.p1: \
   mcc_generated_files/tmr4.h mcc_generated_files/tmr1.h \
   mcc_generated_files/pwm6.h mcc_generated_files/tmr2.h \
   mcc_generated_files/ext_int.h mcc_generated_files/memory.h \
-  mcc_generated_files/eusart.h
+  mcc_generated_files/eusart.h coms.h

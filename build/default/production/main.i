@@ -21807,6 +21807,7 @@ unsigned char tsttc (void);
 void s2Pressed();
 void s1Pressed();
 void clearLeds(void);
+void updateGlobalVariables();
 # 51 "main.c" 2
 
 # 1 "./coms.h" 1
@@ -21931,6 +21932,7 @@ void main(void)
             }
             TMR4_StopTimer();
             TMR1_StartTimer();
+            updateGlobalVariables();
         }
     }
 }

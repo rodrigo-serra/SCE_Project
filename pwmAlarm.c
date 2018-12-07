@@ -71,7 +71,7 @@ void checkVariablesForAlarm(int temperature, int luminosity){
         TMR2_StartTimer();
         TMR3_StartTimer();
         control_alarm = 1;
-    }else if((alarm == 0 && control_alarm == 1) || (ALAF == 0 && alarm = 1)){
+    }else if((alarm == 0 && control_alarm == 1) || (ALAF == 0 && alarm == 1)){
         if(alarm == 1)
             alarm=0;
         PWM6_LoadDutyValue(0);

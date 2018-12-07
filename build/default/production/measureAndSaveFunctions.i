@@ -21765,6 +21765,17 @@ void PMD_Initialize(void);
 
 
 
+# 1 "./coms.h" 1
+# 37 "./coms.h"
+volatile int msg_array[20];
+volatile int pointer_array=0;
+
+void readbytes(void);
+void writebytes(uint8_t data);
+void interp_msg(void);
+# 7 "measureAndSaveFunctions.c" 2
+
+
 int get_luminosity (void){
 
 
@@ -21853,6 +21864,21 @@ void sensor_timer(int lum, int temp){
         if(numRegsSaved < 20)
         {
             updateNumRegsSaved = numRegsSaved + 1;
+            if(updateNumRegsSaved == 10){
+                writebytes(0xFD);
+
+                writebytes(0XCE);
+
+                writebytes(20);
+
+                writebytes(DATAEE_ReadByte(0x7066));
+
+                writebytes(DATAEE_ReadByte(0x7065));
+
+                writebytes(DATAEE_ReadByte(0x7064));
+
+                writebytes(0xFE);
+            }
         }else{
             updateNumRegsSaved = numRegsSaved;
         }

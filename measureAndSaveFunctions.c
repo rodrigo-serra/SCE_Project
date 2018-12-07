@@ -3,6 +3,8 @@
 #include "mcc_generated_files/mcc.h"
 #include "mcc_generated_files/adcc.h"
 #include "mcc_generated_files/memory.h"
+#include "mcc_generated_files/eusart.h"
+#include "coms.h"
 
 int get_luminosity (void){
     
@@ -92,6 +94,21 @@ void sensor_timer(int lum, int temp){
         if(numRegsSaved < 20)
         {
             updateNumRegsSaved = numRegsSaved + 1;
+            if(updateNumRegsSaved == 10){
+                writebytes(SOM);
+                
+                writebytes(NMFL);
+               //NREG
+                writebytes(20);
+                //Registos validos
+                writebytes(DATAEE_ReadByte(NUM_REGS_SAVED));
+                //iread
+                writebytes(DATAEE_ReadByte(LAST_READ));
+                //iwrite
+                writebytes(DATAEE_ReadByte(LAST_WRITTEN));
+                
+                writebytes(EOM);
+            }
         }else{
             updateNumRegsSaved = numRegsSaved;
         }

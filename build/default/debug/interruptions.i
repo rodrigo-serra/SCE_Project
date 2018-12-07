@@ -21775,6 +21775,7 @@ void PMD_Initialize(void);
 void s2Pressed();
 void s1Pressed();
 void clearLeds(void);
+void updateGlobalVariables();
 # 5 "interruptions.c" 2
 
 

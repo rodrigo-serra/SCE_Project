@@ -2,6 +2,7 @@
 #include "coms.h"
 #include "globalvariables.h"
 #include "mcc_generated_files/memory.h"
+#include "mcc_generated_files/mcc.h"
 
 void readbytes(void){
     uint8_t data;
@@ -28,11 +29,14 @@ void interp_msg(void){
     int n;
     int iread;
     int numregs;
-    
+    int aux;
+    int aux2;
+    int aux3;
     cmd = msg_array[1]; //Leitura do byte corresponde ao comando pretendido
     writebytes(SOM);
+    //__delay_ms(50);
     writebytes(msg_array[1]);
-    
+    //__delay_ms(50);
     
     switch(cmd) {
         case RCLK :
@@ -41,16 +45,28 @@ void interp_msg(void){
             //writebytes(45); //Enviar segundos
             
             writebytes(hrs);
+            //__delay_ms(50);
             writebytes(mins);
+            //__delay_ms(50);
             writebytes(secs);
+            //__delay_ms(50);
             break;
         case SCLK :
             //Atualiza Relogio
-            hrs = msg_array[2];
-            mins = msg_array[3];
-            secs = msg_array[4];
-            DATAEE_WriteByte(HOUR, msg_array[2]);
-            DATAEE_WriteByte(MINUTE, msg_array[3]);
+            aux = msg_array[2]; //Intervalo [0;23]
+            aux2 = msg_array[3]; //Intervalo [0;59]
+            aux3 = msg_array[4]; //Intervalo [0;59]
+            
+            if(aux<0 || aux>23 || aux2<0 || aux2>59 || aux3<0 || aux3>59){
+                writebytes(CMD_ERROR);
+            }else{
+                hrs = msg_array[2];
+                mins = msg_array[3];
+                secs = msg_array[4];
+                DATAEE_WriteByte(HOUR, msg_array[2]);
+                DATAEE_WriteByte(MINUTE, msg_array[3]);
+                writebytes(CMD_OK);
+            }
             //writebytes(17);
             break;
         case RTL :
@@ -69,14 +85,27 @@ void interp_msg(void){
             break;
         case MMP :
             //Atualiza PMON, periodo de registo
-            PMON = msg_array[2];
+            aux = msg_array[2]; //Duracao do periodo de monotorizacao pertencente ao intervalo [0,99]s
+            
+            if(aux<0 || aux>99){
+                writebytes(CMD_ERROR);
+            }else{
+                PMON = msg_array[2];
+                writebytes(CMD_OK);
+            }
             
             //writebytes(20);
             break;
         case MTA :
             //Atualiza TALA, duracao alarme
-            TALA = msg_array[2];
+            aux = msg_array[2]; //Duracao do alarme pertencente ao intervalo [0,60]s
             
+            if(aux<0 || aux>60){
+                writebytes(CMD_ERROR);
+            }else{
+                TALA = msg_array[2];
+                writebytes(CMD_OK);
+            }
             //writebytes(21);
             break;
         case RALA :
@@ -89,17 +118,30 @@ void interp_msg(void){
             break;
         case DATL :
             //Define thresholds
-            TempThreshold = msg_array[2];
-            LumThreshold = msg_array[3];
-            DATAEE_WriteByte(THRESHLUM, msg_array[3]);
-            DATAEE_WriteByte(THRESHTEMP, msg_array[2]);
+            aux = msg_array[2]; //Threshold da temperatura que tem que pertencer ao intervalo [0;50]
+            aux2 = msg_array[3]; //Threshold da luminosidade que tem que pertencer ao intervalo [0;3]
             
+            if(aux < 0 || aux > 50 || aux2<0 || aux2>3 ){
+                writebytes(CMD_ERROR);
+            }else{
+                TempThreshold = msg_array[2];
+                LumThreshold = msg_array[3];
+                DATAEE_WriteByte(THRESHLUM, msg_array[3]);
+                DATAEE_WriteByte(THRESHTEMP, msg_array[2]);
+                writebytes(CMD_OK);
+            }
             //writebytes(23);
             break;
         case AALA :
             //Altera alarm flag ALAF
-            ALAF = msg_array[2];
+            aux = msg_array[2]; //Tem que estar compreendido entre 0 e 1
             
+            if(aux != 0 && aux!= 1){
+                writebytes(CMD_ERROR);
+            }else{
+                ALAF = msg_array[2];
+                writebytes(CMD_OK);
+            }
             //writebytes(24);
             break;
         case RMM :
@@ -161,6 +203,8 @@ void interp_msg(void){
             DATAEE_WriteByte(MAXLUM + LUM, 0);
             DATAEE_WriteByte(MINTEMP + TEMP, 200);
             DATAEE_WriteByte(MINLUM + LUM, 5);
+            
+            writebytes(CMD_OK);
             
             //writebytes(26);
             break;
@@ -250,13 +294,9 @@ void interp_msg(void){
             DATAEE_WriteByte(LAST_READ, iread);
             //writebytes(29);
             break;
-        case NMFL :
-            //Notificação de metade da memoria preenchida
-            
-            writebytes(30);
-            break;
         default :
-            writebytes(31);
+            writebytes(CMD_ERROR);
+            //writebytes(31);
     }
     writebytes(EOM);
 }

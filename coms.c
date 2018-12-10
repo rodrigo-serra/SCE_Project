@@ -87,7 +87,7 @@ void interp_msg(void){
             //Atualiza PMON, periodo de registo
             aux = msg_array[2]; //Duracao do periodo de monotorizacao pertencente ao intervalo [0,99]s
             
-            if(aux<0 || aux>99){
+            if(aux<3 || aux>99){
                 writebytes(CMD_ERROR);
             }else{
                 PMON = msg_array[2];

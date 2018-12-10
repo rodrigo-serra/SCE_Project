@@ -6,6 +6,7 @@
 #include "mcc_generated_files/eusart.h"
 #include "coms.h"
 
+
 int get_luminosity (void){
     
     //READ FOR POTENCIOMETER
@@ -131,7 +132,7 @@ void sensor_timer(int lum, int temp){
     int minLum = DATAEE_ReadByte(MINLUM + LUM);
 
     if(temp >= maxTemp){
-        DATAEE_WriteByte(MAXTEMP + HOUR, localHour);
+        DATAEE_WriteByte(MAXTEMP + HOURS, localHour);
         DATAEE_WriteByte(MAXTEMP + MINUTES, localMin);
         DATAEE_WriteByte(MAXTEMP + SECONDS, localSec);
         DATAEE_WriteByte(MAXTEMP + TEMP, temp);
@@ -139,7 +140,7 @@ void sensor_timer(int lum, int temp){
     }
 
     if(lum >= maxLum){
-        DATAEE_WriteByte(MAXLUM + HOUR, localHour);
+        DATAEE_WriteByte(MAXLUM + HOURS, localHour);
         DATAEE_WriteByte(MAXLUM + MINUTES, localMin);
         DATAEE_WriteByte(MAXLUM + SECONDS, localSec);
         DATAEE_WriteByte(MAXLUM + TEMP, temp);
@@ -147,7 +148,7 @@ void sensor_timer(int lum, int temp){
     }
 
     if(temp <= minTemp){
-        DATAEE_WriteByte(MINTEMP + HOUR, localHour);
+        DATAEE_WriteByte(MINTEMP + HOURS, localHour);
         DATAEE_WriteByte(MINTEMP + MINUTES, localMin);
         DATAEE_WriteByte(MINTEMP + SECONDS, localSec);
         DATAEE_WriteByte(MINTEMP + TEMP, temp);
@@ -155,7 +156,7 @@ void sensor_timer(int lum, int temp){
     }
 
     if(lum <= minLum){
-        DATAEE_WriteByte(MINLUM + HOUR, localHour);
+        DATAEE_WriteByte(MINLUM + HOURS, localHour);
         DATAEE_WriteByte(MINLUM + MINUTES, localMin);
         DATAEE_WriteByte(MINLUM + SECONDS, localSec);
         DATAEE_WriteByte(MINLUM + TEMP, temp);

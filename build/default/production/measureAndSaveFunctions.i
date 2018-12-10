@@ -21776,6 +21776,7 @@ void interp_msg(void);
 # 7 "measureAndSaveFunctions.c" 2
 
 
+
 int get_luminosity (void){
 
 
@@ -21901,7 +21902,7 @@ void sensor_timer(int lum, int temp){
     int minLum = DATAEE_ReadByte(0x7073 + 4);
 
     if(temp >= maxTemp){
-        DATAEE_WriteByte(0x706E + 0x7067, localHour);
+        DATAEE_WriteByte(0x706E + 0, localHour);
         DATAEE_WriteByte(0x706E + 1, localMin);
         DATAEE_WriteByte(0x706E + 2, localSec);
         DATAEE_WriteByte(0x706E + 3, temp);
@@ -21909,7 +21910,7 @@ void sensor_timer(int lum, int temp){
     }
 
     if(lum >= maxLum){
-        DATAEE_WriteByte(0x7069 + 0x7067, localHour);
+        DATAEE_WriteByte(0x7069 + 0, localHour);
         DATAEE_WriteByte(0x7069 + 1, localMin);
         DATAEE_WriteByte(0x7069 + 2, localSec);
         DATAEE_WriteByte(0x7069 + 3, temp);
@@ -21917,7 +21918,7 @@ void sensor_timer(int lum, int temp){
     }
 
     if(temp <= minTemp){
-        DATAEE_WriteByte(0x7078 + 0x7067, localHour);
+        DATAEE_WriteByte(0x7078 + 0, localHour);
         DATAEE_WriteByte(0x7078 + 1, localMin);
         DATAEE_WriteByte(0x7078 + 2, localSec);
         DATAEE_WriteByte(0x7078 + 3, temp);
@@ -21925,7 +21926,7 @@ void sensor_timer(int lum, int temp){
     }
 
     if(lum <= minLum){
-        DATAEE_WriteByte(0x7073 + 0x7067, localHour);
+        DATAEE_WriteByte(0x7073 + 0, localHour);
         DATAEE_WriteByte(0x7073 + 1, localMin);
         DATAEE_WriteByte(0x7073 + 2, localSec);
         DATAEE_WriteByte(0x7073 + 3, temp);
@@ -21956,5 +21957,6 @@ void getValuesFromPreviousSession(){
         DATAEE_WriteByte(0x7080, PMON);
         DATAEE_WriteByte(0x707F, TALA);
         DATAEE_WriteByte(0x707F, ALAF);
+
     }
 }

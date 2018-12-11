@@ -68,23 +68,23 @@
 #define ERASE_FLASH_BLOCKSIZE    32
 #define END_FLASH                0x2000
 
-#define START_INDEX              0x7000
-#define LAST_WRITTEN             0x7064 //100(20x5) adresses after start
-#define LAST_READ                0x7065
-#define NUM_REGS_SAVED           0x7066
-#define HOUR                     0x7067
-#define MINUTE                   0x7068
-#define MAXLUM                   0x7069
-#define MAXTEMP                  0x706E
-#define MINLUM                   0x7073
-#define MINTEMP                  0x7078
+#define START_INDEX              0xF000
+#define LAST_WRITTEN             0xF064 //100(20x5) adresses after start
+#define LAST_READ                0xF065
+#define NUM_REGS_SAVED           0xF066
+#define HOUR                     0xF067
+#define MINUTE                   0xF068
+#define MAXLUM                   0xF069
+#define MAXTEMP                  0xF06E
+#define MINLUM                   0xF073
+#define MINTEMP                  0xF078
         
-#define THRESHTEMP               0x707D
-#define THRESHLUM                0x707E
+#define THRESHTEMP               0xF07D
+#define THRESHLUM                0xF07E
 
-#define TALAvalue                0x707F
-#define PMONvalue                0x7080
-#define ALAFvalue                0x7081        
+#define TALAvalue                0xF07F
+#define PMONvalue                0xF080
+#define ALAFvalue                0xF081        
         
 #define HOURS                   0
 #define MINUTES                 1        

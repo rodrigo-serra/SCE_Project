@@ -142,7 +142,7 @@ void main(void)
             
         }else{
             //call function to modify states
-            TMR1_StopTimer();
+           /* TMR1_StopTimer();
             TMR4_StartTimer();
             int previous = HIGH;
             while(mode_s != -1){
@@ -162,7 +162,7 @@ void main(void)
             }
             TMR4_StopTimer();
             TMR1_StartTimer();
-            updateGlobalVariables();
+            updateGlobalVariables();*/
         }    
     }
 }

@@ -21817,19 +21817,19 @@ void setLedLuminosity(int lum){
 
 void sensor_timer(int lum, int temp){
 
-    int numRegsSaved = DATAEE_ReadByte(0x7066);
-    int lastRegSaved = DATAEE_ReadByte(0x7064);
+    int numRegsSaved = DATAEE_ReadByte(0xF066);
+    int lastRegSaved = DATAEE_ReadByte(0xF064);
 
 
     if( numRegsSaved == 0 || ((numRegsSaved != lastRegSaved) && numRegsSaved != 20) || numRegsSaved > 20 || lastRegSaved > 20){
         numRegsSaved = 0;
         lastRegSaved = 0;
-        DATAEE_WriteByte(0x7066, numRegsSaved);
-        DATAEE_WriteByte(0x7064, lastRegSaved);
-        DATAEE_WriteByte(0x706E + 3, 0);
-        DATAEE_WriteByte(0x7069 + 4, 0);
-        DATAEE_WriteByte(0x7078 + 3, 200);
-        DATAEE_WriteByte(0x7073 + 4, 5);
+        DATAEE_WriteByte(0xF066, numRegsSaved);
+        DATAEE_WriteByte(0xF064, lastRegSaved);
+        DATAEE_WriteByte(0xF06E + 3, 0);
+        DATAEE_WriteByte(0xF069 + 4, 0);
+        DATAEE_WriteByte(0xF078 + 3, 200);
+        DATAEE_WriteByte(0xF073 + 4, 5);
     }
 
 
@@ -21840,15 +21840,20 @@ void sensor_timer(int lum, int temp){
     TMR1_StartTimer();
 
 
-    DATAEE_WriteByte(0x7067, localHour);
-    DATAEE_WriteByte(0x7068, localMin);
+    DATAEE_WriteByte(0xF067, localHour);
+    DATAEE_WriteByte(0xF068, localMin);
 
     int lastLumEntry = 0;
     int lastTempEntry = 0;
 
     if(numRegsSaved != 0){
-        lastLumEntry = DATAEE_ReadByte(0x7000 + lastRegSaved-1 + 4);
-        lastTempEntry = DATAEE_ReadByte(0x7000 + lastRegSaved-1 + 3);
+        if(lastRegSaved == 0){
+            lastLumEntry = DATAEE_ReadByte(0xF000 + 19*5 + 4);
+            lastTempEntry = DATAEE_ReadByte(0xF000 + 19*5 + 3);
+        }else{
+            lastLumEntry = DATAEE_ReadByte(0xF000 + (lastRegSaved-1)*5 + 4);
+            lastTempEntry = DATAEE_ReadByte(0xF000 + (lastRegSaved-1)*5 + 3);
+        }
     }
 
     if(((lum != lastLumEntry || temp != lastTempEntry) && numRegsSaved != 0) || numRegsSaved == 0){
@@ -21872,11 +21877,11 @@ void sensor_timer(int lum, int temp){
 
                 writebytes(20);
 
-                writebytes(DATAEE_ReadByte(0x7066));
+                writebytes(DATAEE_ReadByte(0xF066));
 
-                writebytes(DATAEE_ReadByte(0x7065));
+                writebytes(DATAEE_ReadByte(0xF065));
 
-                writebytes(DATAEE_ReadByte(0x7064));
+                writebytes(DATAEE_ReadByte(0xF064));
 
                 writebytes(0xFE);
             }
@@ -21885,52 +21890,52 @@ void sensor_timer(int lum, int temp){
         }
 
 
-        DATAEE_WriteByte(0x7064, newRegIndex);
-        DATAEE_WriteByte(0x7066, updateNumRegsSaved);
+        DATAEE_WriteByte(0xF064, newRegIndex);
+        DATAEE_WriteByte(0xF066, updateNumRegsSaved);
 
-        DATAEE_WriteByte(0x7000 + lastRegSaved + 0, localHour);
-        DATAEE_WriteByte(0x7000 + lastRegSaved + 1, localMin);
-        DATAEE_WriteByte(0x7000 + lastRegSaved + 2, localSec);
-        DATAEE_WriteByte(0x7000 + lastRegSaved + 3, temp);
-        DATAEE_WriteByte(0x7000 + lastRegSaved + 4, lum);
+        DATAEE_WriteByte(0xF000 + lastRegSaved*5 + 0, localHour);
+        DATAEE_WriteByte(0xF000 + lastRegSaved*5 + 1, localMin);
+        DATAEE_WriteByte(0xF000 + lastRegSaved*5 + 2, localSec);
+        DATAEE_WriteByte(0xF000 + lastRegSaved*5 + 3, temp);
+        DATAEE_WriteByte(0xF000 + lastRegSaved*5 + 4, lum);
     }
 
 
-    int maxTemp = DATAEE_ReadByte(0x706E + 3);
-    int maxLum = DATAEE_ReadByte(0x7069 + 4);
-    int minTemp = DATAEE_ReadByte(0x7078 + 3);
-    int minLum = DATAEE_ReadByte(0x7073 + 4);
+    int maxTemp = DATAEE_ReadByte(0xF06E + 3);
+    int maxLum = DATAEE_ReadByte(0xF069 + 4);
+    int minTemp = DATAEE_ReadByte(0xF078 + 3);
+    int minLum = DATAEE_ReadByte(0xF073 + 4);
 
     if(temp >= maxTemp){
-        DATAEE_WriteByte(0x706E + 0, localHour);
-        DATAEE_WriteByte(0x706E + 1, localMin);
-        DATAEE_WriteByte(0x706E + 2, localSec);
-        DATAEE_WriteByte(0x706E + 3, temp);
-        DATAEE_WriteByte(0x706E + 4, lum);
+        DATAEE_WriteByte(0xF06E + 0, localHour);
+        DATAEE_WriteByte(0xF06E + 1, localMin);
+        DATAEE_WriteByte(0xF06E + 2, localSec);
+        DATAEE_WriteByte(0xF06E + 3, temp);
+        DATAEE_WriteByte(0xF06E + 4, lum);
     }
 
     if(lum >= maxLum){
-        DATAEE_WriteByte(0x7069 + 0, localHour);
-        DATAEE_WriteByte(0x7069 + 1, localMin);
-        DATAEE_WriteByte(0x7069 + 2, localSec);
-        DATAEE_WriteByte(0x7069 + 3, temp);
-        DATAEE_WriteByte(0x7069 + 4, lum);
+        DATAEE_WriteByte(0xF069 + 0, localHour);
+        DATAEE_WriteByte(0xF069 + 1, localMin);
+        DATAEE_WriteByte(0xF069 + 2, localSec);
+        DATAEE_WriteByte(0xF069 + 3, temp);
+        DATAEE_WriteByte(0xF069 + 4, lum);
     }
 
     if(temp <= minTemp){
-        DATAEE_WriteByte(0x7078 + 0, localHour);
-        DATAEE_WriteByte(0x7078 + 1, localMin);
-        DATAEE_WriteByte(0x7078 + 2, localSec);
-        DATAEE_WriteByte(0x7078 + 3, temp);
-        DATAEE_WriteByte(0x7078 + 4, lum);
+        DATAEE_WriteByte(0xF078 + 0, localHour);
+        DATAEE_WriteByte(0xF078 + 1, localMin);
+        DATAEE_WriteByte(0xF078 + 2, localSec);
+        DATAEE_WriteByte(0xF078 + 3, temp);
+        DATAEE_WriteByte(0xF078 + 4, lum);
     }
 
     if(lum <= minLum){
-        DATAEE_WriteByte(0x7073 + 0, localHour);
-        DATAEE_WriteByte(0x7073 + 1, localMin);
-        DATAEE_WriteByte(0x7073 + 2, localSec);
-        DATAEE_WriteByte(0x7073 + 3, temp);
-        DATAEE_WriteByte(0x7073 + 4, lum);
+        DATAEE_WriteByte(0xF073 + 0, localHour);
+        DATAEE_WriteByte(0xF073 + 1, localMin);
+        DATAEE_WriteByte(0xF073 + 2, localSec);
+        DATAEE_WriteByte(0xF073 + 3, temp);
+        DATAEE_WriteByte(0xF073 + 4, lum);
     }
 
 }
@@ -21938,24 +21943,24 @@ void sensor_timer(int lum, int temp){
 
 void getValuesFromPreviousSession(){
 
-    int numRegsSaved = DATAEE_ReadByte(0x7066);
-    int lastRegSaved = DATAEE_ReadByte(0x7064);
+    int numRegsSaved = DATAEE_ReadByte(0xF066);
+    int lastRegSaved = DATAEE_ReadByte(0xF064);
 
 
     if( (numRegsSaved == 20 || ((numRegsSaved == lastRegSaved) && numRegsSaved != 20)) && numRegsSaved <= 20 && lastRegSaved <= 20){
 
-        hrs = DATAEE_ReadByte(0x7067);
-        mins = DATAEE_ReadByte(0x7068);
-        LumThreshold = DATAEE_ReadByte(0x707E);
-        TempThreshold = DATAEE_ReadByte(0x707D);
-        PMON = DATAEE_ReadByte(0x7080);
-        TALA = DATAEE_ReadByte(0x707F);
-        ALAF = DATAEE_ReadByte(0x7081);
+        hrs = DATAEE_ReadByte(0xF067);
+        mins = DATAEE_ReadByte(0xF068);
+        LumThreshold = DATAEE_ReadByte(0xF07E);
+        TempThreshold = DATAEE_ReadByte(0xF07D);
+        PMON = DATAEE_ReadByte(0xF080);
+        TALA = DATAEE_ReadByte(0xF07F);
+        ALAF = DATAEE_ReadByte(0xF081);
     }else{
-        DATAEE_WriteByte(0x707E, LumThreshold);
-        DATAEE_WriteByte(0x707D, TempThreshold);
-        DATAEE_WriteByte(0x7080, PMON);
-        DATAEE_WriteByte(0x707F, TALA);
-        DATAEE_WriteByte(0x707F, ALAF);
+        DATAEE_WriteByte(0xF07E, LumThreshold);
+        DATAEE_WriteByte(0xF07D, TempThreshold);
+        DATAEE_WriteByte(0xF080, PMON);
+        DATAEE_WriteByte(0xF07F, TALA);
+        DATAEE_WriteByte(0xF07F, ALAF);
     }
 }

@@ -65,16 +65,16 @@ void cyg_user_start(void)
 	cyg_mbox_create( &mbxIPh, &mbxIP);
 	cyg_mbox_create( &mbxPIh, &mbxPI);
 
-	cyg_thread_create(5, interface_program, (cyg_addrword_t) 0,
+	cyg_thread_create(4, interface_program, (cyg_addrword_t) 0,
 		"Interface Thread", (void *) stack[0], 4096,
 		&interface_thread, &thread_s[0]);
-	cyg_thread_create(4, sender_program, (cyg_addrword_t) 1,
+	cyg_thread_create(3, sender_program, (cyg_addrword_t) 1,
 		"Sender Thread", (void *) stack[1], 4096,
 		&sender_thread, &thread_s[1]);
-	cyg_thread_create(3, receiver_program, (cyg_addrword_t) 2,
+	cyg_thread_create(2, receiver_program, (cyg_addrword_t) 2,
 		"Receiver Thread", (void *) stack[2], 4096,
 		&receiver_thread, &thread_s[2]);
-	cyg_thread_create(6, processing_program, (cyg_addrword_t) 3,
+	cyg_thread_create(7, processing_program, (cyg_addrword_t) 3,
 		"Processing Thread", (void *) stack[3], 4096,
 		&processing_thread, &thread_s[3]);
 
@@ -87,7 +87,7 @@ void cyg_user_start(void)
 /* this is the interface thread */
 void interface_program(cyg_addrword_t data)
 {
-	cmd_ini(0, NULL);
+	//cmd_ini(0, NULL);
 	monitor();
 }
 
@@ -115,18 +115,19 @@ void sender_program(cyg_addrword_t data)
 void receiver_program(cyg_addrword_t data)
 {
 	unsigned int n, i;
-	unsigned char bufr[50], buffer[10];
+	unsigned char bufr[70], buffer[10];
 	int registo[5];
 	n=1;
 	int nregs = 0, iregs = 0, regs_saved = 0;
 	i=0;
 	int nmfl_received = 0, trgc_received = 0, trgi_received = 0;
+
+	cmd_ini(0, NULL);
+
 	while(exitControl == 0)
 	{
 		err = cyg_io_read(serH, buffer, &n);
-		cyg_mutex_lock(&cliblock);
-		printf("io_read err=%x, n=%d\n", err, n);
-		cyg_mutex_lock(&cliblock);
+		//printf("io_read err=%x, n=%d\n", err, n);
 		
 		if(buffer[0] == EOM)
 		{
@@ -144,6 +145,9 @@ void receiver_program(cyg_addrword_t data)
 			//se for o comando de memoria meia cheia, ativa o controlo para começar a ler registos periodicamente
 			registerRequest = 1;
 			nmfl_received = 1;
+			cyg_mutex_lock(&cliblock);
+			printf("Metade dos registos da PIC preenchidos\n");
+			cyg_mutex_unlock(&cliblock);
 		}else if(buffer[0] == TRGC || trgc_received == 1){
 			//se for transferencia de resgistos, nao vai guardar no bufr, mas na variavel global
 			if(trgc_received == 0){
@@ -210,8 +214,8 @@ void processing_program(cyg_addrword_t data)
 	time_t seconds = 0, time_ref;
 	time_ref = time(NULL);
 	
-	cloc init_time=malloc(sizeof(cloc_));
-	cloc end_time=malloc(sizeof(cloc_));
+	cloc init_time=malloc(sizeof(cloc));
+	cloc end_time=malloc(sizeof(cloc));
 	
 	while(exitControl == 0){
 		seconds = time(NULL)-time_ref;
@@ -245,8 +249,14 @@ void processing_program(cyg_addrword_t data)
 			end_time->hours = bufr[3];
 			end_time->minutes = bufr[4];
 			end_time->seconds = bufr[5];
-			
-			calc(init_time,end_time,results);
+
+			//calc(init_time,end_time,results);
+			results[0] = 1;
+			results[1] = 2;
+			results[2] = 3;
+			results[3] = 4;
+			results[4] = 5;
+			results[5] = 6;			
 			//put calcs in mail box PI
 			for(i=0; i<6; i++)
 				bufw[i]=results[i];

@@ -77,8 +77,13 @@ void sensor_timer(int lum, int temp){
     int lastTempEntry = 0;
     
     if(numRegsSaved != 0){
-        lastLumEntry = DATAEE_ReadByte(START_INDEX + lastRegSaved-1 + LUM);
-        lastTempEntry = DATAEE_ReadByte(START_INDEX + lastRegSaved-1 + TEMP);
+        if(lastRegSaved == 0){
+            lastLumEntry = DATAEE_ReadByte(START_INDEX + 19*5 + LUM);
+            lastTempEntry = DATAEE_ReadByte(START_INDEX + 19*5 + TEMP);
+        }else{
+            lastLumEntry = DATAEE_ReadByte(START_INDEX + (lastRegSaved-1)*5 + LUM);
+            lastTempEntry = DATAEE_ReadByte(START_INDEX + (lastRegSaved-1)*5 + TEMP);
+        }
     }
     
     if(((lum != lastLumEntry || temp != lastTempEntry) && numRegsSaved != 0) || numRegsSaved == 0){
@@ -118,11 +123,11 @@ void sensor_timer(int lum, int temp){
         DATAEE_WriteByte(LAST_WRITTEN, newRegIndex);
         DATAEE_WriteByte(NUM_REGS_SAVED, updateNumRegsSaved);
         
-        DATAEE_WriteByte(START_INDEX + lastRegSaved + HOURS, localHour);
-        DATAEE_WriteByte(START_INDEX + lastRegSaved + MINUTES, localMin);
-        DATAEE_WriteByte(START_INDEX + lastRegSaved + SECONDS, localSec);
-        DATAEE_WriteByte(START_INDEX + lastRegSaved + TEMP, temp);
-        DATAEE_WriteByte(START_INDEX + lastRegSaved + LUM, lum);
+        DATAEE_WriteByte(START_INDEX + lastRegSaved*5 + HOURS, localHour);
+        DATAEE_WriteByte(START_INDEX + lastRegSaved*5 + MINUTES, localMin);
+        DATAEE_WriteByte(START_INDEX + lastRegSaved*5 + SECONDS, localSec);
+        DATAEE_WriteByte(START_INDEX + lastRegSaved*5 + TEMP, temp);
+        DATAEE_WriteByte(START_INDEX + lastRegSaved*5 + LUM, lum);
     }
     
     //Check if it's the max or the min and if so, save it

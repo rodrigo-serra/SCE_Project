@@ -21911,28 +21911,7 @@ void main(void)
             }
 
         }else{
-
-            TMR1_StopTimer();
-            TMR4_StartTimer();
-            int previous = 1;
-            while(mode_s != -1){
-                if(PORTCbits.RC5 == 0 && previous == 1){
-                    s2Pressed();
-                    _delay((unsigned long)((50)*(1000000/4000.0)));
-                    previous = 0;
-                }else {
-                    if(PORTCbits.RC5 == 1 && previous == 0)
-                        previous = 1;
-                }
-                if(s1_pressed == 1){
-                    s1_pressed = 0;
-                    s1Pressed();
-                    _delay((unsigned long)((50)*(1000000/4000.0)));
-                }
-            }
-            TMR4_StopTimer();
-            TMR1_StartTimer();
-            updateGlobalVariables();
+# 166 "main.c"
         }
     }
 }

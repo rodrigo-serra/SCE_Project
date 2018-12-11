@@ -1,4 +1,4 @@
-/* 
+ /* 
  * File:   globalvariables.h
  * Author: Rui
  *

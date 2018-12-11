@@ -1699,10 +1699,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 3 `i
 ]
 "28
-[; ;./globalvariables.h: 28: volatile int ALAF = 1;
+[; ;./globalvariables.h: 28: volatile int ALAF = 0;
 [v _ALAF `Vi ~T0 @X0 1 e ]
 [i _ALAF
--> 1 `i
+-> 0 `i
 ]
 "29
 [; ;./globalvariables.h: 29: volatile int alarm = 0;
@@ -2330,11 +2330,11 @@ Version 4.0 HI-TECH Software Intermediate Code
 "189
 [; ;measureAndSaveFunctions.c: 189:         DATAEE_WriteByte(0x707F, ALAF);
 [e ( _DATAEE_WriteByte (2 , -> -> 28799 `i `us -> _ALAF `uc ]
-"191
-[; ;measureAndSaveFunctions.c: 191:     }
+"190
+[; ;measureAndSaveFunctions.c: 190:     }
 }
 [e :U 1668 ]
-"192
-[; ;measureAndSaveFunctions.c: 192: }
+"191
+[; ;measureAndSaveFunctions.c: 191: }
 [e :UE 1666 ]
 }

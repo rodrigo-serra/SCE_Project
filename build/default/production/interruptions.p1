@@ -1698,10 +1698,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> 3 `i
 ]
 "28
-[; ;./globalvariables.h: 28: volatile int ALAF = 1;
+[; ;./globalvariables.h: 28: volatile int ALAF = 0;
 [v _ALAF `Vi ~T0 @X0 1 e ]
 [i _ALAF
--> 1 `i
+-> 0 `i
 ]
 "29
 [; ;./globalvariables.h: 29: volatile int alarm = 0;

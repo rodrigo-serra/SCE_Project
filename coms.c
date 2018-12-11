@@ -244,14 +244,19 @@ void interp_msg(void){
                 
                 data = DATAEE_ReadByte(START_INDEX + iread*5 + HOURS);
                 writebytes(data);
+                //writebytes(50);
                 data = DATAEE_ReadByte(START_INDEX + iread*5 + MINUTES);
                 writebytes(data);
+                //writebytes(40);
                 data = DATAEE_ReadByte(START_INDEX + iread*5 + SECONDS);
                 writebytes(data);
+                //writebytes(30);
                 data = DATAEE_ReadByte(START_INDEX + iread*5 + TEMP);
                 writebytes(data);
+                //writebytes(20);
                 data = DATAEE_ReadByte(START_INDEX + iread*5 + LUM);
                 writebytes(data);
+                //writebytes(10);
             }
             DATAEE_WriteByte(LAST_READ, iread);
             //writebytes(28);

@@ -170,7 +170,7 @@ void getValuesFromPreviousSession(){
     //check if it is the first session
     int numRegsSaved = DATAEE_ReadByte(NUM_REGS_SAVED);
     int lastRegSaved = DATAEE_ReadByte(LAST_WRITTEN);
-    
+
     //check if it connected for the first time
     if( (numRegsSaved == 20 || ((numRegsSaved == lastRegSaved) && numRegsSaved != 20)) && numRegsSaved <= 20 && lastRegSaved <= 20){
     //update time if not

@@ -20949,7 +20949,7 @@ volatile int hrs = 0;
 volatile int mins = 0;
 volatile int secs = 0;
 volatile int PMON = 3;
-volatile int ALAF = 1;
+volatile int ALAF = 0;
 volatile int alarm = 0;
 volatile int control_alarm = 0;
 volatile int TALA = 2;
@@ -21957,6 +21957,5 @@ void getValuesFromPreviousSession(){
         DATAEE_WriteByte(0x7080, PMON);
         DATAEE_WriteByte(0x707F, TALA);
         DATAEE_WriteByte(0x707F, ALAF);
-
     }
 }

@@ -137,12 +137,11 @@ void main(void)
                 //SLEEP();   
             }
             //Comunicacao com o eCos
-            while(EUSART_is_rx_ready() != 0){
+            /*while(EUSART_is_rx_ready() != 0){
                 readbytes();
-            }
+            }*/
             
         }else{
-            /*
             //MODIFICATION MODE
             //Disables clock
             TMR1_StopTimer();
@@ -172,7 +171,7 @@ void main(void)
             TMR4_StopTimer();
             //Enables clock
             TMR1_StartTimer();
-            updateGlobalVariables();*/
+            updateGlobalVariables();
         }    
     }
 }

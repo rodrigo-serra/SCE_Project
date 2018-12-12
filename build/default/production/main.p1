@@ -99,12 +99,39 @@ Version 4.0 HI-TECH Software Intermediate Code
 "22 ./measureAndSaveFunctions.h
 [; ;./measureAndSaveFunctions.h: 22: void sensor_timer(int lum, int temp);
 [v _sensor_timer `(v ~T0 @X0 0 ef2`i`i ]
-"40 ./coms.h
-[; ;./coms.h: 40: void readbytes(void);
-[v _readbytes `(v ~T0 @X0 0 ef ]
-"224 ./mcc_generated_files/eusart.h
-[; ;./mcc_generated_files/eusart.h: 224: uint8_t EUSART_is_rx_ready(void);
-[v _EUSART_is_rx_ready `(uc ~T0 @X0 0 ef ]
+"161 ./mcc_generated_files/tmr1.h
+[; ;./mcc_generated_files/tmr1.h: 161: void TMR1_StopTimer(void);
+[v _TMR1_StopTimer `(v ~T0 @X0 0 ef ]
+"464 ./mcc_generated_files/tmr4.h
+[; ;./mcc_generated_files/tmr4.h: 464: void TMR4_StartTimer(void);
+[v _TMR4_StartTimer `(v ~T0 @X0 0 ef ]
+"514 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 514:     struct {
+[s S37 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S37 . RC0 RC1 RC2 RC3 RC4 RC5 RC6 RC7 ]
+"513
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 513: typedef union {
+[u S36 `S37 1 ]
+[n S36 . . ]
+"525
+[; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 525: extern volatile PORTCbits_t PORTCbits __attribute__((address(0x00E)));
+[v _PORTCbits `VS36 ~T0 @X0 0 e@14 ]
+"14 ./stateModifiers.h
+[; ;./stateModifiers.h: 14: void s2Pressed();
+[v _s2Pressed `(v ~T0 @X0 0 e? ]
+[v F12202 `(v ~T0 @X0 1 tf1`ul ]
+"92 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic.h
+[v __delay `JF12202 ~T0 @X0 0 e ]
+[p i __delay ]
+"15 ./stateModifiers.h
+[; ;./stateModifiers.h: 15: void s1Pressed();
+[v _s1Pressed `(v ~T0 @X0 0 e? ]
+"129 ./mcc_generated_files/tmr1.h
+[; ;./mcc_generated_files/tmr1.h: 129: void TMR1_StartTimer(void);
+[v _TMR1_StartTimer `(v ~T0 @X0 0 ef ]
+"17 ./stateModifiers.h
+[; ;./stateModifiers.h: 17: void updateGlobalVariables();
+[v _updateGlobalVariables `(v ~T0 @X0 0 e? ]
 "54 C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h
 [; ;C:\Program Files (x86)\Microchip\xc8\v2.00\pic\include\pic16f18875.h: 54: __asm("INDF0 equ 00h");
 [; <" INDF0 equ 00h ;# ">
@@ -2029,39 +2056,102 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 138:             }
 }
 [e :U 1636 ]
-"140
-[; ;main.c: 140:             while(EUSART_is_rx_ready() != 0){
-[e $U 1637  ]
-[e :U 1638 ]
-{
-"141
-[; ;main.c: 141:                 readbytes();
-[e ( _readbytes ..  ]
-"142
-[; ;main.c: 142:             }
-}
-[e :U 1637 ]
-"140
-[; ;main.c: 140:             while(EUSART_is_rx_ready() != 0){
-[e $ != -> ( _EUSART_is_rx_ready ..  `i -> 0 `i 1638  ]
-[e :U 1639 ]
 "144
 [; ;main.c: 144:         }else{
 }
-[e $U 1640  ]
+[e $U 1637  ]
 [e :U 1633 ]
 {
-"176
-[; ;main.c: 176:         }
+"147
+[; ;main.c: 147:             TMR1_StopTimer();
+[e ( _TMR1_StopTimer ..  ]
+"149
+[; ;main.c: 149:             TMR4_StartTimer();
+[e ( _TMR4_StartTimer ..  ]
+"151
+[; ;main.c: 151:             int previous = 1;
+[v _previous `i ~T0 @X0 1 a ]
+[e = _previous -> 1 `i ]
+"153
+[; ;main.c: 153:             while(mode_s != -1){
+[e $U 1638  ]
+[e :U 1639 ]
+{
+"154
+[; ;main.c: 154:                 if(PORTCbits.RC5 == 0 && previous == 1){
+[e $ ! && == -> . . _PORTCbits 0 5 `i -> 0 `i == _previous -> 1 `i 1641  ]
+{
+"156
+[; ;main.c: 156:                     s2Pressed();
+[e ( _s2Pressed ..  ]
+"157
+[; ;main.c: 157:                     _delay((unsigned long)((50)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"158
+[; ;main.c: 158:                     previous = 0;
+[e = _previous -> 0 `i ]
+"159
+[; ;main.c: 159:                 }else {
 }
+[e $U 1642  ]
+[e :U 1641 ]
+{
+"160
+[; ;main.c: 160:                     if(PORTCbits.RC5 == 1 && previous == 0)
+[e $ ! && == -> . . _PORTCbits 0 5 `i -> 1 `i == _previous -> 0 `i 1643  ]
+"161
+[; ;main.c: 161:                         previous = 1;
+[e = _previous -> 1 `i ]
+[e :U 1643 ]
+"162
+[; ;main.c: 162:                 }
+}
+[e :U 1642 ]
+"163
+[; ;main.c: 163:                 if(s1_pressed == 1){
+[e $ ! == _s1_pressed -> 1 `i 1644  ]
+{
+"164
+[; ;main.c: 164:                     s1_pressed = 0;
+[e = _s1_pressed -> 0 `i ]
+"166
+[; ;main.c: 166:                     s1Pressed();
+[e ( _s1Pressed ..  ]
+"167
+[; ;main.c: 167:                     _delay((unsigned long)((50)*(1000000/4000.0)));
+[e ( __delay (1 -> * -> -> 50 `i `d / -> -> 1000000 `l `d .4000.0 `ul ]
+"168
+[; ;main.c: 168:                 }
+}
+[e :U 1644 ]
+"169
+[; ;main.c: 169:             }
+}
+[e :U 1638 ]
+"153
+[; ;main.c: 153:             while(mode_s != -1){
+[e $ != _mode_s -U -> 1 `i 1639  ]
 [e :U 1640 ]
-"177
-[; ;main.c: 177:     }
+"171
+[; ;main.c: 171:             TMR4_StopTimer();
+[e ( _TMR4_StopTimer ..  ]
+"173
+[; ;main.c: 173:             TMR1_StartTimer();
+[e ( _TMR1_StartTimer ..  ]
+"174
+[; ;main.c: 174:             updateGlobalVariables();
+[e ( _updateGlobalVariables ..  ]
+"175
+[; ;main.c: 175:         }
+}
+[e :U 1637 ]
+"176
+[; ;main.c: 176:     }
 }
 [e :U 1630 ]
 [e $U 1631  ]
 [e :U 1632 ]
-"178
-[; ;main.c: 178: }
+"177
+[; ;main.c: 177: }
 [e :UE 1629 ]
 }

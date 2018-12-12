@@ -3,17 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Rodrigo/Documents/GitHub/SCE_Project/coms.h</file>
-            <file>file:/C:/Users/Rodrigo/Documents/GitHub/SCE_Project/mcc_generated_files/memory.h</file>
-            <file>file:/C:/Users/Rodrigo/Documents/GitHub/SCE_Project/stateModifiers.c</file>
-            <file>file:/C:/Users/Rodrigo/Documents/GitHub/SCE_Project/measureAndSaveFunctions.c</file>
-            <file>file:/C:/Users/Rodrigo/Documents/GitHub/SCE_Project/interruptions.c</file>
-            <file>file:/C:/Users/Rodrigo/Documents/GitHub/SCE_Project/main.c</file>
-            <file>file:/C:/Users/Rodrigo/Documents/GitHub/SCE_Project/stateModifiers.h</file>
-            <file>file:/C:/Users/Rodrigo/Documents/GitHub/SCE_Project/globalvariables.h</file>
-            <file>file:/C:/Users/Rodrigo/Documents/GitHub/SCE_Project/pwmAlarm.c</file>
-            <file>file:/C:/Users/Rodrigo/Documents/GitHub/SCE_Project/mcc_generated_files/memory.c</file>
-            <file>file:/C:/Users/Rodrigo/Documents/GitHub/SCE_Project/coms.c</file>
+            <file>file:/D:/Universidade/5ano/SCE/SCE_Project/pwmAlarm.c</file>
+            <file>file:/D:/Universidade/5ano/SCE/SCE_Project/measureAndSaveFunctions.c</file>
+            <file>file:/D:/Universidade/5ano/SCE/SCE_Project/mcc_generated_files/memory.h</file>
+            <file>file:/D:/Universidade/5ano/SCE/SCE_Project/main.c</file>
+            <file>file:/D:/Universidade/5ano/SCE/SCE_Project/stateModifiers.c</file>
+            <file>file:/D:/Universidade/5ano/SCE/SCE_Project/coms.c</file>
+            <file>file:/D:/Universidade/5ano/SCE/SCE_Project/globalvariables.h</file>
         </group>
     </open-files>
 </project-private>

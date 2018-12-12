@@ -36,6 +36,7 @@ extern void cmd_cpt (int, char** );
 extern void cmd_mpt (int, char** );
 extern void cmd_dttl (int, char** );
 extern void cmd_pr (int, char** );
+extern void cmd_garb(int, char**);
        void cmd_sos  (int, char** );
 
 /*-------------------------------------------------------------------------+
@@ -73,6 +74,7 @@ struct 	command_d {
   {cmd_mpt,  "mpt",	"<p>          modify period of transference (minutes - 0 deactivate)"},
   {cmd_dttl, "dttl","<t> <l>      define threshold temperature and luminosity for processing"},
   {cmd_pr,  "pr",	"<h1> <m1> <s1> <h2> <m2> <s2>/n  process registers (max, min, mean) between instants t1 and t2 (h,m,s)"},
+  {cmd_garb,  "garb",	""},
 };
 
 #define NCOMMANDS  (sizeof(commands)/sizeof(struct command_d))

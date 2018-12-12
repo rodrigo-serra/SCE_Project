@@ -6,6 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <time.h>
+#include <unistd.h>
 
 #include "globalvariables.h"
 
@@ -29,18 +30,19 @@ extern void monitor (void);
 extern void cmd_ini(int argc, char **argv);
 extern void checkThresholds(int n);
 extern int saveRegister(int registo[5]);
+extern void calc(cloc start_time,cloc end_time,int *results);
 
 //Variáveis globais de controlo
 volatile int registerRequest = 0;
 volatile int makeCalculations = 0;
 volatile int LumThreshold = 2, TempThreshold = 30;
 volatile int exitControl = 0;
-volatile int p = 10;
+volatile int p = 1;
 
 //Variáveis dos registos
 volatile int iread = 0, iwrite = -1, nr = 0;
 int NRBUF = 100;
-volatile int registers[100][5]; 
+volatile int registers[100][5];
 
 /*error variable*/
 volatile Cyg_ErrNo err;
@@ -65,7 +67,7 @@ void cyg_user_start(void)
 	cyg_mbox_create( &mbxIPh, &mbxIP);
 	cyg_mbox_create( &mbxPIh, &mbxPI);
 
-	cyg_thread_create(4, interface_program, (cyg_addrword_t) 0,
+	cyg_thread_create(6, interface_program, (cyg_addrword_t) 0,
 		"Interface Thread", (void *) stack[0], 4096,
 		&interface_thread, &thread_s[0]);
 	cyg_thread_create(3, sender_program, (cyg_addrword_t) 1,
@@ -74,7 +76,7 @@ void cyg_user_start(void)
 	cyg_thread_create(2, receiver_program, (cyg_addrword_t) 2,
 		"Receiver Thread", (void *) stack[2], 4096,
 		&receiver_thread, &thread_s[2]);
-	cyg_thread_create(7, processing_program, (cyg_addrword_t) 3,
+	cyg_thread_create(5, processing_program, (cyg_addrword_t) 3,
 		"Processing Thread", (void *) stack[3], 4096,
 		&processing_thread, &thread_s[3]);
 
@@ -99,15 +101,16 @@ void sender_program(cyg_addrword_t data)
 	int i = 0;
 	while (exitControl == 0) {
 		bufw = (unsigned char *)cyg_mbox_get( mbxSh ); // wait for message		
+		//check number of bytes to send
 		for(i = 0; bufw[i]!=EOM; i++)
 		{
 			n=i;
 		}
 		n=i+1;
 		err = cyg_io_write(serH, bufw, &n);
-		cyg_mutex_lock(&cliblock);
+		/*cyg_mutex_lock(&cliblock);
 		printf("io_write err=%x, n=%d\n", err, n);
-		cyg_mutex_unlock(&cliblock);
+		cyg_mutex_unlock(&cliblock);*/
 	}
 }
 
@@ -127,7 +130,7 @@ void receiver_program(cyg_addrword_t data)
 	while(exitControl == 0)
 	{
 		err = cyg_io_read(serH, buffer, &n);
-		//printf("io_read err=%x, n=%d\n", err, n);
+		//printf("io_read err=%x, n=%d, %x\n", err, n, buffer[0]);
 		
 		if(buffer[0] == EOM)
 		{
@@ -217,9 +220,9 @@ void processing_program(cyg_addrword_t data)
 	cloc init_time=malloc(sizeof(cloc));
 	cloc end_time=malloc(sizeof(cloc));
 	
-	while(exitControl == 0){
+	while(1){
 		seconds = time(NULL)-time_ref;
-		if(registerRequest == 1 && seconds >= p ) //add time
+		if(registerRequest == 1 && seconds >= p*60 ) //add time
 		{	
 			//request registers
 			bufw[0]=SOM;
@@ -243,29 +246,36 @@ void processing_program(cyg_addrword_t data)
 			//get from mail box IP
 			bufr = (unsigned char *)cyg_mbox_get(mbxIPh);
 			//make calcs 
+
 			init_time->hours = bufr[0];
 			init_time->minutes = bufr[1];
 			init_time->seconds = bufr[2];
 			end_time->hours = bufr[3];
 			end_time->minutes = bufr[4];
 			end_time->seconds = bufr[5];
+			if(bufr[0] != CMD_ERROR && bufr[3] == CMD_ERROR){
+				end_time->hours = registers[iwrite][0];
+				end_time->minutes = registers[iwrite][1];
+				end_time->seconds = registers[iwrite][2];
+			}
 
-			//calc(init_time,end_time,results);
-			results[0] = 1;
-			results[1] = 2;
-			results[2] = 3;
-			results[3] = 4;
-			results[4] = 5;
-			results[5] = 6;			
+			cyg_mutex_lock(&cliblock);
+			calc(init_time,end_time,results);
+			cyg_mutex_unlock(&cliblock);
+		
 			//put calcs in mail box PI
 			for(i=0; i<6; i++)
 				bufw[i]=results[i];
-			
+			if(bufw[1]==51)
+				bufw[1]=CMD_ERROR;
+
+			makeCalculations = 0;
+
 			cyg_mbox_put(mbxPIh, bufw);
 			
-			makeCalculations = 0;
-			
 		}
+		//delay
+		cyg_thread_delay(50);
 	}
 	free(init_time);
 	free(end_time);

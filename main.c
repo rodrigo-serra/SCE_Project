@@ -78,13 +78,13 @@ void main(void)
     // Disable the Peripheral Interrupts
     //INTERRUPT_PeripheralInterruptDisable();
     
-    TMR1_SetInterruptHandler(&changeleds);
+    TMR1_SetInterruptHandler(&changeleds); //Function resposible for blinking at evert second
     
-    TMR4_SetInterruptHandler(&LED_blink_function);
+    TMR4_SetInterruptHandler(&LED_blink_function); //Turn Leds on and off 
     
-    INT_SetInterruptHandler(&s1PressedInterruptHandler);
+    INT_SetInterruptHandler(&s1PressedInterruptHandler); //Interrupt associated with button S1 
     
-    TMR3_SetInterruptHandler(&change_PWM);
+    TMR3_SetInterruptHandler(&change_PWM); //Function associated with Alarm
     TMR3_StopTimer();
     TMR4_StopTimer();
     PWM_Enable();
@@ -101,10 +101,11 @@ void main(void)
     {   
         if(mode_s == -1){
             if(secs%PMON == 0){
-                //get luminosity lvl
+                //get luminosity level
                 luminosity = get_luminosity();
+                //Set leds according to luminosity
                 setLedLuminosity(luminosity); 
-                
+                //Check if luminosity level is above luminosity threshold
                 checkVariablesForAlarm(0,luminosity);
 
                 //if(alarm == 0)
@@ -118,7 +119,7 @@ void main(void)
                 c = tsttc();       	
                 temperature = c;
                 NOP();
-                 
+                //Check if temperature level is above temperature threshold 
                 checkVariablesForAlarm(temperature,0);                        
                 
                 //if(alarm == 0)
@@ -127,7 +128,7 @@ void main(void)
             }
 
             if(secs%PMON == 2){
-                //call function to save (it checks if its a new value or not --
+                //function to save (it checks if its a new value or not --
                 //                       or max or min -- checks thresholds)
                 sensor_timer(luminosity, temperature);
                 //check if the alarm has been turned off
@@ -135,18 +136,24 @@ void main(void)
             
                 //SLEEP();   
             }
-            //Leitura eCos
+            //Comunicacao com o eCos
             while(EUSART_is_rx_ready() != 0){
                 readbytes();
             }
             
         }else{
-            //call function to modify states
-           /* TMR1_StopTimer();
+            /*
+            //MODIFICATION MODE
+            //Disables clock
+            TMR1_StopTimer();
+            //Enables funtion to turn Leds on according to Led state 
             TMR4_StartTimer();
+            //Control Variable
             int previous = HIGH;
+            //Stays in this loop until exits modification mode. S1 works as interrupt, S2 by polling
             while(mode_s != -1){
                 if(S2_GetValue() == LOW && previous == HIGH){
+                    //If S2 pressed changes state according to previous one 
                     s2Pressed();
                     __delay_ms(50);
                     previous = LOW;
@@ -156,11 +163,14 @@ void main(void)
                 }
                 if(s1_pressed == 1){
                     s1_pressed = 0;
+                    //If S2 pressed changes state according to previous one
                     s1Pressed();
                     __delay_ms(50);
                 }
             }
+            //Disables funtion to turn Leds on according to Led state
             TMR4_StopTimer();
+            //Enables clock
             TMR1_StartTimer();
             updateGlobalVariables();*/
         }    

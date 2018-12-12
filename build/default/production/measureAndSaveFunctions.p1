@@ -1887,474 +1887,474 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;measureAndSaveFunctions.c: 29: }
 [e :UE 1629 ]
 }
-"31
-[; ;measureAndSaveFunctions.c: 31: void setLedLuminosity(int lum){
+"32
+[; ;measureAndSaveFunctions.c: 32: void setLedLuminosity(int lum){
 [v _setLedLuminosity `(v ~T0 @X0 1 ef1`i ]
 {
 [e :U _setLedLuminosity ]
 [v _lum `i ~T0 @X0 1 r1 ]
 [f ]
-"32
-[; ;measureAndSaveFunctions.c: 32:     if(lum > 1){
+"33
+[; ;measureAndSaveFunctions.c: 33:     if(lum > 1){
 [e $ ! > _lum -> 1 `i 1637  ]
 {
-"33
-[; ;measureAndSaveFunctions.c: 33:         do { LATAbits.LATA5 = 1; } while(0);
+"34
+[; ;measureAndSaveFunctions.c: 34:         do { LATAbits.LATA5 = 1; } while(0);
 [e :U 1640 ]
 {
 [e = . . _LATAbits 0 5 -> -> 1 `i `uc ]
 }
 [e :U 1639 ]
-"34
-[; ;measureAndSaveFunctions.c: 34:     }else{
+"35
+[; ;measureAndSaveFunctions.c: 35:     }else{
 }
 [e $U 1641  ]
 [e :U 1637 ]
 {
-"35
-[; ;measureAndSaveFunctions.c: 35:         do { LATAbits.LATA5 = 0; } while(0);
+"36
+[; ;measureAndSaveFunctions.c: 36:         do { LATAbits.LATA5 = 0; } while(0);
 [e :U 1644 ]
 {
 [e = . . _LATAbits 0 5 -> -> 0 `i `uc ]
 }
 [e :U 1643 ]
-"36
-[; ;measureAndSaveFunctions.c: 36:     }
+"37
+[; ;measureAndSaveFunctions.c: 37:     }
 }
 [e :U 1641 ]
-"38
-[; ;measureAndSaveFunctions.c: 38:     if(lum%2 == 1)
-[e $ ! == % _lum -> 2 `i -> 1 `i 1645  ]
 "39
-[; ;measureAndSaveFunctions.c: 39:     {
-{
+[; ;measureAndSaveFunctions.c: 39:     if(lum%2 == 1)
+[e $ ! == % _lum -> 2 `i -> 1 `i 1645  ]
 "40
-[; ;measureAndSaveFunctions.c: 40:         do { LATAbits.LATA4 = 1; } while(0);
+[; ;measureAndSaveFunctions.c: 40:     {
+{
+"41
+[; ;measureAndSaveFunctions.c: 41:         do { LATAbits.LATA4 = 1; } while(0);
 [e :U 1648 ]
 {
 [e = . . _LATAbits 0 4 -> -> 1 `i `uc ]
 }
 [e :U 1647 ]
-"41
-[; ;measureAndSaveFunctions.c: 41:     }else{
+"42
+[; ;measureAndSaveFunctions.c: 42:     }else{
 }
 [e $U 1649  ]
 [e :U 1645 ]
 {
-"42
-[; ;measureAndSaveFunctions.c: 42:         do { LATAbits.LATA4 = 0; } while(0);
+"43
+[; ;measureAndSaveFunctions.c: 43:         do { LATAbits.LATA4 = 0; } while(0);
 [e :U 1652 ]
 {
 [e = . . _LATAbits 0 4 -> -> 0 `i `uc ]
 }
 [e :U 1651 ]
-"43
-[; ;measureAndSaveFunctions.c: 43:     }
+"44
+[; ;measureAndSaveFunctions.c: 44:     }
 }
 [e :U 1649 ]
-"44
-[; ;measureAndSaveFunctions.c: 44: }
+"45
+[; ;measureAndSaveFunctions.c: 45: }
 [e :UE 1636 ]
 }
-"48
-[; ;measureAndSaveFunctions.c: 48: void sensor_timer(int lum, int temp){
+"49
+[; ;measureAndSaveFunctions.c: 49: void sensor_timer(int lum, int temp){
 [v _sensor_timer `(v ~T0 @X0 1 ef2`i`i ]
 {
 [e :U _sensor_timer ]
 [v _lum `i ~T0 @X0 1 r1 ]
 [v _temp `i ~T0 @X0 1 r2 ]
 [f ]
-"50
-[; ;measureAndSaveFunctions.c: 50:     int numRegsSaved = DATAEE_ReadByte(0xF066);
+"51
+[; ;measureAndSaveFunctions.c: 51:     int numRegsSaved = DATAEE_ReadByte(0xF066);
 [v _numRegsSaved `i ~T0 @X0 1 a ]
 [e = _numRegsSaved -> ( _DATAEE_ReadByte (1 -> -> 61542 `ui `us `i ]
-"51
-[; ;measureAndSaveFunctions.c: 51:     int lastRegSaved = DATAEE_ReadByte(0xF064);
+"52
+[; ;measureAndSaveFunctions.c: 52:     int lastRegSaved = DATAEE_ReadByte(0xF064);
 [v _lastRegSaved `i ~T0 @X0 1 a ]
 [e = _lastRegSaved -> ( _DATAEE_ReadByte (1 -> -> 61540 `ui `us `i ]
-"54
-[; ;measureAndSaveFunctions.c: 54:     if( numRegsSaved == 0 || ((numRegsSaved != lastRegSaved) && numRegsSaved != 20) || numRegsSaved > 20 || lastRegSaved > 20){
+"55
+[; ;measureAndSaveFunctions.c: 55:     if( numRegsSaved == 0 || ((numRegsSaved != lastRegSaved) && numRegsSaved != 20) || numRegsSaved > 20 || lastRegSaved > 20){
 [e $ ! || || || == _numRegsSaved -> 0 `i && != _numRegsSaved _lastRegSaved != _numRegsSaved -> 20 `i > _numRegsSaved -> 20 `i > _lastRegSaved -> 20 `i 1654  ]
 {
-"55
-[; ;measureAndSaveFunctions.c: 55:         numRegsSaved = 0;
-[e = _numRegsSaved -> 0 `i ]
 "56
-[; ;measureAndSaveFunctions.c: 56:         lastRegSaved = 0;
-[e = _lastRegSaved -> 0 `i ]
+[; ;measureAndSaveFunctions.c: 56:         numRegsSaved = 0;
+[e = _numRegsSaved -> 0 `i ]
 "57
-[; ;measureAndSaveFunctions.c: 57:         DATAEE_WriteByte(0xF066, numRegsSaved);
-[e ( _DATAEE_WriteByte (2 , -> -> 61542 `ui `us -> _numRegsSaved `uc ]
+[; ;measureAndSaveFunctions.c: 57:         lastRegSaved = 0;
+[e = _lastRegSaved -> 0 `i ]
 "58
-[; ;measureAndSaveFunctions.c: 58:         DATAEE_WriteByte(0xF064, lastRegSaved);
-[e ( _DATAEE_WriteByte (2 , -> -> 61540 `ui `us -> _lastRegSaved `uc ]
+[; ;measureAndSaveFunctions.c: 58:         DATAEE_WriteByte(0xF066, numRegsSaved);
+[e ( _DATAEE_WriteByte (2 , -> -> 61542 `ui `us -> _numRegsSaved `uc ]
 "59
-[; ;measureAndSaveFunctions.c: 59:         DATAEE_WriteByte(0xF06E + 3, 0);
-[e ( _DATAEE_WriteByte (2 , -> + -> 61550 `ui -> -> 3 `i `ui `us -> -> 0 `i `uc ]
+[; ;measureAndSaveFunctions.c: 59:         DATAEE_WriteByte(0xF064, lastRegSaved);
+[e ( _DATAEE_WriteByte (2 , -> -> 61540 `ui `us -> _lastRegSaved `uc ]
 "60
-[; ;measureAndSaveFunctions.c: 60:         DATAEE_WriteByte(0xF069 + 4, 0);
-[e ( _DATAEE_WriteByte (2 , -> + -> 61545 `ui -> -> 4 `i `ui `us -> -> 0 `i `uc ]
+[; ;measureAndSaveFunctions.c: 60:         DATAEE_WriteByte(0xF06E + 3, 0);
+[e ( _DATAEE_WriteByte (2 , -> + -> 61550 `ui -> -> 3 `i `ui `us -> -> 0 `i `uc ]
 "61
-[; ;measureAndSaveFunctions.c: 61:         DATAEE_WriteByte(0xF078 + 3, 200);
-[e ( _DATAEE_WriteByte (2 , -> + -> 61560 `ui -> -> 3 `i `ui `us -> -> 200 `i `uc ]
+[; ;measureAndSaveFunctions.c: 61:         DATAEE_WriteByte(0xF069 + 4, 0);
+[e ( _DATAEE_WriteByte (2 , -> + -> 61545 `ui -> -> 4 `i `ui `us -> -> 0 `i `uc ]
 "62
-[; ;measureAndSaveFunctions.c: 62:         DATAEE_WriteByte(0xF073 + 4, 5);
-[e ( _DATAEE_WriteByte (2 , -> + -> 61555 `ui -> -> 4 `i `ui `us -> -> 5 `i `uc ]
+[; ;measureAndSaveFunctions.c: 62:         DATAEE_WriteByte(0xF078 + 3, 200);
+[e ( _DATAEE_WriteByte (2 , -> + -> 61560 `ui -> -> 3 `i `ui `us -> -> 200 `i `uc ]
 "63
-[; ;measureAndSaveFunctions.c: 63:     }
+[; ;measureAndSaveFunctions.c: 63:         DATAEE_WriteByte(0xF073 + 4, 5);
+[e ( _DATAEE_WriteByte (2 , -> + -> 61555 `ui -> -> 4 `i `ui `us -> -> 5 `i `uc ]
+"64
+[; ;measureAndSaveFunctions.c: 64:     }
 }
 [e :U 1654 ]
-"66
-[; ;measureAndSaveFunctions.c: 66:     TMR1_StopTimer();
-[e ( _TMR1_StopTimer ..  ]
 "67
-[; ;measureAndSaveFunctions.c: 67:     int localHour = hrs;
+[; ;measureAndSaveFunctions.c: 67:     TMR1_StopTimer();
+[e ( _TMR1_StopTimer ..  ]
+"68
+[; ;measureAndSaveFunctions.c: 68:     int localHour = hrs;
 [v _localHour `i ~T0 @X0 1 a ]
 [e = _localHour _hrs ]
-"68
-[; ;measureAndSaveFunctions.c: 68:     int localMin = mins;
+"69
+[; ;measureAndSaveFunctions.c: 69:     int localMin = mins;
 [v _localMin `i ~T0 @X0 1 a ]
 [e = _localMin _mins ]
-"69
-[; ;measureAndSaveFunctions.c: 69:     int localSec = secs;
+"70
+[; ;measureAndSaveFunctions.c: 70:     int localSec = secs;
 [v _localSec `i ~T0 @X0 1 a ]
 [e = _localSec _secs ]
-"70
-[; ;measureAndSaveFunctions.c: 70:     TMR1_StartTimer();
+"71
+[; ;measureAndSaveFunctions.c: 71:     TMR1_StartTimer();
 [e ( _TMR1_StartTimer ..  ]
-"73
-[; ;measureAndSaveFunctions.c: 73:     DATAEE_WriteByte(0xF067, localHour);
-[e ( _DATAEE_WriteByte (2 , -> -> 61543 `ui `us -> _localHour `uc ]
 "74
-[; ;measureAndSaveFunctions.c: 74:     DATAEE_WriteByte(0xF068, localMin);
+[; ;measureAndSaveFunctions.c: 74:     DATAEE_WriteByte(0xF067, localHour);
+[e ( _DATAEE_WriteByte (2 , -> -> 61543 `ui `us -> _localHour `uc ]
+"75
+[; ;measureAndSaveFunctions.c: 75:     DATAEE_WriteByte(0xF068, localMin);
 [e ( _DATAEE_WriteByte (2 , -> -> 61544 `ui `us -> _localMin `uc ]
-"76
-[; ;measureAndSaveFunctions.c: 76:     int lastLumEntry = 0;
+"77
+[; ;measureAndSaveFunctions.c: 77:     int lastLumEntry = 0;
 [v _lastLumEntry `i ~T0 @X0 1 a ]
 [e = _lastLumEntry -> 0 `i ]
-"77
-[; ;measureAndSaveFunctions.c: 77:     int lastTempEntry = 0;
+"78
+[; ;measureAndSaveFunctions.c: 78:     int lastTempEntry = 0;
 [v _lastTempEntry `i ~T0 @X0 1 a ]
 [e = _lastTempEntry -> 0 `i ]
-"79
-[; ;measureAndSaveFunctions.c: 79:     if(numRegsSaved != 0){
+"80
+[; ;measureAndSaveFunctions.c: 80:     if(numRegsSaved != 0){
 [e $ ! != _numRegsSaved -> 0 `i 1655  ]
 {
-"80
-[; ;measureAndSaveFunctions.c: 80:         if(lastRegSaved == 0){
+"81
+[; ;measureAndSaveFunctions.c: 81:         if(lastRegSaved == 0){
 [e $ ! == _lastRegSaved -> 0 `i 1656  ]
 {
-"81
-[; ;measureAndSaveFunctions.c: 81:             lastLumEntry = DATAEE_ReadByte(0xF000 + 19*5 + 4);
-[e = _lastLumEntry -> ( _DATAEE_ReadByte (1 -> + + -> 61440 `ui -> * -> 19 `i -> 5 `i `ui -> -> 4 `i `ui `us `i ]
 "82
-[; ;measureAndSaveFunctions.c: 82:             lastTempEntry = DATAEE_ReadByte(0xF000 + 19*5 + 3);
-[e = _lastTempEntry -> ( _DATAEE_ReadByte (1 -> + + -> 61440 `ui -> * -> 19 `i -> 5 `i `ui -> -> 3 `i `ui `us `i ]
+[; ;measureAndSaveFunctions.c: 82:             lastLumEntry = DATAEE_ReadByte(0xF000 + 19*5 + 4);
+[e = _lastLumEntry -> ( _DATAEE_ReadByte (1 -> + + -> 61440 `ui -> * -> 19 `i -> 5 `i `ui -> -> 4 `i `ui `us `i ]
 "83
-[; ;measureAndSaveFunctions.c: 83:         }else{
+[; ;measureAndSaveFunctions.c: 83:             lastTempEntry = DATAEE_ReadByte(0xF000 + 19*5 + 3);
+[e = _lastTempEntry -> ( _DATAEE_ReadByte (1 -> + + -> 61440 `ui -> * -> 19 `i -> 5 `i `ui -> -> 3 `i `ui `us `i ]
+"84
+[; ;measureAndSaveFunctions.c: 84:         }else{
 }
 [e $U 1657  ]
 [e :U 1656 ]
 {
-"84
-[; ;measureAndSaveFunctions.c: 84:             lastLumEntry = DATAEE_ReadByte(0xF000 + (lastRegSaved-1)*5 + 4);
-[e = _lastLumEntry -> ( _DATAEE_ReadByte (1 -> + + -> 61440 `ui -> * - _lastRegSaved -> 1 `i -> 5 `i `ui -> -> 4 `i `ui `us `i ]
 "85
-[; ;measureAndSaveFunctions.c: 85:             lastTempEntry = DATAEE_ReadByte(0xF000 + (lastRegSaved-1)*5 + 3);
-[e = _lastTempEntry -> ( _DATAEE_ReadByte (1 -> + + -> 61440 `ui -> * - _lastRegSaved -> 1 `i -> 5 `i `ui -> -> 3 `i `ui `us `i ]
+[; ;measureAndSaveFunctions.c: 85:             lastLumEntry = DATAEE_ReadByte(0xF000 + (lastRegSaved-1)*5 + 4);
+[e = _lastLumEntry -> ( _DATAEE_ReadByte (1 -> + + -> 61440 `ui -> * - _lastRegSaved -> 1 `i -> 5 `i `ui -> -> 4 `i `ui `us `i ]
 "86
-[; ;measureAndSaveFunctions.c: 86:         }
+[; ;measureAndSaveFunctions.c: 86:             lastTempEntry = DATAEE_ReadByte(0xF000 + (lastRegSaved-1)*5 + 3);
+[e = _lastTempEntry -> ( _DATAEE_ReadByte (1 -> + + -> 61440 `ui -> * - _lastRegSaved -> 1 `i -> 5 `i `ui -> -> 3 `i `ui `us `i ]
+"87
+[; ;measureAndSaveFunctions.c: 87:         }
 }
 [e :U 1657 ]
-"87
-[; ;measureAndSaveFunctions.c: 87:     }
+"88
+[; ;measureAndSaveFunctions.c: 88:     }
 }
 [e :U 1655 ]
-"89
-[; ;measureAndSaveFunctions.c: 89:     if(((lum != lastLumEntry || temp != lastTempEntry) && numRegsSaved != 0) || numRegsSaved == 0){
+"90
+[; ;measureAndSaveFunctions.c: 90:     if(((lum != lastLumEntry || temp != lastTempEntry) && numRegsSaved != 0) || numRegsSaved == 0){
 [e $ ! || && || != _lum _lastLumEntry != _temp _lastTempEntry != _numRegsSaved -> 0 `i == _numRegsSaved -> 0 `i 1658  ]
 {
-"91
-[; ;measureAndSaveFunctions.c: 91:         int newRegIndex = 0;
+"92
+[; ;measureAndSaveFunctions.c: 92:         int newRegIndex = 0;
 [v _newRegIndex `i ~T0 @X0 1 a ]
 [e = _newRegIndex -> 0 `i ]
-"92
-[; ;measureAndSaveFunctions.c: 92:         if(lastRegSaved >= 19){
+"93
+[; ;measureAndSaveFunctions.c: 93:         if(lastRegSaved >= 19){
 [e $ ! >= _lastRegSaved -> 19 `i 1659  ]
 {
-"93
-[; ;measureAndSaveFunctions.c: 93:             newRegIndex = 0;
-[e = _newRegIndex -> 0 `i ]
 "94
-[; ;measureAndSaveFunctions.c: 94:         }else{
+[; ;measureAndSaveFunctions.c: 94:             newRegIndex = 0;
+[e = _newRegIndex -> 0 `i ]
+"95
+[; ;measureAndSaveFunctions.c: 95:         }else{
 }
 [e $U 1660  ]
 [e :U 1659 ]
 {
-"95
-[; ;measureAndSaveFunctions.c: 95:             newRegIndex = lastRegSaved + 1;
-[e = _newRegIndex + _lastRegSaved -> 1 `i ]
 "96
-[; ;measureAndSaveFunctions.c: 96:         }
+[; ;measureAndSaveFunctions.c: 96:             newRegIndex = lastRegSaved + 1;
+[e = _newRegIndex + _lastRegSaved -> 1 `i ]
+"97
+[; ;measureAndSaveFunctions.c: 97:         }
 }
 [e :U 1660 ]
-"99
-[; ;measureAndSaveFunctions.c: 99:         int updateNumRegsSaved = 0;
+"100
+[; ;measureAndSaveFunctions.c: 100:         int updateNumRegsSaved = 0;
 [v _updateNumRegsSaved `i ~T0 @X0 1 a ]
 [e = _updateNumRegsSaved -> 0 `i ]
-"100
-[; ;measureAndSaveFunctions.c: 100:         if(numRegsSaved < 20)
-[e $ ! < _numRegsSaved -> 20 `i 1661  ]
 "101
-[; ;measureAndSaveFunctions.c: 101:         {
-{
+[; ;measureAndSaveFunctions.c: 101:         if(numRegsSaved < 20)
+[e $ ! < _numRegsSaved -> 20 `i 1661  ]
 "102
-[; ;measureAndSaveFunctions.c: 102:             updateNumRegsSaved = numRegsSaved + 1;
-[e = _updateNumRegsSaved + _numRegsSaved -> 1 `i ]
+[; ;measureAndSaveFunctions.c: 102:         {
+{
 "103
-[; ;measureAndSaveFunctions.c: 103:             if(updateNumRegsSaved == 10){
+[; ;measureAndSaveFunctions.c: 103:             updateNumRegsSaved = numRegsSaved + 1;
+[e = _updateNumRegsSaved + _numRegsSaved -> 1 `i ]
+"104
+[; ;measureAndSaveFunctions.c: 104:             if(updateNumRegsSaved == 10){
 [e $ ! == _updateNumRegsSaved -> 10 `i 1662  ]
 {
-"104
-[; ;measureAndSaveFunctions.c: 104:                 writebytes(0xFD);
+"105
+[; ;measureAndSaveFunctions.c: 105:                 writebytes(0xFD);
 [e ( _writebytes (1 -> -> 253 `i `uc ]
-"106
-[; ;measureAndSaveFunctions.c: 106:                 writebytes(0XCE);
+"107
+[; ;measureAndSaveFunctions.c: 107:                 writebytes(0XCE);
 [e ( _writebytes (1 -> -> 206 `i `uc ]
-"108
-[; ;measureAndSaveFunctions.c: 108:                 writebytes(20);
+"109
+[; ;measureAndSaveFunctions.c: 109:                 writebytes(20);
 [e ( _writebytes (1 -> -> 20 `i `uc ]
-"110
-[; ;measureAndSaveFunctions.c: 110:                 writebytes(DATAEE_ReadByte(0xF066));
+"111
+[; ;measureAndSaveFunctions.c: 111:                 writebytes(DATAEE_ReadByte(0xF066));
 [e ( _writebytes (1 ( _DATAEE_ReadByte (1 -> -> 61542 `ui `us ]
-"112
-[; ;measureAndSaveFunctions.c: 112:                 writebytes(DATAEE_ReadByte(0xF065));
+"113
+[; ;measureAndSaveFunctions.c: 113:                 writebytes(DATAEE_ReadByte(0xF065));
 [e ( _writebytes (1 ( _DATAEE_ReadByte (1 -> -> 61541 `ui `us ]
-"114
-[; ;measureAndSaveFunctions.c: 114:                 writebytes(DATAEE_ReadByte(0xF064));
+"115
+[; ;measureAndSaveFunctions.c: 115:                 writebytes(DATAEE_ReadByte(0xF064));
 [e ( _writebytes (1 ( _DATAEE_ReadByte (1 -> -> 61540 `ui `us ]
-"116
-[; ;measureAndSaveFunctions.c: 116:                 writebytes(0xFE);
-[e ( _writebytes (1 -> -> 254 `i `uc ]
 "117
-[; ;measureAndSaveFunctions.c: 117:             }
+[; ;measureAndSaveFunctions.c: 117:                 writebytes(0xFE);
+[e ( _writebytes (1 -> -> 254 `i `uc ]
+"118
+[; ;measureAndSaveFunctions.c: 118:             }
 }
 [e :U 1662 ]
-"118
-[; ;measureAndSaveFunctions.c: 118:         }else{
+"119
+[; ;measureAndSaveFunctions.c: 119:         }else{
 }
 [e $U 1663  ]
 [e :U 1661 ]
 {
-"119
-[; ;measureAndSaveFunctions.c: 119:             updateNumRegsSaved = numRegsSaved;
-[e = _updateNumRegsSaved _numRegsSaved ]
 "120
-[; ;measureAndSaveFunctions.c: 120:         }
+[; ;measureAndSaveFunctions.c: 120:             updateNumRegsSaved = numRegsSaved;
+[e = _updateNumRegsSaved _numRegsSaved ]
+"121
+[; ;measureAndSaveFunctions.c: 121:         }
 }
 [e :U 1663 ]
-"123
-[; ;measureAndSaveFunctions.c: 123:         DATAEE_WriteByte(0xF064, newRegIndex);
-[e ( _DATAEE_WriteByte (2 , -> -> 61540 `ui `us -> _newRegIndex `uc ]
 "124
-[; ;measureAndSaveFunctions.c: 124:         DATAEE_WriteByte(0xF066, updateNumRegsSaved);
+[; ;measureAndSaveFunctions.c: 124:         DATAEE_WriteByte(0xF064, newRegIndex);
+[e ( _DATAEE_WriteByte (2 , -> -> 61540 `ui `us -> _newRegIndex `uc ]
+"125
+[; ;measureAndSaveFunctions.c: 125:         DATAEE_WriteByte(0xF066, updateNumRegsSaved);
 [e ( _DATAEE_WriteByte (2 , -> -> 61542 `ui `us -> _updateNumRegsSaved `uc ]
-"126
-[; ;measureAndSaveFunctions.c: 126:         DATAEE_WriteByte(0xF000 + lastRegSaved*5 + 0, localHour);
-[e ( _DATAEE_WriteByte (2 , -> + + -> 61440 `ui -> * _lastRegSaved -> 5 `i `ui -> -> 0 `i `ui `us -> _localHour `uc ]
 "127
-[; ;measureAndSaveFunctions.c: 127:         DATAEE_WriteByte(0xF000 + lastRegSaved*5 + 1, localMin);
-[e ( _DATAEE_WriteByte (2 , -> + + -> 61440 `ui -> * _lastRegSaved -> 5 `i `ui -> -> 1 `i `ui `us -> _localMin `uc ]
+[; ;measureAndSaveFunctions.c: 127:         DATAEE_WriteByte(0xF000 + lastRegSaved*5 + 0, localHour);
+[e ( _DATAEE_WriteByte (2 , -> + + -> 61440 `ui -> * _lastRegSaved -> 5 `i `ui -> -> 0 `i `ui `us -> _localHour `uc ]
 "128
-[; ;measureAndSaveFunctions.c: 128:         DATAEE_WriteByte(0xF000 + lastRegSaved*5 + 2, localSec);
-[e ( _DATAEE_WriteByte (2 , -> + + -> 61440 `ui -> * _lastRegSaved -> 5 `i `ui -> -> 2 `i `ui `us -> _localSec `uc ]
+[; ;measureAndSaveFunctions.c: 128:         DATAEE_WriteByte(0xF000 + lastRegSaved*5 + 1, localMin);
+[e ( _DATAEE_WriteByte (2 , -> + + -> 61440 `ui -> * _lastRegSaved -> 5 `i `ui -> -> 1 `i `ui `us -> _localMin `uc ]
 "129
-[; ;measureAndSaveFunctions.c: 129:         DATAEE_WriteByte(0xF000 + lastRegSaved*5 + 3, temp);
-[e ( _DATAEE_WriteByte (2 , -> + + -> 61440 `ui -> * _lastRegSaved -> 5 `i `ui -> -> 3 `i `ui `us -> _temp `uc ]
+[; ;measureAndSaveFunctions.c: 129:         DATAEE_WriteByte(0xF000 + lastRegSaved*5 + 2, localSec);
+[e ( _DATAEE_WriteByte (2 , -> + + -> 61440 `ui -> * _lastRegSaved -> 5 `i `ui -> -> 2 `i `ui `us -> _localSec `uc ]
 "130
-[; ;measureAndSaveFunctions.c: 130:         DATAEE_WriteByte(0xF000 + lastRegSaved*5 + 4, lum);
-[e ( _DATAEE_WriteByte (2 , -> + + -> 61440 `ui -> * _lastRegSaved -> 5 `i `ui -> -> 4 `i `ui `us -> _lum `uc ]
+[; ;measureAndSaveFunctions.c: 130:         DATAEE_WriteByte(0xF000 + lastRegSaved*5 + 3, temp);
+[e ( _DATAEE_WriteByte (2 , -> + + -> 61440 `ui -> * _lastRegSaved -> 5 `i `ui -> -> 3 `i `ui `us -> _temp `uc ]
 "131
-[; ;measureAndSaveFunctions.c: 131:     }
+[; ;measureAndSaveFunctions.c: 131:         DATAEE_WriteByte(0xF000 + lastRegSaved*5 + 4, lum);
+[e ( _DATAEE_WriteByte (2 , -> + + -> 61440 `ui -> * _lastRegSaved -> 5 `i `ui -> -> 4 `i `ui `us -> _lum `uc ]
+"132
+[; ;measureAndSaveFunctions.c: 132:     }
 }
 [e :U 1658 ]
-"134
-[; ;measureAndSaveFunctions.c: 134:     int maxTemp = DATAEE_ReadByte(0xF06E + 3);
+"135
+[; ;measureAndSaveFunctions.c: 135:     int maxTemp = DATAEE_ReadByte(0xF06E + 3);
 [v _maxTemp `i ~T0 @X0 1 a ]
 [e = _maxTemp -> ( _DATAEE_ReadByte (1 -> + -> 61550 `ui -> -> 3 `i `ui `us `i ]
-"135
-[; ;measureAndSaveFunctions.c: 135:     int maxLum = DATAEE_ReadByte(0xF069 + 4);
+"136
+[; ;measureAndSaveFunctions.c: 136:     int maxLum = DATAEE_ReadByte(0xF069 + 4);
 [v _maxLum `i ~T0 @X0 1 a ]
 [e = _maxLum -> ( _DATAEE_ReadByte (1 -> + -> 61545 `ui -> -> 4 `i `ui `us `i ]
-"136
-[; ;measureAndSaveFunctions.c: 136:     int minTemp = DATAEE_ReadByte(0xF078 + 3);
+"137
+[; ;measureAndSaveFunctions.c: 137:     int minTemp = DATAEE_ReadByte(0xF078 + 3);
 [v _minTemp `i ~T0 @X0 1 a ]
 [e = _minTemp -> ( _DATAEE_ReadByte (1 -> + -> 61560 `ui -> -> 3 `i `ui `us `i ]
-"137
-[; ;measureAndSaveFunctions.c: 137:     int minLum = DATAEE_ReadByte(0xF073 + 4);
+"138
+[; ;measureAndSaveFunctions.c: 138:     int minLum = DATAEE_ReadByte(0xF073 + 4);
 [v _minLum `i ~T0 @X0 1 a ]
 [e = _minLum -> ( _DATAEE_ReadByte (1 -> + -> 61555 `ui -> -> 4 `i `ui `us `i ]
-"139
-[; ;measureAndSaveFunctions.c: 139:     if(temp >= maxTemp){
+"140
+[; ;measureAndSaveFunctions.c: 140:     if(temp >= maxTemp){
 [e $ ! >= _temp _maxTemp 1664  ]
 {
-"140
-[; ;measureAndSaveFunctions.c: 140:         DATAEE_WriteByte(0xF06E + 0, localHour);
-[e ( _DATAEE_WriteByte (2 , -> + -> 61550 `ui -> -> 0 `i `ui `us -> _localHour `uc ]
 "141
-[; ;measureAndSaveFunctions.c: 141:         DATAEE_WriteByte(0xF06E + 1, localMin);
-[e ( _DATAEE_WriteByte (2 , -> + -> 61550 `ui -> -> 1 `i `ui `us -> _localMin `uc ]
+[; ;measureAndSaveFunctions.c: 141:         DATAEE_WriteByte(0xF06E + 0, localHour);
+[e ( _DATAEE_WriteByte (2 , -> + -> 61550 `ui -> -> 0 `i `ui `us -> _localHour `uc ]
 "142
-[; ;measureAndSaveFunctions.c: 142:         DATAEE_WriteByte(0xF06E + 2, localSec);
-[e ( _DATAEE_WriteByte (2 , -> + -> 61550 `ui -> -> 2 `i `ui `us -> _localSec `uc ]
+[; ;measureAndSaveFunctions.c: 142:         DATAEE_WriteByte(0xF06E + 1, localMin);
+[e ( _DATAEE_WriteByte (2 , -> + -> 61550 `ui -> -> 1 `i `ui `us -> _localMin `uc ]
 "143
-[; ;measureAndSaveFunctions.c: 143:         DATAEE_WriteByte(0xF06E + 3, temp);
-[e ( _DATAEE_WriteByte (2 , -> + -> 61550 `ui -> -> 3 `i `ui `us -> _temp `uc ]
+[; ;measureAndSaveFunctions.c: 143:         DATAEE_WriteByte(0xF06E + 2, localSec);
+[e ( _DATAEE_WriteByte (2 , -> + -> 61550 `ui -> -> 2 `i `ui `us -> _localSec `uc ]
 "144
-[; ;measureAndSaveFunctions.c: 144:         DATAEE_WriteByte(0xF06E + 4, lum);
-[e ( _DATAEE_WriteByte (2 , -> + -> 61550 `ui -> -> 4 `i `ui `us -> _lum `uc ]
+[; ;measureAndSaveFunctions.c: 144:         DATAEE_WriteByte(0xF06E + 3, temp);
+[e ( _DATAEE_WriteByte (2 , -> + -> 61550 `ui -> -> 3 `i `ui `us -> _temp `uc ]
 "145
-[; ;measureAndSaveFunctions.c: 145:     }
+[; ;measureAndSaveFunctions.c: 145:         DATAEE_WriteByte(0xF06E + 4, lum);
+[e ( _DATAEE_WriteByte (2 , -> + -> 61550 `ui -> -> 4 `i `ui `us -> _lum `uc ]
+"146
+[; ;measureAndSaveFunctions.c: 146:     }
 }
 [e :U 1664 ]
-"147
-[; ;measureAndSaveFunctions.c: 147:     if(lum >= maxLum){
+"148
+[; ;measureAndSaveFunctions.c: 148:     if(lum >= maxLum){
 [e $ ! >= _lum _maxLum 1665  ]
 {
-"148
-[; ;measureAndSaveFunctions.c: 148:         DATAEE_WriteByte(0xF069 + 0, localHour);
-[e ( _DATAEE_WriteByte (2 , -> + -> 61545 `ui -> -> 0 `i `ui `us -> _localHour `uc ]
 "149
-[; ;measureAndSaveFunctions.c: 149:         DATAEE_WriteByte(0xF069 + 1, localMin);
-[e ( _DATAEE_WriteByte (2 , -> + -> 61545 `ui -> -> 1 `i `ui `us -> _localMin `uc ]
+[; ;measureAndSaveFunctions.c: 149:         DATAEE_WriteByte(0xF069 + 0, localHour);
+[e ( _DATAEE_WriteByte (2 , -> + -> 61545 `ui -> -> 0 `i `ui `us -> _localHour `uc ]
 "150
-[; ;measureAndSaveFunctions.c: 150:         DATAEE_WriteByte(0xF069 + 2, localSec);
-[e ( _DATAEE_WriteByte (2 , -> + -> 61545 `ui -> -> 2 `i `ui `us -> _localSec `uc ]
+[; ;measureAndSaveFunctions.c: 150:         DATAEE_WriteByte(0xF069 + 1, localMin);
+[e ( _DATAEE_WriteByte (2 , -> + -> 61545 `ui -> -> 1 `i `ui `us -> _localMin `uc ]
 "151
-[; ;measureAndSaveFunctions.c: 151:         DATAEE_WriteByte(0xF069 + 3, temp);
-[e ( _DATAEE_WriteByte (2 , -> + -> 61545 `ui -> -> 3 `i `ui `us -> _temp `uc ]
+[; ;measureAndSaveFunctions.c: 151:         DATAEE_WriteByte(0xF069 + 2, localSec);
+[e ( _DATAEE_WriteByte (2 , -> + -> 61545 `ui -> -> 2 `i `ui `us -> _localSec `uc ]
 "152
-[; ;measureAndSaveFunctions.c: 152:         DATAEE_WriteByte(0xF069 + 4, lum);
-[e ( _DATAEE_WriteByte (2 , -> + -> 61545 `ui -> -> 4 `i `ui `us -> _lum `uc ]
+[; ;measureAndSaveFunctions.c: 152:         DATAEE_WriteByte(0xF069 + 3, temp);
+[e ( _DATAEE_WriteByte (2 , -> + -> 61545 `ui -> -> 3 `i `ui `us -> _temp `uc ]
 "153
-[; ;measureAndSaveFunctions.c: 153:     }
+[; ;measureAndSaveFunctions.c: 153:         DATAEE_WriteByte(0xF069 + 4, lum);
+[e ( _DATAEE_WriteByte (2 , -> + -> 61545 `ui -> -> 4 `i `ui `us -> _lum `uc ]
+"154
+[; ;measureAndSaveFunctions.c: 154:     }
 }
 [e :U 1665 ]
-"155
-[; ;measureAndSaveFunctions.c: 155:     if(temp <= minTemp){
+"156
+[; ;measureAndSaveFunctions.c: 156:     if(temp <= minTemp){
 [e $ ! <= _temp _minTemp 1666  ]
 {
-"156
-[; ;measureAndSaveFunctions.c: 156:         DATAEE_WriteByte(0xF078 + 0, localHour);
-[e ( _DATAEE_WriteByte (2 , -> + -> 61560 `ui -> -> 0 `i `ui `us -> _localHour `uc ]
 "157
-[; ;measureAndSaveFunctions.c: 157:         DATAEE_WriteByte(0xF078 + 1, localMin);
-[e ( _DATAEE_WriteByte (2 , -> + -> 61560 `ui -> -> 1 `i `ui `us -> _localMin `uc ]
+[; ;measureAndSaveFunctions.c: 157:         DATAEE_WriteByte(0xF078 + 0, localHour);
+[e ( _DATAEE_WriteByte (2 , -> + -> 61560 `ui -> -> 0 `i `ui `us -> _localHour `uc ]
 "158
-[; ;measureAndSaveFunctions.c: 158:         DATAEE_WriteByte(0xF078 + 2, localSec);
-[e ( _DATAEE_WriteByte (2 , -> + -> 61560 `ui -> -> 2 `i `ui `us -> _localSec `uc ]
+[; ;measureAndSaveFunctions.c: 158:         DATAEE_WriteByte(0xF078 + 1, localMin);
+[e ( _DATAEE_WriteByte (2 , -> + -> 61560 `ui -> -> 1 `i `ui `us -> _localMin `uc ]
 "159
-[; ;measureAndSaveFunctions.c: 159:         DATAEE_WriteByte(0xF078 + 3, temp);
-[e ( _DATAEE_WriteByte (2 , -> + -> 61560 `ui -> -> 3 `i `ui `us -> _temp `uc ]
+[; ;measureAndSaveFunctions.c: 159:         DATAEE_WriteByte(0xF078 + 2, localSec);
+[e ( _DATAEE_WriteByte (2 , -> + -> 61560 `ui -> -> 2 `i `ui `us -> _localSec `uc ]
 "160
-[; ;measureAndSaveFunctions.c: 160:         DATAEE_WriteByte(0xF078 + 4, lum);
-[e ( _DATAEE_WriteByte (2 , -> + -> 61560 `ui -> -> 4 `i `ui `us -> _lum `uc ]
+[; ;measureAndSaveFunctions.c: 160:         DATAEE_WriteByte(0xF078 + 3, temp);
+[e ( _DATAEE_WriteByte (2 , -> + -> 61560 `ui -> -> 3 `i `ui `us -> _temp `uc ]
 "161
-[; ;measureAndSaveFunctions.c: 161:     }
+[; ;measureAndSaveFunctions.c: 161:         DATAEE_WriteByte(0xF078 + 4, lum);
+[e ( _DATAEE_WriteByte (2 , -> + -> 61560 `ui -> -> 4 `i `ui `us -> _lum `uc ]
+"162
+[; ;measureAndSaveFunctions.c: 162:     }
 }
 [e :U 1666 ]
-"163
-[; ;measureAndSaveFunctions.c: 163:     if(lum <= minLum){
+"164
+[; ;measureAndSaveFunctions.c: 164:     if(lum <= minLum){
 [e $ ! <= _lum _minLum 1667  ]
 {
-"164
-[; ;measureAndSaveFunctions.c: 164:         DATAEE_WriteByte(0xF073 + 0, localHour);
-[e ( _DATAEE_WriteByte (2 , -> + -> 61555 `ui -> -> 0 `i `ui `us -> _localHour `uc ]
 "165
-[; ;measureAndSaveFunctions.c: 165:         DATAEE_WriteByte(0xF073 + 1, localMin);
-[e ( _DATAEE_WriteByte (2 , -> + -> 61555 `ui -> -> 1 `i `ui `us -> _localMin `uc ]
+[; ;measureAndSaveFunctions.c: 165:         DATAEE_WriteByte(0xF073 + 0, localHour);
+[e ( _DATAEE_WriteByte (2 , -> + -> 61555 `ui -> -> 0 `i `ui `us -> _localHour `uc ]
 "166
-[; ;measureAndSaveFunctions.c: 166:         DATAEE_WriteByte(0xF073 + 2, localSec);
-[e ( _DATAEE_WriteByte (2 , -> + -> 61555 `ui -> -> 2 `i `ui `us -> _localSec `uc ]
+[; ;measureAndSaveFunctions.c: 166:         DATAEE_WriteByte(0xF073 + 1, localMin);
+[e ( _DATAEE_WriteByte (2 , -> + -> 61555 `ui -> -> 1 `i `ui `us -> _localMin `uc ]
 "167
-[; ;measureAndSaveFunctions.c: 167:         DATAEE_WriteByte(0xF073 + 3, temp);
-[e ( _DATAEE_WriteByte (2 , -> + -> 61555 `ui -> -> 3 `i `ui `us -> _temp `uc ]
+[; ;measureAndSaveFunctions.c: 167:         DATAEE_WriteByte(0xF073 + 2, localSec);
+[e ( _DATAEE_WriteByte (2 , -> + -> 61555 `ui -> -> 2 `i `ui `us -> _localSec `uc ]
 "168
-[; ;measureAndSaveFunctions.c: 168:         DATAEE_WriteByte(0xF073 + 4, lum);
-[e ( _DATAEE_WriteByte (2 , -> + -> 61555 `ui -> -> 4 `i `ui `us -> _lum `uc ]
+[; ;measureAndSaveFunctions.c: 168:         DATAEE_WriteByte(0xF073 + 3, temp);
+[e ( _DATAEE_WriteByte (2 , -> + -> 61555 `ui -> -> 3 `i `ui `us -> _temp `uc ]
 "169
-[; ;measureAndSaveFunctions.c: 169:     }
+[; ;measureAndSaveFunctions.c: 169:         DATAEE_WriteByte(0xF073 + 4, lum);
+[e ( _DATAEE_WriteByte (2 , -> + -> 61555 `ui -> -> 4 `i `ui `us -> _lum `uc ]
+"170
+[; ;measureAndSaveFunctions.c: 170:     }
 }
 [e :U 1667 ]
-"171
-[; ;measureAndSaveFunctions.c: 171: }
+"172
+[; ;measureAndSaveFunctions.c: 172: }
 [e :UE 1653 ]
 }
-"174
-[; ;measureAndSaveFunctions.c: 174: void getValuesFromPreviousSession(){
+"175
+[; ;measureAndSaveFunctions.c: 175: void getValuesFromPreviousSession(){
 [v _getValuesFromPreviousSession `(v ~T0 @X0 1 ef ]
 {
 [e :U _getValuesFromPreviousSession ]
 [f ]
-"176
-[; ;measureAndSaveFunctions.c: 176:     int numRegsSaved = DATAEE_ReadByte(0xF066);
+"177
+[; ;measureAndSaveFunctions.c: 177:     int numRegsSaved = DATAEE_ReadByte(0xF066);
 [v _numRegsSaved `i ~T0 @X0 1 a ]
 [e = _numRegsSaved -> ( _DATAEE_ReadByte (1 -> -> 61542 `ui `us `i ]
-"177
-[; ;measureAndSaveFunctions.c: 177:     int lastRegSaved = DATAEE_ReadByte(0xF064);
+"178
+[; ;measureAndSaveFunctions.c: 178:     int lastRegSaved = DATAEE_ReadByte(0xF064);
 [v _lastRegSaved `i ~T0 @X0 1 a ]
 [e = _lastRegSaved -> ( _DATAEE_ReadByte (1 -> -> 61540 `ui `us `i ]
-"180
-[; ;measureAndSaveFunctions.c: 180:     if( (numRegsSaved == 20 || ((numRegsSaved == lastRegSaved) && numRegsSaved != 20)) && numRegsSaved <= 20 && lastRegSaved <= 20){
+"181
+[; ;measureAndSaveFunctions.c: 181:     if( (numRegsSaved == 20 || ((numRegsSaved == lastRegSaved) && numRegsSaved != 20)) && numRegsSaved <= 20 && lastRegSaved <= 20){
 [e $ ! && && || == _numRegsSaved -> 20 `i && == _numRegsSaved _lastRegSaved != _numRegsSaved -> 20 `i <= _numRegsSaved -> 20 `i <= _lastRegSaved -> 20 `i 1669  ]
 {
-"182
-[; ;measureAndSaveFunctions.c: 182:         hrs = DATAEE_ReadByte(0xF067);
-[e = _hrs -> ( _DATAEE_ReadByte (1 -> -> 61543 `ui `us `i ]
 "183
-[; ;measureAndSaveFunctions.c: 183:         mins = DATAEE_ReadByte(0xF068);
-[e = _mins -> ( _DATAEE_ReadByte (1 -> -> 61544 `ui `us `i ]
+[; ;measureAndSaveFunctions.c: 183:         hrs = DATAEE_ReadByte(0xF067);
+[e = _hrs -> ( _DATAEE_ReadByte (1 -> -> 61543 `ui `us `i ]
 "184
-[; ;measureAndSaveFunctions.c: 184:         LumThreshold = DATAEE_ReadByte(0xF07E);
-[e = _LumThreshold -> ( _DATAEE_ReadByte (1 -> -> 61566 `ui `us `i ]
+[; ;measureAndSaveFunctions.c: 184:         mins = DATAEE_ReadByte(0xF068);
+[e = _mins -> ( _DATAEE_ReadByte (1 -> -> 61544 `ui `us `i ]
 "185
-[; ;measureAndSaveFunctions.c: 185:         TempThreshold = DATAEE_ReadByte(0xF07D);
-[e = _TempThreshold -> ( _DATAEE_ReadByte (1 -> -> 61565 `ui `us `i ]
+[; ;measureAndSaveFunctions.c: 185:         LumThreshold = DATAEE_ReadByte(0xF07E);
+[e = _LumThreshold -> ( _DATAEE_ReadByte (1 -> -> 61566 `ui `us `i ]
 "186
-[; ;measureAndSaveFunctions.c: 186:         PMON = DATAEE_ReadByte(0xF080);
-[e = _PMON -> ( _DATAEE_ReadByte (1 -> -> 61568 `ui `us `i ]
+[; ;measureAndSaveFunctions.c: 186:         TempThreshold = DATAEE_ReadByte(0xF07D);
+[e = _TempThreshold -> ( _DATAEE_ReadByte (1 -> -> 61565 `ui `us `i ]
 "187
-[; ;measureAndSaveFunctions.c: 187:         TALA = DATAEE_ReadByte(0xF07F);
-[e = _TALA -> ( _DATAEE_ReadByte (1 -> -> 61567 `ui `us `i ]
+[; ;measureAndSaveFunctions.c: 187:         PMON = DATAEE_ReadByte(0xF080);
+[e = _PMON -> ( _DATAEE_ReadByte (1 -> -> 61568 `ui `us `i ]
 "188
-[; ;measureAndSaveFunctions.c: 188:         ALAF = DATAEE_ReadByte(0xF081);
-[e = _ALAF -> ( _DATAEE_ReadByte (1 -> -> 61569 `ui `us `i ]
+[; ;measureAndSaveFunctions.c: 188:         TALA = DATAEE_ReadByte(0xF07F);
+[e = _TALA -> ( _DATAEE_ReadByte (1 -> -> 61567 `ui `us `i ]
 "189
-[; ;measureAndSaveFunctions.c: 189:     }else{
+[; ;measureAndSaveFunctions.c: 189:         ALAF = DATAEE_ReadByte(0xF081);
+[e = _ALAF -> ( _DATAEE_ReadByte (1 -> -> 61569 `ui `us `i ]
+"190
+[; ;measureAndSaveFunctions.c: 190:     }else{
 }
 [e $U 1670  ]
 [e :U 1669 ]
 {
-"190
-[; ;measureAndSaveFunctions.c: 190:         DATAEE_WriteByte(0xF07E, LumThreshold);
-[e ( _DATAEE_WriteByte (2 , -> -> 61566 `ui `us -> _LumThreshold `uc ]
 "191
-[; ;measureAndSaveFunctions.c: 191:         DATAEE_WriteByte(0xF07D, TempThreshold);
-[e ( _DATAEE_WriteByte (2 , -> -> 61565 `ui `us -> _TempThreshold `uc ]
+[; ;measureAndSaveFunctions.c: 191:         DATAEE_WriteByte(0xF07E, LumThreshold);
+[e ( _DATAEE_WriteByte (2 , -> -> 61566 `ui `us -> _LumThreshold `uc ]
 "192
-[; ;measureAndSaveFunctions.c: 192:         DATAEE_WriteByte(0xF080, PMON);
-[e ( _DATAEE_WriteByte (2 , -> -> 61568 `ui `us -> _PMON `uc ]
+[; ;measureAndSaveFunctions.c: 192:         DATAEE_WriteByte(0xF07D, TempThreshold);
+[e ( _DATAEE_WriteByte (2 , -> -> 61565 `ui `us -> _TempThreshold `uc ]
 "193
-[; ;measureAndSaveFunctions.c: 193:         DATAEE_WriteByte(0xF07F, TALA);
-[e ( _DATAEE_WriteByte (2 , -> -> 61567 `ui `us -> _TALA `uc ]
+[; ;measureAndSaveFunctions.c: 193:         DATAEE_WriteByte(0xF080, PMON);
+[e ( _DATAEE_WriteByte (2 , -> -> 61568 `ui `us -> _PMON `uc ]
 "194
-[; ;measureAndSaveFunctions.c: 194:         DATAEE_WriteByte(0xF07F, ALAF);
-[e ( _DATAEE_WriteByte (2 , -> -> 61567 `ui `us -> _ALAF `uc ]
+[; ;measureAndSaveFunctions.c: 194:         DATAEE_WriteByte(0xF07F, TALA);
+[e ( _DATAEE_WriteByte (2 , -> -> 61567 `ui `us -> _TALA `uc ]
 "195
-[; ;measureAndSaveFunctions.c: 195:     }
+[; ;measureAndSaveFunctions.c: 195:         DATAEE_WriteByte(0xF07F, ALAF);
+[e ( _DATAEE_WriteByte (2 , -> -> 61567 `ui `us -> _ALAF `uc ]
+"196
+[; ;measureAndSaveFunctions.c: 196:     }
 }
 [e :U 1670 ]
-"196
-[; ;measureAndSaveFunctions.c: 196: }
+"197
+[; ;measureAndSaveFunctions.c: 197: }
 [e :UE 1668 ]
 }

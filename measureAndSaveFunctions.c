@@ -6,7 +6,7 @@
 #include "mcc_generated_files/eusart.h"
 #include "coms.h"
 
-
+//Reads luminosity from potenciometer
 int get_luminosity (void){
     
     //READ FOR POTENCIOMETER
@@ -28,6 +28,7 @@ int get_luminosity (void){
     
 }
 
+//Update Leds according to the luminosity level
 void setLedLuminosity(int lum){
     if(lum > 1){
         LED_D3_SetHigh();

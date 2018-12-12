@@ -1982,86 +1982,86 @@ Version 4.0 HI-TECH Software Intermediate Code
 "105
 [; ;main.c: 105:                 luminosity = get_luminosity();
 [e = _luminosity ( _get_luminosity ..  ]
-"106
-[; ;main.c: 106:                 setLedLuminosity(luminosity);
+"107
+[; ;main.c: 107:                 setLedLuminosity(luminosity);
 [e ( _setLedLuminosity (1 _luminosity ]
-"108
-[; ;main.c: 108:                 checkVariablesForAlarm(0,luminosity);
+"109
+[; ;main.c: 109:                 checkVariablesForAlarm(0,luminosity);
 [e ( _checkVariablesForAlarm (2 , -> 0 `i _luminosity ]
-"113
-[; ;main.c: 113:             }
+"114
+[; ;main.c: 114:             }
 }
 [e :U 1634 ]
-"115
-[; ;main.c: 115:             if(secs%PMON == 1){
+"116
+[; ;main.c: 116:             if(secs%PMON == 1){
 [e $ ! == % _secs _PMON -> 1 `i 1635  ]
 {
-"117
-[; ;main.c: 117:                 __nop();
-[e ( ___nop ..  ]
 "118
-[; ;main.c: 118:                 c = tsttc();
-[e = _c ( _tsttc ..  ]
-"119
-[; ;main.c: 119:                 temperature = c;
-[e = _temperature -> _c `i ]
-"120
-[; ;main.c: 120:                 __nop();
+[; ;main.c: 118:                 __nop();
 [e ( ___nop ..  ]
-"122
-[; ;main.c: 122:                 checkVariablesForAlarm(temperature,0);
+"119
+[; ;main.c: 119:                 c = tsttc();
+[e = _c ( _tsttc ..  ]
+"120
+[; ;main.c: 120:                 temperature = c;
+[e = _temperature -> _c `i ]
+"121
+[; ;main.c: 121:                 __nop();
+[e ( ___nop ..  ]
+"123
+[; ;main.c: 123:                 checkVariablesForAlarm(temperature,0);
 [e ( _checkVariablesForAlarm (2 , _temperature -> 0 `i ]
-"127
-[; ;main.c: 127:             }
+"128
+[; ;main.c: 128:             }
 }
 [e :U 1635 ]
-"129
-[; ;main.c: 129:             if(secs%PMON == 2){
+"130
+[; ;main.c: 130:             if(secs%PMON == 2){
 [e $ ! == % _secs _PMON -> 2 `i 1636  ]
 {
-"132
-[; ;main.c: 132:                 sensor_timer(luminosity, temperature);
+"133
+[; ;main.c: 133:                 sensor_timer(luminosity, temperature);
 [e ( _sensor_timer (2 , _luminosity _temperature ]
-"134
-[; ;main.c: 134:                 checkVariablesForAlarm(0,0);
+"135
+[; ;main.c: 135:                 checkVariablesForAlarm(0,0);
 [e ( _checkVariablesForAlarm (2 , -> 0 `i -> 0 `i ]
-"137
-[; ;main.c: 137:             }
+"138
+[; ;main.c: 138:             }
 }
 [e :U 1636 ]
-"139
-[; ;main.c: 139:             while(EUSART_is_rx_ready() != 0){
+"140
+[; ;main.c: 140:             while(EUSART_is_rx_ready() != 0){
 [e $U 1637  ]
 [e :U 1638 ]
 {
-"140
-[; ;main.c: 140:                 readbytes();
-[e ( _readbytes ..  ]
 "141
-[; ;main.c: 141:             }
+[; ;main.c: 141:                 readbytes();
+[e ( _readbytes ..  ]
+"142
+[; ;main.c: 142:             }
 }
 [e :U 1637 ]
-"139
-[; ;main.c: 139:             while(EUSART_is_rx_ready() != 0){
+"140
+[; ;main.c: 140:             while(EUSART_is_rx_ready() != 0){
 [e $ != -> ( _EUSART_is_rx_ready ..  `i -> 0 `i 1638  ]
 [e :U 1639 ]
-"143
-[; ;main.c: 143:         }else{
+"144
+[; ;main.c: 144:         }else{
 }
 [e $U 1640  ]
 [e :U 1633 ]
 {
-"166
-[; ;main.c: 166:         }
+"176
+[; ;main.c: 176:         }
 }
 [e :U 1640 ]
-"167
-[; ;main.c: 167:     }
+"177
+[; ;main.c: 177:     }
 }
 [e :U 1630 ]
 [e $U 1631  ]
 [e :U 1632 ]
-"168
-[; ;main.c: 168: }
+"178
+[; ;main.c: 178: }
 [e :UE 1629 ]
 }

@@ -62,10 +62,6 @@ int incrementor(uint16_t t_addr,int decimal,int mode){
 	
 }
 
-//
-
-
-
 
 
 void s2Pressed(){		
@@ -156,8 +152,6 @@ void s2Pressed(){
             break;
     }
 }
-
-
 
 
 void s1Pressed(){

@@ -31,6 +31,7 @@ void PWM_Disable(void){
         PPSLOCKbits.PPSLOCKED = 0x01;
 }
 
+//Function associated with Alarm
 void change_PWM(void){
     //WakeUp();
     if(pwm_value == 0)
@@ -56,6 +57,7 @@ void change_PWM(void){
     }
 }
 
+//Check if temperature/luminosity level is above its threshold
 void checkVariablesForAlarm(int temperature, int luminosity){
     LumThreshold = DATAEE_ReadByte(THRESHLUM);
     TempThreshold = DATAEE_ReadByte(THRESHTEMP);
@@ -64,7 +66,7 @@ void checkVariablesForAlarm(int temperature, int luminosity){
         //set alarm control as active                 
         alarm = 1;
     }
-    //fazer funçao
+    
     if(alarm == 1 && control_alarm == 0 && ALAF == 1){
         //change brightness with pwm for TALA duration
 

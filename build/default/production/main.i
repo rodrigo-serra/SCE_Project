@@ -21873,6 +21873,7 @@ void main(void)
             if(secs%PMON == 0){
 
                 luminosity = get_luminosity();
+
                 setLedLuminosity(luminosity);
 
                 checkVariablesForAlarm(0,luminosity);
@@ -21911,7 +21912,7 @@ void main(void)
             }
 
         }else{
-# 166 "main.c"
+# 176 "main.c"
         }
     }
 }

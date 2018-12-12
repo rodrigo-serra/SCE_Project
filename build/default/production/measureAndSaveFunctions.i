@@ -21798,6 +21798,7 @@ int get_luminosity (void){
 
 }
 
+
 void setLedLuminosity(int lum){
     if(lum > 1){
         do { LATAbits.LATA5 = 1; } while(0);

@@ -40,22 +40,23 @@ extern "C" {
 #define CMD_ERROR 0xFF /* error in command */
 
 //Variáveis globais de controlo
-extern volatile int registerRequest;
-extern volatile int makeCalculations;
+extern volatile int registerRequest;	//ativada permite a leitura periodica de registos
+extern volatile int makeCalculations;	//ativa o modo de calculos na processing task
 extern volatile int LumThreshold, TempThreshold;
-extern volatile int exitControl;
-extern volatile int p;
+extern volatile int exitControl;	//nao e utilizado
+extern volatile int p;			//periodo de leitura de registos
 
 //Variáveis dos registos
 extern volatile int iread, iwrite, nr;
 extern int NRBUF;
-extern volatile int registers[100][5]; 
+extern volatile int registers[100][5]; 	//registos
 
 /*error variable*/
 extern volatile Cyg_ErrNo err;
 extern volatile cyg_io_handle_t serH;
 
-/*Mail boxes handlers and objects for receiver and sender*/
+/*Mail boxes handlers and objects for receive, sender, Interface-Processing*/
+/*and Processing-Interface*/
 extern cyg_handle_t mbxSh, mbxRh, mbxIPh, mbxPIh;
 extern cyg_mbox mbxS, mbxR, mbxIP, mbxPI;
 
